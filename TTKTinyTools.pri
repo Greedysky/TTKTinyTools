@@ -1,5 +1,5 @@
 # =================================================
-# * This file is part of the TTK TinyTools project
+# * This file is part of the TTK Tiny Tools project
 # * Copyright (C) 2015 - 2019 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -67,4 +67,6 @@ DEFINES += TTK_LIBRARY
 HEADERS += $$PWD/ttkglobal.h
 HEADERS += $$PWD/ttkglobaldefine.h
 INCLUDEPATH += $$PWD
+#########################################
+include($$PWD/TTKQrc/TTKQrc.pri)
 #########################################

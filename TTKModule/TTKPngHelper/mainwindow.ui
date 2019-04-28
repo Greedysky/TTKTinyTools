@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>TTKPngHelper</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../TTKQrc/TinyTools.qrc">
+    <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
@@ -38,6 +42,10 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../../TTKQrc/TinyTools.qrc"/>
+  <include location="../../TTKQrc/TinyTools.qrc"/>
+  <include location="../../TTKQrc/TinyTools.qrc"/>
+ </resources>
  <connections/>
 </ui>

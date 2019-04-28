@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_ui(new Ui::MainWindow)
 {
     m_ui->setupUi(this);
+
     connect(m_ui->pushButton, SIGNAL(clicked(bool)), SLOT(choosePng()));
 }
 
