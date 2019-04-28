@@ -18,7 +18,8 @@
 
 include($$PWD/../../TTKTinyTools.pri)
 
-TARGET = TTKSocket
+win32:TARGET = ../../../bin/TTKSocket
+unix:TARGET = ../../lib/TTKSocket
 
 TRANSLATIONS += cn.ts
 

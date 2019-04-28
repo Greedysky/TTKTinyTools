@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QMainWindow>
+#include <QFileInfoList>
 #include "ttkglobaldefine.h"
 
 namespace Ui {
@@ -32,6 +33,8 @@ class TTK_CORE_EXPORT MainWindow: public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+    QFileInfoList getFileListByDir(const QString &dpath, const QStringList &filter, bool recursively);
 
 public slots:
     void choosePng();
