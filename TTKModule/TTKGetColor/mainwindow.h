@@ -1,5 +1,5 @@
-#ifndef TCPCLIENT_H
-#define TCPCLIENT_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 /* =================================================
  * This file is part of the TTK Tiny Tools project
@@ -19,35 +19,27 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QTcpSocket>
+#include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
-typedef struct TTK_CORE_EXPORT ClientData
-{
-    int m_clientID;
-    QString m_ip;
-    int m_port;
-}ClientData;
+namespace Ui {
+class MainWindow;
+}
 
-class TTK_CORE_EXPORT TcpClient : public QTcpSocket
+class TTK_CORE_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TcpClient(int clientID, QObject *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
-    int clientID() const;
-
-Q_SIGNALS:
-    void clientReadData(const ClientData &pair, const QByteArray &data);
-    void clientDisConnect(const ClientData &pair);
-
-private Q_SLOTS:
-    void readData();
-    void disConnect();
+public Q_SLOTS:
+    void ShowColorValue();
 
 private:
-    int m_clientID;
+    Ui::MainWindow *m_ui;
 
 };
 
-#endif // TCPCLIENT_H
+#endif // MAINWINDOW_H

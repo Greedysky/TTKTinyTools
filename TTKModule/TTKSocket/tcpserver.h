@@ -26,17 +26,17 @@ class TTK_CORE_EXPORT TcpServer : public QTcpServer
 {
     Q_OBJECT
 public:
-    explicit TcpServer(QObject *parent = 0);
+    explicit TcpServer(QObject *parent = nullptr);
 
     void sendData(int clientID, const QByteArray &data);
     void closeAllClient();
 
-signals:
+Q_SIGNALS:
     void clientReadData(const ClientData &pair, const QByteArray &data);
     void clientConnect(const ClientData &pair);
     void clientDisConnect(const ClientData &pair);
 
-private slots:
+private Q_SLOTS:
     void clientDisConnectChanged(const ClientData &pair);
 
 protected:

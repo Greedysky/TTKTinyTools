@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 /* =================================================
@@ -19,36 +19,54 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "tcpserver.h"
-#include <QMainWindow>
+#include "gif.h"
+#include <QDialog>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-class TTK_CORE_EXPORT MainWindow : public QMainWindow
+class TTK_CORE_EXPORT MainWindow : public QDialog
 {
     Q_OBJECT
-
+    Q_PROPERTY(int m_borderWidth READ getBorderWidth WRITE setBorderWidth)
+    Q_PROPERTY(QColor m_bgColor READ getBgColor WRITE setBgColor)
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void init();
+    int getBorderWidth() const;
+    QColor getBgColor() const;
+
+private Q_SLOTS:
+    void saveImage();
+    void record();
+    void closeAll();
+    void resizeForm();
+
 public Q_SLOTS:
-    void listenButtonClicked();
-    void connectButtonClicked();
-    void clientReadData(const ClientData &pair, const QByteArray &data);
-    void clientConnect(const ClientData &pair);
-    void clientDisConnect(const ClientData &pair);
-    void readData();
-    void readError(QAbstractSocket::SocketError error);
-    void serverSendClicked();
-    void clientSendClicked();
+    void setBorderWidth(int borderWidth);
+    void setBgColor(const QColor &color);
+
+protected:
+    virtual bool eventFilter(QObject *watched, QEvent *event) override;
+    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override;
 
 private:
-    Ui::MainWindow *ui;
-    QTcpSocket *m_tcpClient;
-    TcpServer *m_tcpServer;
+    Ui::MainWindow *m_ui;
+
+    int m_borderWidth;
+    QColor m_bgColor;
+
+    uint m_fps;
+    QRect m_rectGif;
+    QTimer *m_timer;
+
+    Gif m_gif;
+    Gif::GifWriter *m_gifWriter;
 
 };
 

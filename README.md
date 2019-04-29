@@ -22,7 +22,8 @@ Module
 | TTKPngHelper    | Qt去除加载png图像文件时候的iccp警告     |   完成      |
 | TTKChardet  | Qt字符串编码自动检测       |完成     |
 | TTKSocket  | Qt网络TCP和UDP测试       | 完成     |
-
+| TTKGetColor  | Qt屏幕颜色提取       | 完成     |
+| TTKGifWidget  | Qt屏幕Gif录制       | 完成     |
 
 Copyright
 -------

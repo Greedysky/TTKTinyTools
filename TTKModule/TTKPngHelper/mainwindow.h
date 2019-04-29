@@ -31,12 +31,12 @@ class TTK_CORE_EXPORT MainWindow: public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     QFileInfoList getFileListByDir(const QString &dpath, const QStringList &filter, bool recursively);
 
-public slots:
+public Q_SLOTS:
     void choosePng();
 
 private:
