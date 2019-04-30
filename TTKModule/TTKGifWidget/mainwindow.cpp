@@ -1,4 +1,4 @@
-﻿#include "mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 #include <QTimer>
@@ -30,7 +30,7 @@ void MainWindow::init()
 {
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint | Qt::WindowStaysOnTopHint);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     installEventFilter(this);
 
     m_borderWidth = 3;
@@ -68,7 +68,8 @@ QColor MainWindow::getBgColor() const
 
 void MainWindow::saveImage()
 {
-    if (!m_gifWriter) {
+    if(!m_gifWriter)
+    {
         return;
     }
 
@@ -115,6 +116,11 @@ void MainWindow::record()
     }
     else
     {
+        if(!m_gifWriter)
+        {
+            return;
+        }
+
         m_timer->stop();
         m_gif.GifEnd(m_gifWriter);
 
