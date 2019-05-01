@@ -16,8 +16,19 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKChardet TTKGetColor TTKGifWidget TTKPngHelper TTKSocket TTKGaussianBlur TTKDownloadLimit
-equals(QT_MAJOR_VERSION, 5){
-SUBDIRS += TTKBarrage
-}
+include($$PWD/../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../bin/TTKGaussianBlur
+unix:TARGET = ../../lib/TTKGaussianBlur
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp \
+    gaussianblur.cpp
+
+HEADERS += \
+    mainwindow.h \
+    gaussianblur.h
+
+FORMS += \
+    mainwindow.ui

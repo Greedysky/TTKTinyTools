@@ -24,6 +24,8 @@ Module
 | TTKSocket  | Qt网络TCP和UDP测试       | 完成     |
 | TTKGetColor  | Qt屏幕颜色提取       | 完成     |
 | TTKGifWidget  | Qt屏幕Gif录制       | 完成     |
+| TTKBarrage  | Qt发送弹幕       | 完成     |
+| TTKDownloadLimit  | Qt网络限速      | 完成     |
 
 Copyright
 -------

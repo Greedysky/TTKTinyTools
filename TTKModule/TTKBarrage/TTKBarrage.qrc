@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/video">
+        <file alias="play">resource/video_play.png</file>
+        <file alias="pause">resource/video_pause.png</file>
+        <file alias="volumn">resource/video_volumn.png</file>
+        <file alias="menu">resource/video_menu.png</file>
+        <file alias="barrageStyle">resource/barrageStyle.png</file>
+        <file alias="on">resource/on.png</file>
+        <file alias="off">resource/off.png</file>
+    </qresource>
+    <qresource prefix="/color">
+        <file alias="black">resource/color/Black.png</file>
+        <file alias="blue">resource/color/Blue.png</file>
+        <file alias="green">resource/color/Green.png</file>
+        <file alias="indigo">resource/color/Indigo.png</file>
+        <file alias="orange">resource/color/Orange.png</file>
+        <file alias="origin">resource/color/Origin.png</file>
+        <file alias="purple">resource/color/Purple.png</file>
+        <file alias="red">resource/color/Red.png</file>
+        <file alias="white">resource/color/White.png</file>
+        <file alias="yellow">resource/color/Yellow.png</file>
+    </qresource>
+</RCC>

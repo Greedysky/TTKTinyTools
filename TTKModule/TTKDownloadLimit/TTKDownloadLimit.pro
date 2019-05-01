@@ -16,8 +16,17 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKChardet TTKGetColor TTKGifWidget TTKPngHelper TTKSocket TTKGaussianBlur TTKDownloadLimit
-equals(QT_MAJOR_VERSION, 5){
-SUBDIRS += TTKBarrage
-}
+include($$PWD/../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../bin/TTKDownloadLimit
+unix:TARGET = ../../lib/TTKDownloadLimit
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp
+
+HEADERS += \
+    mainwindow.h
+
+FORMS += \
+    mainwindow.ui

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1">
+<context>
+    <name>BarrageEdit</name>
+    <message>
+        <source>Shear</source>
+        <translation>剪切</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>复制</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation>粘贴</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>删除</translation>
+    </message>
+    <message>
+        <source>SelectAll</source>
+        <translation>全选</translation>
+    </message>
+</context>
+<context>
+    <name>VideoControl</name>
+    <message>
+        <source>Size</source>
+        <translation>字号</translation>
+    </message>
+    <message>
+        <source>BgColor</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>just one barrage!</source>
+        <translation>嘿,骚年!来一发!</translation>
+    </message>
+    <message>
+        <source>openBarrage</source>
+        <translation>弹幕</translation>
+    </message>
+    <message>
+        <source>S</source>
+        <translation>小</translation>
+    </message>
+    <message>
+        <source>M</source>
+        <translation>中</translation>
+    </message>
+    <message>
+        <source>G</source>
+        <translation>大</translation>
+    </message>
+</context>
+</TS>

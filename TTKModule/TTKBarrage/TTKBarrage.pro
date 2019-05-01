@@ -16,8 +16,38 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKChardet TTKGetColor TTKGifWidget TTKPngHelper TTKSocket TTKGaussianBlur TTKDownloadLimit
-equals(QT_MAJOR_VERSION, 5){
-SUBDIRS += TTKBarrage
+include($$PWD/../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../bin/TTKBarrage
+unix:TARGET = ../../lib/TTKBarrage
+
+equals(QT_MAJOR_VERSION, 4){
+QT       += multimedia
 }
+equals(QT_MAJOR_VERSION, 5){
+QT       += multimediawidgets
+}
+
+TRANSLATIONS += cn.ts
+
+INCLUDEPATH += $$PWD/core \
+               $$PWD/widget \
+               $$PWD/
+
+SOURCES += \
+    main.cpp \
+    widget/barragewidget.cpp \
+    widget/videocontrol.cpp \
+    widget/barrageedit.cpp \
+    core/barrageanimation.cpp \
+    videoview.cpp
+
+HEADERS  += \
+    widget/barragewidget.h \
+    widget/videocontrol.h \
+    widget/barrageedit.h \
+    core/barrageanimation.h \
+    core/barragecore.h \
+    videoview.h
+
+RESOURCES+= TTKBarrage.qrc
