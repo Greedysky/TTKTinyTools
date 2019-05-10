@@ -127,7 +127,7 @@ void MainWindow::record()
         delete m_gifWriter;
         m_gifWriter = nullptr;
 
-        m_ui->labStatus->setText("录制完成：");
+        m_ui->labStatus->setText("录制完成");
         m_ui->btnStart->setText("开始");
     }
 }

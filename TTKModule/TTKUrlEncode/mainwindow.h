@@ -19,35 +19,12 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "tcpserver.h"
-#include <QMainWindow>
+#include "ttkglobaldefine.h"
 
-namespace Ui {
-class MainWindow;
-}
-
-class TTK_CORE_EXPORT MainWindow : public QMainWindow
+class TTK_CORE_EXPORT MainWindow
 {
-    Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-public Q_SLOTS:
-    void listenButtonClicked();
-    void connectButtonClicked();
-    void clientReadData(const ClientData &pair, const QByteArray &data);
-    void clientConnect(const ClientData &pair);
-    void clientDisConnect(const ClientData &pair);
-    void readData();
-    void readError(QAbstractSocket::SocketError error);
-    void serverSendClicked();
-    void clientSendClicked();
-
-private:
-    Ui::MainWindow *ui;
-    QTcpSocket *m_tcpClient;
-    TcpServer *m_tcpServer;
+    QString generateUUID();
 
 };
 

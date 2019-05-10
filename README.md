@@ -19,13 +19,18 @@ Module
 ----
 | Module | Description       | Status                                                                                      |
 | :---:    | :---:               | :---:                                                                                       |
-| TTKPngHelper    | Qt去除加载png图像文件时候的iccp警告     |   完成      |
-| TTKChardet  | Qt字符串编码自动检测       |完成     |
-| TTKSocket  | Qt网络TCP和UDP测试       | 完成     |
-| TTKGetColor  | Qt屏幕颜色提取       | 完成     |
-| TTKGifWidget  | Qt屏幕Gif录制       | 完成     |
-| TTKBarrage  | Qt发送弹幕       | 完成     |
-| TTKDownloadLimit  | Qt网络限速      | 完成     |
+| TTKPngHelper    | Qt 去除加载png图像文件时候的iccp警告     |   完成      |
+| TTKChardet  | Qt 字符串编码自动检测       |完成     |
+| TTKSocket  | Qt 网络TCP和UDP测试       | 完成     |
+| TTKGetColor  | Qt 屏幕颜色提取       | 完成     |
+| TTKGifWidget  | Qt 屏幕Gif录制       | 完成     |
+| TTKBarrage  | Qt 发送弹幕       | 完成     |
+| TTKDownloadLimit  | Qt 网络限速      | 完成     |
+| TTKCaseTransform  | Qt 大小写转换       | 完成     |
+| TTKRandomPassword  | Qt 密码随机       | 完成     |
+| TTKRandomUuid  | Qt UUID随机      | 完成     |
+| TTKUtf16Transform  | Qt UTF16转换       | 完成     |
+| TTKUrlEncode  | Qt URL转码     | 完成     |
 
 Copyright
 -------
