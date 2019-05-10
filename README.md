@@ -31,7 +31,6 @@ Copyright
 -------
  * This file is part of the TTK Tiny Tools project.
  * Copyright (c) 2015 - 2019 Greedysky Studio.
- * mail: greedysky@163.com.
  
 How To Contribute
 -------
