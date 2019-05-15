@@ -16,19 +16,30 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
+include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../bin/TTKGaussianBlur
-unix:TARGET = ../../lib/TTKGaussianBlur
+win32:TARGET = ../../../../bin/TTKChardet
+unix:TARGET = ../../../lib/TTKChardet
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    gaussianblur.cpp
+    checker.cpp \
+    ascii.cpp \
+    big5.cpp \
+    gb18030.cpp \
+    gbk.cpp \
+    shiftjis.cpp \
+    utf8.cpp \
+    iso2022_jp.cpp \
+    checkerhelper.cpp
 
 HEADERS += \
-    mainwindow.h \
-    gaussianblur.h
-
-FORMS += \
-    mainwindow.ui
+    checker.h \
+    iso2022_jp.h \
+    ascii.h \
+    big5.h \
+    gb18030.h \
+    gbk.h \
+    shiftjis.h \
+    utf8.h \
+    checkerhelper.h

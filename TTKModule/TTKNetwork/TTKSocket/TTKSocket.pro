@@ -16,14 +16,23 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
+include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../bin/TTKCaseTransform
-unix:TARGET = ../../lib/TTKCaseTransform
+win32:TARGET = ../../../../bin/TTKSocket
+unix:TARGET = ../../../lib/TTKSocket
+
+TRANSLATIONS += cn.ts
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tcpclient.cpp \
+    tcpserver.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    tcpclient.h \
+    tcpserver.h
+
+FORMS += \
+    mainwindow.ui

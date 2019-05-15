@@ -16,17 +16,19 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
+include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../bin/TTKPngHelper
-unix:TARGET = ../../lib/TTKPngHelper
+win32:TARGET = ../../../../bin/TTKGaussianBlur
+unix:TARGET = ../../../lib/TTKGaussianBlur
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    gaussianblur.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    gaussianblur.h
 
 FORMS += \
     mainwindow.ui

@@ -16,23 +16,5 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
-
-win32:TARGET = ../../../bin/TTKSocket
-unix:TARGET = ../../lib/TTKSocket
-
-TRANSLATIONS += cn.ts
-
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    tcpclient.cpp \
-    tcpserver.cpp
-
-HEADERS += \
-    mainwindow.h \
-    tcpclient.h \
-    tcpserver.h
-
-FORMS += \
-    mainwindow.ui
+TEMPLATE = subdirs
+SUBDIRS += TTKSocket TTKDownloadLimit

@@ -16,14 +16,5 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
-
-win32:TARGET = ../../../bin/TTKRandomUuid
-unix:TARGET = ../../lib/TTKRandomUuid
-
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp
-
-HEADERS += \
-    mainwindow.h
+TEMPLATE = subdirs
+#SUBDIRS += TTKPngHelper

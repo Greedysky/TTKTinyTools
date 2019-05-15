@@ -16,30 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
+include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../bin/TTKChardet
-unix:TARGET = ../../lib/TTKChardet
+win32:TARGET = ../../../../bin/TTKCaseTransform
+unix:TARGET = ../../../lib/TTKCaseTransform
 
 SOURCES += \
     main.cpp \
-    checker.cpp \
-    ascii.cpp \
-    big5.cpp \
-    gb18030.cpp \
-    gbk.cpp \
-    shiftjis.cpp \
-    utf8.cpp \
-    iso2022_jp.cpp \
-    checkerhelper.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    checker.h \
-    iso2022_jp.h \
-    ascii.h \
-    big5.h \
-    gb18030.h \
-    gbk.h \
-    shiftjis.h \
-    utf8.h \
-    checkerhelper.h
+    mainwindow.h

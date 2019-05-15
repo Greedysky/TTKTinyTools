@@ -16,10 +16,10 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
+include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../bin/TTKGetColor
-unix:TARGET = ../../lib/TTKGetColor
+win32:TARGET = ../../../../bin/TTKDownloadLimit
+unix:TARGET = ../../../lib/TTKDownloadLimit
 
 SOURCES += \
     main.cpp \

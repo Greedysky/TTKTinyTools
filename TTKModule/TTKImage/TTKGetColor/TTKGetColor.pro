@@ -16,5 +16,17 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKImage TTKNetwork TTKTools TTKText
+include($$PWD/../../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../../bin/TTKGetColor
+unix:TARGET = ../../../lib/TTKGetColor
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp
+
+HEADERS += \
+    mainwindow.h
+
+FORMS += \
+    mainwindow.ui

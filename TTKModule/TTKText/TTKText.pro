@@ -16,19 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/../../TTKTinyTools.pri)
-
-win32:TARGET = ../../../bin/TTKGifWidget
-unix:TARGET = ../../lib/TTKGifWidget
-
-CONFIG      += warn_off
-
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp
-
-HEADERS += \
-    mainwindow.h
-
-FORMS += \
-    mainwindow.ui
+TEMPLATE = subdirs
+SUBDIRS += TTKCaseTransform TTKChardet TTKRandomPassword TTKRandomUuid TTKUrlEncode TTKUtf16Transform
+equals(QT_MAJOR_VERSION, 5){
+SUBDIRS += TTKBarrage
+}
