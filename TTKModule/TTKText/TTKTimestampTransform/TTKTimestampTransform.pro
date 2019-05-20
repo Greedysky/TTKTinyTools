@@ -16,9 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKCaseTransform TTKChardet TTKRandomPassword TTKRandomUuid TTKUrlEncode TTKUtf16Transform TTKHashTransform \
-           TTKTimestampTransform
-equals(QT_MAJOR_VERSION, 5){
-SUBDIRS += TTKBarrage
-}
+include($$PWD/../../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../../bin/TTKTimestampTransform
+unix:TARGET = ../../../lib/TTKTimestampTransform
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp
+
+HEADERS += \
+    mainwindow.h
