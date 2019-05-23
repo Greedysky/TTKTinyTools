@@ -33,6 +33,7 @@ Module
 | TTKUrlEncode  | Qt URL转码     | 完成     |
 | TTKHashTransform  | Qt Hash转换       |   完成   |
 | TTKTimestampTransform  | Qt Timestamp转码     |   完成   |
+| TTKCodeLines  | Qt 代码统计行数     |   完成   |
 
 Copyright
 -------
