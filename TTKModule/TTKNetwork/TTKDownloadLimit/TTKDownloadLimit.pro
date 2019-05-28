@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKDownloadLimit
-unix:TARGET = ../../../lib/TTKDownloadLimit
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKDownloadLimit
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKDownloadLimit
 
 SOURCES += \
     main.cpp \

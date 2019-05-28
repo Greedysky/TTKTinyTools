@@ -17,4 +17,5 @@
 # =================================================
 
 TEMPLATE = subdirs
-SUBDIRS += TTKGetColor TTKGifWidget TTKPngHelper TTKGaussianBlur TTKFontPng TTKBarcodeMaker TTKWebPMaker
+SUBDIRS += TTKGetColor TTKGifWidget TTKPngHelper TTKGaussianBlur TTKFontPng TTKBarcodeMaker TTKWebPMaker \
+           TTKQRCodeReader TTKQRCodeMaker

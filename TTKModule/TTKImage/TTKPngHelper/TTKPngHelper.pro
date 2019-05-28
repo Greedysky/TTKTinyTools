@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKPngHelper
-unix:TARGET = ../../../lib/TTKPngHelper
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKPngHelper
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKPngHelper
 
 SOURCES += \
     main.cpp \

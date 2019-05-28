@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKHash16Transform
-unix:TARGET = ../../../lib/TTKHash16Transform
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKHash16Transform
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKHash16Transform
 
 SOURCES += \
     main.cpp \

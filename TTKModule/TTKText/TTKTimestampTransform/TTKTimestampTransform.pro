@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKTimestampTransform
-unix:TARGET = ../../../lib/TTKTimestampTransform
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKTimestampTransform
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKTimestampTransform
 
 SOURCES += \
     main.cpp \

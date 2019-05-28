@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKGetColor
-unix:TARGET = ../../../lib/TTKGetColor
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKGetColor
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKGetColor
 
 SOURCES += \
     main.cpp \

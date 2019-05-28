@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKRandomUuid
-unix:TARGET = ../../../lib/TTKRandomUuid
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKRandomUuid
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKRandomUuid
 
 SOURCES += \
     main.cpp \

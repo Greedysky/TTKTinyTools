@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKGifWidget
-unix:TARGET = ../../../lib/TTKGifWidget
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKGifWidget
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKGifWidget
 
 CONFIG      += warn_off
 

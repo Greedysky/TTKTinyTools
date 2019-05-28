@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKCodeLines
-unix:TARGET = ../../../lib/TTKCodeLines
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKCodeLines
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKCodeLines
 
 SOURCES += \
     main.cpp \

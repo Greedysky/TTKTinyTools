@@ -36,7 +36,9 @@ Module
 | TTKCodeLines  | Qt 代码统计行数     |   完成   |
 | TTKWebPMaker  | Qt WebP制作器       |   完成   |
 | TTKFontPng  | Qt 字体转PNG     |   完成   |
-| TTKBarcodeMaker  | Qt 二维码制作器     |   完成   |
+| TTKBarcodeMaker  | Qt 条形码制作     |   完成   |
+| TTKQRCodeMaker  | Qt 二维码制作     |   完成   |
+| TTKQRCodeReader  | Qt 二维码解码     |   完成   |
 
 Copyright
 -------

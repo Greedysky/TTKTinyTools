@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKCaseTransform
-unix:TARGET = ../../../lib/TTKCaseTransform
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKCaseTransform
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKCaseTransform
 
 SOURCES += \
     main.cpp \

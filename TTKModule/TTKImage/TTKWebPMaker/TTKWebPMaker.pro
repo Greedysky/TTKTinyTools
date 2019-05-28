@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKWebPMaker
-unix:TARGET = ../../../lib/TTKWebPMaker
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKWebPMaker
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKWebPMaker
 
 SOURCES += \
     main.cpp \

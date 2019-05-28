@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKBarrage
-unix:TARGET = ../../../lib/TTKBarrage
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKBarrage
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKBarrage
 
 equals(QT_MAJOR_VERSION, 4){
 QT       += multimedia

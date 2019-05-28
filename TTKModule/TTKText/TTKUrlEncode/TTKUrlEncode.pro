@@ -18,8 +18,8 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/TTKUrlEncode
-unix:TARGET = ../../../lib/TTKUrlEncode
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKUrlEncode
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKUrlEncode
 
 SOURCES += \
     main.cpp \
