@@ -16,6 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKGetColor TTKGifWidget TTKPngHelper TTKGaussianBlur TTKFontPng TTKBarcodeMaker TTKWebPMaker \
-           TTKQRCodeReader TTKQRCodeMaker TTKIconMaker
+include($$PWD/../../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKIconMaker
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKIconMaker
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp
+
+HEADERS += \
+    mainwindow.h

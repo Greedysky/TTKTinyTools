@@ -19,13 +19,19 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QPixmap>
+#include <QImage>
 #include "ttkglobaldefine.h"
 
 class TTK_CORE_EXPORT MainWindow
 {
 public:
-    QPixmap saveIcon(const QString &fontPath, int w, int h, int fontSize, int iconIndex);
+    void save();
+
+private:
+    void save(const QString &path, const QSize &size);
+
+private:
+    QImage source_;
 
 };
 
