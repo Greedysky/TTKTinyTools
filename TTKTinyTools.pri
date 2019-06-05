@@ -59,7 +59,7 @@ win32{
 }
 
 unix:!mac{
-    LIBS += -L../../lib/$$TTKTinyTools -lTTKThirdParty
+    LIBS += -L../../../lib/$$TTKTinyTools -lTTKThirdParty
     QMAKE_CXXFLAGS += -std=c++11
     QMAKE_CXXFLAGS += -Wunused-function
     QMAKE_CXXFLAGS += -Wswitch

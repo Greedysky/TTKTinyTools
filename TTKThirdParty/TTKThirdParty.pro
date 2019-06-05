@@ -23,7 +23,7 @@ include(../TTKVersion.pri)
 unix:VERSION += $$TTKTinyTools
 
 win32:TARGET = ../../bin/$$TTKTinyTools/TTKThirdParty
-unix:TARGET = ../../lib/$$TTKTinyTools/TTKThirdParty
+unix:TARGET = ../lib/$$TTKTinyTools/TTKThirdParty
 TEMPLATE = lib
 
 win32:msvc{

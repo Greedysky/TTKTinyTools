@@ -18,6 +18,15 @@
 
 INCLUDEPATH += $$PWD
 
+win32: {
+HEADERS += \
+    $$PWD/win32/zxing/iconv.h \
+    $$PWD/win32/zxing/stdint.h
+
+SOURCES += \
+    $$PWD/win32/zxing/win_iconv.c
+}
+
 HEADERS += \
     $$PWD/bigint/BigInteger.hh \
     $$PWD/bigint/BigIntegerAlgorithms.hh \
@@ -26,8 +35,6 @@ HEADERS += \
     $$PWD/bigint/BigUnsigned.hh \
     $$PWD/bigint/BigUnsignedInABase.hh \
     $$PWD/bigint/NumberlikeArray.hh \
-    $$PWD/win32/zxing/iconv.h \
-    $$PWD/win32/zxing/stdint.h \
     $$PWD/zxing/BarcodeFormat.h \
     $$PWD/zxing/Binarizer.h \
     $$PWD/zxing/BinaryBitmap.h \
@@ -138,7 +145,6 @@ SOURCES += \
     $$PWD/bigint/BigIntegerUtils.cc \
     $$PWD/bigint/BigUnsigned.cc \
     $$PWD/bigint/BigUnsignedInABase.cc \
-    $$PWD/win32/zxing/win_iconv.c \
     $$PWD/zxing/BarcodeFormat.cpp \
     $$PWD/zxing/Binarizer.cpp \
     $$PWD/zxing/BinaryBitmap.cpp \
