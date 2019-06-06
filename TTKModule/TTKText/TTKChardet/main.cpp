@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
     CheckerHelper helper;
     helper.detect("Test");
 
-    return a.exec();
+    return 0;
 }

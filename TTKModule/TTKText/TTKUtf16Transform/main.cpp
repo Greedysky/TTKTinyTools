@@ -9,5 +9,5 @@ int main(int argc, char *argv[])
     w.toUtf16("Test");
     w.fromUtf16("Test");
 
-    return a.exec();
+    return 0;
 }

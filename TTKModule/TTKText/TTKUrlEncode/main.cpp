@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.generateUUID();
 
-    return a.exec();
+    return 0;
 }

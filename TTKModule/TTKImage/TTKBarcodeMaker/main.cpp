@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.savePng("1111111111111");
 
-    return a.exec();
+    return 0;
 }
