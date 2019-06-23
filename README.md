@@ -39,6 +39,8 @@ Module
 | TTKBarcodeMaker  | Qt 条形码制作     |   完成   |
 | TTKQRCodeMaker  | Qt 二维码制作     |   完成   |
 | TTKQRCodeReader  | Qt 二维码解码     |   完成   |
+| TTKIconMaker  | Qt 图标生成     |   完成   |
+| TTKCPUMemery  | Qt CPU内存     |   完成   |
 
 Copyright
 -------

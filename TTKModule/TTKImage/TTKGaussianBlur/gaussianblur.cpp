@@ -21,7 +21,7 @@ void GaussianBlur::gaussBlur1(int* pix, int w, int h, int radius)
 
     float* gaussMatrix = (float*)malloc(sizeof(float)* (radius + radius + 1));
     float gaussSum = 0.0;
-    for (int i = 0, x = -radius; x <= radius; ++x, ++i)
+    for(int i = 0, x = -radius; x <= radius; ++x, ++i)
     {
         float g = deno * exp(1.0 * nume * x * x);
 
@@ -30,7 +30,7 @@ void GaussianBlur::gaussBlur1(int* pix, int w, int h, int radius)
     }
 
     int len = radius + radius + 1;
-    for (int i = 0; i < len; ++i)
+    for(int i = 0; i < len; ++i)
     {
         gaussMatrix[i] /= gaussSum;
     }
@@ -38,20 +38,20 @@ void GaussianBlur::gaussBlur1(int* pix, int w, int h, int radius)
     int* rowData  = (int*)malloc(w * sizeof(int));
     int* listData = (int*)malloc(h * sizeof(int));
 
-    for (int y = 0; y < h; ++y)
+    for(int y = 0; y < h; ++y)
     {
         memcpy(rowData, pix + y * w, sizeof(int) * w);
 
-        for (int x = 0; x < w; ++x)
+        for(int x = 0; x < w; ++x)
         {
             float r = 0, g = 0, b = 0;
             gaussSum = 0;
 
-            for (int i = -radius; i <= radius; ++i)
+            for(int i = -radius; i <= radius; ++i)
             {
                 int k = x + i;
 
-                if (0 <= k && k <= w)
+                if(0 <= k && k <= w)
                 {
                     int color = rowData[k];
                     int cr = (color & 0x00ff0000) >> 16;
@@ -74,23 +74,23 @@ void GaussianBlur::gaussBlur1(int* pix, int w, int h, int radius)
         }
     }
 
-    for (int x = 0; x < w; ++x)
+    for(int x = 0; x < w; ++x)
     {
-        for (int y = 0; y < h; ++y)
+        for(int y = 0; y < h; ++y)
         {
             listData[y] = pix[y * w + x];
         }
 
-        for (int y = 0; y < h; ++y)
+        for(int y = 0; y < h; ++y)
         {
             float r = 0, g = 0, b = 0;
             gaussSum = 0;
 
-            for (int j = -radius; j <= radius; ++j)
+            for(int j = -radius; j <= radius; ++j)
             {
                 int k = y + j;
 
-                if (0 <= k && k <= h)
+                if(0 <= k && k <= h)
                 {
                     int color = listData[k];
                     int cr = (color & 0x00ff0000) >> 16;
@@ -148,7 +148,7 @@ void GaussianBlur::boxBlurH(int* srcPix, int* destPix, int w, int h, int radius)
     int num;
     float iarr;
 
-    for (int i = 0; i < h; ++i)
+    for(int i = 0; i < h; ++i)
     {
         r = 0;
         g = 0;
@@ -157,7 +157,7 @@ void GaussianBlur::boxBlurH(int* srcPix, int* destPix, int w, int h, int radius)
         index = i * w;
         num = radius;
 
-        for (int j = 0; j < radius; j++)
+        for(int j = 0; j < radius; j++)
         {
             color = srcPix[index + j];
             r += (color & 0x00ff0000) >> 16;
@@ -165,7 +165,7 @@ void GaussianBlur::boxBlurH(int* srcPix, int* destPix, int w, int h, int radius)
             b += (color & 0x000000ff);
         }
 
-        for (int j = 0; j <= radius; ++j)
+        for(int j = 0; j <= radius; ++j)
         {
             num++;
             iarr = 1.0 / (1.0 * num);
@@ -183,7 +183,7 @@ void GaussianBlur::boxBlurH(int* srcPix, int* destPix, int w, int h, int radius)
         }
 
         iarr = 1.0 / (1.0 * num);
-        for (int j = radius + 1; j < w - radius; ++j)
+        for(int j = radius + 1; j < w - radius; ++j)
         {
             preColor = srcPix[index + j - 1 - radius];
             color = srcPix[index + j + radius];
@@ -199,7 +199,7 @@ void GaussianBlur::boxBlurH(int* srcPix, int* destPix, int w, int h, int radius)
             destPix[index + j] = tr << 16 | tg << 8 | tb | 0xff000000;
         }
 
-        for (int j = w - radius; j < w; ++j)
+        for(int j = w - radius; j < w; ++j)
         {
             num--;
             iarr = 1.0 / (1.0 * num);
@@ -229,7 +229,7 @@ void GaussianBlur::boxBlurV(int* srcPix, int* destPix, int w, int h, int radius)
     int num;
     float iarr;
 
-    for (int i = 0; i < w; ++i)
+    for(int i = 0; i < w; ++i)
     {
         r = 0;
         g = 0;
@@ -237,7 +237,7 @@ void GaussianBlur::boxBlurV(int* srcPix, int* destPix, int w, int h, int radius)
 
         num = radius;
 
-        for (int j = 0; j < radius; ++j)
+        for(int j = 0; j < radius; ++j)
         {
             color = srcPix[j*w + i];
             r += (color & 0x00ff0000) >> 16;
@@ -245,7 +245,7 @@ void GaussianBlur::boxBlurV(int* srcPix, int* destPix, int w, int h, int radius)
             b += (color & 0x000000ff);
         }
 
-        for (int j = 0; j <= radius; ++j)
+        for(int j = 0; j <= radius; ++j)
         {
             num++;
             iarr = 1.0 / (1.0 * num);
@@ -263,7 +263,7 @@ void GaussianBlur::boxBlurV(int* srcPix, int* destPix, int w, int h, int radius)
         }
 
         iarr = 1.0 / (1.0 * num);
-        for (int j = radius + 1; j < h - radius; ++j)
+        for(int j = radius + 1; j < h - radius; ++j)
         {
             preColor = srcPix[(j - radius - 1) * w + i];
             color = srcPix[(j + radius) * w + i];
@@ -279,7 +279,7 @@ void GaussianBlur::boxBlurV(int* srcPix, int* destPix, int w, int h, int radius)
             destPix[j*w + i] = tr << 16 | tg << 8 | tb | 0xff000000;
         }
 
-        for (int j = h - radius; j < h; ++j)
+        for(int j = h - radius; j < h; ++j)
         {
             num--;
             iarr = 1.0 / (1.0 * num);
@@ -300,7 +300,7 @@ void GaussianBlur::boxBlurV(int* srcPix, int* destPix, int w, int h, int radius)
 
 void GaussianBlur::boxBlur(int* srcPix, int* destPix, int w, int h, int r)
 {
-    if (r < 0)
+    if(r < 0)
     {
         return;
     }
@@ -314,7 +314,7 @@ void GaussianBlur::boxesForGauss(float sigma, int* size, int n)
     float wIdeal = sqrt(12.0 * sigma * sigma / n + 1.0);
     int wl = floor(wIdeal);
 
-    if (0 == wl % 2)
+    if(0 == wl % 2)
     {
         wl--;
     }
@@ -324,7 +324,7 @@ void GaussianBlur::boxesForGauss(float sigma, int* size, int n)
     float mIdeal = (12.0 * sigma * sigma - n * wl * wl - 4 * n * wl - 3 * n) / (-4 * wl - 4);
     int m = round(mIdeal);
 
-    for (int i = 0; i < n; ++i)
+    for(int i = 0; i < n; ++i)
     {
         size[i] = (i < m ? wl : wu);
     }

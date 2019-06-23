@@ -16,5 +16,21 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKCPUMemery
+include($$PWD/../../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKCPUMemery
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKCPUMemery
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp \
+    showcpumemory.cpp \
+    showdevicesize.cpp
+
+HEADERS += \
+    mainwindow.h \
+    showcpumemory.h \
+    showdevicesize.h
+
+FORMS += \
+    mainwindow.ui
