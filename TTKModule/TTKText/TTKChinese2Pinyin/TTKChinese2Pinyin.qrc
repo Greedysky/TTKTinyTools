@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/data">
+        <file alias="single_pinyin">resource/single_pinyin</file>
+        <file alias="mutil_pinyin">resource/mutil_pinyin</file>
+        <file alias="pinyin">resource/pinyin</file>
+    </qresource>
+</RCC>

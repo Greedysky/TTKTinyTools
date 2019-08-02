@@ -16,28 +16,22 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+include($$PWD/../../../TTKTinyTools.pri)
 
-HEADERS += \
-    $$PWD/bitstream.h \
-    $$PWD/config.h \
-    $$PWD/mask.h \
-    $$PWD/mmask.h \
-    $$PWD/mqrspec.h \
-    $$PWD/qrencode_inner.h \
-    $$PWD/qrencode.h \
-    $$PWD/qrinput.h \
-    $$PWD/qrspec.h \
-    $$PWD/rscode.h \
-    $$PWD/split.h
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKChinese2Pinyin
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKChinese2Pinyin
 
+
+HEADERS  += \
+    $$PWD/pinyinresource.h \
+    $$PWD/chinesehelper.h \
+    $$PWD/pinyinhelper.h
+    
 SOURCES += \
-    $$PWD/bitstream.c \
-    $$PWD/mask.c \
-    $$PWD/mmask.c \
-    $$PWD/mqrspec.c \
-    $$PWD/qrencode.c \
-    $$PWD/qrinput.c \
-    $$PWD/qrspec.c \
-    $$PWD/rscode.c \
-    $$PWD/split.c
+    $$PWD/main.cpp \
+    $$PWD/pinyinresource.cpp \
+    $$PWD/chinesehelper.cpp \
+    $$PWD/pinyinhelper.cpp
+
+
+RESOURCES+= TTKChinese2Pinyin.qrc

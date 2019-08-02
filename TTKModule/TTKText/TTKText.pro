@@ -18,7 +18,7 @@
 
 TEMPLATE = subdirs
 SUBDIRS += TTKCaseTransform TTKChardet TTKRandomPassword TTKRandomUuid TTKUrlEncode TTKUtf16Transform TTKHashTransform \
-           TTKTimestampTransform TTKCodeLines
+           TTKTimestampTransform TTKCodeLines TTKChinese2Pinyin
 equals(QT_MAJOR_VERSION, 5){
 SUBDIRS += TTKBarrage
 }
