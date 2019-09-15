@@ -42,6 +42,8 @@ Module
 | TTKIconMaker  | Qt 图标生成     |   完成   |
 | TTKCPUMemery  | Qt CPU内存     |   完成   |
 | TTKChinese2Pinyin  | Qt 汉字转拼音     |   完成   |
+| TTKImageView  | Qt 图片浏览器     |   完成   |
+
 
 Copyright
 -------
