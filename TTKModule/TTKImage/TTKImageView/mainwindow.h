@@ -36,10 +36,10 @@ public:
     ~MainWindow();
 
 private Q_SLOTS:
-	void on_btnOpen_clicked();
-	void on_ckFill_stateChanged(int arg1);
-	void on_ckFade_stateChanged(int arg1);
-	void on_ckKeyMove_stateChanged(int arg1);
+    void openFileButtonClicked();
+    void fillButtonChanged(bool state);
+    void fadeButtonChanged(bool state);
+    void keyMoveButtonChanged(bool state);
 
 private:
     Ui::MainWindow *ui;

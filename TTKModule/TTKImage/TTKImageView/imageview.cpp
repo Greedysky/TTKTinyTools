@@ -7,7 +7,7 @@
 #include <QKeyEvent>
 #include <QFileDialog>
 
-ImageNum::ImageNum(QWidget *parent)
+ImageIndex::ImageIndex(QWidget *parent)
     : QWidget(parent)
 {
     m_totalNum = 0;
@@ -15,7 +15,7 @@ ImageNum::ImageNum(QWidget *parent)
     setFixedSize(160, 30);
 }
 
-void ImageNum::paintEvent(QPaintEvent *event)
+void ImageIndex::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
@@ -24,7 +24,7 @@ void ImageNum::paintEvent(QPaintEvent *event)
     drawText(&painter);
 }
 
-void ImageNum::drawBg(QPainter *painter)
+void ImageIndex::drawBg(QPainter *painter)
 {
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -33,7 +33,7 @@ void ImageNum::drawBg(QPainter *painter)
     painter->restore();
 }
 
-void ImageNum::drawText(QPainter *painter)
+void ImageIndex::drawText(QPainter *painter)
 {
     const QString &text = QString("第 %1 张 / 共 %2 张").arg(m_currentIndex + 1).arg(m_totalNum);
     painter->save();
@@ -46,7 +46,7 @@ void ImageNum::drawText(QPainter *painter)
     painter->restore();
 }
 
-void ImageNum::setTotalNum(int totalNum)
+void ImageIndex::setTotalNum(int totalNum)
 {
     if(totalNum < 0)
     {
@@ -61,7 +61,7 @@ void ImageNum::setTotalNum(int totalNum)
     update();
 }
 
-void ImageNum::setCurrentIndex(int currentIndex)
+void ImageIndex::setCurrentIndex(int currentIndex)
 {
     if(currentIndex < 0)
     {
@@ -74,6 +74,8 @@ void ImageNum::setCurrentIndex(int currentIndex)
 
     update();
 }
+
+
 
 ImageView::ImageView(QWidget *parent)
     : QWidget(parent)
@@ -91,12 +93,15 @@ ImageView::ImageView(QWidget *parent)
     m_totalNum = 0;
     m_currentIndex = -1;
 
-    m_imageNum = new ImageNum(this);
-    connect(this, SIGNAL(totalNumChanged(int)), m_imageNum, SLOT(setTotalNum(int)));
-    connect(this, SIGNAL(currentIndexChanged(int)), m_imageNum, SLOT(setCurrentIndex(int)));
+    m_imageIndex = new ImageIndex(this);
+    connect(this, SIGNAL(totalNumChanged(int)), m_imageIndex, SLOT(setTotalNum(int)));
+    connect(this, SIGNAL(currentIndexChanged(int)), m_imageIndex, SLOT(setCurrentIndex(int)));
 
     m_preButton = new QToolButton(this);
     m_nextButton = new QToolButton(this);
+
+    m_preButton->setCursor(Qt::PointingHandCursor);
+    m_nextButton->setCursor(Qt::PointingHandCursor);
 
     m_preButton->setIconSize(m_icoSize);
     m_nextButton->setIconSize(m_icoSize);
@@ -140,8 +145,8 @@ void ImageView::calcGeometry()
     const QPoint nextPoint(width() - m_buttonSpace - m_preButton->width(), (height() - m_preButton->height()) / 2);
     m_nextButton->move(nextPoint);
 
-    const QPoint numPoint(width() / 2 - m_imageNum->width() / 2, height() - m_bottomSpace - m_preButton->height() / 2 - m_imageNum->height() / 2);
-    m_imageNum->move(numPoint);
+    const QPoint numPoint(width() / 2 - m_imageIndex->width() / 2, height() - m_bottomSpace - m_preButton->height() / 2 - m_imageIndex->height() / 2);
+    m_imageIndex->move(numPoint);
 }
 
 void ImageView::fading()
@@ -236,14 +241,14 @@ void ImageView::load()
 
 void ImageView::load(const QString &path)
 {
-    QDir imageFolder(path);
-    imageFolder.setSorting(QDir::Time);
+    QDir folder(path);
+    folder.setSorting(QDir::Time);
 
-    if(imageFolder.exists())
+    if(folder.exists())
     {
         QStringList filter;
         filter << "*.png" << "*.jpg" << "*.gif" << "*.jpeg" << "*.bmp" ;
-        const QStringList &imageList = imageFolder.entryList(filter);
+        const QStringList &imageList = folder.entryList(filter);
 
         m_totalNum = imageList.count();
         m_currentIndex = -1;

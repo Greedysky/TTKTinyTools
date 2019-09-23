@@ -24,11 +24,11 @@
 
 class QToolButton;
 
-class TTK_CORE_EXPORT ImageNum : public QWidget
+class TTK_CORE_EXPORT ImageIndex : public QWidget
 {
     Q_OBJECT
 public:
-    ImageNum(QWidget *parent = nullptr);
+    ImageIndex(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -44,6 +44,7 @@ private:
     int m_currentIndex;
 
 };
+
 
 class TTK_CORE_EXPORT ImageView : public QWidget
 {
@@ -105,7 +106,7 @@ private:
     int m_currentIndex;
     QImage m_currentImage;
 
-    ImageNum *m_imageNum;
+    ImageIndex *m_imageIndex;
 
     int m_totalNum;
     double m_opacity;

@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
       ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->btnOpen, SIGNAL(clicked()), SLOT(openFileButtonClicked()));
+    connect(ui->ckFill, SIGNAL(clicked(bool)), SLOT(fillButtonChanged(bool)));
+    connect(ui->ckFade, SIGNAL(clicked(bool)), SLOT(fadeButtonChanged(bool)));
+    connect(ui->ckKeyMove, SIGNAL(clicked(bool)), SLOT(keyMoveButtonChanged(bool)));
 }
 
 MainWindow::~MainWindow()
@@ -15,27 +20,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btnOpen_clicked()
+void MainWindow::openFileButtonClicked()
 {
-    QString path = QFileDialog::getExistingDirectory(this, "选择文件夹");
-
-    if (!path.isEmpty()) {
+    const QString &path = QFileDialog::getExistingDirectory(this, "选择文件夹");
+    if(!path.isEmpty())
+    {
         ui->labPath->setText(path);
         ui->imageView->load(path);
     }
 }
 
-void MainWindow::on_ckFill_stateChanged(int arg1)
+void MainWindow::fillButtonChanged(bool state)
 {
-    ui->imageView->setFill(arg1 != 0);
+    ui->imageView->setFill(state);
 }
 
-void MainWindow::on_ckFade_stateChanged(int arg1)
+void MainWindow::fadeButtonChanged(bool state)
 {
-    ui->imageView->setFade(arg1 != 0);
+    ui->imageView->setFade(state);
 }
 
-void MainWindow::on_ckKeyMove_stateChanged(int arg1)
+void MainWindow::keyMoveButtonChanged(bool state)
 {
-    ui->imageView->setKeyMove(arg1 != 0);
+    ui->imageView->setKeyMove(state);
 }
