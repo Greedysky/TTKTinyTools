@@ -43,7 +43,8 @@ Module
 | TTKCPUMemery  | Qt CPU内存     |   完成   |
 | TTKChinese2Pinyin  | Qt 汉字转拼音     |   完成   |
 | TTKImageView  | Qt 图片浏览器     |   完成   |
-
+| TTKGaussianBlur  | Qt 图片高斯模糊     |   完成   |
+| TTKWaterWave  | Qt 图片水波效果     |   完成   |
 
 Copyright
 -------

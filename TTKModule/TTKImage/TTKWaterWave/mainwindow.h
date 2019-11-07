@@ -27,6 +27,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class WaterWave;
+
 class TTK_CORE_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
@@ -36,11 +38,18 @@ public:
 
 protected Q_SLOTS:
     void openImage();
-    void radiusChanged(int value);
+    void renderImage();
+
+protected:
+    virtual void mousePressEvent(QMouseEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override;
 
 private:
     Ui::MainWindow *m_ui;
-    QString m_path;
+
+    WaterWave *m_waterWave;
+    QImage m_image;
+    QTimer *m_timer;
 
 };
 
