@@ -16,5 +16,37 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS += TTKSocket TTKDownloadLimit TTKNetTraffic
+include($$PWD/../../../TTKTinyTools.pri)
+
+win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKNetTraffic
+unix:TARGET = ../../../lib/$$TTKTinyTools/TTKNetTraffic
+
+SOURCES += \
+    main.cpp\
+    mainwindow.cpp \
+    helper.cpp \
+    settingwidget.cpp \
+    ttkcpumemorylabel.cpp \
+    ttknettrafficlabel.cpp
+
+HEADERS += \
+    mainwindow.h \
+    helper.h \
+    settingwidget.h \
+    ttkcpumemorylabel.h \
+    ttknettrafficlabel.h
+
+RESOURCES += \
+    resource.qrc
+
+
+
+
+
+
+
+
+
+
+
+
