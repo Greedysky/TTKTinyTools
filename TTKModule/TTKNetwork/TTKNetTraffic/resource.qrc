@@ -1,0 +1,63 @@
+<RCC>
+    <qresource prefix="/net">
+        <file alias="res_traffic">res/avnets</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>qss/branch-closed.png</file>
+        <file>qss/branch-end.png</file>
+        <file>qss/branch-more.png</file>
+        <file>qss/branch-more1.png</file>
+        <file>qss/branch-open.png</file>
+        <file>qss/checkbox_checked.png</file>
+        <file>qss/checkbox_checked_hover.png</file>
+        <file>qss/checkbox_checked_pressed.png</file>
+        <file>qss/checkbox_unchecked.png</file>
+        <file>qss/checkbox_unchecked_hover.png</file>
+        <file>qss/checkbox_unchecked_pressed.png</file>
+        <file>qss/close.png</file>
+        <file>qss/close_hover.png</file>
+        <file>qss/downarrow.png</file>
+        <file>qss/down_arrow.png</file>
+        <file>qss/down_arrow_disabled.png</file>
+        <file>qss/down_arrow_hover.png</file>
+        <file>qss/frame.png</file>
+        <file>qss/left_arrow.png</file>
+        <file>qss/left_arrow_hover.png</file>
+        <file>qss/maximize.png</file>
+        <file>qss/maximized.png</file>
+        <file>qss/maximized_hover.png</file>
+        <file>qss/maximize_hover.png</file>
+        <file>qss/minimize.png</file>
+        <file>qss/minimize_hover.png</file>
+        <file>qss/radiobutton_checked.png</file>
+        <file>qss/radiobutton_checked_hover.png</file>
+        <file>qss/radiobutton_checked_pressed.png</file>
+        <file>qss/radiobutton_unchecked.png</file>
+        <file>qss/radiobutton_unchecked_hover.png</file>
+        <file>qss/radiobutton_unchecked_pressed.png</file>
+        <file>qss/right_arrow.png</file>
+        <file>qss/right_arrow_hover.png</file>
+        <file>qss/setup.png</file>
+        <file>qss/sizegrip.png</file>
+        <file>qss/sizegrip1.png</file>
+        <file>qss/spindown.png</file>
+        <file>qss/spindown_hover.png</file>
+        <file>qss/spindown_off.png</file>
+        <file>qss/spindown_pressed.png</file>
+        <file>qss/spinup.png</file>
+        <file>qss/spinup_hover.png</file>
+        <file>qss/spinup_off.png</file>
+        <file>qss/spinup_pressed.png</file>
+        <file>qss/Style1.qss</file>
+        <file>qss/Style2.qss</file>
+        <file>qss/Style4.qss</file>
+        <file>qss/up_arrow.png</file>
+        <file>qss/up_arrow_disabled.png</file>
+        <file>qss/up_arrow_hover.png</file>
+        <file>qss/vline.png</file>
+        <file>qss/cpu.png</file>
+        <file>qss/mem.png</file>
+        <file>qss/Style3.qss</file>
+        <file>qss/ubuntu.png</file>
+    </qresource>
+</RCC>

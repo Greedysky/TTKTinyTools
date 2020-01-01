@@ -34,6 +34,7 @@ Module
 | TTKHashTransform  | Qt Hash转换       |   完成   |
 | TTKTimestampTransform  | Qt Timestamp转码     |   完成   |
 | TTKCodeLines  | Qt 代码统计行数     |   完成   |
+| TTKCodeCount  | Qt 代码统计行数     |   完成   |
 | TTKWebPMaker  | Qt WebP制作器       |   完成   |
 | TTKFontPng  | Qt 字体转PNG     |   完成   |
 | TTKBarcodeMaker  | Qt 条形码制作     |   完成   |
@@ -45,6 +46,7 @@ Module
 | TTKImageView  | Qt 图片浏览器     |   完成   |
 | TTKGaussianBlur  | Qt 图片高斯模糊     |   完成   |
 | TTKWaterWave  | Qt 图片水波效果     |   完成   |
+| TTKNetTraffic  | Qt CPU内存网速显示     |   完成   |
 
 Copyright
 -------
