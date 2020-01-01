@@ -21,6 +21,10 @@ include($$PWD/../../../TTKTinyTools.pri)
 win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKNetTraffic
 unix:TARGET = ../../../lib/$$TTKTinyTools/TTKNetTraffic
 
+win32{
+    LIBS += -lIphlpapi
+}
+
 SOURCES += \
     main.cpp\
     mainwindow.cpp \
