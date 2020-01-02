@@ -66,6 +66,8 @@ MainWindow::MainWindow(QWidget *parent)
     timer->start(500);
     connect(timer, SIGNAL(timeout()), SLOT(refreshInfo()));
 
+    m_setingWidget = nullptr;
+
     setLayout(layoutmid);
     move(200, 200);
 
@@ -95,11 +97,14 @@ void MainWindow::refreshInfo()
 
 void MainWindow::showWindow()
 {
-    SettingWidget *window = new SettingWidget(m_isShowtop, m_isShowcpu, m_isShowmem, pos());
-    connect(window, SIGNAL(showtop(int)), SLOT(showtop(int)));
-    connect(window, SIGNAL(showcpu(int)), SLOT(showcpu(int)));
-    connect(window, SIGNAL(showmem(int)), SLOT(showmem(int)));
-    window->show();
+    if(!m_setingWidget)
+    {
+        m_setingWidget = new SettingWidget(m_isShowtop, m_isShowcpu, m_isShowmem, pos());
+        connect(m_setingWidget, SIGNAL(showtop(int)), SLOT(showtop(int)));
+        connect(m_setingWidget, SIGNAL(showcpu(int)), SLOT(showcpu(int)));
+        connect(m_setingWidget, SIGNAL(showmem(int)), SLOT(showmem(int)));
+    }
+    m_setingWidget->show();
 }
 
 void MainWindow::showcpu(int value)

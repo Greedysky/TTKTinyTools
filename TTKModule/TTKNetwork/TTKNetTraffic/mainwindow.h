@@ -51,6 +51,7 @@ private:
     QLabel *m_lableNWS, *m_lableMem, *m_lableCPU;
     QPushButton *m_buttonNWS, *m_buttonMem, *m_buttonCPU;
     Helper *m_helper;
+    QWidget *m_setingWidget;
 
     QPoint m_dPos;
     bool m_isShowtop, m_isShowcpu, m_isShowmem;
