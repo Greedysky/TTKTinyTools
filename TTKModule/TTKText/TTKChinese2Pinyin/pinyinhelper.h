@@ -114,8 +114,8 @@ private:
     QStringList convertWithoutTone(QString pinyinArrayString);
 
     ChineseHelper m_chineseHelper;
-    MStringMap m_pinyinTable;
-    MStringMap m_mutliPinyinTable;
+    TTKStringMap m_pinyinTable;
+    TTKStringMap m_mutliPinyinTable;
     QString m_pinyinSeparator;   // = ",";
     QChar m_chineseLing;         // = '〇';
     QString m_allUnmarkedVowel;  // = "aeiouv";

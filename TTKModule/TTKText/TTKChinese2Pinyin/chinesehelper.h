@@ -90,7 +90,7 @@ public:
     bool containsChinese(const QString &str) const;
 
 private:
-    MStringMap m_data;
+    TTKStringMap m_data;
 
 };
 
