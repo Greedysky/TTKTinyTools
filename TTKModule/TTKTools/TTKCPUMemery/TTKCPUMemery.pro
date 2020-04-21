@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKCPUMemery
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKCPUMemery
+TARGET = TTKCPUMemery
 
 SOURCES += \
     main.cpp \

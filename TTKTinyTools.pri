@@ -26,12 +26,14 @@ QT       += widgets
 
 TEMPLATE = app
 
-include(TTKVersion.pri)
+include($$PWD/TTKVersion.pri)
+win32:DESTDIR = $$OUT_PWD/../../../bin/$$TTKTinyTools
+unix:DESTDIR = $$OUT_PWD/../../../lib/$$TTKTinyTools
 
 win32{
     equals(QT_MAJOR_VERSION, 5){
         msvc{
-            LIBS += -L../../../bin/$$TTKTinyTools -lTTKThirdParty
+            LIBS += -L$$DESTDIR -lTTKThirdParty
             CONFIG +=c++11
             !contains(QMAKE_TARGET.arch, x86_64){
                  #support on windows XP
@@ -41,28 +43,22 @@ win32{
         }
 
         gcc{
-            LIBS += -L../../../bin/$$TTKTinyTools -lTTKThirdParty
-            QMAKE_CXXFLAGS += -std=c++11
-            QMAKE_CXXFLAGS += -Wunused-function
-            QMAKE_CXXFLAGS += -Wswitch
+            LIBS += -L$$DESTDIR -lTTKThirdParty
+            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
         }
     }
 
     equals(QT_MAJOR_VERSION, 4){
         gcc{
-            LIBS += -L../../../bin/$$TTKTinyTools -lTTKThirdParty
-            QMAKE_CXXFLAGS += -std=c++11
-            QMAKE_CXXFLAGS += -Wunused-function
-            QMAKE_CXXFLAGS += -Wswitch
+            LIBS += -L$$DESTDIR -lTTKThirdParty
+            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
         }
     }
 }
 
 unix:!mac{
-    LIBS += -L../../../lib/$$TTKTinyTools -lTTKThirdParty
-    QMAKE_CXXFLAGS += -std=c++11
-    QMAKE_CXXFLAGS += -Wunused-function
-    QMAKE_CXXFLAGS += -Wswitch
+    LIBS += -L$$DESTDIR -lTTKThirdParty
+    QMAKE_CXXFLAGS += -std=c++11 -Wunused-function  -Wswitch
 }
 
 DEFINES += TTK_LIBRARY

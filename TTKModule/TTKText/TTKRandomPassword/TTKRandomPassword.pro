@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKRandomPassword
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKRandomPassword
+TARGET = TTKRandomPassword
 
 SOURCES += \
     main.cpp \

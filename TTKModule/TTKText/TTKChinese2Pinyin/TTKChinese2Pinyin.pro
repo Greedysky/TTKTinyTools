@@ -18,9 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKChinese2Pinyin
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKChinese2Pinyin
-
+TARGET = TTKChinese2Pinyin
 
 HEADERS  += \
     $$PWD/pinyinresource.h \

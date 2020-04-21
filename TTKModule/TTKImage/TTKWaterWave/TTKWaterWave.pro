@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKWaterWave
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKWaterWave
+TARGET = TTKWaterWave
 
 SOURCES += \
     main.cpp \

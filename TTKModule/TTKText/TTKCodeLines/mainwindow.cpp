@@ -3,7 +3,6 @@
 
 #include <QDir>
 #include <QMap>
-#include <QDebug>
 #include <QFileInfo>
 #include <QEventLoop>
 #include <functional>

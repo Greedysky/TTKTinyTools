@@ -18,8 +18,9 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKImageView
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKImageView
+TARGET = TTKImageView
+
+INCLUDEPATH += $$PWD
 
 SOURCES += \
     main.cpp \

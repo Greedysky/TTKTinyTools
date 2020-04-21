@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKIconMaker
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKIconMaker
+TARGET = TTKIconMaker
 
 SOURCES += \
     main.cpp \

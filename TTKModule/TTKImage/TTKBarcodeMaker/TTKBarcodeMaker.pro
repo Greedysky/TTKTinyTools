@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKBarcodeMaker
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKBarcodeMaker
+TARGET = TTKBarcodeMaker
 
 SOURCES += \
     main.cpp \

@@ -19,8 +19,7 @@
 include($$PWD/../../../TTKTinyTools.pri)
 include($$PWD/../../../TTKThirdParty/TTKThirdParty.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKQRCodeReader
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKQRCodeReader
+TARGET = TTKQRCodeReader
 
 SOURCES += \
     main.cpp \

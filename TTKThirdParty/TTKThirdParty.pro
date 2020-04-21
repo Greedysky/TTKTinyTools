@@ -19,11 +19,13 @@
 QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-include(../TTKVersion.pri)
+include($$PWD/../TTKVersion.pri)
 unix:VERSION += $$TTKTinyTools
 
-win32:TARGET = ../../bin/$$TTKTinyTools/TTKThirdParty
-unix:TARGET = ../lib/$$TTKTinyTools/TTKThirdParty
+win32:DESTDIR = $$OUT_PWD/../bin/$$TTKTinyTools
+unix:DESTDIR = $$OUT_PWD/../lib/$$TTKTinyTools
+
+TARGET = TTKThirdParty
 TEMPLATE = lib
 
 win32:msvc{
@@ -32,10 +34,9 @@ win32:msvc{
     QMAKE_CXXFLAGS += -std=c++11
 }
 
-include(qrencode/QRencode.pri)
-include(zxing/ZXing.pri)
+include($$PWD/qrencode/QRencode.pri)
+include($$PWD/zxing/ZXing.pri)
 
 win32{
     RC_FILE = TTKThirdParty.rc
 }
-

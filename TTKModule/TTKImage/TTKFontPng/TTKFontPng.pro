@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKFontPng
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKFontPng
+TARGET = TTKFontPng
 
 SOURCES += \
     main.cpp \

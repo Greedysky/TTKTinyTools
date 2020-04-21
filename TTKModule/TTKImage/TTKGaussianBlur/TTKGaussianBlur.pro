@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKGaussianBlur
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKGaussianBlur
+TARGET = TTKGaussianBlur
 
 SOURCES += \
     main.cpp \

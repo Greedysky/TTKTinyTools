@@ -18,8 +18,7 @@
 
 include($$PWD/../../../TTKTinyTools.pri)
 
-win32:TARGET = ../../../../bin/$$TTKTinyTools/TTKUtf16Transform
-unix:TARGET = ../../../lib/$$TTKTinyTools/TTKUtf16Transform
+TARGET = TTKUtf16Transform
 
 SOURCES += \
     main.cpp \
