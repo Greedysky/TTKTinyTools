@@ -25,6 +25,8 @@
 #include <zxing/common/StringUtils.h>
 #include <iostream>
 #ifndef NO_ICONV
+#include <win32/zxing/iconv.h>
+#else
 #include <iconv.h>
 #endif
 

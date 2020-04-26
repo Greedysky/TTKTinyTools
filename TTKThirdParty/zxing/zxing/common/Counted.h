@@ -19,11 +19,12 @@
  */
 
 #include <iostream>
+#include "extrasglobaldefine.h"
 
 namespace zxing {
 
 /* base class for reference-counted objects */
-class Counted {
+class EXTRAS_EXPORT Counted {
 private:
   unsigned int count_;
 public:
@@ -52,7 +53,7 @@ public:
 };
 
 /* counting reference to reference-counted objects */
-template<typename T> class Ref {
+template<typename T> class EXTRAS_EXPORT Ref {
 private:
 public:
   T *object_;

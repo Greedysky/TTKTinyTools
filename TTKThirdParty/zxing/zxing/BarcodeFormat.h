@@ -21,9 +21,11 @@
  * limitations under the License.
  */
 
+#include "extrasglobaldefine.h"
+
 namespace zxing {
 
-class BarcodeFormat {
+class EXTRAS_EXPORT BarcodeFormat {
 public:
   // if you update the enum, update BarcodeFormat.cpp
 

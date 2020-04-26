@@ -26,7 +26,7 @@
 
 namespace zxing {
 
- class Reader : public Counted {
+ class EXTRAS_EXPORT Reader : public Counted {
   protected:
    Reader() {}
   public:

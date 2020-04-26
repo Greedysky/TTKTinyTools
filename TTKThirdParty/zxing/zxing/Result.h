@@ -29,7 +29,7 @@
 
 namespace zxing {
 
-class Result : public Counted {
+class EXTRAS_EXPORT Result : public Counted {
 private:
   Ref<String> text_;
   ArrayRef<char> rawBytes_;

@@ -21,6 +21,8 @@
 
 #include <zxing/aztec/decoder/Decoder.h>
 #ifndef NO_ICONV
+#include <win32/zxing/iconv.h>
+#else
 #include <iconv.h>
 #endif
 #include <iostream>

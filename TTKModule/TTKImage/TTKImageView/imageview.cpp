@@ -1,4 +1,4 @@
-#include "imageview.h"
+﻿#include "imageview.h"
 
 #include <QTimer>
 #include <QAction>

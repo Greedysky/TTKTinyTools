@@ -30,7 +30,7 @@ namespace zxing {
 class String;
 std::ostream& operator << (std::ostream& out, String const& s);
 
-class String : public Counted {
+class EXTRAS_EXPORT String : public Counted {
 private:
   std::string text_;
 public:

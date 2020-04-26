@@ -27,7 +27,7 @@
 
 namespace zxing {
 	
-	class BinaryBitmap : public Counted {
+    class EXTRAS_EXPORT BinaryBitmap : public Counted {
 	private:
 		Ref<Binarizer> binarizer_;
 		
