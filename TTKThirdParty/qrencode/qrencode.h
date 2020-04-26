@@ -101,6 +101,8 @@
 
 #ifdef _WIN32
 #define EXTRAS_EXPORT __declspec(dllexport)
+#else
+#define EXTRAS_EXPORT
 #endif
 
 #if defined(__cplusplus)
