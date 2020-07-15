@@ -24,8 +24,8 @@
 class TTK_CORE_EXPORT WaterWave
 {
 public:
-    WaterWave(int* pixels, int width, int height, int pixelFormat);
-    WaterWave(int* pixels, int width, int height, int pixelFormat, float scale);
+    WaterWave(int* pixels, int width, int height);
+    WaterWave(int* pixels, int width, int height, float scale);
     ~WaterWave();
 
     int* pixels();
@@ -40,7 +40,7 @@ private:
     void spreedRipple();
     void renderRipple();
 
-    void init(int* pixels, int width, int height, int pixelFormat);
+    void init(int* pixels, int width, int height);
     void initSourcePower();
 
 private:
@@ -53,8 +53,6 @@ private:
 
     int m_width;
     int m_height;
-    int m_length;
-    int m_pixelFormat;
 
     int m_powerRate;
     float m_scale;

@@ -1,15 +1,15 @@
 #include "waterwave.h"
 #include <cstring>
 
-WaterWave::WaterWave(int* pixels, int width, int height, int pixelFormat)
+WaterWave::WaterWave(int* pixels, int width, int height)
 {
-    init(pixels, width, height, pixelFormat);
+    init(pixels, width, height);
     m_scale = 1;
 }
 
-WaterWave::WaterWave(int* pixels, int width, int height, int pixelFormat, float scale)
+WaterWave::WaterWave(int* pixels, int width, int height, float scale)
 {
-    init(pixels, width, height, pixelFormat);
+    init(pixels, width, height);
     m_scale = scale;
 }
 
@@ -80,8 +80,8 @@ void WaterWave::setWaveSourcePosition(int x, int y)
         return;
     }
 
-    const int distance = (sourceY - m_sourceRadius)*m_width + sourceX - m_sourceRadius;
-    const int size = ((m_sourceRadius << 1) + 1)* ((m_sourceRadius << 1) + 1);
+    const int distance = (sourceY - m_sourceRadius) * m_width + sourceX - m_sourceRadius;
+    const int size = ((m_sourceRadius << 1) + 1) * ((m_sourceRadius << 1) + 1);
     for(int i = 0; i < size; ++i)
     {
         m_buffer1[distance + m_sourcePosition[i]] = static_cast<short>(m_sourcePower[i]);
@@ -90,7 +90,7 @@ void WaterWave::setWaveSourcePosition(int x, int y)
 
 void WaterWave::spreedRipple()
 {
-    const int length = m_width*(m_height -1);
+    const int length = m_width * (m_height -1);
     for(int i = m_width; i < length; ++i)
     {
         m_buffer2[i] = ((m_buffer1[i - 1] + m_buffer1[i - m_width] + m_buffer1[i + 1] + m_buffer1[i + m_width]) >> 1) - m_buffer2[i];
@@ -111,7 +111,7 @@ void WaterWave::renderRipple()
         for(int x = 0; x < m_width; ++x, ++w)
         {
             offset = (m_width * (m_buffer1[w - m_width] - m_buffer1[w + m_width])) + (m_buffer1[w - 1] - m_buffer1[w + 1]);
-            if(w + offset > 0 && w + offset < m_length)
+            if(w + offset > 0 && w + offset < m_width * m_height)
             {
                 m_newPixels[w] = m_orginPixels[w + offset];
             }
@@ -123,7 +123,7 @@ void WaterWave::renderRipple()
     }
 }
 
-void WaterWave::init(int* pixels, int width, int height, int pixelFormat)
+void WaterWave::init(int* pixels, int width, int height)
 {
     m_orginPixels = nullptr;
     m_newPixels = nullptr;
@@ -132,31 +132,28 @@ void WaterWave::init(int* pixels, int width, int height, int pixelFormat)
     m_sourcePower = nullptr;
     m_sourcePosition = nullptr;
 
-    m_orginPixels = new int[width*height];
-    memcpy(m_orginPixels, pixels, width*height*4);
-
     m_width = width;
     m_height = height;
-    m_pixelFormat = pixelFormat;
-    m_length = width*height;
 
-    m_newPixels = new int[m_length]{};
+    m_orginPixels = new int[width * height];
+    memcpy(m_orginPixels, pixels, width * height * 4);
 
-    memcpy(m_newPixels, pixels, m_length*sizeof(int));
+    m_newPixels = new int[width * height]{};
+    memcpy(m_newPixels, pixels, width * height * sizeof(int));
 
-    m_buffer1 = new short[m_length]{};
-    m_buffer2 = new short[m_length]{};
+    m_buffer1 = new short[width * height]{};
+    m_buffer2 = new short[width * height]{};
 
     m_powerRate = 3;
 }
 
 void WaterWave::initSourcePower()
 {
-    const int value = m_sourceRadius*m_sourceRadius;
+    const int value = m_sourceRadius * m_sourceRadius;
     const int diameter = (m_sourceRadius << 1) + 1;
     const int rate = m_sourceRadius / value;
 
-    const int size = diameter*diameter;
+    const int size = diameter * diameter;
     m_sourcePower = new int[size]{};
     m_sourcePosition = new int[size]{};
 
@@ -164,12 +161,12 @@ void WaterWave::initSourcePower()
     {
         for(int y = 0; y <= diameter; ++y)
         {
-            const int distanceSquare = (m_sourceRadius - x)*(m_sourceRadius - x) + (m_sourceRadius - y)*(m_sourceRadius - y);
+            const int distanceSquare = (m_sourceRadius - x) * (m_sourceRadius - x) + (m_sourceRadius - y) * (m_sourceRadius - y);
             if(distanceSquare <= value)
             {
-                const int depth = m_sourceDepth - distanceSquare*rate;
-                m_sourcePosition[y*diameter + x] = y*m_width + x;
-                m_sourcePower[y*diameter + x] = depth;
+                const int depth = m_sourceDepth - distanceSquare * rate;
+                m_sourcePosition[y * diameter + x] = y * m_width + x;
+                m_sourcePower[y * diameter + x] = depth;
             }
         }
     }

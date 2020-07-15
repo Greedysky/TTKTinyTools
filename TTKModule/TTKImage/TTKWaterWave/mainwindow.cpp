@@ -37,7 +37,7 @@ void MainWindow::openImage()
     }
 
     m_image.load(path);
-    m_waterWave = new WaterWave((int*)(m_image.bits()), m_image.width(), m_image.height(), m_image.format());
+    m_waterWave = new WaterWave((int*)(m_image.bits()), m_image.width(), m_image.height());
 }
 
 void MainWindow::renderImage()
