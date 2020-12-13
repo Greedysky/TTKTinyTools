@@ -761,6 +761,7 @@ win_iconv_open(rec_iconv_t *cd, const char *tocode, const char *fromcode)
 static int
 win_iconv_close(iconv_t cd)
 {
+    (void)cd;
     return 0;
 }
 
@@ -1255,6 +1256,9 @@ find_imported_module_by_funcname(HMODULE hModule, const char *funcname)
 static int
 sbcs_mblen(csconv_t *cv, const uchar *buf, int bufsize)
 {
+    (void)cv;
+    (void)buf;
+    (void)bufsize;
     return 1;
 }
 
@@ -1292,6 +1296,7 @@ mbcs_mblen(csconv_t *cv, const uchar *buf, int bufsize)
 static int
 utf8_mblen(csconv_t *cv, const uchar *buf, int bufsize)
 {
+    (void)cv;
     int len = 0;
 
     if (buf[0] < 0x80) len = 1;
@@ -1311,6 +1316,7 @@ utf8_mblen(csconv_t *cv, const uchar *buf, int bufsize)
 static int
 eucjp_mblen(csconv_t *cv, const uchar *buf, int bufsize)
 {
+    (void)cv;
     if (buf[0] < 0x80) /* ASCII */
         return 1;
     else if (buf[0] == 0x8E) /* JIS X 0201 */
