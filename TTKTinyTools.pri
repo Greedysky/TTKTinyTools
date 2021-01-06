@@ -27,8 +27,7 @@ QT       += widgets
 TEMPLATE = app
 
 include($$PWD/TTKVersion.pri)
-win32:DESTDIR = $$OUT_PWD/../../../bin/$$TTKTinyTools
-unix:DESTDIR = $$OUT_PWD/../../../lib/$$TTKTinyTools
+DESTDIR = $$OUT_PWD/../../../bin/$$TTKTinyTools
 
 win32{
     equals(QT_MAJOR_VERSION, 5){

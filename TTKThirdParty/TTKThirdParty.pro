@@ -20,10 +20,9 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 include($$PWD/../TTKVersion.pri)
-unix:VERSION += $$TTKTinyTools
+CONFIG += plugin lib
 
-win32:DESTDIR = $$OUT_PWD/../bin/$$TTKTinyTools
-unix:DESTDIR = $$OUT_PWD/../lib/$$TTKTinyTools
+DESTDIR = $$OUT_PWD/../bin/$$TTKTinyTools
 
 TARGET = TTKThirdParty
 TEMPLATE = lib
