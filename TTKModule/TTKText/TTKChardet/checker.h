@@ -29,6 +29,8 @@ class TTK_CORE_EXPORT CheckerBase
 {
 public:
     CheckerBase(const string &name);
+    virtual ~CheckerBase();
+    
     virtual bool detect(const string &str) const = 0;
 
 private:

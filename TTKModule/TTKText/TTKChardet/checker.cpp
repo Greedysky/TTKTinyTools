@@ -6,3 +6,7 @@ CheckerBase::CheckerBase(const string &name)
 
 }
 
+CheckerBase::~CheckerBase()
+{
+
+}
