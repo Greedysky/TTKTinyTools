@@ -28,7 +28,7 @@ TARGET = TTKThirdParty
 TEMPLATE = lib
 
 win32:msvc{
-    CONFIG +=c++11
+    CONFIG += c++11
 }else{
     QMAKE_CXXFLAGS += -std=c++11
 }
@@ -38,6 +38,4 @@ INCLUDEPATH += $$PWD
 include($$PWD/qrencode/QRencode.pri)
 include($$PWD/zxing/ZXing.pri)
 
-win32{
-    RC_FILE = TTKThirdParty.rc
-}
+win32:RC_FILE = TTKThirdParty.rc

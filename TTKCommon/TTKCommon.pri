@@ -16,6 +16,10 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-CONFIG += ordered
-SUBDIRS = TTKThirdParty TTKModule
+INCLUDEPATH += $$PWD
+HEADERS  += \
+    $$PWD/ttkglobaldefine.h \
+    $$PWD/ttkglobal.h \
+    $$PWD/ttkprivate.h \
+    $$PWD/ttksingleton.h \
+    $$PWD/ttkversion.h

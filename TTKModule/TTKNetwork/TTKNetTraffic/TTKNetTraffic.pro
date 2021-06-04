@@ -20,9 +20,7 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKNetTraffic
 
-win32{
-    LIBS += -lIphlpapi
-}
+win32:LIBS += -lIphlpapi
 
 SOURCES += \
     main.cpp\

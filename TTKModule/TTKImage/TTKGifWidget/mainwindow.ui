@@ -77,7 +77,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../../TTKQrc/TinyTools.qrc">
+         <iconset resource="../../TTKUi/TinyTools.qrc">
           <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
         </property>
         <property name="flat">
@@ -270,11 +270,7 @@
   <tabstop>btnClose</tabstop>
  </tabstops>
  <resources>
-  <include location="../../TTKQrc/TinyTools.qrc"/>
-  <include location="../../TTKQrc/TinyTools.qrc"/>
-  <include location="../../TTKQrc/TinyTools.qrc"/>
-  <include location="../../TTKQrc/TinyTools.qrc"/>
-  <include location="../../TTKQrc/TinyTools.qrc"/>
+  <include location="../../TTKUi/TinyTools.qrc"/>
  </resources>
  <connections/>
 </ui>

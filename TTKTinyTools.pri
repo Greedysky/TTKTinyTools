@@ -33,7 +33,7 @@ win32{
     equals(QT_MAJOR_VERSION, 5){
         msvc{
             LIBS += -L$$DESTDIR -lTTKThirdParty
-            CONFIG +=c++11
+            CONFIG += c++11
             !contains(QMAKE_TARGET.arch, x86_64){
                  #support on windows XP
                  QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
@@ -63,11 +63,8 @@ unix:!mac{
 DEFINES += TTK_LIBRARY
 
 #########################################
-HEADERS += $$PWD/ttkglobal.h
-HEADERS += $$PWD/ttkglobaldefine.h
-INCLUDEPATH += $$PWD
-#########################################
-include($$PWD/TTKQrc/TTKQrc.pri)
+include($$PWD/TTKUi/TTKUi.pri)
+include($$PWD/TTKCommon/TTKCommon.pri)
 #########################################
 win32:RC_FILE = $$PWD/TTKModule/TTKCore.rc
 #########################################

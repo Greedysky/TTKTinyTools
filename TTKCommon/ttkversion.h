@@ -13,8 +13,7 @@
 
 #define TTKTOOLS_VERSION 0x02100
 
-#define TTKTOOLS_VERSION_CHECK(major, middle, minor, patch) ((major<<12)|(middle<<8)|(minor<<4)|(patch))
-
+#define TTK_VERSION_CHECK(major, middle, minor, patch) ((major<<12)|(middle<<8)|(minor<<4)|(patch))
 
 #endif // TTKVERSION_H
 
