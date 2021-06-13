@@ -22,7 +22,7 @@
 #include <QPixmap>
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT MainWindow
+class TTK_MODULE_EXPORT MainWindow
 {
 public:
     void savePng(const QString &id);

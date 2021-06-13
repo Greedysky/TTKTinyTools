@@ -1,12 +1,11 @@
 #include "mainwindow.h"
-#include "ttkglobal.h"
 
 #include <QDir>
 #include <QMap>
 #include <QFileInfo>
 #include <QEventLoop>
 #include <functional>
-#ifdef TTK_GREATER_NEW
+#if TTK_QT_VERSION_CHECK(5,0,0)
 #  include <QtConcurrent/QtConcurrent>
 #else
 #  include <QtConcurrentRun>

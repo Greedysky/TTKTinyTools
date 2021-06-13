@@ -21,11 +21,11 @@
  * limitations under the License.
  */
 
-#include "extrasglobaldefine.h"
+#include "ttkglobaldefine.h"
 
 namespace zxing {
 
-class EXTRAS_EXPORT BarcodeFormat {
+class TTK_MODULE_EXPORT BarcodeFormat {
 public:
   // if you update the enum, update BarcodeFormat.cpp
 

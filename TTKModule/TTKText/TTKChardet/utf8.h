@@ -21,7 +21,7 @@
 
 #include "checker.h"
 
-class TTK_CORE_EXPORT UTF8Checker : public CheckerBase
+class TTK_MODULE_EXPORT UTF8Checker : public CheckerBase
 {
 public:
     UTF8Checker();

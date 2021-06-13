@@ -28,7 +28,7 @@ class QSlider;
 class QToolButton;
 class QPushButton;
 
-class TTK_CORE_EXPORT VideoControl : public QWidget
+class TTK_MODULE_EXPORT VideoControl : public QWidget
 {
     Q_OBJECT
 public:

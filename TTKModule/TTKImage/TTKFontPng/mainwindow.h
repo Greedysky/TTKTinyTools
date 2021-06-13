@@ -22,7 +22,7 @@
 #include <QPixmap>
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT MainWindow
+class TTK_MODULE_EXPORT MainWindow
 {
 public:
     QPixmap saveIcon(const QString &fontPath, int w, int h, int fontSize, int iconIndex);

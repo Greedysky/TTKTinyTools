@@ -27,7 +27,7 @@
 
 namespace zxing {
 
-class EXTRAS_EXPORT Binarizer : public Counted {
+class TTK_MODULE_EXPORT Binarizer : public Counted {
  private:
   Ref<LuminanceSource> source_;
 

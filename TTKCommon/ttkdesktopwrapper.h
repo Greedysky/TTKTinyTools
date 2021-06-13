@@ -1,5 +1,5 @@
-#ifndef TTKCPUMEMORYLABEL_H
-#define TTKCPUMEMORYLABEL_H
+#ifndef TTKDESKTOPWRAPPER_H
+#define TTKDESKTOPWRAPPER_H
 
 /* =================================================
  * This file is part of the TTK Tiny Tools project
@@ -19,48 +19,28 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QTimer>
+#include <QWidget>
 #include "ttkglobaldefine.h"
 
-class QProcess;
-
-/*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTK_MODULE_EXPORT TTKCPUMemoryLabel : public QObject
+/*! @brief The class of the desktop screen wrapper.
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_MODULE_EXPORT TTKDesktopWrapper
 {
-    Q_OBJECT
-    TTK_DECLARE_MODULE(TTKCPUMemoryLabel)
 public:
-    explicit TTKCPUMemoryLabel(QObject *parent = nullptr);
-    virtual ~TTKCPUMemoryLabel();
-
-    float cpuInfo() const;
-    float memeryInfo() const;
-
-public Q_SLOTS:
-    void start(int interval);
-    void stop();
-
-private Q_SLOTS:
-    void getCPU();
-    void getMemory();
-    void readData();
-
-private:
-    int m_totalNew, m_idleNew, m_totalOld, m_idleOld;
-
-    float m_cpuPercent;
-    float m_memoryPercent;
-
-    int m_memoryAll;
-    int m_memoryUse;
-    int m_memoryFree;
-
-    QTimer *m_timerCPU;
-    QTimer *m_timerMemory;
-    QProcess *m_process;
+    /*!
+     * Get screen geometry by given screen index.
+     */
+    static QRect screenGeometry(int index = 0);
+    /*!
+     * Get all screen geometry.
+     */
+    static QRect geometry();
+    /*!
+     * Grab all screen geometry pixmap by given rect.
+     */
+    static QPixmap grabWindow(int x = 0, int y = 0, int w = -1, int h = -1);
 
 };
 
-#endif // TTKCPUMEMORYLABEL_H
+#endif // TTKDESKTOPWRAPPER_H

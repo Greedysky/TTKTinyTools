@@ -25,7 +25,7 @@
 class QLabel;
 class BarrageAnimation;
 
-class TTK_CORE_EXPORT BarrageWidget : public QObject
+class TTK_MODULE_EXPORT BarrageWidget : public QObject
 {
     Q_OBJECT
 public:

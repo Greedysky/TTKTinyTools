@@ -21,7 +21,7 @@
 
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT WaterWave
+class TTK_MODULE_EXPORT WaterWave
 {
 public:
     WaterWave(int* pixels, int width, int height);

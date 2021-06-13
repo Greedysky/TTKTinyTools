@@ -33,7 +33,9 @@ win32:msvc{
     QMAKE_CXXFLAGS += -std=c++11
 }
 
-INCLUDEPATH += $$PWD
+INCLUDEPATH += \
+    $$PWD \
+    $$PWD/../TTKCommon
 
 include($$PWD/qrencode/QRencode.pri)
 include($$PWD/zxing/ZXing.pri)

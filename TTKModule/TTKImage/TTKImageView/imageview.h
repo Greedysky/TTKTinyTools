@@ -24,7 +24,7 @@
 
 class QToolButton;
 
-class TTK_CORE_EXPORT ImageIndex : public QWidget
+class TTK_MODULE_EXPORT ImageIndex : public QWidget
 {
     Q_OBJECT
 public:
@@ -46,7 +46,7 @@ private:
 };
 
 
-class TTK_CORE_EXPORT ImageView : public QWidget
+class TTK_MODULE_EXPORT ImageView : public QWidget
 {
     Q_OBJECT
 public:

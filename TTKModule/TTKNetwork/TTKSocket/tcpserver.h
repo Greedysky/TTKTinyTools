@@ -22,7 +22,7 @@
 #include <QTcpServer>
 #include "tcpclient.h"
 
-class TTK_CORE_EXPORT TcpServer : public QTcpServer
+class TTK_MODULE_EXPORT TcpServer : public QTcpServer
 {
     Q_OBJECT
 public:

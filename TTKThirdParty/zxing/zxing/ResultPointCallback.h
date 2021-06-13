@@ -26,7 +26,7 @@ namespace zxing {
 
 class ResultPoint;
 
-class EXTRAS_EXPORT ResultPointCallback : public Counted {
+class TTK_MODULE_EXPORT ResultPointCallback : public Counted {
 protected:
   ResultPointCallback() {}
 public:

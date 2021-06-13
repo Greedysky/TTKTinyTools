@@ -24,7 +24,7 @@
 typedef function<bool(const unsigned char *str)> ISO2022_jp_func_type;
 typedef pair<int, ISO2022_jp_func_type> ISO2022_jp_pair;
 
-class TTK_CORE_EXPORT ISO2022_JPChecker : public CheckerBase
+class TTK_MODULE_EXPORT ISO2022_JPChecker : public CheckerBase
 {
 public:
     ISO2022_JPChecker();

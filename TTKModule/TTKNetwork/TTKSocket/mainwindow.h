@@ -26,7 +26,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class TTK_CORE_EXPORT MainWindow : public QMainWindow
+class TTK_MODULE_EXPORT MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:

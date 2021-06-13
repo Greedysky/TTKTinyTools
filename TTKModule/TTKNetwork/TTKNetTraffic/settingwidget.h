@@ -25,7 +25,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT SettingWidget : public QWidget
+class TTK_MODULE_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:

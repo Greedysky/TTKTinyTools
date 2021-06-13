@@ -1,9 +1,9 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ttkdesktopwrapper.h"
 
 #include <QStyle>
 #include <QTimer>
-#include <QScreen>
 #include <QDateTime>
 #include <QPainter>
 #include <QMouseEvent>
@@ -74,11 +74,10 @@ void MainWindow::saveImage()
         return;
     }
 
-#ifndef TTK_GREATER_NEW
-    const QPixmap &pix = QPixmap::grabWindow(0, x() + m_rectGif.x(), y() + m_rectGif.y(), m_rectGif.width(), m_rectGif.height());
+    const QPixmap &pix = TTKDesktopWrapper::grabWindow(x() + m_rectGif.x(), y() + m_rectGif.y(), m_rectGif.width(), m_rectGif.height());
+#if !TTK_QT_VERSION_CHECK(5,0,0)
     const QImage &image = pix.toImage().convertToFormat(QImage::Format_ARGB32);
 #else
-    const QPixmap &pix = QApplication::primaryScreen()->grabWindow(0, x() + m_rectGif.x(), y() + m_rectGif.y(), m_rectGif.width(), m_rectGif.height());
     const QImage &image = pix.toImage().convertToFormat(QImage::Format_RGBA8888);
 #endif
 

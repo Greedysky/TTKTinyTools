@@ -21,7 +21,7 @@
 
 #include "checker.h"
 
-class TTK_CORE_EXPORT GB18030Checker : public CheckerBase
+class TTK_MODULE_EXPORT GB18030Checker : public CheckerBase
 {
 public:
     GB18030Checker();

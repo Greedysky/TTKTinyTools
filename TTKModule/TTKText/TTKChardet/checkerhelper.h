@@ -25,7 +25,7 @@
 
 using namespace std;
 
-class TTK_CORE_EXPORT CheckerHelper
+class TTK_MODULE_EXPORT CheckerHelper
 {
 public:
     CheckerHelper();

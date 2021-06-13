@@ -26,7 +26,7 @@
 class QTableWidget;
 class QProcess;
 
-class TTK_CORE_EXPORT ShowDeviceSize : public QObject
+class TTK_MODULE_EXPORT ShowDeviceSize : public QObject
 {
     Q_OBJECT
 public:

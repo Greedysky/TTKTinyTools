@@ -27,7 +27,7 @@
 
 namespace zxing {
 	
-class EXTRAS_EXPORT GlobalHistogramBinarizer : public Binarizer {
+class TTK_MODULE_EXPORT GlobalHistogramBinarizer : public Binarizer {
 private:
   ArrayRef<char> luminances;
   ArrayRef<int> buckets;

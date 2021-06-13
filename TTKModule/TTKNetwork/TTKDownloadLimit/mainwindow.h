@@ -22,7 +22,6 @@
 #include <QMainWindow>
 #include <QNetworkReply>
 #include <QTimer>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 namespace Ui {
@@ -32,7 +31,7 @@ class MainWindow;
 class QFile;
 class QNetworkAccessManager;
 
-class TTK_CORE_EXPORT MainWindow : public QMainWindow
+class TTK_MODULE_EXPORT MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:

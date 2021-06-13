@@ -22,7 +22,7 @@
 #include <QLineEdit>
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT BarrageEdit : public QLineEdit
+class TTK_MODULE_EXPORT BarrageEdit : public QLineEdit
 {
     Q_OBJECT
 public:

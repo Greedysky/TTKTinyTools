@@ -23,7 +23,7 @@
 #include <QPropertyAnimation>
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT BarrageAnimation : public QPropertyAnimation
+class TTK_MODULE_EXPORT BarrageAnimation : public QPropertyAnimation
 {
     Q_OBJECT
 public:

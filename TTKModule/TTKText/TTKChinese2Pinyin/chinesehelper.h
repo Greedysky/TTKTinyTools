@@ -26,7 +26,7 @@ class ChineseHelperPrivate;
 /*! @brief The class of the simple and traditional chinese characters.
  * @author jiangXiaoBai <2499971906@qq.com>
  */
-class TTK_CORE_EXPORT ChineseHelper
+class TTK_MODULE_EXPORT ChineseHelper
 {
 public:
     /*!

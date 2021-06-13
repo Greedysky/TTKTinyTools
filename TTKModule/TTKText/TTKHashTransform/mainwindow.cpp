@@ -54,7 +54,7 @@ void MainWindow::calculateSha1()
     m_target = QCryptographicHash::hash(m_source.toUtf8(), QCryptographicHash::Sha1).toHex();
 }
 
-#ifdef TTK_GREATER_NEW
+#if TTK_QT_VERSION_CHECK(5,0,0)
 void MainWindow::calculateSha224()
 {
     m_target = QCryptographicHash::hash(m_source.toUtf8(), QCryptographicHash::Sha224).toHex();

@@ -19,12 +19,12 @@
  */
 
 #include <iostream>
-#include "extrasglobaldefine.h"
+#include "ttkglobaldefine.h"
 
 namespace zxing {
 
 /* base class for reference-counted objects */
-class EXTRAS_EXPORT Counted {
+class TTK_MODULE_EXPORT Counted {
 private:
   unsigned int count_;
 public:
@@ -53,7 +53,7 @@ public:
 };
 
 /* counting reference to reference-counted objects */
-template<typename T> class EXTRAS_EXPORT Ref {
+template<typename T> class TTK_MODULE_EXPORT Ref {
 private:
 public:
   T *object_;

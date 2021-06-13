@@ -22,7 +22,7 @@
 #include <QImage>
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT GaussianBlur
+class TTK_MODULE_EXPORT GaussianBlur
 {
 public:
     GaussianBlur();

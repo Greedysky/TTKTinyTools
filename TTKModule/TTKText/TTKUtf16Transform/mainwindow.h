@@ -21,7 +21,7 @@
 
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT MainWindow
+class TTK_MODULE_EXPORT MainWindow
 {
 public:
     QString toUtf16(const QString &str);

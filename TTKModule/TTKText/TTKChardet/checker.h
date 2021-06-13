@@ -25,7 +25,7 @@
 
 using namespace std;
 
-class TTK_CORE_EXPORT CheckerBase
+class TTK_MODULE_EXPORT CheckerBase
 {
 public:
     CheckerBase(const string &name);

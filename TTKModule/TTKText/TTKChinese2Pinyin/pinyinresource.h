@@ -21,13 +21,12 @@
 
 #include <QMap>
 #include <QStringList>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*! @brief The class of the pinyin resource.
  * @author jiangXiaoBai <2499971906@qq.com>
  */
-class TTK_CORE_EXPORT PinyinResource
+class TTK_MODULE_EXPORT PinyinResource
 {
 public:
 

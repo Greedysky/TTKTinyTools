@@ -28,7 +28,7 @@ class TTKCPUMemoryLabel;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT Helper : public QObject
+class TTK_MODULE_EXPORT Helper : public QObject
 {
     Q_OBJECT
 public:

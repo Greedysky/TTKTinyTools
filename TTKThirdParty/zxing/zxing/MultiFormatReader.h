@@ -27,7 +27,7 @@
 #include <zxing/DecodeHints.h>
 
 namespace zxing {
-  class EXTRAS_EXPORT MultiFormatReader : public Reader {
+  class TTK_MODULE_EXPORT MultiFormatReader : public Reader {
   private:
     Ref<Result> decodeInternal(Ref<BinaryBitmap> image);
   

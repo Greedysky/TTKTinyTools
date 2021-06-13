@@ -26,7 +26,7 @@
 
 namespace zxing {
 
- class EXTRAS_EXPORT Reader : public Counted {
+ class TTK_MODULE_EXPORT Reader : public Counted {
   protected:
    Reader() {}
   public:

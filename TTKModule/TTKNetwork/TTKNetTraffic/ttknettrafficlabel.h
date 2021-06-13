@@ -21,7 +21,6 @@
 
 #include <QLabel>
 #include <QThread>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QProcess;

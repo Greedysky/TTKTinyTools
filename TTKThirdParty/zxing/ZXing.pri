@@ -28,7 +28,6 @@ SOURCES += \
 }
 
 HEADERS += \
-    $$PWD/../extrasglobaldefine.h \
     $$PWD/bigint/BigInteger.hh \
     $$PWD/bigint/BigIntegerAlgorithms.hh \
     $$PWD/bigint/BigIntegerLibrary.hh \

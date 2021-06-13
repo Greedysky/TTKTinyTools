@@ -15,7 +15,7 @@ QPixmap transFontToPixmap(const QFont &newFont, int w, int h, int fontSize, int 
     font.setPointSize(fontSize);
     widget.setFont(font);
 
-#ifdef TTK_GREATER_NEW
+#if TTK_QT_VERSION_CHECK(5,0,0)
     return widget.grab(widget.rect());
 #else
     return QPixmap::grabWidget(&widget, widget.rect());

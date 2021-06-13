@@ -25,7 +25,7 @@
 /*! @brief The class of the chinese characters to pinyin.
  * @author jiangXiaoBai <2499971906@qq.com>
  */
-class TTK_CORE_EXPORT PinyinHelper
+class TTK_MODULE_EXPORT PinyinHelper
 {
 public:
     enum Format

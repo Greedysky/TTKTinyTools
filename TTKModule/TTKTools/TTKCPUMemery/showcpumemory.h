@@ -26,7 +26,7 @@ class QLabel;
 class QTimer;
 class QProcess;
 
-class TTK_CORE_EXPORT ShowCPUMemory : public QObject
+class TTK_MODULE_EXPORT ShowCPUMemory : public QObject
 {
     Q_OBJECT
 public:

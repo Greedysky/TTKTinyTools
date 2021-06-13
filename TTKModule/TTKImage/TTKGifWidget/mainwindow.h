@@ -21,14 +21,13 @@
 
 #include "gif.h"
 #include <QDialog>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-class TTK_CORE_EXPORT MainWindow : public QDialog
+class TTK_MODULE_EXPORT MainWindow : public QDialog
 {
     Q_OBJECT
     Q_PROPERTY(int m_borderWidth READ getBorderWidth WRITE setBorderWidth)

@@ -1,10 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ttkdesktopwrapper.h"
 
 #include <QTimer>
-#include <QScreen>
-#include <QApplication>
-#include <QDesktopWidget>
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent),
@@ -12,11 +10,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     m_ui->setupUi(this);
 
-    QDesktopWidget *desktop = QApplication::desktop();
-
     setWindowFlags(Qt::WindowMinimizeButtonHint);
     setWindowFlags(Qt::WindowStaysOnTopHint);
-    move((desktop->width() - width())/2, (desktop->height() - height())/2);
+
+    const QRect &geometry = TTKDesktopWrapper::geometry();
+    move((geometry.width() - width()) / 2, (geometry.height() - height()) / 2);
     setFixedSize(width(), height());
 
     ShowColorValue();
@@ -34,11 +32,7 @@ void MainWindow::ShowColorValue()
     m_ui->txtXY->setText(QString("X:%1  Y:%2").arg(x).arg(y));
 
     QString strDecimal, strHex;
-#ifndef TTK_GREATER_NEW
-    const QPixmap &pixmap = QPixmap::grabWindow(QApplication::desktop()->winId(), x, y, 2, 2);
-#else
-    const QPixmap &pixmap = QApplication::primaryScreen()->grabWindow(QApplication::desktop()->winId(),  x, y, 2, 2);
-#endif
+    const QPixmap &pixmap = TTKDesktopWrapper::grabWindow(x, y, 2, 2);
     if(!pixmap.isNull())
     {
         const QImage &image = pixmap.toImage();

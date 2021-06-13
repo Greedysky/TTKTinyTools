@@ -29,7 +29,7 @@ class Helper;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT MainWindow : public QWidget
+class TTK_MODULE_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
 public:
