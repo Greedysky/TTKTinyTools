@@ -20,8 +20,11 @@ QT       += core gui network
 equals(QT_MAJOR_VERSION, 4){
 CONFIG   += gcc
 }
-equals(QT_MAJOR_VERSION, 5){
-QT       += widgets
+greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
+    QT   += widgets
+    equals(QT_MAJOR_VERSION, 6){ #Qt6
+        QT   += core5compat
+    }
 }
 
 TEMPLATE = app
@@ -30,7 +33,7 @@ include($$PWD/TTKVersion.pri)
 DESTDIR = $$OUT_PWD/../../../bin/$$TTKTinyTools
 
 win32{
-    equals(QT_MAJOR_VERSION, 5){
+    greaterThan(QT_MAJOR_VERSION, 4){
         msvc{
             LIBS += -L$$DESTDIR -lTTKThirdParty
             CONFIG += c++11
