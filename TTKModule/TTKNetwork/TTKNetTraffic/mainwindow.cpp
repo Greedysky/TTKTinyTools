@@ -72,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
     move(200, 200);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
-    Qt::WindowFlags flags = 0;
+    Qt::WindowFlags flags = Qt::WindowFlags();
     flags = Qt::Window;
     flags |=Qt::FramelessWindowHint;
     flags |= Qt::WindowStaysOnTopHint;
