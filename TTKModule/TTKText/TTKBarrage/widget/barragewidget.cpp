@@ -1,7 +1,6 @@
 #include "barragewidget.h"
 #include "barragecore.h"
 #include "barrageanimation.h"
-
 #include <QFile>
 #include <QLabel>
 
@@ -147,11 +146,11 @@ void BarrageWidget::createLabel()
 void BarrageWidget::createLabel(QLabel *label)
 {
     QString color = QString("QLabel{color:rgb(%1,%2,%3);}")
-            .arg(qrand()%255).arg(qrand()%255).arg(qrand()%255);
+            .arg(BarrageCore::random(255)).arg(BarrageCore::random(255)).arg(BarrageCore::random(255));
     label->setStyleSheet(color);
     if(!m_barrageLists.isEmpty())
     {
-        label->setText(m_barrageLists[qrand()%m_barrageLists.count()]);
+        label->setText(m_barrageLists[BarrageCore::random(m_barrageLists.count())]);
     }
     label->hide();
     m_labels << label;
@@ -186,7 +185,11 @@ void BarrageWidget::setLabelTextSize(QLabel *label)
     ft.setPointSize(m_fontSize);
     label->setFont(ft);
     QFontMetrics ftMcs(ft);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    label->resize(ftMcs.horizontalAdvance(label->text()), ftMcs.height());
+#else
     label->resize(ftMcs.width(label->text()), ftMcs.height());
+#endif
 }
 
 void BarrageWidget::readBarrage()
@@ -214,7 +217,7 @@ void BarrageWidget::writeBarrage()
         QByteArray array;
         foreach(QString var, m_barrageLists)
         {
-            array.append(var + '\n');
+            array.append((var + '\n').toUtf8());
         }
         file.write(array);
     }

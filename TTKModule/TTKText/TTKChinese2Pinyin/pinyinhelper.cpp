@@ -174,5 +174,9 @@ QStringList PinyinHelper::convertWithoutTone(QString pinyinArrayString)
         pinyinSet.insert(pinyin);
     }
 
+#if TTK_QT_VERSION_CHECK(5,14,0)
+    return pinyinSet.values();
+#else
     return pinyinSet.toList();
+#endif
 }

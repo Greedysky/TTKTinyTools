@@ -7,9 +7,7 @@ BarrageAnimation::BarrageAnimation(QObject *parent)
     init();
 }
 
-BarrageAnimation::BarrageAnimation(QObject *target,
-                                             const QByteArray &propertyName,
-                                             QObject *parent)
+BarrageAnimation::BarrageAnimation(QObject *target, const QByteArray &propertyName, QObject *parent)
     : QPropertyAnimation(target, propertyName, parent)
 {
     init();
@@ -17,7 +15,7 @@ BarrageAnimation::BarrageAnimation(QObject *target,
 
 void BarrageAnimation::animationFinished()
 {
-    setDuration(qrand()%10000 + 1000);
+    setDuration(BarrageCore::random(10000) + 1000);
     setSize(m_parentSize);
     start();
 }
@@ -25,7 +23,7 @@ void BarrageAnimation::animationFinished()
 void BarrageAnimation::setSize(const QSize &size)
 {
     m_parentSize = size;
-    int randHeight = qrand()%size.height();
+    int randHeight = BarrageCore::random(size.height());
     setStartValue(QPoint(0, randHeight));
     setEndValue(QPoint(size.width(), randHeight));
 }
@@ -33,7 +31,7 @@ void BarrageAnimation::setSize(const QSize &size)
 void BarrageAnimation::init()
 {
     BarrageCore::timeSRand();
-    setDuration(qrand()%10000 + 1000);
+    setDuration(BarrageCore::random(10000) + 1000);
     setEasingCurve(QEasingCurve::Linear);
 
     connect(this, SIGNAL(finished()), SLOT(animationFinished()));

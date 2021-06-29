@@ -28,7 +28,11 @@ TTKStringMap PinyinResource::getResource(const QString &resourceName)
     }
 
     QTextStream in(&file);
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    in.setEncoding(QStringConverter::Utf8);
+#else
     in.setCodec("utf-8");
+#endif
 
     QString line;
     while((line = in.readLine()) != QString())

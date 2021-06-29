@@ -7,7 +7,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QTranslator translator;
-    translator.load("cn.qm");
+    if(!translator.load("cn.qm"))
+    {
+        qDebug("Load translation error");
+    }
     a.installTranslator(&translator);
 
     MainWindow w;
