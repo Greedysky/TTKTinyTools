@@ -42,10 +42,12 @@ public:
     void calculateSha256();
     void calculateSha384();
     void calculateSha512();
+#if TTK_QT_VERSION_CHECK(5,1,0)
     void calculateSha3_224();
     void calculateSha3_256();
     void calculateSha3_384();
     void calculateSha3_512();
+#endif
 #endif
 
 private:
