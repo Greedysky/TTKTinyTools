@@ -10,17 +10,17 @@ Qt 自定义小工具集合
  * Qt develop version be tested on Qt6.x for windows-mingw 64bit
  * Qt develop version be tested on Qt6.x for ubuntu-linux-gcc 64bit
   
-| Platform | Qt & Compiler       | Status                                                                                      |
-| :---:    | :---:               | :---:                                                                                       |
-| Linux    | 4.8.7 GCC & 5.x GCC & 6.x GCC | ![Linux](https://img.shields.io/badge/build-passing-brightgreen.svg)                            |
+| Platform | Qt & Compiler                 | Status                                                                 |
+| :---:    | :---:                         | :---:                                                                  |
+| Linux    | 4.8.7 GCC & 5.x GCC & 6.x GCC | ![Linux](https://img.shields.io/badge/build-passing-brightgreen.svg)   |
 | Windows  | 4.8.7 GCC & 5.x GCC & 6.x GCC | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
-| Windows  | 5.x MSVC       | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
-| OS X     | 5.x Clang     | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg)                           |
+| Windows  | 5.x MSVC                      | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
+| OS X     | 5.x Clang                     | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg)       |
 
 Module
 ----
-| Module | Description       | Status                                                                                      |
-| :---:    | :---:               | :---:                                                                                       |
+| Module | Description | Status |
+| :---:  | :---:       | :---:  |
 | TTKPngHelper    | Qt 去除加载png图像文件时候的iccp警告     |   完成   |
 | TTKChardet  | Qt 字符串编码自动检测       |   完成   |
 | TTKSocket  | Qt 网络TCP和UDP测试       |   完成   |
