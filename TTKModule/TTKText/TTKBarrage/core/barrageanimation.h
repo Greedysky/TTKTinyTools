@@ -28,8 +28,7 @@ class TTK_MODULE_EXPORT BarrageAnimation : public QPropertyAnimation
     Q_OBJECT
 public:
     explicit BarrageAnimation(QObject *parent = nullptr);
-    BarrageAnimation(QObject *target, const QByteArray &propertyName, QObject *parent = nullptr);
-    ~BarrageAnimation() = default;
+    explicit BarrageAnimation(QObject *target, const QByteArray &propertyName, QObject *parent = nullptr);
 
     void setSize(const QSize &size);
 

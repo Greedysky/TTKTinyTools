@@ -169,7 +169,7 @@ QStringList PinyinHelper::convertWithoutTone(QString pinyinArrayString)
     pinyinArray = pinyinArrayString.replace("ü", "v").split(m_pinyinSeparator);
 
     QSet<QString> pinyinSet;
-    foreach(const QString &pinyin, pinyinArray)
+    for(const QString &pinyin : qAsConst(pinyinArray))
     {
         pinyinSet.insert(pinyin);
     }

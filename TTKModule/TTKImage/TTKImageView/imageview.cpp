@@ -256,7 +256,7 @@ void ImageView::load(const QString &path)
 
         if(m_totalNum > 0)
         {
-            foreach (QString strImage, imageList)
+            for(const QString &strImage : qAsConst(imageList))
             {
                 const QString &strFullPath = QString("%1/%2").arg(path).arg(strImage);
                 m_imageNames.append(strFullPath);

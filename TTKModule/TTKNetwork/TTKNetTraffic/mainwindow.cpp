@@ -83,11 +83,6 @@ MainWindow::MainWindow(QWidget *parent)
     m_helper->start();
 }
 
-MainWindow::~MainWindow()
-{
-
-}
-
 void MainWindow::refreshInfo()
 {
     m_lableNWS->setText(m_helper->getNWS());

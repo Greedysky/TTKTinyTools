@@ -34,7 +34,6 @@ class TTK_MODULE_EXPORT MainWindow : public QWidget
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    virtual ~MainWindow();
 
 private:
     virtual void mousePressEvent(QMouseEvent *event) override;

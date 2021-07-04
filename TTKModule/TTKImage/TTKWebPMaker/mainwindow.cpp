@@ -11,7 +11,7 @@ void MainWindow::makeWebP()
         return;
     }
 
-    for(const auto &filePath: filePaths)
+    for(const auto &filePath : qAsConst(filePaths))
     {
         QImage(filePath).save(filePath, "WEBP", 100);
     }

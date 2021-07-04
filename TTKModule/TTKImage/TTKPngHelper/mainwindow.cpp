@@ -30,7 +30,7 @@ QFileInfoList MainWindow::getFileListByDir(const QString &dpath, const QStringLi
     if(recursively)
     {
         const QFileInfoList& folderList = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
-        foreach(const QFileInfo &fileInfo, folderList)
+        for(const QFileInfo &fileInfo : qAsConst(folderList))
         {
             fileList.append( getFileListByDir(fileInfo.absoluteFilePath(), filter, recursively) );
         }
@@ -49,7 +49,7 @@ void MainWindow::choosePng()
 
     QStringList filters;
     filters << "*.png";
-    foreach(const QFileInfo &info, getFileListByDir(dir, filters, true))
+    for(const QFileInfo &info : getFileListByDir(dir, filters, true))
     {
         QImage image(info.absoluteFilePath());
         if(image.isNull())

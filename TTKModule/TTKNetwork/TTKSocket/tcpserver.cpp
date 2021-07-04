@@ -8,7 +8,7 @@ TcpServer::TcpServer(QObject *parent)
 
 void TcpServer::sendData(int clientID, const QByteArray &data)
 {
-    foreach(TcpClient *client, m_clientList)
+    for(TcpClient *client : qAsConst(m_clientList))
     {
         if(client->clientID() == clientID)
         {
@@ -20,7 +20,7 @@ void TcpServer::sendData(int clientID, const QByteArray &data)
 
 void TcpServer::closeAllClient()
 {
-    foreach(TcpClient *client, m_clientList)
+    for(TcpClient *client : qAsConst(m_clientList))
     {
         client->close();
     }
@@ -45,7 +45,7 @@ void TcpServer::incomingConnection(int handle)
 
 void TcpServer::clientDisConnectChanged(const ClientData &pair)
 {
-    foreach(TcpClient *client, m_clientList)
+    for(TcpClient *client : qAsConst(m_clientList))
     {
         if(client->clientID() == pair.m_clientID)
         {

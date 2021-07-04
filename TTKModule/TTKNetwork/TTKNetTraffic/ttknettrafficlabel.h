@@ -37,8 +37,7 @@ public:
      * Object contsructor.
      */
     explicit TTKNetTraffic(QObject *parent = nullptr);
-
-    virtual ~TTKNetTraffic();
+    ~TTKNetTraffic();
 
     /*!
      * Set available newtwork name.

@@ -33,7 +33,7 @@ class TTK_MODULE_EXPORT TTKCPUMemoryLabel : public QObject
     TTK_DECLARE_MODULE(TTKCPUMemoryLabel)
 public:
     explicit TTKCPUMemoryLabel(QObject *parent = nullptr);
-    virtual ~TTKCPUMemoryLabel();
+    ~TTKCPUMemoryLabel();
 
     float cpuInfo() const;
     float memeryInfo() const;

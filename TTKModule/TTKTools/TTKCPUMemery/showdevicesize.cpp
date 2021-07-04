@@ -53,7 +53,7 @@ void ShowDeviceSize::load()
 
 #ifdef Q_OS_WIN
     const QFileInfoList &list = QDir::drives();
-    foreach(const QFileInfo &dir, list)
+    for(const QFileInfo &dir : qAsConst(list))
     {
         const QString &dirName = dir.absolutePath();
         LPCWSTR lpcwstrDriver = (LPCWSTR)dirName.utf16();

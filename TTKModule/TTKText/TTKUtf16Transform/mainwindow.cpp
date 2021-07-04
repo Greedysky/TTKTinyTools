@@ -3,7 +3,7 @@
 QString MainWindow::toUtf16(const QString &str)
 {
     QString target;
-    foreach(const QChar &c, str)
+    for(const QChar &c : qAsConst(str))
     {
         if(c.unicode() > 0xff)
         {

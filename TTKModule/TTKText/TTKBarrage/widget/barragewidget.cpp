@@ -74,7 +74,7 @@ void BarrageWidget::barrageStateChanged(bool on)
 void BarrageWidget::setSize(const QSize &size)
 {
     m_parentSize = size;
-    foreach(BarrageAnimation *anima, m_animations)
+    for(BarrageAnimation *anima : qAsConst(m_animations))
     {
         anima->setSize(size);
     }
@@ -83,7 +83,7 @@ void BarrageWidget::setSize(const QSize &size)
 void BarrageWidget::setLabelBackground(const QColor &color)
 {
     m_backgroundColor = color;
-    foreach(QLabel *label, m_labels)
+    for(QLabel *label : qAsConst(m_labels))
     {
         setLabelBackground(label);
     }
@@ -92,7 +92,7 @@ void BarrageWidget::setLabelBackground(const QColor &color)
 void BarrageWidget::setLabelTextSize(int size)
 {
     m_fontSize = size;
-    foreach(QLabel *label, m_labels)
+    for(QLabel *label : qAsConst(m_labels))
     {
         setLabelTextSize(label);
     }
@@ -135,7 +135,7 @@ void BarrageWidget::deleteItems()
 void BarrageWidget::createLabel()
 {
     BarrageCore::timeSRand();
-    foreach(QString str, m_barrageLists)
+    for(const QString &str : qAsConst(m_barrageLists))
     {
         Q_UNUSED(str);
         QLabel *label = new QLabel(m_parentClass);
@@ -158,7 +158,7 @@ void BarrageWidget::createLabel(QLabel *label)
 
 void BarrageWidget::createAnimation()
 {
-    foreach(QLabel *label, m_labels)
+    for(QLabel *label : qAsConst(m_labels))
     {
         createAnimation(label);
     }
@@ -215,7 +215,7 @@ void BarrageWidget::writeBarrage()
     if(file.open(QIODevice::WriteOnly | QFile::Text))
     {
         QByteArray array;
-        foreach(QString var, m_barrageLists)
+        for(QString var : qAsConst(m_barrageLists))
         {
             array.append((var + '\n').toUtf8());
         }

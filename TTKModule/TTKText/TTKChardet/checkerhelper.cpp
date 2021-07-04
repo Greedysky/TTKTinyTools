@@ -23,7 +23,7 @@ CheckerHelper::CheckerHelper()
 
 CheckerHelper::~CheckerHelper()
 {
-    for(auto &func : m_checkers)
+    for(const auto &func : qAsConst(m_checkers))
     {
         delete func.second;
     }
@@ -63,7 +63,7 @@ bool CheckerHelper::check(const string &charset, const string &str)
 string CheckerHelper::detect(const string &str)
 {
     string charSet = "unknown";
-    for(const auto& checker: m_checkers)
+    for(const auto &checker : qAsConst(m_checkers))
     {
         if(checker.second->detect(str))
         {
