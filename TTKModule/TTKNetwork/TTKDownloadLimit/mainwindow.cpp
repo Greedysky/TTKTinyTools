@@ -41,7 +41,7 @@ void MainWindow::startRequest(const QUrl &url)
     connect(m_reply, SIGNAL(finished()), SLOT(downLoadFinished()));
     connect(m_reply, SIGNAL(readyRead()), SLOT(downLoadReadyRead()));
     connect(m_reply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(downloadProgress(qint64,qint64)));
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if TTK_QT_VERSION_CHECK(5,15,0)
     connect(m_reply, SIGNAL(errorOccurred(QNetworkReply::NetworkError)), SLOT(replyError(QNetworkReply::NetworkError)));
 #else
     connect(m_reply, SIGNAL(error(QNetworkReply::NetworkError)), SLOT(replyError(QNetworkReply::NetworkError)));
