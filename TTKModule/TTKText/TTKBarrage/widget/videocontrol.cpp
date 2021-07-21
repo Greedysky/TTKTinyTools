@@ -170,21 +170,21 @@ QWidget* VideoControl::createBarrageWidget()
     fontSizeLayout->setContentsMargins(0, 0, 0, 0);
     QLabel *fontSizeLabel = new QLabel(tr("Size"), this);
 
-    QButtonGroup *fontSizeButtonGroup = new QButtonGroup(fontSizeWidget);
+    QButtonGroup *fontSizeGroup = new QButtonGroup(fontSizeWidget);
     fontSizeLayout->addWidget(fontSizeLabel);
     for(int i=1; i<=3; ++i)
     {
         QPushButton *button = createBarrageSizeButton(i);
-        fontSizeButtonGroup->addButton(button, i);
+        fontSizeGroup->addButton(button, i);
         fontSizeLayout->addStretch(1);
         fontSizeLayout->addWidget(button);
     }
     fontSizeLayout->addStretch(1);
     fontSizeWidget->setLayout(fontSizeLayout);
 #if TTK_QT_VERSION_CHECK(5,15,0)
-    connect(fontSizeButtonGroup, SIGNAL(idClicked(int)), SLOT(barrageSizeButtonClicked(int)));
+    connect(fontSizeGroup, SIGNAL(idClicked(int)), SLOT(barrageSizeButtonClicked(int)));
 #else
-    connect(fontSizeButtonGroup, SIGNAL(buttonClicked(int)), SLOT(barrageSizeButtonClicked(int)));
+    connect(fontSizeGroup, SIGNAL(buttonClicked(int)), SLOT(barrageSizeButtonClicked(int)));
 #endif
 
     QWidget *backgroundWidget = new QWidget(barrageSettingWidget);
@@ -193,19 +193,19 @@ QWidget* VideoControl::createBarrageWidget()
     backgroundLayout->setSpacing(5);
     QLabel *backgroundLabel = new QLabel(tr("BgColor"), this);
 
-    QButtonGroup *backgroundButtonGroup = new QButtonGroup(backgroundWidget);
+    QButtonGroup *backgroundGroup = new QButtonGroup(backgroundWidget);
     backgroundLayout->addWidget(backgroundLabel);
     for(int i=1; i<=8; ++i)
     {
         QPushButton *button = createBarrageColorButton(i);
-        backgroundButtonGroup->addButton(button, i);
+        backgroundGroup->addButton(button, i);
         backgroundLayout->addWidget(button);
     }
     backgroundWidget->setLayout(backgroundLayout);
 #if TTK_QT_VERSION_CHECK(5,15,0)
-    connect(backgroundButtonGroup, SIGNAL(idClicked(int)), SLOT(barrageColorButtonClicked(int)));
+    connect(backgroundGroup, SIGNAL(idClicked(int)), SLOT(barrageColorButtonClicked(int)));
 #else
-    connect(backgroundButtonGroup, SIGNAL(buttonClicked(int)), SLOT(barrageColorButtonClicked(int)));
+    connect(backgroundGroup, SIGNAL(buttonClicked(int)), SLOT(barrageColorButtonClicked(int)));
 #endif
 
     settingLayout->addWidget(fontSizeWidget);

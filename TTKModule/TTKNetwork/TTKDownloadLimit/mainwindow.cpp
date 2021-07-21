@@ -37,7 +37,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::startRequest(const QUrl &url)
 {
-    m_reply = m_manager->get( QNetworkRequest(url));
+    m_reply = m_manager->get(QNetworkRequest(url));
     connect(m_reply, SIGNAL(finished()), SLOT(downLoadFinished()));
     connect(m_reply, SIGNAL(readyRead()), SLOT(downLoadReadyRead()));
     connect(m_reply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(downloadProgress(qint64,qint64)));
@@ -75,7 +75,7 @@ void MainWindow::startToDownload()
         const QString &url = m_ui->pathEdit->text().trimmed();
         if(!url.isEmpty())
         {
-            if( m_file->open(QIODevice::WriteOnly) )
+            if(m_file->open(QIODevice::WriteOnly))
             {
                 startRequest(QUrl(url));
                 m_timer.start(1000);
@@ -193,22 +193,22 @@ void MainWindow::updateDownloadSpeed()
 QString MainWindow::sizeStandardization(qint64 size)
 {
     QString front, back;
-    if( size / 1024 == 0)
+    if(size / 1024 == 0)
     {
         front =  QString::number(size);
         back = "00";
     }
-    else if( size / 1024 / 1024 == 0 && size / 1024 > 0)
+    else if(size / 1024 / 1024 == 0 && size / 1024 > 0)
     {
         front = QString::number(size / 1024);
         back = QString::number(size % 1024).left(2).rightJustified(2, '0') + "KB";
     }
-    else if( size / 1024 / 1024 / 1024 == 0 && size / 1024 / 1024 > 0)
+    else if(size / 1024 / 1024 / 1024 == 0 && size / 1024 / 1024 > 0)
     {
         front = QString::number(size / 1024 / 1024);
         back = QString::number(size % (1024 * 1024)).left(2).rightJustified(2, '0') + "M";
     }
-    else if( size / 1024 / 1024 / 1024 > 0)
+    else if(size / 1024 / 1024 / 1024 > 0)
     {
         front = QString::number(size / 1024 / 1024 / 1024);
         back = QString::number(size % (1024 * 1024 * 1024)).left(2).rightJustified(2, '0') + "T";

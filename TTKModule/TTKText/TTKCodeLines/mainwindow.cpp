@@ -44,7 +44,7 @@ void  MainWindow::codeLines(const QString &path)
     QMap<QString, int> categorys;
 
     QEventLoop eventLoop;
-    const auto status = QtConcurrent::run( [&]()
+    const auto status = QtConcurrent::run([&]()
     {
         foreachFileFromDirectory( { path }, [&](const QFileInfo &info)
         {
