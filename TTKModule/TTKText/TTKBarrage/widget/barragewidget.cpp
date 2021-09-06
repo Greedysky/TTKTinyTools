@@ -57,7 +57,7 @@ void BarrageWidget::stop()
 void BarrageWidget::barrageStateChanged(bool on)
 {
     m_barrageState = on;
-    if(m_barrageState && !m_barrageLists.isEmpty())
+    if(m_barrageState && !m_barrageList.isEmpty())
     {
         deleteItems();
         createLabel();
@@ -108,7 +108,7 @@ void BarrageWidget::addBarrage(const QString &string)
     setLabelTextSize(label);
 
     label->setText(string);
-    m_barrageLists << string;
+    m_barrageList << string;
 
     if(m_barrageState)
     {
@@ -135,7 +135,7 @@ void BarrageWidget::deleteItems()
 void BarrageWidget::createLabel()
 {
     BarrageCore::timeSRand();
-    for(const QString &str : qAsConst(m_barrageLists))
+    for(const QString &str : qAsConst(m_barrageList))
     {
         Q_UNUSED(str);
         QLabel *label = new QLabel(m_parentClass);
@@ -148,9 +148,9 @@ void BarrageWidget::createLabel(QLabel *label)
     QString color = QString("QLabel{color:rgb(%1,%2,%3);}")
             .arg(BarrageCore::random(255)).arg(BarrageCore::random(255)).arg(BarrageCore::random(255));
     label->setStyleSheet(color);
-    if(!m_barrageLists.isEmpty())
+    if(!m_barrageList.isEmpty())
     {
-        label->setText(m_barrageLists[BarrageCore::random(m_barrageLists.count())]);
+        label->setText(m_barrageList[BarrageCore::random(m_barrageList.count())]);
     }
     label->hide();
     m_labels << label;
@@ -197,12 +197,12 @@ void BarrageWidget::readBarrage()
     QFile file(BARRAGEPATH_AL);
     if(file.open(QIODevice::ReadOnly))
     {
-        m_barrageLists << QString(file.readAll()).split("\r\n");
-        for(int i=m_barrageLists.count() -1; i>=0; --i)
+        m_barrageList << QString(file.readAll()).split("\r\n");
+        for(int i=m_barrageList.count() -1; i>=0; --i)
         {
-            if(m_barrageLists[i].isEmpty())
+            if(m_barrageList[i].isEmpty())
             {
-                m_barrageLists.removeAt(i);
+                m_barrageList.removeAt(i);
             }
         }
     }
@@ -215,7 +215,7 @@ void BarrageWidget::writeBarrage()
     if(file.open(QIODevice::WriteOnly | QFile::Text))
     {
         QByteArray array;
-        for(QString var : qAsConst(m_barrageLists))
+        for(QString var : qAsConst(m_barrageList))
         {
             array.append((var + '\n').toUtf8());
         }

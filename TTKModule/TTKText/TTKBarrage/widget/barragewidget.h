@@ -61,7 +61,7 @@ protected:
     QColor m_backgroundColor;
     QList<QLabel*> m_labels;
     QList<BarrageAnimation*> m_animations;
-    QStringList m_barrageLists;
+    QStringList m_barrageList;
 
 };
 
