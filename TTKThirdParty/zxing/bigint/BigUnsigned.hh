@@ -62,8 +62,8 @@ public:
 	BigUnsigned(         short x);
 protected:
 	// Helpers
-	template <class X> void initFromPrimitive      (X x);
-	template <class X> void initFromSignedPrimitive(X x);
+    template <typename X> void initFromPrimitive      (X x);
+    template <typename X> void initFromSignedPrimitive(X x);
 public:
 
 	/* Converters to primitive integer types
@@ -77,8 +77,8 @@ public:
 	short          toShort        () const;
 protected:
 	// Helpers
-	template <class X> X convertToSignedPrimitive() const;
-	template <class X> X convertToPrimitive      () const;
+    template <typename X> X convertToSignedPrimitive() const;
+    template <typename X> X convertToPrimitive      () const;
 public:
 
 	// BIT/BLOCK ACCESSORS
@@ -236,7 +236,7 @@ public:
 			unsigned int y);
 
 	// See BigInteger.cc.
-	template <class X>
+    template <typename X>
 	friend X convertBigUnsignedToPrimitiveAccess(const BigUnsigned &a);
 };
 
@@ -352,7 +352,7 @@ inline void BigUnsigned::operator >>=(int b) {
  * reduce code duplication.  (Don't worry: this is protected and we instantiate
  * it only with primitive integer types.)  Type X could be signed, but x is
  * known to be nonnegative. */
-template <class X>
+template <typename X>
 void BigUnsigned::initFromPrimitive(X x) {
 	if (x == 0)
 		; // NumberlikeArray already initialized us to zero.
@@ -369,7 +369,7 @@ void BigUnsigned::initFromPrimitive(X x) {
  * initFromPrimitive and let the compiler optimize it out for unsigned-type
  * instantiations, but I wanted to avoid the warning stupidly issued by g++ for
  * a condition that is constant in *any* instantiation, even if not in all. */
-template <class X>
+template <typename X>
 void BigUnsigned::initFromSignedPrimitive(X x) {
 	if (x < 0)
 		throw "BigUnsigned constructor: "
@@ -383,7 +383,7 @@ void BigUnsigned::initFromSignedPrimitive(X x) {
 /* Template with the same idea as initFromPrimitive.  This might be slightly
  * slower than the previous version with the masks, but it's much shorter and
  * clearer, which is the library's stated goal. */
-template <class X>
+template <typename X>
 X BigUnsigned::convertToPrimitive() const {
 	if (len == 0)
 		// The number is zero; return zero.
@@ -405,7 +405,7 @@ X BigUnsigned::convertToPrimitive() const {
  * not a negative one that happened to convert back into the correct nonnegative
  * one.  (E.g., catch incorrect conversion of 2^31 to the long -2^31.)  Again,
  * separated to avoid a g++ warning. */
-template <class X>
+template <typename X>
 X BigUnsigned::convertToSignedPrimitive() const {
 	X x = convertToPrimitive<X>();
 	if (x >= 0)

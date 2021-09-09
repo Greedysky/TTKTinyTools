@@ -16,7 +16,7 @@ BigUnsigned stringToBigUnsigned(const std::string &s);
 BigInteger stringToBigInteger(const std::string &s);
 
 // Creates a BigInteger from data such as `char's; read below for details.
-template <class T>
+template <typename T>
 BigInteger dataToBigInteger(const T* data, BigInteger::Index length, BigInteger::Sign sign);
 
 // Outputs x to os, obeying the flags `dec', `hex', `bin', and `showbase'.
@@ -41,7 +41,7 @@ std::ostream &operator <<(std::ostream &os, const BigInteger &x);
  * (2) When a value of `T' is casted to a `Blk', the low bytes of
  * the result contain the desired binary data.
  */
-template <class T>
+template <typename T>
 BigInteger dataToBigInteger(const T* data, BigInteger::Index length, BigInteger::Sign sign) {
 	// really ceiling(numBytes / sizeof(BigInteger::Blk))
 	unsigned int pieceSizeInBits = 8 * sizeof(T);

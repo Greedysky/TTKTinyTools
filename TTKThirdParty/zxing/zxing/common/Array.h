@@ -27,7 +27,7 @@
 
 namespace zxing {
 
-template<typename T> class Array : public Counted {
+template <typename T> class Array : public Counted {
 protected:
 public:
   std::vector<T> values_;
@@ -83,7 +83,7 @@ public:
   }
 };
 
-template<typename T> class ArrayRef : public Counted {
+template <typename T> class ArrayRef : public Counted {
 private:
 public:
   Array<T> *array_;
@@ -107,7 +107,7 @@ public:
     reset(other.array_);
   }
 
-  template<class Y>
+  template <typename Y>
   ArrayRef(const ArrayRef<Y> &other) :
       array_(0) {
     reset(static_cast<const Array<T> *>(other.array_));

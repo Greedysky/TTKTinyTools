@@ -60,13 +60,13 @@ BigInteger::BigInteger(unsigned short x) : mag(x) { sign = mag.isZero() ? zero :
 // For signed input, determine the desired magnitude and sign separately.
 
 namespace {
-	template <class X, class UX>
+    template <typename X, typename UX>
 	BigInteger::Blk magOf(X x) {
 		/* UX(...) cast needed to stop short(-2^15), which negates to
 		 * itself, from sign-extending in the conversion to Blk. */
 		return BigInteger::Blk(x < 0 ? UX(-x) : x);
 	}
-	template <class X>
+    template <typename X>
 	BigInteger::Sign signOf(X x) {
 		return (x == 0) ? BigInteger::zero
 			: (x > 0) ? BigInteger::positive
@@ -84,12 +84,12 @@ BigInteger::BigInteger(short x) : sign(signOf(x)), mag(magOf<short, unsigned sho
  * The friend is a separate function rather than
  * BigInteger::convertToUnsignedPrimitive to avoid requiring BigUnsigned to
  * declare BigInteger. */
-template <class X>
+template <typename X>
 inline X convertBigUnsignedToPrimitiveAccess(const BigUnsigned &a) {
 	return a.convertToPrimitive<X>();
 }
 
-template <class X>
+template <typename X>
 X BigInteger::convertToUnsignedPrimitive() const {
 	if (sign == negative)
 		throw "BigInteger::to<Primitive>: "
@@ -100,7 +100,7 @@ X BigInteger::convertToUnsignedPrimitive() const {
 
 /* Similar to BigUnsigned::convertToPrimitive, but split into two cases for
  * nonnegative and negative numbers. */
-template <class X, class UX>
+template <typename X, typename UX>
 X BigInteger::convertToSignedPrimitive() const {
 	if (sign == zero)
 		return 0;

@@ -53,7 +53,7 @@ public:
 };
 
 /* counting reference to reference-counted objects */
-template<typename T> class TTK_MODULE_EXPORT Ref {
+template <typename T> class TTK_MODULE_EXPORT Ref {
 private:
 public:
   T *object_;
@@ -66,7 +66,7 @@ public:
     reset(other.object_);
   }
 
-  template<class Y>
+  template <typename Y>
   Ref(const Ref<Y> &other) :
       object_(0) {
     reset(other.object_);
@@ -91,7 +91,7 @@ public:
     reset(other.object_);
     return *this;
   }
-  template<class Y>
+  template <typename Y>
   Ref& operator=(const Ref<Y> &other) {
     reset(other.object_);
     return *this;
@@ -100,7 +100,7 @@ public:
     reset(o);
     return *this;
   }
-  template<class Y>
+  template <typename Y>
   Ref& operator=(Y* o) {
     reset(o);
     return *this;
@@ -122,7 +122,7 @@ public:
   bool operator==(const Ref &other) const {
     return object_ == other.object_ || *object_ == *(other.object_);
   }
-  template<class Y>
+  template <typename Y>
   bool operator==(const Ref<Y> &other) const {
     return object_ == other.object_ || *object_ == *(other.object_);
   }

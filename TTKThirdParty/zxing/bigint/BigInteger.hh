@@ -72,8 +72,8 @@ public:
 	short          toShort        () const;
 protected:
 	// Helper
-	template <class X> X convertToUnsignedPrimitive() const;
-	template <class X, class UX> X convertToSignedPrimitive() const;
+    template <typename X> X convertToUnsignedPrimitive() const;
+    template <typename X, typename UX> X convertToSignedPrimitive() const;
 public:
 
 	// ACCESSORS

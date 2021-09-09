@@ -17,7 +17,7 @@
  * public:
  *     NumberlikeArray< the-type-argument >::getLength;
  */
-template <class Blk>
+template <typename Blk>
 class NumberlikeArray {
 public:
 
@@ -87,10 +87,10 @@ public:
 /* BEGIN TEMPLATE DEFINITIONS.  They are present here so that source files that
  * include this header file can generate the necessary real definitions. */
 
-template <class Blk>
+template <typename Blk>
 const unsigned int NumberlikeArray<Blk>::N = 8 * sizeof(Blk);
 
-template <class Blk>
+template <typename Blk>
 void NumberlikeArray<Blk>::allocate(Index c) {
 	// If the requested capacity is more than the current capacity...
 	if (c > cap) {
@@ -102,7 +102,7 @@ void NumberlikeArray<Blk>::allocate(Index c) {
 	}
 }
 
-template <class Blk>
+template <typename Blk>
 void NumberlikeArray<Blk>::allocateAndCopy(Index c) {
 	// If the requested capacity is more than the current capacity...
 	if (c > cap) {
@@ -119,7 +119,7 @@ void NumberlikeArray<Blk>::allocateAndCopy(Index c) {
 	}
 }
 
-template <class Blk>
+template <typename Blk>
 NumberlikeArray<Blk>::NumberlikeArray(const NumberlikeArray<Blk> &x)
 		: len(x.len) {
 	// Create array
@@ -131,7 +131,7 @@ NumberlikeArray<Blk>::NumberlikeArray(const NumberlikeArray<Blk> &x)
 		blk[i] = x.blk[i];
 }
 
-template <class Blk>
+template <typename Blk>
 void NumberlikeArray<Blk>::operator=(const NumberlikeArray<Blk> &x) {
 	/* Calls like a = a have no effect; catch them before the aliasing
 	 * causes a problem */
@@ -147,7 +147,7 @@ void NumberlikeArray<Blk>::operator=(const NumberlikeArray<Blk> &x) {
 		blk[i] = x.blk[i];
 }
 
-template <class Blk>
+template <typename Blk>
 NumberlikeArray<Blk>::NumberlikeArray(const Blk *b, Index blen)
 		: cap(blen), len(blen) {
 	// Create array
@@ -158,7 +158,7 @@ NumberlikeArray<Blk>::NumberlikeArray(const Blk *b, Index blen)
 		blk[i] = b[i];
 }
 
-template <class Blk>
+template <typename Blk>
 bool NumberlikeArray<Blk>::operator ==(const NumberlikeArray<Blk> &x) const {
 	if (len != x.len)
 		// Definitely unequal.
