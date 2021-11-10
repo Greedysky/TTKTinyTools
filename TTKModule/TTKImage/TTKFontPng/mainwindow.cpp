@@ -27,7 +27,7 @@ QPixmap MainWindow::saveIcon(const QString &fontPath, int w, int h, int fontSize
     const int fontId = QFontDatabase::addApplicationFont(fontPath);
     const QString &fontName = QFontDatabase::applicationFontFamilies(fontId).at(0);
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    QFont font(QStringList() << fontName);
+    QFont font({fontName});
 #else
     QFont font(fontName);
 #endif
