@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #if defined Q_OS_UNIX || defined Q_CC_MINGW
-# include <unistd.h>
+#  include <unistd.h>
 #endif
 #include <QFile>
 #include <QThread>

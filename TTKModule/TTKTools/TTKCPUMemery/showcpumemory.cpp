@@ -4,7 +4,7 @@
 #include <QLabel>
 
 #ifdef Q_OS_WIN
-#include "windows.h"
+#  include "windows.h"
 #endif
 #define MB (1024 * 1024)
 #define KB (1024)

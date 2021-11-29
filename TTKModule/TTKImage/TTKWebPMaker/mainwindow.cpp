@@ -4,7 +4,7 @@
 
 void MainWindow::makeWebP()
 {
-    const QStringList &filePaths = QFileDialog::getOpenFileNames(nullptr, "Save Path", ".", "Images (*.png *.jpg)");
+    const QStringList &filePaths = QFileDialog::getOpenFileNames(nullptr, "Save Path", TTK_DOT, "Images (*.png *.jpg)");
 
     if(filePaths.isEmpty())
     {

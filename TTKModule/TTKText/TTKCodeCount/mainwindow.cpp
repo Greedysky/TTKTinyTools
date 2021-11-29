@@ -73,7 +73,7 @@ void MainWindow::initForm()
     ui->txtNote->setFont(font);
     ui->txtBlank->setFont(font);
 
-#if (QT_VERSION > QT_VERSION_CHECK(4,7,0))
+#if TTK_QT_VERSION_CHECK(4,7,0)
     ui->txtFilter->setPlaceholderText("中间空格隔开,例如 *.h *.cpp *.c");
 #endif
 }
@@ -106,7 +106,7 @@ void MainWindow::countCode(const QString &filePath)
         }
         else
         {
-            if(fileInfo.fileName() == "." || fileInfo.fileName() == "..")
+            if(fileInfo.fileName() == TTK_DOT || fileInfo.fileName() == TTK_DOTS)
             {
                 continue;
             }

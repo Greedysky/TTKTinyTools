@@ -110,7 +110,7 @@ QPixmap makeBarcode(const qint64 number)
 
 void MainWindow::savePng(const QString &id)
 {
-    QString filePath = QFileDialog::getSaveFileName(nullptr, "Save Path", ".", "*.png");
+    QString filePath = QFileDialog::getSaveFileName(nullptr, "Save Path", TTK_DOT, "*.png");
 
     if(filePath.isEmpty())
     {

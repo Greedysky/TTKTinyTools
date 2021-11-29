@@ -23,7 +23,7 @@
 #include <QApplication>
 #include "ttkglobal.h"
 #if TTK_QT_VERSION_CHECK(5,10,0)
-#include <QRandomGenerator>
+#  include <QRandomGenerator>
 #endif
 
 #define BARRAGEPATH     "videobarrage"
@@ -54,7 +54,7 @@ namespace BarrageCore
         path.chop(5);
         return path;
 #else
-        return path + "/";
+        return path + TTK_SEPARATOR;
 #endif
     }
 

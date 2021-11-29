@@ -71,7 +71,7 @@ private:
 
 QString MainWindow::decodeImage(const int decodeType)
 {
-    const QString &filePath = QFileDialog::getOpenFileName(nullptr, "Please Path", ".", "*.png *.jpg");
+    const QString &filePath = QFileDialog::getOpenFileName(nullptr, "Please Path", TTK_DOT, "*.png *.jpg");
 
     if(filePath.isEmpty())
     {
