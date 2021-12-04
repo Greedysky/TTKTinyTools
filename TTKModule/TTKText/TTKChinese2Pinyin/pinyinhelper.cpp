@@ -7,8 +7,8 @@
 
 PinyinHelper::PinyinHelper()
 {
-    m_pinyinTable = PinyinResource::getPinyinResource();
-    m_mutliPinyinTable = PinyinResource::getMutilPinyinResource();
+    m_pinyinTable = PinyinResource::pinyinResource();
+    m_mutliPinyinTable = PinyinResource::mutilPinyinResource();
     m_pinyinSeparator = ",";
 #ifdef Q_CC_MSVC
     m_chineseLing = '\xa9\x96';

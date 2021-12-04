@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
     delete m_ui;
 }
 
-QFileInfoList MainWindow::getFileListByDir(const QString &dpath, const QStringList &filter, bool recursively)
+QFileInfoList MainWindow::fileListByDir(const QString &dpath, const QStringList &filter, bool recursively)
 {
     QDir dir(dpath);
     if(!dir.exists())
@@ -32,7 +32,7 @@ QFileInfoList MainWindow::getFileListByDir(const QString &dpath, const QStringLi
         const QFileInfoList& folderList = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
         for(const QFileInfo &fileInfo : qAsConst(folderList))
         {
-            fileList.append( getFileListByDir(fileInfo.absoluteFilePath(), filter, recursively) );
+            fileList.append(fileListByDir(fileInfo.absoluteFilePath(), filter, recursively));
         }
     }
 
@@ -49,7 +49,7 @@ void MainWindow::choosePng()
 
     QStringList filters;
     filters << "*.png";
-    for(const QFileInfo &info : getFileListByDir(dir, filters, true))
+    for(const QFileInfo &info : fileListByDir(dir, filters, true))
     {
         QImage image(info.absoluteFilePath());
         if(image.isNull())

@@ -31,7 +31,7 @@ public:
     CheckerHelper();
     ~CheckerHelper();
 
-    CheckerBase* getChecker(const string &name);
+    CheckerBase* checker(const string &name);
 
     bool contains(const string &name);
 

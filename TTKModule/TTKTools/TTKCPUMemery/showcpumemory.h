@@ -37,8 +37,8 @@ public:
     void stop();
 
 private Q_SLOTS:
-    void getCPU();
-    void getMemory();
+    void cpu();
+    void memory();
     void readData();
 
 private:

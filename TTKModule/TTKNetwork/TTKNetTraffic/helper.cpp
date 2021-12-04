@@ -48,17 +48,17 @@ void Helper::start()
     m_memery->start(500);
 }
 
-QString Helper::getNWS() const
+QString Helper::speed() const
 {
     return m_nwsInfo;
 }
 
-QString Helper::getMem() const
+QString Helper::memery() const
 {
     return QString::number(m_memery->memeryInfo());
 }
 
-QString Helper::getCPU() const
+QString Helper::cpu() const
 {
     return QString::number(m_memery->cpuInfo());
 }

@@ -35,7 +35,7 @@ void MainWindow::init()
     installEventFilter(this);
 
     m_borderWidth = 3;
-    m_bgColor = QColor(34, 163, 169);
+    m_backgroundColor = QColor(34, 163, 169);
 
     m_fps = 10;
     m_ui->txtFps->setText(QString::number(m_fps));
@@ -57,14 +57,14 @@ void MainWindow::init()
     setStyleSheet(qss.join(QString()));
 }
 
-int MainWindow::getBorderWidth() const
+int MainWindow::borderWidth() const
 {
     return m_borderWidth;
 }
 
-QColor MainWindow::getBgColor() const
+QColor MainWindow::backgroundColor() const
 {
-    return m_bgColor;
+    return m_backgroundColor;
 }
 
 void MainWindow::saveImage()
@@ -159,11 +159,11 @@ void MainWindow::setBorderWidth(int borderWidth)
     }
 }
 
-void MainWindow::setBgColor(const QColor &color)
+void MainWindow::setBackgroundgColor(const QColor &color)
 {
-    if(m_bgColor != color)
+    if(m_backgroundColor != color)
     {
-        m_bgColor = color;
+        m_backgroundColor = color;
         update();
     }
 }
@@ -216,7 +216,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.setPen(Qt::NoPen);
-    painter.setBrush(m_bgColor);
+    painter.setBrush(m_backgroundColor);
     painter.drawRoundedRect(rect(), 5, 5);
     painter.setCompositionMode(QPainter::CompositionMode_Clear);
     painter.fillRect(m_rectGif, Qt::SolidPattern);

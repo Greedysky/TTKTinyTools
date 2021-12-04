@@ -30,21 +30,21 @@ class TTK_MODULE_EXPORT PinyinResource
 {
 public:
 
-    static TTKStringMap getPinyinResource();
+    static TTKStringMap pinyinResource();
     /*!
      * Get mutil pinyin resource.
      */
-    static TTKStringMap getMutilPinyinResource();
+    static TTKStringMap mutilPinyinResource();
     /*!
      * Get chinese resource.
      */
-    static TTKStringMap getChineseResource();
+    static TTKStringMap chineseResource();
 
 private:
     /*!
      * Get resource.
      */
-    static TTKStringMap getResource(const QString &resourceName);
+    static TTKStringMap resource(const QString &resourceName);
 
 };
 

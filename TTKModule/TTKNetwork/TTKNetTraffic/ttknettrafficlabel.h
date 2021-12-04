@@ -46,7 +46,7 @@ public:
     /*!
      * Get newtwork names.
      */
-    QStringList getNewtworkNames() const;
+    QStringList newtworkNames() const;
     /*!
      * Stop and quit current thread.
      */

@@ -27,7 +27,7 @@
 #endif
 
 #define BARRAGEPATH     "videobarrage"
-#define BARRAGEPATH_AL  BarrageCore::getAppDir() + BARRAGEPATH
+#define BARRAGEPATH_AL  BarrageCore::applicationPath() + BARRAGEPATH
 
 namespace BarrageCore
 {
@@ -47,7 +47,7 @@ namespace BarrageCore
 #endif
     }
 
-    static QString getAppDir()
+    static QString applicationPath()
     {
         QString path = QApplication::applicationDirPath();
 #ifdef QT_DEBUG

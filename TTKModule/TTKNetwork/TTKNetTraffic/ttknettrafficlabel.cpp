@@ -68,7 +68,7 @@ void TTKNetTraffic::setAvailableNewtworkName(const QString &name)
 #endif
 }
 
-QStringList TTKNetTraffic::getNewtworkNames() const
+QStringList TTKNetTraffic::newtworkNames() const
 {
     QStringList names;
 #ifdef Q_OS_WIN

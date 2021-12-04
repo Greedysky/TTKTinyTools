@@ -34,7 +34,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QFileInfoList getFileListByDir(const QString &dpath, const QStringList &filter, bool recursively);
+    QFileInfoList fileListByDir(const QString &dpath, const QStringList &filter, bool recursively);
 
 public Q_SLOTS:
     void choosePng();

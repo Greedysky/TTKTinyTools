@@ -20,10 +20,10 @@ ShowCPUMemory::ShowCPUMemory(QObject *parent) : QObject(parent)
     m_labCPUMemory = nullptr;
 
     m_timerCPU = new QTimer(this);
-    connect(m_timerCPU, SIGNAL(timeout()), SLOT(getCPU()));
+    connect(m_timerCPU, SIGNAL(timeout()), SLOT(cpu()));
 
     m_timerMemory = new QTimer(this);
-    connect(m_timerMemory, SIGNAL(timeout()), SLOT(getMemory()));
+    connect(m_timerMemory, SIGNAL(timeout()), SLOT(memory()));
 
     m_process = new QProcess(this);
     connect(m_process, SIGNAL(readyRead()), SLOT(readData()));
@@ -32,8 +32,8 @@ ShowCPUMemory::ShowCPUMemory(QObject *parent) : QObject(parent)
 void ShowCPUMemory::setLab(QLabel *label)
 {
     m_labCPUMemory = label;
-    getCPU();
-    getMemory();
+    cpu();
+    memory();
 }
 
 void ShowCPUMemory::start(int interval)
@@ -48,7 +48,7 @@ void ShowCPUMemory::stop()
     m_timerMemory->stop();
 }
 
-void ShowCPUMemory::getCPU()
+void ShowCPUMemory::cpu()
 {
 #ifdef Q_OS_WIN
     static FILETIME preidleTime;
@@ -94,7 +94,7 @@ void ShowCPUMemory::getCPU()
 #endif
 }
 
-void ShowCPUMemory::getMemory()
+void ShowCPUMemory::memory()
 {
 #ifdef Q_OS_WIN
     MEMORYSTATUSEX statex;

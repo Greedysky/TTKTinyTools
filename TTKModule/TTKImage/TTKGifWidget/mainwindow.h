@@ -30,15 +30,15 @@ class MainWindow;
 class TTK_MODULE_EXPORT MainWindow : public QDialog
 {
     Q_OBJECT
-    Q_PROPERTY(int m_borderWidth READ getBorderWidth WRITE setBorderWidth)
-    Q_PROPERTY(QColor m_bgColor READ getBgColor WRITE setBgColor)
+    Q_PROPERTY(int m_borderWidth READ borderWidth WRITE setBorderWidth)
+    Q_PROPERTY(QColor m_backgroundColor READ backgroundColor WRITE setBackgroundgColor)
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     void init();
-    int getBorderWidth() const;
-    QColor getBgColor() const;
+    int borderWidth() const;
+    QColor backgroundColor() const;
 
 private Q_SLOTS:
     void saveImage();
@@ -48,7 +48,7 @@ private Q_SLOTS:
 
 public Q_SLOTS:
     void setBorderWidth(int borderWidth);
-    void setBgColor(const QColor &color);
+    void setBackgroundgColor(const QColor &color);
 
 protected:
     virtual bool eventFilter(QObject *watched, QEvent *event) override;
@@ -59,7 +59,7 @@ private:
     Ui::MainWindow *m_ui;
 
     int m_borderWidth;
-    QColor m_bgColor;
+    QColor m_backgroundColor;
 
     uint m_fps;
     QRect m_rectGif;

@@ -37,9 +37,9 @@ public:
 
     void start();
 
-    QString getNWS() const;       //read the network speed
-    QString getMem() const;       //read memory
-    QString getCPU() const;           //read CPU state
+    QString speed() const;       //read the network speed
+    QString memery() const;       //read memory
+    QString cpu() const;          //read CPU state
 
 private Q_SLOTS:
     void setData(ulong upload, ulong download);

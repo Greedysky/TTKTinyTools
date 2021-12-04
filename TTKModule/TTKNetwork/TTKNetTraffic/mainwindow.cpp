@@ -85,9 +85,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::refreshInfo()
 {
-    m_lableNWS->setText(m_helper->getNWS());
-    m_lableMem->setText("MemUsage: " + m_helper->getMem() + "%");
-    m_lableCPU->setText("CpuUsage: " + m_helper->getCPU() + "%");
+    m_lableNWS->setText(m_helper->speed());
+    m_lableMem->setText("MemUsage: " + m_helper->memery() + "%");
+    m_lableCPU->setText("CpuUsage: " + m_helper->cpu() + "%");
 }
 
 void MainWindow::showWindow()

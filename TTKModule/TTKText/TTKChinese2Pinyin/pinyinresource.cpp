@@ -3,22 +3,22 @@
 #include <QFile>
 #include <QTextStream>
 
-TTKStringMap PinyinResource::getPinyinResource()
+TTKStringMap PinyinResource::pinyinResource()
 {
-    return getResource(":/data/pinyin");
+    return resource(":/data/pinyin");
 }
 
-TTKStringMap PinyinResource::getMutilPinyinResource()
+TTKStringMap PinyinResource::mutilPinyinResource()
 {
-    return getResource(":/data/mutil_pinyin");
+    return resource(":/data/mutil_pinyin");
 }
 
-TTKStringMap PinyinResource::getChineseResource()
+TTKStringMap PinyinResource::chineseResource()
 {
-    return getResource(":/data/single_pinyin");
+    return resource(":/data/single_pinyin");
 }
 
-TTKStringMap PinyinResource::getResource(const QString &resourceName)
+TTKStringMap PinyinResource::resource(const QString &resourceName)
 {
     TTKStringMap map;
     QFile file(resourceName);

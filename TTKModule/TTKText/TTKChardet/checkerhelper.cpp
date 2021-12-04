@@ -29,7 +29,7 @@ CheckerHelper::~CheckerHelper()
     }
 }
 
-CheckerBase* CheckerHelper::getChecker(const string &name)
+CheckerBase* CheckerHelper::checker(const string &name)
 {
     auto it = m_checkers.find(name);
     if(it == m_checkers.end())
@@ -55,7 +55,7 @@ bool CheckerHelper::check(const string &charset, const string &str)
 
     if(contains(in))
     {
-        return getChecker(in)->detect(str);
+        return checker(in)->detect(str);
     }
     return false;
 }

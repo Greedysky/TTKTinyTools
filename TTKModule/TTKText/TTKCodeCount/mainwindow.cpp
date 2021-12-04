@@ -106,7 +106,7 @@ void MainWindow::countCode(const QString &filePath)
         }
         else
         {
-            if(fileInfo.fileName() == TTK_DOT || fileInfo.fileName() == TTK_DOTS)
+            if(fileInfo.fileName() == TTK_DOT || fileInfo.fileName() == TTK_DOTDOT)
             {
                 continue;
             }
