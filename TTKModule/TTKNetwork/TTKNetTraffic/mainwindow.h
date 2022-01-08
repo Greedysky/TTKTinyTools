@@ -36,8 +36,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
 private:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
 
 private Q_SLOTS:
     void refreshInfo();

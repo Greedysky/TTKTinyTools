@@ -51,9 +51,9 @@ public Q_SLOTS:
     void setBackgroundgColor(const QColor &color);
 
 protected:
-    virtual bool eventFilter(QObject *watched, QEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual bool eventFilter(QObject *watched, QEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     Ui::MainWindow *m_ui;

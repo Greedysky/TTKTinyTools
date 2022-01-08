@@ -25,7 +25,7 @@ class TTK_MODULE_EXPORT GB18030Checker : public CheckerBase
 {
 public:
     GB18030Checker();
-    virtual bool detect(const string &str) const override;
+    virtual bool detect(const string &str) const override final;
 
 };
 

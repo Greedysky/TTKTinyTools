@@ -25,7 +25,7 @@ class TTK_MODULE_EXPORT UTF8Checker : public CheckerBase
 {
 public:
     UTF8Checker();
-    virtual bool detect(const string &str) const override;
+    virtual bool detect(const string &str) const override final;
 
 };
 

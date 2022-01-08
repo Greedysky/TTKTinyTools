@@ -50,9 +50,9 @@ private Q_SLOTS:
     void barrageColorButtonChanged(const QColor &color);
 
 protected:
-    virtual void enterEvent(QEvent *event) override;
-    virtual void leaveEvent(QEvent *event) override;
-    virtual void contextMenuEvent(QContextMenuEvent *event) override;
+    virtual void enterEvent(QEvent *event) override final;
+    virtual void leaveEvent(QEvent *event) override final;
+    virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
     QMediaPlayer *m_player;
     QVideoWidget *m_videoWidget;

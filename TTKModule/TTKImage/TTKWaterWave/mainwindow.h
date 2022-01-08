@@ -40,8 +40,8 @@ protected Q_SLOTS:
     void renderImage();
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     Ui::MainWindow *m_ui;

@@ -31,7 +31,7 @@ public:
     ImageIndex(QWidget *parent = nullptr);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawBg(QPainter *painter);
     void drawText(QPainter *painter);
 
@@ -83,10 +83,10 @@ public Q_SLOTS:
     void moveToPage(int index);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void keyPressEvent(QKeyEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
-    virtual void showEvent(QShowEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void keyPressEvent(QKeyEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
+    virtual void showEvent(QShowEvent *event) override final;
     void drawBg(QPainter *painter);
     void drawImage(QPainter *painter);
 

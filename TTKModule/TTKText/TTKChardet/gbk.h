@@ -25,7 +25,7 @@ class TTK_MODULE_EXPORT GBKChecker : public CheckerBase
 {
 public:
     GBKChecker();
-    virtual bool detect(const string &str) const override;
+    virtual bool detect(const string &str) const override final;
 
 private:
     bool checkTwoBytes(const unsigned char *buffer) const;

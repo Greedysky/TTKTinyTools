@@ -72,7 +72,7 @@ protected:
     /*!
      * Thread run now.
      */
-    virtual void run() override;
+    virtual void run() override final;
 
 protected:
     bool m_run;
