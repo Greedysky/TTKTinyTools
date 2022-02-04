@@ -21,9 +21,8 @@ include($$PWD/../../../TTKThirdParty/TTKThirdParty.pri)
 
 TARGET = TTKQRCodeMaker
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+HEADERS += $$PWD/mainwindow.h
 
-HEADERS += \
-    mainwindow.h
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp

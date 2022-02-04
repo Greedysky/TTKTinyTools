@@ -22,17 +22,15 @@ TARGET = TTKImageView
 
 INCLUDEPATH += $$PWD
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    imageview.cpp
-
 HEADERS += \
-    mainwindow.h \
-    imageview.h
+    $$PWD/mainwindow.h \
+    $$PWD/imageview.h
 
-FORMS += \
-    mainwindow.ui
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp \
+    $$PWD/imageview.cpp
 
-RESOURCES += \
-    TTKImageView.qrc
+FORMS += $$PWD/mainwindow.ui
+
+RESOURCES += $$PWD/TTKImageView.qrc

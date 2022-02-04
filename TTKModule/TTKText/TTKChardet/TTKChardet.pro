@@ -20,25 +20,25 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKChardet
 
-SOURCES += \
-    main.cpp \
-    checker.cpp \
-    ascii.cpp \
-    big5.cpp \
-    gb18030.cpp \
-    gbk.cpp \
-    shiftjis.cpp \
-    utf8.cpp \
-    iso2022_jp.cpp \
-    checkerhelper.cpp
-
 HEADERS += \
-    checker.h \
-    iso2022_jp.h \
-    ascii.h \
-    big5.h \
-    gb18030.h \
-    gbk.h \
-    shiftjis.h \
-    utf8.h \
-    checkerhelper.h
+    $$PWD/checker.h \
+    $$PWD/iso2022_jp.h \
+    $$PWD/ascii.h \
+    $$PWD/big5.h \
+    $$PWD/gb18030.h \
+    $$PWD/gbk.h \
+    $$PWD/shiftjis.h \
+    $$PWD/utf8.h \
+    $$PWD/checkerhelper.h
+
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/checker.cpp \
+    $$PWD/ascii.cpp \
+    $$PWD/big5.cpp \
+    $$PWD/gb18030.cpp \
+    $$PWD/gbk.cpp \
+    $$PWD/shiftjis.cpp \
+    $$PWD/utf8.cpp \
+    $$PWD/iso2022_jp.cpp \
+    $$PWD/checkerhelper.cpp

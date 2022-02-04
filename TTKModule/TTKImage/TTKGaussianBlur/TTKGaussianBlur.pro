@@ -20,14 +20,13 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKGaussianBlur
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    gaussianblur.cpp
-
 HEADERS += \
-    mainwindow.h \
-    gaussianblur.h
+    $$PWD/mainwindow.h \
+    $$PWD/gaussianblur.h
 
-FORMS += \
-    mainwindow.ui
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp \
+    $$PWD/gaussianblur.cpp
+
+FORMS += $$PWD/mainwindow.ui

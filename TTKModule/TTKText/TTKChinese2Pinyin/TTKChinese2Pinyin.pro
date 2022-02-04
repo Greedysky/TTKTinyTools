@@ -20,7 +20,7 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKChinese2Pinyin
 
-HEADERS  += \
+HEADERS += \
     $$PWD/pinyinresource.h \
     $$PWD/chinesehelper.h \
     $$PWD/pinyinhelper.h
@@ -31,5 +31,4 @@ SOURCES += \
     $$PWD/chinesehelper.cpp \
     $$PWD/pinyinhelper.cpp
 
-
-RESOURCES+= TTKChinese2Pinyin.qrc
+RESOURCES += $$PWD/TTKChinese2Pinyin.qrc

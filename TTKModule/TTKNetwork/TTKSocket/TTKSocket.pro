@@ -20,18 +20,17 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKSocket
 
-TRANSLATIONS += cn.ts
-
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    tcpclient.cpp \
-    tcpserver.cpp
+TRANSLATIONS += $$PWD/cn.ts
 
 HEADERS += \
-    mainwindow.h \
-    tcpclient.h \
-    tcpserver.h
+    $$PWD/mainwindow.h \
+    $$PWD/tcpclient.h \
+    $$PWD/tcpserver.h
 
-FORMS += \
-    mainwindow.ui
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp \
+    $$PWD/tcpclient.cpp \
+    $$PWD/tcpserver.cpp
+
+FORMS += $$PWD/mainwindow.ui

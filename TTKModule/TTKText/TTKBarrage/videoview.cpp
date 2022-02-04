@@ -4,6 +4,9 @@
 
 #include <QVideoWidget>
 #include <QBoxLayout>
+#if TTK_QT_VERSION_CHECK(6,0,0)
+#  include <QAudioOutput>
+#endif
 
 VideoView::VideoView(QWidget *parent)
     : QWidget(parent)
@@ -11,7 +14,11 @@ VideoView::VideoView(QWidget *parent)
     setFixedSize(700, 500);
 
     m_player = new QMediaPlayer(this);
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    connect(m_player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)), SLOT(stateChanged(QMediaPlayer::PlaybackState)));
+#else
     connect(m_player, SIGNAL(stateChanged(QMediaPlayer::State)), SLOT(stateChanged(QMediaPlayer::State)));
+#endif
     connect(m_player, SIGNAL(positionChanged(qint64)), SLOT(positionChanged(qint64)));
     connect(m_player, SIGNAL(durationChanged(qint64)), SLOT(durationChanged(qint64)));
 
@@ -29,12 +36,15 @@ VideoView::VideoView(QWidget *parent)
 
     m_barrageCore = new BarrageWidget(this);
     m_barrageCore->setSize(QSize(650, 380));
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    m_audioOutput = new QAudioOutput(this);
+    m_player->setAudioOutput(m_audioOutput);
+#endif
     m_player->setVideoOutput(m_videoWidget);
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(m_videoWidget);
     setLayout(layout);
-
 }
 
 VideoView::~VideoView()
@@ -45,7 +55,11 @@ VideoView::~VideoView()
     delete m_control;
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void VideoView::enterEvent(QEnterEvent *event)
+#else
 void VideoView::enterEvent(QEvent *event)
+#endif
 {
     QWidget::enterEvent(event);
     m_control->show();
@@ -64,7 +78,11 @@ void VideoView::contextMenuEvent(QContextMenuEvent *event)
 
 void VideoView::play()
 {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    switch(m_player->playbackState())
+#else
     switch(m_player->state())
+#endif
     {
         case QMediaPlayer::PlayingState:
             m_player->pause();
@@ -79,7 +97,11 @@ void VideoView::play()
     }
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void VideoView::stateChanged(QMediaPlayer::PlaybackState state)
+#else
 void VideoView::stateChanged(QMediaPlayer::State state)
+#endif
 {
     switch(state)
     {
@@ -116,12 +138,20 @@ void VideoView::setPosition(int position)
 
 void VideoView::volumnChanged(int volumn)
 {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    m_audioOutput->setVolume(volumn);
+#else
     m_player->setVolume(volumn);
+#endif
 }
 
 void VideoView::mediaChanged(const QString &data)
 {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    m_player->setSource(QUrl(data));
+#else
     m_player->setMedia(QUrl(data));
+#endif
     m_player->play();
 }
 

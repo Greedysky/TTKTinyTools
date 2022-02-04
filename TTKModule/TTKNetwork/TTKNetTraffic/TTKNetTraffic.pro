@@ -22,20 +22,19 @@ TARGET = TTKNetTraffic
 
 win32:LIBS += -lIphlpapi
 
-SOURCES += \
-    main.cpp\
-    mainwindow.cpp \
-    helper.cpp \
-    settingwidget.cpp \
-    ttkcpumemorylabel.cpp \
-    ttknettrafficlabel.cpp
-
 HEADERS += \
-    mainwindow.h \
-    helper.h \
-    settingwidget.h \
-    ttkcpumemorylabel.h \
-    ttknettrafficlabel.h
+    $$PWD/mainwindow.h \
+    $$PWD/helper.h \
+    $$PWD/settingwidget.h \
+    $$PWD/ttkcpumemorylabel.h \
+    $$PWD/ttknettrafficlabel.h
 
-RESOURCES += \
-    resource.qrc
+SOURCES += \
+    $$PWD/main.cpp\
+    $$PWD/mainwindow.cpp \
+    $$PWD/helper.cpp \
+    $$PWD/settingwidget.cpp \
+    $$PWD/ttkcpumemorylabel.cpp \
+    $$PWD/ttknettrafficlabel.cpp
+
+RESOURCES += $$PWD/resource.qrc

@@ -20,9 +20,8 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKRandomPassword
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+HEADERS += $$PWD/mainwindow.h
 
-HEADERS += \
-    mainwindow.h
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp

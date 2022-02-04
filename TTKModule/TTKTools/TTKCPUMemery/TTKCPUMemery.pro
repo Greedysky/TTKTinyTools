@@ -20,16 +20,15 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKCPUMemery
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    showcpumemory.cpp \
-    showdevicesize.cpp
-
 HEADERS += \
-    mainwindow.h \
-    showcpumemory.h \
-    showdevicesize.h
+    $$PWD/mainwindow.h \
+    $$PWD/showcpumemory.h \
+    $$PWD/showdevicesize.h
 
-FORMS += \
-    mainwindow.ui
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp \
+    $$PWD/showcpumemory.cpp \
+    $$PWD/showdevicesize.cpp
+
+FORMS += $$PWD/mainwindow.ui

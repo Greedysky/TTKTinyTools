@@ -20,14 +20,13 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKWaterWave
 
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    waterwave.cpp
-
 HEADERS += \
-    mainwindow.h \
-    waterwave.h
+    $$PWD/mainwindow.h \
+    $$PWD/waterwave.h
 
-FORMS += \
-    mainwindow.ui
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp \
+    $$PWD/waterwave.cpp
+
+FORMS += $$PWD/mainwindow.ui

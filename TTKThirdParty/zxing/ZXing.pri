@@ -18,13 +18,14 @@
 
 INCLUDEPATH += $$PWD
 
-win32: {
+CONFIG += warn_off
+
+win32{
 HEADERS += \
     $$PWD/win32/zxing/iconv.h \
     $$PWD/win32/zxing/stdint.h
 
-SOURCES += \
-    $$PWD/win32/zxing/win_iconv.c
+SOURCES += $$PWD/win32/zxing/win_iconv.c
 }
 
 HEADERS += \
@@ -138,7 +139,6 @@ HEADERS += \
     $$PWD/zxing/qrcode/detector/FinderPatternFinder.h \
     $$PWD/zxing/qrcode/detector/FinderPatternInfo.h
 
-    
 SOURCES += \
     $$PWD/bigint/BigInteger.cc \
     $$PWD/bigint/BigIntegerAlgorithms.cc \

@@ -21,7 +21,9 @@
 
 #include <QWidget>
 #include <QMediaPlayer>
+#include "ttkglobal.h"
 
+class QAudioOutput;
 class QVideoWidget;
 class VideoControl;
 class BarrageWidget;
@@ -42,7 +44,11 @@ private Q_SLOTS:
     void setPosition(int position);
     void volumnChanged(int volumn);
     void mediaChanged(const QString &data);
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    void stateChanged(QMediaPlayer::PlaybackState state);
+#else
     void stateChanged(QMediaPlayer::State state);
+#endif
 
     void addBarrageChanged(const QString &string);
     void pushBarrageChanged(bool on);
@@ -50,12 +56,19 @@ private Q_SLOTS:
     void barrageColorButtonChanged(const QColor &color);
 
 protected:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    virtual void enterEvent(QEnterEvent *event) override final;
+#else
     virtual void enterEvent(QEvent *event) override final;
+#endif
     virtual void leaveEvent(QEvent *event) override final;
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
     QMediaPlayer *m_player;
     QVideoWidget *m_videoWidget;
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    QAudioOutput *m_audioOutput;
+#endif
     VideoControl *m_control;
     BarrageWidget *m_barrageCore;
 

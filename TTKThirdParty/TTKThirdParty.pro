@@ -16,15 +16,16 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-QT       += core gui
+QT += core gui
 greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
-    QT   += widgets
+    QT += widgets
     equals(QT_MAJOR_VERSION, 6){ #Qt6
-        QT   += core5compat
+        QT += core5compat
     }
 }
 
 include($$PWD/../TTKVersion.pri)
+
 CONFIG += plugin lib
 
 DESTDIR = $$OUT_PWD/../bin/$$TTKTinyTools
@@ -37,7 +38,11 @@ DEFINES += TTK_LIBRARY
 win32:msvc{
     CONFIG += c++11
 }else{
-    QMAKE_CXXFLAGS += -std=c++11
+    equals(QT_MAJOR_VERSION, 6){ #Qt6
+        QMAKE_CXXFLAGS += -std=c++17
+    }else{
+        QMAKE_CXXFLAGS += -std=c++11
+    }
 }
 
 INCLUDEPATH += \
@@ -47,4 +52,4 @@ INCLUDEPATH += \
 include($$PWD/qrencode/QRencode.pri)
 include($$PWD/zxing/ZXing.pri)
 
-win32:RC_FILE = TTKThirdParty.rc
+win32:RC_FILE = $$PWD/TTKThirdParty.rc

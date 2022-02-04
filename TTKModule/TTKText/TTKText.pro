@@ -19,6 +19,11 @@
 TEMPLATE = subdirs
 SUBDIRS += TTKCaseTransform TTKChardet TTKRandomPassword TTKRandomUuid TTKUrlEncode TTKUtf16Transform TTKHashTransform \
            TTKTimestampTransform TTKCodeLines TTKChinese2Pinyin TTKCodeCount
-equals(QT_MAJOR_VERSION, 5){
-SUBDIRS += TTKBarrage
+
+equals(QT_MAJOR_VERSION, 6):lessThan(QT_MINOR_VERSION, 2){
+    message(Qt6.0.x and 6.1.x not support TTKBarrage module)
+}else{
+    greaterThan(QT_MAJOR_VERSION, 4){
+        SUBDIRS += TTKBarrage
+    }
 }

@@ -20,13 +20,10 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKCodeCount
 
+HEADERS += $$PWD/mainwindow.h
+
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp
 
-HEADERS += \
-    mainwindow.h
-
-FORMS += \
-    mainwindow.ui
-
+FORMS += $$PWD/mainwindow.ui

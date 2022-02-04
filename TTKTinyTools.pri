@@ -16,51 +16,54 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-QT       += core gui network
+QT += core gui network
 equals(QT_MAJOR_VERSION, 4){
-CONFIG   += gcc
+    CONFIG += gcc
 }
+
 greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
-    QT   += widgets
+    QT += widgets
     equals(QT_MAJOR_VERSION, 6){ #Qt6
-        QT   += core5compat
+        QT += core5compat
     }
 }
 
 TEMPLATE = app
 
 include($$PWD/TTKVersion.pri)
+
 DESTDIR = $$OUT_PWD/../../../bin/$$TTKTinyTools
 
 win32{
-    greaterThan(QT_MAJOR_VERSION, 4){
-        msvc{
-            LIBS += -L$$DESTDIR -lTTKThirdParty
-            CONFIG += c++11
-            !contains(QMAKE_TARGET.arch, x86_64){
-                 #support on windows XP
-                 QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
-                 QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
-            }
-        }
-
-        gcc{
-            LIBS += -L$$DESTDIR -lTTKThirdParty
-            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
+    msvc{
+        LIBS += -L$$DESTDIR -lTTKThirdParty
+        CONFIG += c++11
+        !contains(QMAKE_TARGET.arch, x86_64){
+             #support on windows XP
+             QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
+             QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
         }
     }
 
-    equals(QT_MAJOR_VERSION, 4){
-        gcc{
-            LIBS += -L$$DESTDIR -lTTKThirdParty
-            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
+    gcc{
+        LIBS += -L$$DESTDIR -lTTKThirdParty
+        equals(QT_MAJOR_VERSION, 6){ #Qt6
+            QMAKE_CXXFLAGS += -std=c++17
+        }else{
+            QMAKE_CXXFLAGS += -std=c++11
         }
+        QMAKE_CXXFLAGS += -Wunused-function -Wswitch
     }
 }
 
 unix:!mac{
     LIBS += -L$$DESTDIR -lTTKThirdParty
-    QMAKE_CXXFLAGS += -std=c++11 -Wunused-function  -Wswitch
+    equals(QT_MAJOR_VERSION, 6){ #Qt6
+        QMAKE_CXXFLAGS += -std=c++17
+    }else{
+        QMAKE_CXXFLAGS += -std=c++11
+    }
+    QMAKE_CXXFLAGS += -Wunused-function  -Wswitch
 }
 
 DEFINES += TTK_LIBRARY

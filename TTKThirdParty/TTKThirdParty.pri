@@ -17,6 +17,6 @@
 # ***************************************************************************
 
 INCLUDEPATH += \
-        $$PWD \
-        $$PWD/qrencode \
-        $$PWD/zxing
+    $$PWD \
+    $$PWD/qrencode \
+    $$PWD/zxing
