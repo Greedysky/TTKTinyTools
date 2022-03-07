@@ -22,12 +22,12 @@
 #include <QTcpSocket>
 #include "ttkglobaldefine.h"
 
-typedef struct TTK_MODULE_EXPORT ClientData
+struct TTK_MODULE_EXPORT ClientData
 {
     int m_clientID;
     QString m_ip;
     int m_port;
-}ClientData;
+};
 
 class TTK_MODULE_EXPORT TcpClient : public QTcpSocket
 {
