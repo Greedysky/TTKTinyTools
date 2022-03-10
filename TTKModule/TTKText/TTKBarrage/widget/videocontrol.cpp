@@ -115,7 +115,7 @@ void VideoControl::openFileDialog()
 
     if(dialog.exec())
     {
-        emit mediaChanged(dialog.selectedFiles().first());
+        emit mediaChanged(dialog.selectedFiles().front());
     }
 }
 

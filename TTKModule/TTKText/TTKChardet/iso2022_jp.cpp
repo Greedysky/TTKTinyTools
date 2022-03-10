@@ -47,9 +47,9 @@ tuple<bool, ISO2022_jp_pair> ISO2022_JPChecker::checkFlag(const char *&str) cons
     for(auto &func : ISO2022_Detect)
     {
         string flag = func.first;
-        if(!strncmp(flag.c_str(), (const char *)str, flag.size()))
+        if(!strncmp(flag.c_str(), (const char *)str, flag.length()))
         {
-            str += flag.size();
+            str += flag.length();
             ret = make_tuple(true, func.second);
             break;
         }

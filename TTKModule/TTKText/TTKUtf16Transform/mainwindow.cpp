@@ -25,7 +25,7 @@ QString MainWindow::fromUtf16(const QString &str)
     QString target;
     while(!source.isEmpty())
     {
-        if((source.size() >= 6) && source.startsWith("\\u"))
+        if((source.length() >= 6) && source.startsWith("\\u"))
         {
             target += QChar(ushort(source.mid(2, 4).toUShort(nullptr, 16)));
             source.remove(0, 6);

@@ -127,7 +127,7 @@ void MainWindow::savePng(const QString &id)
 
 QPixmap MainWindow::render(const QString &id)
 {
-    if((id.size() == 13) && id.toLongLong())
+    if((id.length() == 13) && id.toLongLong())
     {
         return makeBarcode(id.toLongLong());
     }

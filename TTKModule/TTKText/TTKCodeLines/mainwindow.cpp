@@ -46,16 +46,16 @@ void  MainWindow::codeLines(const QString &path)
     QEventLoop eventLoop;
     const auto status = QtConcurrent::run([&]()
     {
-        foreachFileFromDirectory( { path }, [&](const QFileInfo &info)
+        foreachFileFromDirectory( { path }, [&](const QFileInfo &fin)
         {
-            QString suffix = info.suffix().toLower();
+            QString suffix = fin.suffix().toLower();
             if(suffix.isEmpty())
             {
                suffix = "other";
             }
             categorys.insert(suffix, categorys[suffix] + 1);
 
-            QFile file(info.filePath());
+            QFile file(fin.filePath());
             if(!file.open(QIODevice::ReadOnly))
             {
                 return;

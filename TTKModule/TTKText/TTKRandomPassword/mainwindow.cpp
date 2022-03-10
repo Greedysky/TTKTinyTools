@@ -41,7 +41,7 @@ QString MainWindow::randomPassword(const int length, const bool number, const bo
 
     for(int index = 0; index < length; ++index)
     {
-        password += table.at(rand() % table.size());
+        password += table.at(rand() % table.length());
     }
 
     return password;

@@ -85,8 +85,8 @@ bool MainWindow::checkFile(const QString &fileName)
         return false;
     }
 
-    QFileInfo file(fileName);
-    const QString &suffix = "*." + file.suffix();
+    const QFileInfo fin(fileName);
+    const QString &suffix = "*." + fin.suffix();
     const QString &filter = ui->txtFilter->text().trimmed();
     const QStringList &filters = filter.split(" ");
     return filters.contains(suffix);
@@ -95,22 +95,22 @@ bool MainWindow::checkFile(const QString &fileName)
 void MainWindow::countCode(const QString &filePath)
 {
     QDir dir(filePath);
-    for(const QFileInfo &fileInfo : dir.entryInfoList())
+    for(const QFileInfo &fin : dir.entryInfoList())
     {
-        if(fileInfo.isFile())
+        if(fin.isFile())
         {
-            if(checkFile(fileInfo.fileName()))
+            if(checkFile(fin.fileName()))
             {
-                m_files << fileInfo.filePath();
+                m_files << fin.filePath();
             }
         }
         else
         {
-            if(fileInfo.fileName() == TTK_DOT || fileInfo.fileName() == TTK_DOTDOT)
+            if(fin.fileName() == TTK_DOT || fin.fileName() == TTK_DOTDOT)
             {
                 continue;
             }
-            countCode(fileInfo.absoluteFilePath());
+            countCode(fin.absoluteFilePath());
         }
     }
 }
@@ -130,18 +130,18 @@ void MainWindow::countCode(const QStringList &files)
 
     for(int i = 0; i < count; i++)
     {
-        QFileInfo fileInfo(files.at(i));
-        countCode(fileInfo.filePath(), lineCode, lineBlank, lineNotes);
+        const QFileInfo fin(files.at(i));
+        countCode(fin.filePath(), lineCode, lineBlank, lineNotes);
         int lineAll = lineCode + lineBlank + lineNotes;
 
         QTableWidgetItem *itemName = new QTableWidgetItem;
-        itemName->setText(fileInfo.fileName());
+        itemName->setText(fin.fileName());
 
         QTableWidgetItem *itemSuffix = new QTableWidgetItem;
-        itemSuffix->setText(fileInfo.suffix());
+        itemSuffix->setText(fin.suffix());
 
         QTableWidgetItem *itemSize = new QTableWidgetItem;
-        itemSize->setText(QString::number(fileInfo.size()));
+        itemSize->setText(QString::number(fin.size()));
 
         QTableWidgetItem *itemLine = new QTableWidgetItem;
         itemLine->setText(QString::number(lineAll));
@@ -156,7 +156,7 @@ void MainWindow::countCode(const QStringList &files)
         itemBlank->setText(QString::number(lineBlank));
 
         QTableWidgetItem *itemPath = new QTableWidgetItem;
-        itemPath->setText(fileInfo.filePath());
+        itemPath->setText(fin.filePath());
 
         itemSuffix->setTextAlignment(Qt::AlignCenter);
         itemSize->setTextAlignment(Qt::AlignCenter);
@@ -174,7 +174,7 @@ void MainWindow::countCode(const QStringList &files)
         ui->tableWidget->setItem(i, 6, itemBlank);
         ui->tableWidget->setItem(i, 7, itemPath);
 
-        totalBytes  += fileInfo.size();
+        totalBytes  += fin.size();
         totalLines  += lineAll;
         totalCodes  += lineCode;
         totalNotes  += lineNotes;
@@ -260,7 +260,7 @@ void MainWindow::buttonOpenFile()
     const QString &filter = QString("代码文件(%1)").arg(ui->txtFilter->text().trimmed());
     const QStringList &files = QFileDialog::getOpenFileNames(this, "选择文件", "./", filter);
 
-    if(files.size() > 0)
+    if(files.count() > 0)
     {
         ui->txtFile->setText(files.join("|"));
         countCode(files);

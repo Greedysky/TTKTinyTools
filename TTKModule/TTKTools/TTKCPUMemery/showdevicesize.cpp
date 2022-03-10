@@ -53,9 +53,9 @@ void ShowDeviceSize::load()
 
 #ifdef Q_OS_WIN
     const QFileInfoList &list = QDir::drives();
-    for(const QFileInfo &dir : qAsConst(list))
+    for(const QFileInfo &fin : qAsConst(list))
     {
-        const QString &dirName = dir.absolutePath();
+        const QString &dirName = fin.absolutePath();
         LPCWSTR lpcwstrDriver = (LPCWSTR)dirName.utf16();
         ULARGE_INTEGER liFreeBytesAvailable, liTotalBytes, liTotalFreeBytes;
         if(GetDiskFreeSpaceEx(lpcwstrDriver, &liFreeBytesAvailable, &liTotalBytes, &liTotalFreeBytes))

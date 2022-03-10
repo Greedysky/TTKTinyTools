@@ -9,11 +9,11 @@ QString MainWindow::currentDateTimeTimestampString()
 
 QString MainWindow::dateTimeStringFromTimestampString(const QString &stamp)
 {
-    if(stamp.size() == 13)
+    if(stamp.length() == 13)
     {
         return QDateTime::fromMSecsSinceEpoch(stamp.toLongLong()).toString("yyyy-MM-dd hh:mm:ss");
     }
-    else if(stamp.size() == 10)
+    else if(stamp.length() == 10)
     {
         return QDateTime::fromMSecsSinceEpoch(stamp.toInt() * 1000).toString("yyyy-MM-dd hh:mm:ss");
     }

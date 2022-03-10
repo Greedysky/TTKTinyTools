@@ -30,9 +30,9 @@ QFileInfoList MainWindow::fileListByPath(const QString &dpath, const QStringList
     if(recursively)
     {
         const QFileInfoList& folderList = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
-        for(const QFileInfo &fileInfo : qAsConst(folderList))
+        for(const QFileInfo &fin : qAsConst(folderList))
         {
-            fileList.append(fileListByPath(fileInfo.absoluteFilePath(), filter, recursively));
+            fileList.append(fileListByPath(fin.absoluteFilePath(), filter, recursively));
         }
     }
 
@@ -49,17 +49,17 @@ void MainWindow::choosePng()
 
     QStringList filters;
     filters << "*.png";
-    for(const QFileInfo &info : fileListByPath(dir, filters, true))
+    for(const QFileInfo &fin : fileListByPath(dir, filters, true))
     {
-        QImage image(info.absoluteFilePath());
+        QImage image(fin.absoluteFilePath());
         if(image.isNull())
         {
             continue;
         }
 
-        if(!image.save(info.absoluteFilePath(), "png"))
+        if(!image.save(fin.absoluteFilePath(), "png"))
         {
-            QMessageBox::warning(this, "Error", QString("%1 save fail").arg(info.absoluteFilePath()));
+            QMessageBox::warning(this, "Error", QString("%1 save fail").arg(fin.absoluteFilePath()));
         }
     }
 
