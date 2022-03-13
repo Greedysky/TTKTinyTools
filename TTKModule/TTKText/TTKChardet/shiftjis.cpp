@@ -2,6 +2,12 @@
 
 #include <vector>
 
+#define ShiftJIS_byte_func(a) \
+    [](const unsigned char *s) \
+    { \
+        return *s <= a; \
+    }
+
 #define ShiftJIS_one_byte_func(a, b) \
     [](const unsigned char *s) \
     { \
@@ -17,8 +23,8 @@
 const vector<pair<int, function<bool(const unsigned char*) > > > ShiftJIS_Detect = {
         {2, ShiftJIS_two_byte_func(0x40, 0x7E, 0x80, 0xFC)},
         {2, ShiftJIS_two_byte_func(0x81, 0x9F, 0xE0, 0xEF)},
-        {1, ShiftJIS_one_byte_func(0x00, 0x7F)},
-        {1, ShiftJIS_one_byte_func(0xA1, 0xDF)} };
+        {1, ShiftJIS_one_byte_func(0xA1, 0xDF)},
+        {1, ShiftJIS_byte_func(0x7F)} };
 
 ShiftJISChecker::ShiftJISChecker()
     : CheckerBase("shift_jis")
