@@ -215,7 +215,7 @@ void BarrageWidget::writeBarrage()
     if(file.open(QIODevice::WriteOnly | QFile::Text))
     {
         QByteArray array;
-        for(QString var : qAsConst(m_barrageList))
+        for(const QString &var : qAsConst(m_barrageList))
         {
             array.append((var + '\n').toUtf8());
         }

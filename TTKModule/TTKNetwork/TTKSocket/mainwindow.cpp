@@ -112,7 +112,7 @@ void MainWindow::clientDisConnect(const ClientData &pair)
 
 void MainWindow::readData()
 {
-    QByteArray buffer = m_tcpClient->readAll();
+    const QByteArray &buffer = m_tcpClient->readAll();
     if(!buffer.isEmpty())
     {
         ui->clientLogEdit->append(tr("Receive:%1 Time:%2")
@@ -129,20 +129,20 @@ void MainWindow::readError(QAbstractSocket::SocketError)
 
 void MainWindow::serverSendClicked()
 {
-    QString data = ui->serverTextEdit->toPlainText();
+    const QString &data = ui->serverTextEdit->toPlainText();
     if(data.isEmpty())
     {
         return;
     }
 
-    QString info = ui->serverComboBox->currentText();
-    int clientID = info.split(":")[0].toInt();
+    const QString &info = ui->serverComboBox->currentText();
+    const int clientID = info.split(":")[0].toInt();
     m_tcpServer->sendData(clientID, data.toUtf8());
 }
 
 void MainWindow::clientSendClicked()
 {
-    QString data = ui->clientTextEdit->toPlainText();
+    const QString &data = ui->clientTextEdit->toPlainText();
     if(!data.isEmpty())
     {
         m_tcpClient->write(data.toUtf8());

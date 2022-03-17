@@ -133,7 +133,7 @@ void TTKCPUMemoryLabel::readData()
         QString s = QLatin1String(m_process->readLine());
         if(s.startsWith("cpu"))
         {
-            QStringList list = s.split(" ");
+            const QStringList &list = s.split(" ");
             m_idleNew = list.at(5).toInt();
 
             for(const QString &value : qAsConst(list))
