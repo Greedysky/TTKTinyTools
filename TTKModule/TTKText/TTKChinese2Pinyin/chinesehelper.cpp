@@ -24,7 +24,7 @@ QChar ChineseHelper::convertToTraditionalChinese(const QChar &c) const
 QString ChineseHelper::convertToSimplifiedChinese(const QString &str) const
 {
     QString sb;
-    for(int i=0, len=str.length(); i<len; i++)
+    for(int i = 0, len = str.length(); i < len; ++i)
     {
         sb += convertToSimplifiedChinese(str[i]);
     }
@@ -34,7 +34,7 @@ QString ChineseHelper::convertToSimplifiedChinese(const QString &str) const
 QString ChineseHelper::convertToTraditionalChinese(const QString &str) const
 {
     QString sb;
-    for(int i=0, len=str.length(); i<len; i++)
+    for(int i = 0, len = str.length(); i < len; ++i)
     {
         sb += convertToTraditionalChinese(str[i]);
     }
@@ -57,7 +57,7 @@ bool ChineseHelper::isChinese(const QChar &c) const
 
 bool ChineseHelper::containsChinese(const QString &str) const
 {
-    for(int i=0, len=str.length(); i<len; i++)
+    for(int i = 0, len = str.length(); i < len; ++i)
     {
         if(isChinese(str[i]))
         {

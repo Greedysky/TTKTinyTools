@@ -4,7 +4,7 @@
 
 void paintLine(QImage &image, const bool black, const int pos, const int len = 100)
 {
-    for(auto index = 0; index < len; ++index)
+    for(int index = 0; index < len; ++index)
     {
         image.setPixel(pos * 2, index, (black) ? (qRgba(0, 0, 0, 255)) : (qRgba(0, 0, 0, 0)));
         image.setPixel(pos * 2 + 1, index, (black) ? (qRgba(0, 0, 0, 255)) : (qRgba(0, 0, 0, 0)));
@@ -13,7 +13,7 @@ void paintLine(QImage &image, const bool black, const int pos, const int len = 1
 
 void paintLines(QImage &image, const QString &key, const int pos, const int len = 100)
 {
-    for(auto index = 0; index < 7; ++index)
+    for(int index = 0; index < 7; ++index)
     {
         paintLine(image, key[ index ] == '1', pos + index, len);
     }

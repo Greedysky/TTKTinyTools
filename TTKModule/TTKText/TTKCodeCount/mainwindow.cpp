@@ -43,7 +43,7 @@ void MainWindow::initForm()
     ui->tableWidget->verticalHeader()->setDefaultSectionSize(20);
     ui->tableWidget->verticalHeader()->setHighlightSections(false);
 
-    for(int i = 0; i < columnCount; i++)
+    for(int i = 0; i < columnCount; ++i)
     {
         ui->tableWidget->setColumnWidth(i, columnWidth.at(i));
     }
@@ -128,7 +128,7 @@ void MainWindow::countCode(const QStringList &files)
     quint32 totalNotes = 0;
     quint32 totalBlanks = 0;
 
-    for(int i = 0; i < count; i++)
+    for(int i = 0; i < count; ++i)
     {
         const QFileInfo fin(files.at(i));
         countCode(fin.filePath(), lineCode, lineBlank, lineNotes);

@@ -25,7 +25,7 @@ void BarrageWidget::start()
 {
     if(m_barrageState)
     {
-        for(int i=0; i<m_labels.count(); i++)
+        for(int i = 0; i < m_labels.count(); ++i)
         {
             m_labels[i]->show();
             m_animations[i]->start();
@@ -37,7 +37,7 @@ void BarrageWidget::pause()
 {
     if(m_barrageState)
     {
-        for(int i=0; i<m_labels.count(); i++)
+        for(int i = 0; i < m_labels.count(); ++i)
         {
             m_labels[i]->hide();
             m_animations[i]->pause();
@@ -47,7 +47,7 @@ void BarrageWidget::pause()
 
 void BarrageWidget::stop()
 {
-    for(int i=0; i<m_labels.count(); i++)
+    for(int i = 0; i < m_labels.count(); ++i)
     {
         m_labels[i]->hide();
         m_animations[i]->stop();
@@ -198,7 +198,7 @@ void BarrageWidget::readBarrage()
     if(file.open(QIODevice::ReadOnly))
     {
         m_barrageList << QString(file.readAll()).split("\r\n");
-        for(int i=m_barrageList.count() -1; i>=0; --i)
+        for(int i = m_barrageList.count() -1; i >= 0; --i)
         {
             if(m_barrageList[i].isEmpty())
             {

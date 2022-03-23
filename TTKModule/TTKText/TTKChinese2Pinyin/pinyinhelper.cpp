@@ -28,7 +28,7 @@ QString PinyinHelper::convertToPinyinString(const QString &s, const QString &sep
 {
     const QString &str = m_chineseHelper.convertToSimplifiedChinese(s);
     QString sb;
-    for(int i=0, len=str.length(); i<len; i++)
+    for(int i = 0, len = str.length(); i < len; ++i)
     {
         const QChar &c = str[i];
         if(m_chineseHelper.isChinese(c)/* || c == CHINESE_LING*/)
@@ -36,13 +36,13 @@ QString PinyinHelper::convertToPinyinString(const QString &s, const QString &sep
             bool isFoundFlag = false;
             const int rightMove = 3;
 
-            for(int rightIndex=(i + rightMove) < len ? (i + rightMove) : (len - 1); rightIndex>i; rightIndex--)
+            for(int index = (i + rightMove) < len ? (i + rightMove) : (len - 1); index > i; --index)
             {
-                const QString &cizu = str.mid(i, rightIndex + 1);
+                const QString &cizu = str.mid(i, index + 1);
                 if(m_mutliPinyinTable.keys().indexOf(cizu) != -1)
                 {
                     const QStringList &pinyinArray = formatPinyin(m_mutliPinyinTable.value(cizu), pinyinFormat);
-                    for(int j=0, l=pinyinArray.length(); j<l; j++)
+                    for(int j = 0, l = pinyinArray.length(); j < l; ++j)
                     {
                         sb.append(pinyinArray[j]);
                         if (j<l - 1)
@@ -50,7 +50,8 @@ QString PinyinHelper::convertToPinyinString(const QString &s, const QString &sep
                             sb.append(separator);
                         }
                     }
-                    i = rightIndex;
+
+                    i = index;
                     isFoundFlag = true;
                     break;
                 }
@@ -130,12 +131,12 @@ QStringList PinyinHelper::convertWithToneMark(const QString &pinyinArrayString)
 QStringList PinyinHelper::convertWithToneNumber(const QString &pinyinArrayString)
 {
     QStringList pinyinArray = pinyinArrayString.split(m_pinyinSeparator);
-    for(int i=pinyinArray.length() - 1; i>=0; i--)
+    for(int i = pinyinArray.length() - 1; i >= 0; --i)
     {
         bool hasMarkedChar = false;
         QString originalPinyin = pinyinArray[i].replace("ü", "v");
 
-        for(int j = originalPinyin.length() - 1; j >= 0; j--)
+        for(int j = originalPinyin.length() - 1; j >= 0; --j)
         {
             QChar originalChar = originalPinyin[j];
             if(originalChar < 'a' || originalChar > 'z')
@@ -160,7 +161,7 @@ QStringList PinyinHelper::convertWithToneNumber(const QString &pinyinArrayString
 QStringList PinyinHelper::convertWithoutTone(QString pinyinArrayString)
 {
     QStringList pinyinArray;
-    for(int i = m_allMarkedVowel.length() - 1; i>=0; i--)
+    for(int i = m_allMarkedVowel.length() - 1; i >= 0; --i)
     {
         QChar originalChar = m_allMarkedVowel.at(i);
         QChar replaceChar = m_allUnmarkedVowel.at(((i - i % 4)) / 4);

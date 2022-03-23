@@ -157,7 +157,7 @@ void GaussianBlur::boxBlurH(int* srcPix, int* destPix, int w, int h, int radius)
         index = i * w;
         num = radius;
 
-        for(int j = 0; j < radius; j++)
+        for(int j = 0; j < radius; ++j)
         {
             color = srcPix[index + j];
             r += (color & 0x00ff0000) >> 16;

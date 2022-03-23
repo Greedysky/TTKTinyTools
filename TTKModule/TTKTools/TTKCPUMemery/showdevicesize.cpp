@@ -46,7 +46,7 @@ void ShowDeviceSize::setTableWidget(QTableWidget *table)
 
 void ShowDeviceSize::load()
 {
-    for(int i = 0; i < m_tableWidget->rowCount(); i++)
+    for(int i = 0; i < m_tableWidget->rowCount(); ++i)
     {
         m_tableWidget->removeRow(0);
     }
@@ -94,7 +94,7 @@ void ShowDeviceSize::checkSize(const QString &result, const QString &name)
     int percent = 0, index = 0;
     const QStringList &list = result.split(" ");
 
-    for(int i = 0; i < list.count(); i++)
+    for(int i = 0; i < list.count(); ++i)
     {
         const QString &s = list.at(i).trimmed();
         if(s == "")

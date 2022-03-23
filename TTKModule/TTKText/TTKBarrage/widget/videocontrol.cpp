@@ -172,7 +172,7 @@ QWidget* VideoControl::createBarrageWidget()
 
     QButtonGroup *fontSizeGroup = new QButtonGroup(fontSizeWidget);
     fontSizeLayout->addWidget(fontSizeLabel);
-    for(int i=1; i<=3; ++i)
+    for(int i = 1; i <= 3; ++i)
     {
         QPushButton *button = createBarrageSizeButton(i);
         fontSizeGroup->addButton(button, i);
@@ -195,7 +195,7 @@ QWidget* VideoControl::createBarrageWidget()
 
     QButtonGroup *backgroundGroup = new QButtonGroup(backgroundWidget);
     backgroundLayout->addWidget(backgroundLabel);
-    for(int i=1; i<=8; ++i)
+    for(int i = 1; i <= 8; ++i)
     {
         QPushButton *button = createBarrageColorButton(i);
         backgroundGroup->addButton(button, i);

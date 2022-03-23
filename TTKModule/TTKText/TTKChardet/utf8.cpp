@@ -4,7 +4,7 @@
 
 bool bytesExtraCheck(const unsigned char* str, int length)
 {
-    for(int i=0; i<length; ++i)
+    for(int i = 0; i < length; ++i)
     {
         if((str[i] & 0xC0) != 0x80)
         {
