@@ -4,6 +4,7 @@
 #  include <unistd.h>
 #endif
 #include <QFile>
+#include <QThread>
 #include <QNetworkAccessManager>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -177,7 +178,11 @@ void MainWindow::updateDownloadSpeed()
     ///limit speed
     if(m_limitValue != 0 && delta > m_limitValue*1024)
     {
+#if defined Q_OS_WIN && TTK_QT_VERSION_CHECK(5,0,0)
+        QThread::msleep(1000 - m_limitValue * 1024 * 1000 / delta);
+#else
         usleep((1000 - m_limitValue * 1024 * 1000 / delta) * 1000);
+#endif
         delta = m_limitValue * 1024;
     }
     //////////////////////////////////////
