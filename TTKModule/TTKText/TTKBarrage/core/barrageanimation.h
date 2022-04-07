@@ -36,7 +36,7 @@ public Q_SLOTS:
     void animationFinished();
 
 protected:
-    void init();
+    void initialize();
     QSize m_parentSize;
 
 };

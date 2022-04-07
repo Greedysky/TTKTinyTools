@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
       ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    initForm();
+    initialize();
 
     connect(ui->btnOpenFile, SIGNAL(clicked(bool)), SLOT(buttonOpenFile()));
     connect(ui->btnOpenPath, SIGNAL(clicked(bool)), SLOT(buttonOpenPath()));
@@ -23,7 +23,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::initForm()
+void MainWindow::initialize()
 {
     QStringList headText;
     headText << "文件名" << "类型" << "大小" << "总行数" << "代码行数" << "注释行数" << "空白行数" << "路径";

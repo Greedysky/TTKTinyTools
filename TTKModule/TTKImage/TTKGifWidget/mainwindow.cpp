@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     m_ui->setupUi(this);
 
-    init();
+    initialize();
 
     connect(m_ui->btnStart, SIGNAL(clicked()), SLOT(record()));
     connect(m_ui->btnClose, SIGNAL(clicked()), SLOT(closeAll()));
@@ -27,7 +27,7 @@ MainWindow::~MainWindow()
     delete m_ui;
 }
 
-void MainWindow::init()
+void MainWindow::initialize()
 {
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_DeleteOnClose);

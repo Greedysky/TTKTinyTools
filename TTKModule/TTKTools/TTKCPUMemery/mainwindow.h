@@ -34,7 +34,7 @@ public:
     ~MainWindow();
     
 private Q_SLOTS:
-    void Init();
+    void initialize();
     
 private:
     Ui::MainWindow *ui;

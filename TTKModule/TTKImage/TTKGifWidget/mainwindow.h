@@ -36,7 +36,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void init();
+    void initialize();
     int borderWidth() const;
     QColor backgroundColor() const;
 

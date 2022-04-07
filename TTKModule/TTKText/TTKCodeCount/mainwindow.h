@@ -34,7 +34,7 @@ public:
     ~MainWindow();
 
 private:
-    void initForm();
+    void initialize();
     bool checkFile(const QString &fileName);
     void countCode(const QString &filePath);
     void countCode(const QStringList &files);

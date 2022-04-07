@@ -3,13 +3,13 @@
 
 WaterWave::WaterWave(int* pixels, int width, int height)
 {
-    init(pixels, width, height);
+    initialize(pixels, width, height);
     m_scale = 1;
 }
 
 WaterWave::WaterWave(int* pixels, int width, int height, float scale)
 {
-    init(pixels, width, height);
+    initialize(pixels, width, height);
     m_scale = scale;
 }
 
@@ -123,7 +123,7 @@ void WaterWave::renderRipple()
     }
 }
 
-void WaterWave::init(int* pixels, int width, int height)
+void WaterWave::initialize(int* pixels, int width, int height)
 {
     m_orginPixels = nullptr;
     m_newPixels = nullptr;

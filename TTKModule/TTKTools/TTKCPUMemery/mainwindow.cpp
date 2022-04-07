@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Init();
+    initialize();
 }
 
 MainWindow::~MainWindow()
@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::Init()
+void MainWindow::initialize()
 {
     ShowCPUMemory *showCPUMemory = new ShowCPUMemory(this);
     showCPUMemory->setLab(ui->labCPUMemory);

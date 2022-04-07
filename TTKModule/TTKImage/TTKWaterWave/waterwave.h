@@ -40,7 +40,7 @@ private:
     void spreedRipple();
     void renderRipple();
 
-    void init(int* pixels, int width, int height);
+    void initialize(int* pixels, int width, int height);
     void initSourcePower();
 
 private:

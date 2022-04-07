@@ -4,13 +4,13 @@
 BarrageAnimation::BarrageAnimation(QObject *parent)
     : QPropertyAnimation(parent)
 {
-    init();
+    initialize();
 }
 
 BarrageAnimation::BarrageAnimation(QObject *target, const QByteArray &propertyName, QObject *parent)
     : QPropertyAnimation(target, propertyName, parent)
 {
-    init();
+    initialize();
 }
 
 void BarrageAnimation::animationFinished()
@@ -28,7 +28,7 @@ void BarrageAnimation::setSize(const QSize &size)
     setEndValue(QPoint(size.width(), randHeight));
 }
 
-void BarrageAnimation::init()
+void BarrageAnimation::initialize()
 {
     BarrageCore::timeSRand();
     setDuration(BarrageCore::random(10000) + 1000);
