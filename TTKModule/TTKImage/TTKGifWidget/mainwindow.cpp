@@ -80,7 +80,6 @@ void MainWindow::saveImage()
 #else
     const QImage &image = pix.toImage().convertToFormat(QImage::Format_RGBA8888);
 #endif
-
     m_gif.GifWriteFrame(m_gifWriter, image.bits(), m_rectGif.width(), m_rectGif.height(), m_fps);
 }
 

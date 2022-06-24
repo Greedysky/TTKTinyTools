@@ -161,18 +161,10 @@ void MainWindow::showtop(int value)
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 { 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-    m_dPos = event->globalPosition().toPoint() - pos();
-#else
-    m_dPos = event->globalPos() - pos();
-#endif
+    m_dPos = QtMouseEventGlobalPos(event) - pos();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
-#if TTK_QT_VERSION_CHECK(6,0,0)
-    move(event->globalPosition().toPoint() - m_dPos);
-#else
-    move(event->globalPos() - m_dPos);
-#endif
+    move(QtMouseEventGlobalPos(event) - m_dPos);
 }

@@ -115,7 +115,7 @@ Ref<Result> Code39Reader::decodeRow(int rowNumber, Ref<BitArray> row) {
     recordPattern(row, nextStart, theCounters);
     int pattern = toNarrowWidePattern(theCounters);
     if (pattern < 0) {
-      throw NotFoundException();;
+      throw NotFoundException();
     }
     decodedChar = patternToChar(pattern);
     result.append(1, decodedChar);

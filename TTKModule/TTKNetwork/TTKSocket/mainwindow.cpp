@@ -18,11 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->serverSendButton->setEnabled(false);
 
     connect(m_tcpClient, SIGNAL(readyRead()), SLOT(readData()));
-#if TTK_QT_VERSION_CHECK(5,15,0)
-    connect(m_tcpClient, SIGNAL(errorOccurred(QAbstractSocket::SocketError)), SLOT(readError(QAbstractSocket::SocketError)));
-#else
-    connect(m_tcpClient, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(readError(QAbstractSocket::SocketError)));
-#endif
+    QtSocketErrorConnect(m_tcpClient, this, readError);
+
     connect(m_tcpServer, SIGNAL(clientConnect(ClientData)), SLOT(clientConnect(ClientData)));
     connect(m_tcpServer, SIGNAL(clientDisConnect(ClientData)), SLOT(clientDisConnect(ClientData)));
     connect(m_tcpServer, SIGNAL(clientReadData(ClientData,QByteArray)), SLOT(clientReadData(ClientData,QByteArray)));

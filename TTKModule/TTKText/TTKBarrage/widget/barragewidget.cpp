@@ -184,12 +184,9 @@ void BarrageWidget::setLabelTextSize(QLabel *label)
     QFont ft = label->font();
     ft.setPointSize(m_fontSize);
     label->setFont(ft);
+
     QFontMetrics ftMcs(ft);
-#if TTK_QT_VERSION_CHECK(5,11,0)
-    label->resize(ftMcs.horizontalAdvance(label->text()), ftMcs.height());
-#else
-    label->resize(ftMcs.width(label->text()), ftMcs.height());
-#endif
+    label->resize(QtFontWidth(ftMcs, label->text()), ftMcs.height());
 }
 
 void BarrageWidget::readBarrage()

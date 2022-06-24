@@ -55,11 +55,7 @@ VideoView::~VideoView()
     delete m_control;
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void VideoView::enterEvent(QEnterEvent *event)
-#else
-void VideoView::enterEvent(QEvent *event)
-#endif
+void VideoView::enterEvent(QtEnterEvent *event)
 {
     QWidget::enterEvent(event);
     m_control->show();

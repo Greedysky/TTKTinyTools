@@ -43,12 +43,7 @@ void MainWindow::openImage()
 void MainWindow::renderImage()
 {
     m_waterWave->run();
-#if TTK_QT_VERSION_CHECK(5,10,0)
-    const int size = m_image.sizeInBytes();
-#else
-    const int size = m_image.byteCount();
-#endif
-    memcpy(m_image.bits(), (const uchar*)m_waterWave->pixels(), size);
+    memcpy(m_image.bits(), (const uchar*)m_waterWave->pixels(), QtImageBytes(m_image));
     update();
 }
 

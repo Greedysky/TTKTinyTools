@@ -44,7 +44,7 @@ vector<Ref<ResultPoint> > MonochromeRectangleDetector::detect() {
   int right = width;
   Ref<ResultPoint> pointA(findCornerFromCenter(halfWidth, 0, left, right,
                                                halfHeight, -deltaY, top, bottom, halfWidth / 2));
-  top = (int) pointA->getY() - 1;;
+  top = (int) pointA->getY() - 1;
   Ref<ResultPoint> pointB(findCornerFromCenter(halfWidth, -deltaX, left, right,
                                                halfHeight, 0, top, bottom, halfHeight / 2));
   left = (int) pointB->getX() - 1;

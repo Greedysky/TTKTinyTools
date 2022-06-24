@@ -103,7 +103,7 @@ int ModulusGF::log(int a) {
 
 int ModulusGF::inverse(int a) {
   if (a == 0) {
-    throw IllegalArgumentException("inverse of zero!");;
+    throw IllegalArgumentException("inverse of zero!");
   }
   return expTable_[modulus_ - logTable_[a] - 1];
 }
