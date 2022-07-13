@@ -34,7 +34,7 @@ QString PinyinHelper::convertToPinyinString(const QString &s, const QString &sep
         if(m_chineseHelper.isChinese(c)/* || c == CHINESE_LING*/)
         {
             bool isFoundFlag = false;
-            const int rightMove = 3;
+            constexpr int rightMove = 3;
 
             for(int index = (i + rightMove) < len ? (i + rightMove) : (len - 1); index > i; --index)
             {

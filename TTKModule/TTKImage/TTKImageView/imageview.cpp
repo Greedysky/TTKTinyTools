@@ -339,7 +339,7 @@ void ImageView::setKeyMove(bool keyMove)
 
 void ImageView::moveFirst()
 {
-    const int index = 0;
+    constexpr int index = 0;
     if(m_currentIndex != index)
     {
         moveToPage(index);

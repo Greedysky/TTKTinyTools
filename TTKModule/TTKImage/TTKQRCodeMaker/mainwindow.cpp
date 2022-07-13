@@ -36,7 +36,7 @@ QImage makeQRcode(const QString &data, const QSize &size)
 
     painter.setBrush(QColor("#000000"));
 
-    const double s =(qrCode->width > 0) ?(qrCode->width) : 1;
+    const double s = (qrCode->width > 0) ? (qrCode->width) : 1;
     const double aspect = image.width() / image.height();
     const double scale = ((aspect > 1.0) ? image.height() : image.width()) / s;
 
