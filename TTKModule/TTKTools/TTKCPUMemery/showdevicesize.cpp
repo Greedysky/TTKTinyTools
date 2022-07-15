@@ -142,11 +142,13 @@ void ShowDeviceSize::insertSize(const QString &name, const QString &use, const Q
 
     QTableWidgetItem *itemname = new QTableWidgetItem(name);
     QTableWidgetItem *itemuse = new QTableWidgetItem(use);
-    itemuse->setTextAlignment(Qt::AlignCenter);
+    QtItemSetTextAlignment(itemuse, Qt::AlignCenter);
+
     QTableWidgetItem *itemfree = new QTableWidgetItem(free);
-    itemfree->setTextAlignment(Qt::AlignCenter);
+    QtItemSetTextAlignment(itemfree, Qt::AlignCenter);
+
     QTableWidgetItem *itemall = new QTableWidgetItem(all);
-    itemall->setTextAlignment(Qt::AlignCenter);
+    QtItemSetTextAlignment(itemall, Qt::AlignCenter);
 
     m_tableWidget->setItem(row, 0, itemname);
     m_tableWidget->setItem(row, 1, itemuse);

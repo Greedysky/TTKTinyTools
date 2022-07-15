@@ -158,12 +158,12 @@ void MainWindow::countCode(const QStringList &files)
         QTableWidgetItem *itemPath = new QTableWidgetItem;
         itemPath->setText(fin.filePath());
 
-        itemSuffix->setTextAlignment(Qt::AlignCenter);
-        itemSize->setTextAlignment(Qt::AlignCenter);
-        itemLine->setTextAlignment(Qt::AlignCenter);
-        itemCode->setTextAlignment(Qt::AlignCenter);
-        itemNote->setTextAlignment(Qt::AlignCenter);
-        itemBlank->setTextAlignment(Qt::AlignCenter);
+        QtItemSetTextAlignment(itemSuffix, Qt::AlignCenter);
+        QtItemSetTextAlignment(itemSize, Qt::AlignCenter);
+        QtItemSetTextAlignment(itemLine, Qt::AlignCenter);
+        QtItemSetTextAlignment(itemCode, Qt::AlignCenter);
+        QtItemSetTextAlignment(itemNote, Qt::AlignCenter);
+        QtItemSetTextAlignment(itemBlank, Qt::AlignCenter);
 
         ui->tableWidget->setItem(i, 0, itemName);
         ui->tableWidget->setItem(i, 1, itemSuffix);
