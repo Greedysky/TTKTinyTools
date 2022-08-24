@@ -25,29 +25,29 @@
 class TTK_MODULE_EXPORT MainWindow
 {
 public:
-    enum DecodeType
+    enum class Decode
     {
-        DecodeAztecType = 1 << 1,
-        DecodeCodaBarType = 1 << 2,
-        DecodeCode39Type = 1 << 3,
-        DecodeCode93Type = 1 << 4,
-        DecodeCode128Type = 1 << 5,
-        DecodeDataMatrixType = 1 << 6,
-        DecodeEan8Type = 1 << 7,
-        DecodeEan13Type = 1 << 8,
-        DecodeItfType = 1 << 9,
-        DecodeMaxiCodeType = 1 << 10,
-        DecodePdf417Type = 1 << 11,
-        DecodeQrCodeType = 1 << 12,
-        DecodeRss14Type = 1 << 13,
-        DecodeRssExpandedType = 1 << 14,
-        DecodeUpcAType = 1 << 15,
-        DecodeUpcEType = 1 << 16,
-        DecodeUpcEanExtensionType = 1 << 17
+        Aztec = 1 << 1,
+        CodaBar = 1 << 2,
+        Code39 = 1 << 3,
+        Code93 = 1 << 4,
+        Code128 = 1 << 5,
+        DataMatrix = 1 << 6,
+        Ean8 = 1 << 7,
+        Ean13 = 1 << 8,
+        Itf = 1 << 9,
+        MaxiCode = 1 << 10,
+        Pdf417 = 1 << 11,
+        QrCode = 1 << 12,
+        Rss14 = 1 << 13,
+        RssExpanded = 1 << 14,
+        UpcA = 1 << 15,
+        UpcE = 1 << 16,
+        UpcEanExtension = 1 << 17
     };
 
-    QString decodeImage(const int decodeType = static_cast<int>(DecodeQrCodeType));
-    QString decodeImage(const QImage &image, const int decodeType = static_cast<int>(DecodeQrCodeType));
+    QString decodeImage(const int decode = static_cast<int>(Decode::QrCode));
+    QString decodeImage(const QImage &image, const int decode = static_cast<int>(Decode::QrCode));
 
 };
 

@@ -69,7 +69,7 @@ private:
     QImage m_image;
 };
 
-QString MainWindow::decodeImage(const int decodeType)
+QString MainWindow::decodeImage(const int decode)
 {
     const QString &filePath = QFileDialog::getOpenFileName(nullptr, "Please Path", TTK_DOT, "*.png *.jpg");
 
@@ -81,13 +81,13 @@ QString MainWindow::decodeImage(const int decodeType)
     QImage image;
     if(image.load(filePath))
     {
-        return decodeImage(image, decodeType) ;
+        return decodeImage(image, decode) ;
     }
 
     return QString();
 }
 
-QString MainWindow::decodeImage(const QImage &image, const int decodeType)
+QString MainWindow::decodeImage(const QImage &image, const int decode)
 {
     zxing::Ref< zxing::Result > res;
 
@@ -109,7 +109,7 @@ QString MainWindow::decodeImage(const QImage &image, const int decodeType)
 
     try
     {
-        res = reader->decode( ref, static_cast< zxing::DecodeHints >( static_cast< unsigned int >( decodeType)));
+        res = reader->decode( ref, static_cast< zxing::DecodeHints >( static_cast< unsigned int >( decode)));
         return QString( res->getText()->getText().c_str());
     }
     catch(zxing::Exception &)
