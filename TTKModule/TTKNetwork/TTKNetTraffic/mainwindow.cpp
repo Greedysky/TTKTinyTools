@@ -8,12 +8,12 @@
 #include <QMouseEvent>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_setingWidget(nullptr),
+      m_isShowtop(true),
+      m_isShowcpu(false),
+      m_isShowmem(false)
 {
-    m_isShowtop = true;
-    m_isShowcpu = false;
-    m_isShowmem = false;
-
     m_lableNWS = new QLabel(this);
     m_lableNWS->setMinimumWidth(200);
     m_lableMem = new QLabel(this);
@@ -66,15 +66,13 @@ MainWindow::MainWindow(QWidget *parent)
     timer->start(500);
     connect(timer, SIGNAL(timeout()), SLOT(refreshInfo()));
 
-    m_setingWidget = nullptr;
-
     setLayout(layoutmid);
     move(200, 200);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
     Qt::WindowFlags flags = Qt::WindowFlags();
     flags = Qt::Window;
-    flags |=Qt::FramelessWindowHint;
+    flags |= Qt::FramelessWindowHint;
     flags |= Qt::WindowStaysOnTopHint;
 
     setWindowFlags(flags);

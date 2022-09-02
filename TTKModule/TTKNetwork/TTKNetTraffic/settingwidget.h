@@ -29,7 +29,7 @@ class TTK_MODULE_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SettingWidget(bool top, bool cpu, bool mem, const QPoint &pos, QWidget *parent = 0);
+    explicit SettingWidget(bool top, bool cpu, bool mem, const QPoint &pos, QWidget *parent = nullptr);
 
 Q_SIGNALS:
     void showtop(int value);

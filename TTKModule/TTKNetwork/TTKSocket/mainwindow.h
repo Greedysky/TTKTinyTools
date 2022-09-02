@@ -45,7 +45,7 @@ public Q_SLOTS:
     void clientSendClicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *m_ui;
     QTcpSocket *m_tcpClient;
     TcpServer *m_tcpServer;
 

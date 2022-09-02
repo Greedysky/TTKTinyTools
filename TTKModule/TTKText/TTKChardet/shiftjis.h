@@ -25,6 +25,7 @@ class TTK_MODULE_EXPORT ShiftJISChecker : public CheckerBase
 {
 public:
     ShiftJISChecker();
+
     virtual bool detect(const string &str) const override final;
 
 };

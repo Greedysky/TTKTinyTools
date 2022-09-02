@@ -2,15 +2,15 @@
 #include <cstring>
 
 WaterWave::WaterWave(int* pixels, int width, int height)
+    : WaterWave(pixels, width, height, 1)
 {
-    initialize(pixels, width, height);
-    m_scale = 1;
+
 }
 
 WaterWave::WaterWave(int* pixels, int width, int height, float scale)
+    : m_scale(scale)
 {
     initialize(pixels, width, height);
-    m_scale = scale;
 }
 
 WaterWave::~WaterWave()

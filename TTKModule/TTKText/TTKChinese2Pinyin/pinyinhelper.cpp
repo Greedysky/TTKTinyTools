@@ -6,17 +6,17 @@
 #endif
 
 PinyinHelper::PinyinHelper()
+    : m_pinyinTable(PinyinResource::pinyinResource()),
+      m_mutliPinyinTable(PinyinResource::mutilPinyinResource()),
+      m_pinyinSeparator(","),
+      m_allUnmarkedVowel("aeiouv"),
+      m_allMarkedVowel("āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ")
 {
-    m_pinyinTable = PinyinResource::pinyinResource();
-    m_mutliPinyinTable = PinyinResource::mutilPinyinResource();
-    m_pinyinSeparator = ",";
 #ifdef Q_CC_MSVC
     m_chineseLing = '\xa9\x96';
 #else
     m_chineseLing = L'〇';
 #endif
-    m_allUnmarkedVowel = "aeiouv";
-    m_allMarkedVowel = "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ";
 }
 
 QStringList PinyinHelper::convertToPinyinArray(const QChar &c)

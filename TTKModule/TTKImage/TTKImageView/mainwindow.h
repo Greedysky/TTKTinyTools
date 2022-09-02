@@ -42,7 +42,7 @@ private Q_SLOTS:
     void keyMoveButtonChanged(bool state);
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *m_ui;
 
 };
 

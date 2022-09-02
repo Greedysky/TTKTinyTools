@@ -30,14 +30,14 @@ class TTK_MODULE_EXPORT MainWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     
 private Q_SLOTS:
     void initialize();
     
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *m_ui;
 
 };
 

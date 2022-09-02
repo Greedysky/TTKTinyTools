@@ -25,6 +25,7 @@ class TTK_MODULE_EXPORT GBKChecker : public CheckerBase
 {
 public:
     GBKChecker();
+
     virtual bool detect(const string &str) const override final;
 
 private:

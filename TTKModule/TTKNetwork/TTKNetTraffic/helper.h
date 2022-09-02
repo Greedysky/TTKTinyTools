@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT Helper : public QObject
 {
     Q_OBJECT
 public:
-    explicit Helper(QObject *parent = 0);
+    explicit Helper(QObject *parent = nullptr);
     ~Helper();
 
     void start();

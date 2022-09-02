@@ -9,9 +9,9 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent),
-      m_ui(new Ui::MainWindow)
+      m_ui(new Ui::MainWindow),
+      m_waterWave(nullptr)
 {
-    m_waterWave = nullptr;
     m_ui->setupUi(this);
 
     connect(m_ui->openButton, SIGNAL(clicked(bool)), SLOT(openImage()));

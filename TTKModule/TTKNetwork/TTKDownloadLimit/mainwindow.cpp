@@ -10,23 +10,24 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       m_ui(new Ui::MainWindow),
-      m_reply(nullptr)
+      m_reply(nullptr),
+      m_received(0),
+      m_total(0),
+      m_limitValue(0)
 {
     m_ui->setupUi(this);
+    setFixedSize(433, 194);
 
     m_file = new QFile("download.d", this);
     m_manager = new QNetworkAccessManager(this);
+
     connect(m_ui->downloadButton, SIGNAL(clicked(bool)), SLOT(startToDownload()));
     connect(m_ui->autoButton, SIGNAL(clicked(bool)), SLOT(autoDownloadPressed()));
     connect(m_ui->limitButton, SIGNAL(clicked(bool)), SLOT(limitDownloadPressed()));
     connect(m_ui->limitValueBox, SIGNAL(valueChanged(int)), SLOT(limitValueBoxChanged(int)));
     connect(&m_timer, SIGNAL(timeout()), SLOT(updateDownloadSpeed()));
 
-    m_limitValue = 0;
-    m_received = m_total = 0;
     m_ui->autoButton->click();
-
-    setFixedSize(433, 194);
 }
 
 MainWindow::~MainWindow()

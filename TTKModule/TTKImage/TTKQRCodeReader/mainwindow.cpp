@@ -12,14 +12,14 @@
 class ImageWrapper : public zxing::LuminanceSource
 {
 public:
-    ImageWrapper(const QImage &source):
-        LuminanceSource(source.width(), source.height()),
-        m_image(source)
+    ImageWrapper(const QImage &source)
+        : LuminanceSource(source.width(), source.height()),
+          m_image(source)
     {
 
     }
 
-    zxing::ArrayRef<char> getRow(int y, zxing::ArrayRef<char> row) const
+    virtual zxing::ArrayRef<char> getRow(int y, zxing::ArrayRef<char> row) const override final
     {
         int width = getWidth();
 
@@ -36,7 +36,7 @@ public:
         return row;
     }
 
-    zxing::ArrayRef<char> getMatrix() const
+    virtual zxing::ArrayRef<char> getMatrix() const override final
     {
         int width = m_image.width();
         int height = m_image.height();
@@ -67,6 +67,7 @@ public:
 
 private:
     QImage m_image;
+
 };
 
 QString MainWindow::decodeImage(const int decode)

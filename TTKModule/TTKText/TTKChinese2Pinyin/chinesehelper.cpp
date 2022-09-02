@@ -5,8 +5,9 @@
 #endif
 
 ChineseHelper::ChineseHelper()
+    : m_data(PinyinResource::chineseResource())
 {
-    m_data = PinyinResource::chineseResource();
+
 }
 
 QChar ChineseHelper::convertToSimplifiedChinese(const QChar &c) const

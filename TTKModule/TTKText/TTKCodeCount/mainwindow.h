@@ -46,7 +46,7 @@ private Q_SLOTS:
     void buttonClear();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *m_ui;
     QStringList m_files;
 
 };

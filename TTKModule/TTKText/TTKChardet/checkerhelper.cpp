@@ -31,7 +31,7 @@ CheckerHelper::~CheckerHelper()
 
 CheckerBase* CheckerHelper::checker(const string &name)
 {
-    auto it = m_checkers.find(name);
+    const auto &it = m_checkers.find(name);
     if(it == m_checkers.end())
     {
         return nullptr;
@@ -44,7 +44,7 @@ CheckerBase* CheckerHelper::checker(const string &name)
 
 bool CheckerHelper::contains(const string &name)
 {
-    auto it = m_checkers.find(name);
+    const auto &it = m_checkers.find(name);
     return it != m_checkers.end();
 }
 

@@ -5,23 +5,23 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent),
-    ui(new Ui::MainWindow)
+      m_ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    m_ui->setupUi(this);
     initialize();
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    delete m_ui;
 }
 
 void MainWindow::initialize()
 {
     ShowCPUMemory *showCPUMemory = new ShowCPUMemory(this);
-    showCPUMemory->setLab(ui->labCPUMemory);
+    showCPUMemory->setLab(m_ui->labCPUMemory);
     showCPUMemory->start(1000);
 
-    ShowDeviceSize::instance()->setTableWidget(ui->tableWidget);
+    ShowDeviceSize::instance()->setTableWidget(m_ui->tableWidget);
     ShowDeviceSize::instance()->load();
 }

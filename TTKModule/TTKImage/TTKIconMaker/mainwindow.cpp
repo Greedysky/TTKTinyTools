@@ -28,6 +28,7 @@ void MainWindow::save()
     {
         return;
     }
+
     save(outPath + "/OSX/icon.iconset/icon_16x16.png", QSize(16, 16));
     save(outPath + "/OSX/icon.iconset/icon_16x16@2x.png", QSize(32, 32));
     save(outPath + "/OSX/icon.iconset/icon_32x32.png", QSize(32, 32));
@@ -44,6 +45,7 @@ void MainWindow::save()
     {
         return;
     }
+
     save(outPath + "/iOS/Icon_29x29.png", QSize(29, 29));
     save(outPath + "/iOS/Icon_29x29@2x.png" ,QSize(58, 58));
     save(outPath + "/iOS/Icon_29x29@3x.png", QSize(87, 87));
@@ -67,6 +69,7 @@ void MainWindow::save()
     {
         return;
     }
+
     save(outPath + "/Android/Icon_36.png", QSize(36, 36));
     save(outPath + "/Android/Icon_72.png", QSize(72, 72));
     save(outPath + "/Android/Icon_96.png", QSize(96, 96));

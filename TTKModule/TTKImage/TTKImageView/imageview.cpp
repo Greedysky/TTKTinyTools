@@ -8,10 +8,10 @@
 #include <QFileDialog>
 
 ImageIndex::ImageIndex(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_totalNum(0),
+      m_currentIndex(-1)
 {
-    m_totalNum = 0;
-    m_currentIndex = -1;
     setFixedSize(160, 30);
 }
 
@@ -78,20 +78,18 @@ void ImageIndex::setCurrentIndex(int currentIndex)
 
 
 ImageView::ImageView(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_bottomSpace(10),
+      m_buttonSpace(10),
+      m_icoSize(65, 65),
+      m_fill(false),
+      m_fade(false),
+      m_keyMove(false),
+      m_currentIndex(-1),
+      m_totalNum(0),
+      m_opacity(1.0)
 {
     setStyleSheet(".QToolButton{background-color:rgba(0,0,0,0);border-style:none;}");
-
-    m_bottomSpace = 10;
-    m_buttonSpace = 10;
-    m_icoSize = QSize(65, 65);
-
-    m_fade = false;
-    m_fill = false;
-    m_keyMove = false;
-
-    m_totalNum = 0;
-    m_currentIndex = -1;
 
     m_imageIndex = new ImageIndex(this);
     connect(this, SIGNAL(totalNumChanged(int)), m_imageIndex, SLOT(setTotalNum(int)));
@@ -112,7 +110,6 @@ ImageView::ImageView(QWidget *parent)
     connect(m_preButton, SIGNAL(clicked()), this, SLOT(movePrevious()));
     connect(m_nextButton, SIGNAL(clicked()), this, SLOT(moveNext()));
 
-    m_opacity = 1.0;
     m_timer = new QTimer(this);
     m_timer->setInterval(50);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(fading()));

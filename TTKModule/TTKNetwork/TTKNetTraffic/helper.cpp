@@ -30,10 +30,9 @@ Helper::Helper(QObject *parent)
     : QObject(parent)
 {
     m_traffic = new TTKNetTraffic(this);
-    connect(m_traffic, SIGNAL(networkData(ulong,ulong)), SLOT(setData(ulong,ulong)));
-
     m_memery = new TTKCPUMemoryLabel(this);
 
+    connect(m_traffic, SIGNAL(networkData(ulong,ulong)), SLOT(setData(ulong,ulong)));
 }
 
 Helper::~Helper()

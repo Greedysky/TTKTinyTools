@@ -28,6 +28,7 @@ class TTK_MODULE_EXPORT ISO2022_JPChecker : public CheckerBase
 {
 public:
     ISO2022_JPChecker();
+
     virtual bool detect(const string &str) const override final;
 
 private:

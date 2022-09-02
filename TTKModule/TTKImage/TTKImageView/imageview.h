@@ -28,7 +28,7 @@ class TTK_MODULE_EXPORT ImageIndex : public QWidget
 {
     Q_OBJECT
 public:
-    ImageIndex(QWidget *parent = nullptr);
+    explicit ImageIndex(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override final;
@@ -87,6 +87,7 @@ protected:
     virtual void keyPressEvent(QKeyEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void showEvent(QShowEvent *event) override final;
+
     void drawBg(QPainter *painter);
     void drawImage(QPainter *painter);
 

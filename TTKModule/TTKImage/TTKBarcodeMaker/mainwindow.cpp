@@ -2,7 +2,7 @@
 
 #include <QFileDialog>
 
-void paintLine(QImage &image, const bool black, const int pos, const int len = 100)
+static void paintLine(QImage &image, const bool black, const int pos, const int len = 100)
 {
     for(int index = 0; index < len; ++index)
     {
@@ -11,7 +11,7 @@ void paintLine(QImage &image, const bool black, const int pos, const int len = 1
     }
 }
 
-void paintLines(QImage &image, const QString &key, const int pos, const int len = 100)
+static void paintLines(QImage &image, const QString &key, const int pos, const int len = 100)
 {
     for(int index = 0; index < 7; ++index)
     {
@@ -19,7 +19,7 @@ void paintLines(QImage &image, const QString &key, const int pos, const int len 
     }
 }
 
-void paintByteA(QImage &image, const int number, const int pos)
+static void paintByteA(QImage &image, const int number, const int pos)
 {
     switch(number)
     {
@@ -36,7 +36,7 @@ void paintByteA(QImage &image, const int number, const int pos)
     }
 }
 
-void paintByteB(QImage &image, const int number, const int pos)
+static void paintByteB(QImage &image, const int number, const int pos)
 {
     switch(number)
     {
@@ -53,7 +53,7 @@ void paintByteB(QImage &image, const int number, const int pos)
     }
 }
 
-void paintByteC(QImage &image, const int number, const int pos)
+static void paintByteC(QImage &image, const int number, const int pos)
 {
     switch(number)
     {
@@ -70,7 +70,7 @@ void paintByteC(QImage &image, const int number, const int pos)
     }
 }
 
-QPixmap makeBarcode(const qint64 number)
+static QPixmap makeBarcode(const qint64 number)
 {
     QImage image(QSize(190, 120), QImage::Format_ARGB32);
     image.fill(qRgba(0, 0, 0, 0));
@@ -107,6 +107,7 @@ QPixmap makeBarcode(const qint64 number)
 
     return QPixmap::fromImage(image);
 }
+
 
 void MainWindow::savePng(const QString &id)
 {

@@ -25,6 +25,7 @@ class TTK_MODULE_EXPORT AsciiChecker : public CheckerBase
 {
 public:
     AsciiChecker();
+
     virtual bool detect(const string &str) const override final;
 
 };

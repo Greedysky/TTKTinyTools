@@ -3,9 +3,9 @@
 #include <QHostAddress>
 
 TcpClient::TcpClient(int clientID, QObject *parent)
-    : QTcpSocket(parent)
+    : QTcpSocket(parent),
+      m_clientID(clientID)
 {
-    m_clientID = clientID;
     connect(this, SIGNAL(readyRead()), SLOT(readData()));
     connect(this, SIGNAL(disconnected()), SLOT(disConnect()));
 }

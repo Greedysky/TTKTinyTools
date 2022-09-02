@@ -4,7 +4,7 @@
 #include <QFileDialog>
 #include "qrencode/qrencode.h"
 
-QImage makeQRcode(const QString &data, const QSize &size)
+static QImage makeQRcode(const QString &data, const QSize &size)
 {
     QImage image(size, QImage::Format_RGB32);
     image.fill(QColor("#000000"));

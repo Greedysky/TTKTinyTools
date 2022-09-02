@@ -12,7 +12,8 @@
 #include <QFileDialog>
 
 VideoControl::VideoControl(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_pushBarrageOn(false)
 {
     setStyleSheet("background:black;");
 
@@ -158,7 +159,6 @@ void VideoControl::barrageColorButtonClicked(int index)
 QWidget* VideoControl::createBarrageWidget()
 {
     QWidget *barrageWidget = new QWidget(this);
-    m_pushBarrageOn = false;
 
     ///////////////////////////////////////////
     QWidgetAction *widgetAction = new QWidgetAction(barrageWidget);

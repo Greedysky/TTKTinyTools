@@ -9,16 +9,19 @@
 #define MB (1024 * 1024)
 #define KB (1024)
 
-ShowCPUMemory::ShowCPUMemory(QObject *parent) : QObject(parent)
+ShowCPUMemory::ShowCPUMemory(QObject *parent)
+    : QObject(parent),
+      m_totalNew(0),
+      m_idleNew(0),
+      m_totalOld(0),
+      m_idleOld(0),
+      m_cpuPercent(0),
+      m_memoryPercent(0),
+      m_memoryAll(0),
+      m_memoryUse(0),
+      m_memoryFree(0),
+      m_labCPUMemory(nullptr)
 {
-    m_totalNew = m_idleNew = m_totalOld = m_idleOld = 0;
-    m_cpuPercent = 0;
-
-    m_memoryPercent = 0;
-    m_memoryAll = 0;
-    m_memoryUse = 0;
-    m_labCPUMemory = nullptr;
-
     m_timerCPU = new QTimer(this);
     connect(m_timerCPU, SIGNAL(timeout()), SLOT(cpu()));
 
