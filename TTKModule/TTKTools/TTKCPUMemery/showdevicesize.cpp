@@ -52,8 +52,7 @@ void ShowDeviceSize::load()
     }
 
 #ifdef Q_OS_WIN
-    const QFileInfoList &list = QDir::drives();
-    for(const QFileInfo &fin : qAsConst(list))
+    for(const QFileInfo &fin : QDir::drives())
     {
         const QString &dirName = fin.absolutePath();
         LPCWSTR lpcwstrDriver = (LPCWSTR)dirName.utf16();
@@ -80,15 +79,15 @@ void ShowDeviceSize::readData()
 {
     while(!m_process->atEnd())
     {
-        const QString &result = QLatin1String(m_process->readLine());
+        const QString &result = QString::fromLocal8Bit(m_process->readLine());
         if(result.startsWith("/dev/sda"))
         {
-            checkSize(result, "");
+            checkSize(result);
         }
     }
 }
 
-void ShowDeviceSize::checkSize(const QString &result, const QString &name)
+void ShowDeviceSize::checkSize(const QString &result)
 {
     QString dev, use, free, all;
     int percent = 0, index = 0;
@@ -97,12 +96,12 @@ void ShowDeviceSize::checkSize(const QString &result, const QString &name)
     for(int i = 0; i < list.count(); ++i)
     {
         const QString &s = list.at(i).trimmed();
-        if(s == "")
+        if(s.isEmpty())
         {
             continue;
         }
-        index++;
 
+        index++;
         if(index == 1)
         {
             dev = s;
@@ -124,11 +123,6 @@ void ShowDeviceSize::checkSize(const QString &result, const QString &name)
             percent = s.left(s.length() - 1).toInt();
             break;
         }
-    }
-
-    if(name.length() > 0)
-    {
-        dev = name;
     }
 
     insertSize(dev, use, free, all, percent);

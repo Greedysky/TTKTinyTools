@@ -50,7 +50,7 @@ public:
 
 private Q_SLOTS:
     void readData();
-    void checkSize(const QString &result, const QString &name);
+    void checkSize(const QString &result);
     void insertSize(const QString &name, const QString &use, const QString &free, const QString &all, int percent);
 
 private:
