@@ -7,7 +7,7 @@
 static QImage makeQRcode(const QString &data, const QSize &size)
 {
     QImage image(size, QImage::Format_RGB32);
-    image.fill(QColor("#000000"));
+    image.fill(QColor(0x00, 0x00, 0x00));
 
     QPainter painter(&image);
 
@@ -19,7 +19,7 @@ static QImage makeQRcode(const QString &data, const QSize &size)
     QRcode *qrCode = QRcode_encodeString(data.toUtf8().data(), 1, QR_ECLEVEL_H, QR_MODE_8, true);
     if(!qrCode)
     {
-        QColor error("#ffffff");
+        QColor error(0xFF, 0xFF, 0xFF);
         painter.setBrush(error);
         painter.setPen(Qt::NoPen);
         painter.drawRect(0, 0, image.width(), image.height());
@@ -28,13 +28,13 @@ static QImage makeQRcode(const QString &data, const QSize &size)
         return image;
     }
 
-    QColor colorForBackground("#ffffff");
+    QColor colorForBackground(0xFF, 0xFF, 0xFF);
 
     painter.setBrush(colorForBackground);
     painter.setPen(Qt::NoPen);
     painter.drawRect(0, 0, image.width(), image.height());
 
-    painter.setBrush(QColor("#000000"));
+    painter.setBrush(QColor(0x00, 0x00, 0x00));
 
     const double s = (qrCode->width > 0) ? (qrCode->width) : 1;
     const double aspect = image.width() / image.height();
