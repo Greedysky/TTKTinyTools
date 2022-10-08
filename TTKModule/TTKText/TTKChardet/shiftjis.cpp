@@ -27,7 +27,7 @@ const vector<pair<int, function<bool(const unsigned char*) > > > ShiftJIS_Detect
         {1, ShiftJIS_one_byte_func(0xA1, 0xDF)} };
 
 ShiftJISChecker::ShiftJISChecker()
-    : CheckerBase("shift_jis")
+    : AbstractChecker("shift_jis")
 {
 
 }

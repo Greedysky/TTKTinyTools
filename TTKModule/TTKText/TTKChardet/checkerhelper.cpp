@@ -29,7 +29,7 @@ CheckerHelper::~CheckerHelper()
     }
 }
 
-CheckerBase* CheckerHelper::checker(const string &name)
+AbstractChecker* CheckerHelper::checker(const string &name)
 {
     const auto &it = m_checkers.find(name);
     if(it == m_checkers.end())

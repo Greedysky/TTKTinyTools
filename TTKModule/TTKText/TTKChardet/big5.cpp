@@ -15,7 +15,7 @@ const vector< function< bool(const unsigned char*) > > Big5_Detect = {
         Big5_two_byte_func(0xc940, 0xf9d5) };
 
 Big5Checker::Big5Checker()
-    : CheckerBase("big5")
+    : AbstractChecker("big5")
 {
 
 }

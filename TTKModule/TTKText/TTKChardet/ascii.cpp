@@ -1,7 +1,7 @@
 #include "ascii.h"
 
 AsciiChecker::AsciiChecker()
-    : CheckerBase("ascii")
+    : AbstractChecker("ascii")
 {
 
 }

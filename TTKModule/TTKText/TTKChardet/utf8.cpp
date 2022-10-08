@@ -29,7 +29,7 @@ const map<int, function<bool(const unsigned char *, int) > >UTF8_Detect = {
                         {6, multibyte_utf8(0xFE, 0xFC, 6)} };
 
 UTF8Checker::UTF8Checker()
-    : CheckerBase("utf-8")
+    : AbstractChecker("utf-8")
 {
 
 }

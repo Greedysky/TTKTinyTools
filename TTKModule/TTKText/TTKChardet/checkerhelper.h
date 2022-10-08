@@ -31,7 +31,7 @@ public:
     CheckerHelper();
     ~CheckerHelper();
 
-    CheckerBase* checker(const string &name);
+    AbstractChecker* checker(const string &name);
 
     bool contains(const string &name);
 
@@ -39,7 +39,7 @@ public:
     string detect(const string &str);
 
 private:
-    map<string, CheckerBase*> m_checkers;
+    map<string, AbstractChecker*> m_checkers;
 
 };
 

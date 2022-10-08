@@ -21,7 +21,7 @@
 
 #include "checker.h"
 
-class TTK_MODULE_EXPORT ShiftJISChecker : public CheckerBase
+class TTK_MODULE_EXPORT ShiftJISChecker : public AbstractChecker
 {
 public:
     ShiftJISChecker();

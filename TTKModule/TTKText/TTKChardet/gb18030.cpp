@@ -25,7 +25,7 @@ const vector< pair <int, function<bool(const unsigned char*)> > > GB18030_Detect
 
 
 GB18030Checker::GB18030Checker()
-    : CheckerBase("gb18030")
+    : AbstractChecker("gb18030")
 {
 
 }

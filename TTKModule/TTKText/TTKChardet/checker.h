@@ -25,11 +25,11 @@
 
 using namespace std;
 
-class TTK_MODULE_EXPORT CheckerBase
+class TTK_MODULE_EXPORT AbstractChecker
 {
 public:
-    CheckerBase(const string &name);
-    virtual ~CheckerBase();
+    AbstractChecker(const string &name);
+    virtual ~AbstractChecker();
     
     virtual bool detect(const string &str) const = 0;
 

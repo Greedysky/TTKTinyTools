@@ -21,7 +21,7 @@
 
 #include "checker.h"
 
-class TTK_MODULE_EXPORT Big5Checker : public CheckerBase
+class TTK_MODULE_EXPORT Big5Checker : public AbstractChecker
 {
 public:
     Big5Checker();

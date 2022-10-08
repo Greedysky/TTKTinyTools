@@ -21,7 +21,7 @@
 
 #include "checker.h"
 
-class TTK_MODULE_EXPORT AsciiChecker : public CheckerBase
+class TTK_MODULE_EXPORT AsciiChecker : public AbstractChecker
 {
 public:
     AsciiChecker();

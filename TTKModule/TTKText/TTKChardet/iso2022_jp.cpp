@@ -10,7 +10,7 @@ const map<string, ISO2022_jp_pair> ISO2022_Detect = {
     {("\x1b$B"), {2, [](const unsigned char *) { return true; }}} };
 
 ISO2022_JPChecker::ISO2022_JPChecker()
-    : CheckerBase("iso2022_jp")
+    : AbstractChecker("iso2022_jp")
 {
 
 }

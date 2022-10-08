@@ -1,7 +1,7 @@
 #include "gbk.h"
 
 GBKChecker::GBKChecker()
-    : CheckerBase("gbk")
+    : AbstractChecker("gbk")
 {
 
 }
