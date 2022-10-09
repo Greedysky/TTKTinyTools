@@ -172,7 +172,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
     static QPoint mousePoint;
     static bool mousePressed = false;
 
-    QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
+    QMouseEvent *mouseEvent = TTKStatic_cast(QMouseEvent*, event);
     if(mouseEvent->type() == QEvent::MouseButtonPress)
     {
         if(mouseEvent->button() == Qt::LeftButton)

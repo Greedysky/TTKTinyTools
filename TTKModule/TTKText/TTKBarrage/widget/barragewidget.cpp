@@ -6,7 +6,7 @@
 
 BarrageWidget::BarrageWidget(QObject *parent)
     : QObject(parent),
-      m_parentClass(static_cast<QWidget*>(parent)),
+      m_parentClass(TTKObject_cast(QWidget*, parent)),
       m_barrageState(false),
       m_fontSize(15),
       m_backgroundColor(0, 0, 0)

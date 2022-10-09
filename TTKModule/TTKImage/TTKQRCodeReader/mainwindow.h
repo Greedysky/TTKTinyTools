@@ -46,8 +46,8 @@ public:
         UpcEanExtension = 1 << 17
     };
 
-    QString decodeImage(const int decode = static_cast<int>(Decode::QrCode));
-    QString decodeImage(const QImage &image, const int decode = static_cast<int>(Decode::QrCode));
+    QString decodeImage(const int decode = TTKStatic_cast(int, Decode::QrCode));
+    QString decodeImage(const QImage &image, const int decode = TTKStatic_cast(int, Decode::QrCode));
 
 };
 
