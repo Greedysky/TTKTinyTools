@@ -104,7 +104,7 @@ void VideoControl::setFixedSize(int w, int h)
 
 void VideoControl::sliderReleased()
 {
-    emit sliderValueChanged(m_timeSlider->value()/1000);
+    Q_EMIT sliderValueChanged(m_timeSlider->value()/1000);
 }
 
 void VideoControl::openFileDialog()
@@ -116,14 +116,14 @@ void VideoControl::openFileDialog()
 
     if(dialog.exec())
     {
-        emit mediaChanged(dialog.selectedFiles().front());
+        Q_EMIT mediaChanged(dialog.selectedFiles().front());
     }
 }
 
 void VideoControl::pushBarrageClicked()
 {
     m_pushBarrage->setIcon(QIcon(m_pushBarrageOn ? ":/video/on" : ":/video/off"));
-    emit pushBarrageChanged(m_pushBarrageOn);
+    Q_EMIT pushBarrageChanged(m_pushBarrageOn);
     m_pushBarrageOn = !m_pushBarrageOn;
 }
 
@@ -136,7 +136,7 @@ void VideoControl::barrageSizeButtonClicked(int index)
         case 2: size = 20; break;
         case 3: size = 30; break;
     }
-    emit barrageSizeButtonChanged(size);
+    Q_EMIT barrageSizeButtonChanged(size);
 }
 
 void VideoControl::barrageColorButtonClicked(int index)
@@ -153,7 +153,7 @@ void VideoControl::barrageColorButtonClicked(int index)
         case 7: color = QColor(160, 32, 240); break;
         case 8: color = QColor(0, 0, 0); break;
     }
-    emit barrageColorButtonChanged(color);
+    Q_EMIT barrageColorButtonChanged(color);
 }
 
 QWidget* VideoControl::createBarrageWidget()

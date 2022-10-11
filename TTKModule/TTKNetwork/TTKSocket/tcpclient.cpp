@@ -21,7 +21,7 @@ void TcpClient::readData()
     pair.m_clientID = m_clientID;
     pair.m_ip = peerAddress().toString();
     pair.m_port = peerPort();
-    emit clientReadData(pair, readAll());
+    Q_EMIT clientReadData(pair, readAll());
 }
 
 void TcpClient::disConnect()
@@ -30,5 +30,5 @@ void TcpClient::disConnect()
     pair.m_clientID = m_clientID;
     pair.m_ip = peerAddress().toString();
     pair.m_port = peerPort();
-    emit clientDisConnect(pair);
+    Q_EMIT clientDisConnect(pair);
 }

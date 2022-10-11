@@ -33,7 +33,7 @@ public:
 Q_SIGNALS:
     void enterFinished(const QString &text);
 
-protected:
+private:
     virtual void focusInEvent(QFocusEvent *event) override final;
     virtual void focusOutEvent(QFocusEvent *event) override final;
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;

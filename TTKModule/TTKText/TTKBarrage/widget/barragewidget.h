@@ -43,7 +43,7 @@ public:
     void setLabelTextSize(int size);
     void addBarrage(const QString &string);
 
-protected:
+private:
     void deleteItems();
     void createLabel();
     void createLabel(QLabel *label);

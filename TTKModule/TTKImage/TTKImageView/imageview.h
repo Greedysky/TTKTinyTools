@@ -30,14 +30,14 @@ class TTK_MODULE_EXPORT ImageIndex : public QWidget
 public:
     explicit ImageIndex(QWidget *parent = nullptr);
 
-protected:
-    virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
-    void drawText(QPainter *painter);
-
 public Q_SLOTS:
     void setTotalNum(int totalNum);
     void setCurrentIndex(int currentIndex);
+
+private:
+    virtual void paintEvent(QPaintEvent *event) override final;
+    void drawBg(QPainter *painter);
+    void drawText(QPainter *painter);
 
 private:
     int m_totalNum;
@@ -82,7 +82,7 @@ public Q_SLOTS:
     void moveNext();
     void moveToPage(int index);
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void keyPressEvent(QKeyEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;

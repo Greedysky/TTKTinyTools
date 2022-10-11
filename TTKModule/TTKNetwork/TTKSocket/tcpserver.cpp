@@ -38,7 +38,7 @@ void TcpServer::incomingConnection(int handle)
     pair.m_clientID = handle;
     pair.m_ip = client->peerAddress().toString();
     pair.m_port = client->peerPort();
-    emit clientConnect(pair);
+    Q_EMIT clientConnect(pair);
 
     m_clientList.append(client);
 }
@@ -50,7 +50,7 @@ void TcpServer::clientDisConnectChanged(const ClientData &pair)
         if(client->clientID() == pair.m_clientID)
         {
             m_clientList.removeAll(client);
-            emit clientDisConnect(pair);
+            Q_EMIT clientDisConnect(pair);
             break;
         }
     }

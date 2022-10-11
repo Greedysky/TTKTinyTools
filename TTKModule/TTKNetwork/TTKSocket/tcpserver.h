@@ -39,7 +39,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void clientDisConnectChanged(const ClientData &pair);
 
-protected:
+private:
     void incomingConnection(int handle);
 
     QList<TcpClient*> m_clientList;

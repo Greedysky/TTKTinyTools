@@ -57,7 +57,7 @@ public Q_SLOTS:
     void barrageSizeButtonClicked(int index);
     void barrageColorButtonClicked(int index);
 
-protected:
+private:
     QWidget* createBarrageWidget();
     QPushButton* createBarrageSizeButton(int index);
     QPushButton* createBarrageColorButton(int index);

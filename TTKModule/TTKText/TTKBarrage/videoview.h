@@ -55,7 +55,7 @@ private Q_SLOTS:
     void barrageSizeButtonChanged(int size);
     void barrageColorButtonChanged(const QColor &color);
 
-protected:
+private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;

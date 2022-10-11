@@ -33,7 +33,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void openImage();
     void radiusChanged(int value);
 

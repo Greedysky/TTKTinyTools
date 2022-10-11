@@ -35,11 +35,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void openImage();
     void renderImage();
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 

@@ -146,7 +146,7 @@ void TTKNetTraffic::outputRecieved()
             download= list[1].trimmed().toULong();
             upload  = list[2].trimmed().toULong();
         }
-        emit networkData(upload, download);
+        Q_EMIT networkData(upload, download);
     }
 #endif
 }
@@ -203,7 +203,7 @@ void TTKNetTraffic::run()
         dwLastIn = dwInOctets;
         dwLastOut = dwOutOctets;
 
-        emit networkData(dwBandOut, dwBandIn);
+        Q_EMIT networkData(dwBandOut, dwBandIn);
         sleep(1);
     }
     delete[] pTable;

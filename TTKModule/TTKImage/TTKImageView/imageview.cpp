@@ -260,7 +260,7 @@ void ImageView::load(const QString &path)
             }
 
             moveToPage(0);
-            emit totalNumChanged(m_totalNum);
+            Q_EMIT totalNumChanged(m_totalNum);
         }
     }
 }
@@ -272,8 +272,8 @@ void ImageView::clear()
     m_imageNames.clear();
     update();
 
-    emit totalNumChanged(m_totalNum);
-    emit currentIndexChanged(m_currentIndex);
+    Q_EMIT totalNumChanged(m_totalNum);
+    Q_EMIT currentIndexChanged(m_currentIndex);
 }
 
 void ImageView::setBottomSpace(int bottomSpace)
@@ -379,7 +379,7 @@ void ImageView::moveToPage(int index)
 
     m_currentIndex = index;
     m_currentImage = QImage(m_imageNames.at(m_currentIndex));
-    emit currentIndexChanged(m_currentIndex);
+    Q_EMIT currentIndexChanged(m_currentIndex);
 
     if(m_fade)
     {

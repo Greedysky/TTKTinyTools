@@ -50,7 +50,7 @@ public Q_SLOTS:
     void setBorderWidth(int borderWidth);
     void setBackgroundgColor(const QColor &color);
 
-protected:
+private:
     virtual bool eventFilter(QObject *watched, QEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
