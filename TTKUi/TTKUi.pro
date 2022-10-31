@@ -16,4 +16,16 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
+TEMPLATE = lib
+msvc:CONFIG += staticlib
+
+include($$PWD/../TTKVersion.pri)
+
+CONFIG += plugin lib
+
+DESTDIR = $$OUT_PWD/../bin/$$TTKVersion
+TARGET = TTKUi
+
 RESOURCES += $$PWD/TinyTools.qrc
+    
+win32:RC_FILE = $$PWD/TTKUi.rc

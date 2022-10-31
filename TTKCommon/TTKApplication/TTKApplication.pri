@@ -1,5 +1,5 @@
 # ***************************************************************************
-# * This file is part of the TTK Tiny Tools project
+# * This file is part of the TTK Library Module project
 # * Copyright (C) 2015 - 2022 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -16,40 +16,13 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-QT += core gui
-greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
-    QT += widgets
-    equals(QT_MAJOR_VERSION, 6){ #Qt6
-        QT += core5compat
-    }
-}
+INCLUDEPATH += $$PWD
 
-include($$PWD/../TTKVersion.pri)
+HEADERS += \
+    $$PWD/ttklocalpeer.h \
+    $$PWD/ttkrunapplication.h \
 
-CONFIG += plugin lib
+SOURCES += \
+    $$PWD/ttklocalpeer.cpp \
+    $$PWD/ttkrunapplication.cpp
 
-DESTDIR = $$OUT_PWD/../bin/$$TTKVersion
-
-TARGET = TTKThirdParty
-
-TEMPLATE = lib
-DEFINES += TTK_LIBRARY
-
-win32:msvc{
-    CONFIG += c++11
-}else{
-    equals(QT_MAJOR_VERSION, 6){ #Qt6
-        QMAKE_CXXFLAGS += -std=c++17
-    }else{
-        QMAKE_CXXFLAGS += -std=c++11
-    }
-}
-
-INCLUDEPATH += \
-    $$PWD \
-    $$PWD/../TTKCommon
-
-include($$PWD/qrencode/QRencode.pri)
-include($$PWD/zxing/ZXing.pri)
-
-win32:RC_FILE = $$PWD/TTKThirdParty.rc

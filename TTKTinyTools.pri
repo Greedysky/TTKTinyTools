@@ -32,44 +32,43 @@ TEMPLATE = app
 
 include($$PWD/TTKVersion.pri)
 
-DESTDIR = $$OUT_PWD/../../../bin/$$TTKTinyTools
+DESTDIR = $$OUT_PWD/../../../bin/$$TTKVersion
 
 win32{
     msvc{
-        LIBS += -L$$DESTDIR -lTTKThirdParty
         CONFIG += c++11
         !contains(QMAKE_TARGET.arch, x86_64){
              #support on windows XP
              QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
              QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
         }
+        LIBS += -L$$DESTDIR -lTTKLibrary -lTTKUi -lTTKThirdParty
     }
 
     gcc{
-        LIBS += -L$$DESTDIR -lTTKThirdParty
         equals(QT_MAJOR_VERSION, 6){ #Qt6
             QMAKE_CXXFLAGS += -std=c++17
         }else{
             QMAKE_CXXFLAGS += -std=c++11
         }
         QMAKE_CXXFLAGS += -Wunused-function -Wswitch
+        LIBS += -L$$DESTDIR -lTTKLibrary -lTTKUi -lTTKThirdParty
     }
 }
 
 unix:!mac{
-    LIBS += -L$$DESTDIR -lTTKThirdParty
     equals(QT_MAJOR_VERSION, 6){ #Qt6
         QMAKE_CXXFLAGS += -std=c++17
     }else{
         QMAKE_CXXFLAGS += -std=c++11
     }
     QMAKE_CXXFLAGS += -Wunused-function  -Wswitch
+    LIBS += -L$$DESTDIR -lTTKLibrary -lTTKUi -lTTKThirdParty
 }
 
 DEFINES += TTK_LIBRARY
 
 #########################################
-include($$PWD/TTKUi/TTKUi.pri)
 include($$PWD/TTKCommon/TTKCommon.pri)
 #########################################
 win32:RC_FILE = $$PWD/TTKModule/TTKCore.rc

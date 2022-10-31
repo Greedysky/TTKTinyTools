@@ -1,5 +1,5 @@
 # ***************************************************************************
-# * This file is part of the TTK Tiny Tools project
+# * This file is part of the TTK Library Module project
 # * Copyright (C) 2015 - 2022 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -16,25 +16,21 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-QT += core gui
-greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
-    QT += widgets
-    equals(QT_MAJOR_VERSION, 6){ #Qt6
-        QT += core5compat
-    }
-}
-
-include($$PWD/../TTKVersion.pri)
-
-CONFIG += plugin lib
-
-DESTDIR = $$OUT_PWD/../bin/$$TTKVersion
-
-TARGET = TTKThirdParty
+QT += core
 
 TEMPLATE = lib
 DEFINES += TTK_LIBRARY
 
+include($$PWD/../../TTKVersion.pri)
+
+DESTDIR = $$OUT_PWD/../../bin/$$TTKVersion
+TARGET = TTKDumper
+
+CONFIG += plugin lib
+
+INCLUDEPATH += $$PWD/../
+
+win32:LIBS += -lpsapi
 win32:msvc{
     CONFIG += c++11
 }else{
@@ -45,11 +41,12 @@ win32:msvc{
     }
 }
 
-INCLUDEPATH += \
-    $$PWD \
-    $$PWD/../TTKCommon
+HEADERS += \
+    $$PWD/miniprocess.h \
+    $$PWD/ttkdumper.h
 
-include($$PWD/qrencode/QRencode.pri)
-include($$PWD/zxing/ZXing.pri)
+SOURCES += \
+    $$PWD/miniprocess.cpp \
+    $$PWD/ttkdumper.cpp
 
-win32:RC_FILE = $$PWD/TTKThirdParty.rc
+win32:RC_FILE = $$PWD/TTKDumper.rc
