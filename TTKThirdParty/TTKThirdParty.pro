@@ -24,15 +24,14 @@ greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
     }
 }
 
-include($$PWD/../TTKVersion.pri)
-
+TEMPLATE = lib
 CONFIG += plugin lib
 
-DESTDIR = $$OUT_PWD/../bin/$$TTKVersion
+include($$PWD/../TTKVersion.pri)
 
+DESTDIR = $$OUT_PWD/../bin/$$TTKVersion
 TARGET = TTKThirdParty
 
-TEMPLATE = lib
 DEFINES += TTK_LIBRARY
 
 win32:msvc{

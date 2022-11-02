@@ -17,5 +17,6 @@
 # ***************************************************************************
 
 TEMPLATE = subdirs
+CONFIG += ordered
 SUBDIRS += TTKGetColor TTKGifWidget TTKPngHelper TTKGaussianBlur TTKFontPng TTKBarcodeMaker TTKWebPMaker \
            TTKQRCodeReader TTKQRCodeMaker TTKIconMaker TTKImageView TTKWaterWave

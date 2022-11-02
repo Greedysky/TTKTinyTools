@@ -17,6 +17,7 @@
 # ***************************************************************************
 
 TEMPLATE = subdirs
+CONFIG += ordered
 SUBDIRS += TTKCaseTransform TTKChardet TTKRandomPassword TTKRandomUuid TTKUrlEncode TTKUtf16Transform TTKHashTransform \
            TTKTimestampTransform TTKCodeLines TTKChinese2Pinyin TTKCodeCount
 
