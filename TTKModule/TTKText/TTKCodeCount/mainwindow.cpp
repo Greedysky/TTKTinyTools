@@ -28,7 +28,7 @@ void MainWindow::initialize()
     QStringList headText;
     headText << "文件名" << "类型" << "大小" << "总行数" << "代码行数" << "注释行数" << "空白行数" << "路径";
 
-    QList<int> columnWidth;
+    TTKIntList columnWidth;
     columnWidth << 130 << 50 << 70 << 80 << 70 << 70 << 70 << 150;
 
     const int columnCount = headText.count();
