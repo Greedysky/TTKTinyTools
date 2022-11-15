@@ -23,8 +23,6 @@ static QImage makeQRcode(const QString &data, const QSize &size)
         painter.setBrush(error);
         painter.setPen(Qt::NoPen);
         painter.drawRect(0, 0, image.width(), image.height());
-        painter.end();
-
         return image;
     }
 
@@ -58,8 +56,6 @@ static QImage makeQRcode(const QString &data, const QSize &size)
     }
 
     QRcode_free(qrCode);
-    painter.end();
-
     return image;
 }
 
