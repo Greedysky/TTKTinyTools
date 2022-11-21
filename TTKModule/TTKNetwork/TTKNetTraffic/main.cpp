@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 #endif
 
     QFile file(":/qss/Style3.qss");
-    if(file.open(QFile::ReadOnly))
+    if(file.open(QIODevice::ReadOnly))
     {
         qApp->setStyleSheet(file.readAll());
         file.close();

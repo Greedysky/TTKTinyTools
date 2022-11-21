@@ -208,7 +208,7 @@ void BarrageWidget::readBarrage()
 void BarrageWidget::writeBarrage()
 {
     QFile file(BARRAGEPATH_AL);
-    if(file.open(QIODevice::WriteOnly | QFile::Text))
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QByteArray array;
         for(const QString &var : qAsConst(m_barrageList))

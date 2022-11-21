@@ -209,7 +209,7 @@ void MainWindow::countCode(const QString &fileName, int &lineCode, int &lineBlan
 {
     lineCode = lineBlank = lineNotes = 0;
     QFile file(fileName);
-    if(file.open(QFile::ReadOnly))
+    if(file.open(QIODevice::ReadOnly))
     {
         QTextStream out(&file);
         QString line;
