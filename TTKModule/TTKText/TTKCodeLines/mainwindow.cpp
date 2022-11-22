@@ -81,10 +81,11 @@ void  MainWindow::codeLines(const QString &path)
     Q_UNUSED(status);
     eventLoop.exec();
 
-    qDebug() << "All File Count " << fileCount;
-    qDebug() << "All Meet The Requirements Line Count " << lineCount;
+    TTK_INFO_STREAM("All File Count " << fileCount);
+    TTK_INFO_STREAM("All Meet The Requirements Line Count " << lineCount);
+
     for(const QString &key : categorys.keys())
     {
-        qDebug() << QString(".%1 Type  All count %2").arg(key).arg(categorys[key]);
+        TTK_INFO_STREAM(QString(".%1 Type  All count %2").arg(key).arg(categorys[key]));
     }
 }
