@@ -31,7 +31,7 @@ TTKStringMap PinyinResource::resource(const QString &resourceName)
 #if TTK_QT_VERSION_CHECK(6,0,0)
     in.setEncoding(QStringConverter::Utf8);
 #else
-    in.setCodec("utf-8");
+    in.setCodec("UTF-8");
 #endif
 
     QString line;
