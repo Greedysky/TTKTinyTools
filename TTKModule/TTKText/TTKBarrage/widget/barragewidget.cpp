@@ -180,12 +180,12 @@ void BarrageWidget::setLabelBackground(QLabel *label)
 
 void BarrageWidget::setLabelTextSize(QLabel *label)
 {
-    QFont ft = label->font();
-    ft.setPointSize(m_fontSize);
-    label->setFont(ft);
+    QFont f = label->font();
+    f.setPointSize(m_fontSize);
+    label->setFont(f);
 
-    QFontMetrics ftMcs(ft);
-    label->resize(QtFontWidth(ftMcs, label->text()), ftMcs.height());
+    const QFontMetrics ft(f);
+    label->resize(QtFontWidth(ft, label->text()), ft.height());
 }
 
 void BarrageWidget::readBarrage()

@@ -214,7 +214,7 @@ QString MainWindow::sizeStandardization(qint64 size)
     {
         return QString("--");
     }
-    return QString("%1.%2").arg(front).arg(back);
+    return QString("%1.%2").arg(front, back);
 }
 
 QString MainWindow::timeStandardization(qint64 time)
@@ -222,7 +222,7 @@ QString MainWindow::timeStandardization(qint64 time)
     const int h = time / 3600;
     const int m = (time % 3600) / 60;
     const int s = time % 60;
-    return QString("%1:%2:%3").arg(QString::number(h).rightJustified(2, '0'))
-                              .arg(QString::number(m).rightJustified(2, '0'))
-                              .arg(QString::number(s).rightJustified(2, '0'));
+    return QString("%1:%2:%3").arg(QString::number(h).rightJustified(2, '0'),
+                                   QString::number(m).rightJustified(2, '0'),
+                                   QString::number(s).rightJustified(2, '0'));
 }
