@@ -20,8 +20,6 @@ include($$PWD/../../../TTKTinyTools.pri)
 
 TARGET = TTKImageView
 
-INCLUDEPATH += $$PWD
-
 HEADERS += \
     $$PWD/mainwindow.h \
     $$PWD/imageview.h
