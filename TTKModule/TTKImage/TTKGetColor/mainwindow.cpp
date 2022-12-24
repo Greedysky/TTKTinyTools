@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ttknumberdefine.h"
 #include "ttkdesktopwrapper.h"
 
 #include <QTimer>
@@ -58,5 +59,5 @@ void MainWindow::ShowColorValue()
     m_ui->txtRgb->setText(strDecimal);
     m_ui->txtWeb->setText(strHex);
 
-    QTimer::singleShot(100, this, SLOT(ShowColorValue()));
+    QTimer::singleShot(MT_ONCE, this, SLOT(ShowColorValue()));
 }
