@@ -39,7 +39,7 @@ bool GB18030Checker::detect(const string &str) const
     {
         bool flag = false;
         int leftLength = length - index - 1;
-        for(auto func : GB18030_Detect)
+        for(auto func : qAsConst(GB18030_Detect))
         {
             if(func.first <= leftLength && func.second(buffer))
             {

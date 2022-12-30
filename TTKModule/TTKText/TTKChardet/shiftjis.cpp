@@ -41,7 +41,7 @@ bool ShiftJISChecker::detect(const string &str) const
     {
         bool flag = false;
         int leftLength = length - index - 1;
-        for(auto func : ShiftJIS_Detect)
+        for(auto func : qAsConst(ShiftJIS_Detect))
         {
             if(func.first >= leftLength && func.second(buffer))
             {

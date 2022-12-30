@@ -48,7 +48,7 @@ bool Big5Checker::detect(const string &str) const
 
 bool Big5Checker::checkTwoBytes(const unsigned char *buffer) const
 {
-    for(auto func : Big5_Detect)
+    for(auto func : qAsConst(Big5_Detect))
     {
         if(func(buffer))
         {
