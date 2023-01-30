@@ -1,10 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#if defined Q_OS_UNIX || defined Q_CC_MINGW
+#ifdef Q_CC_MSVC
+#  include <qt_windows.h>
+#elif defined Q_OS_UNIX || defined Q_CC_MINGW
 #  include <unistd.h>
 #endif
 #include <QFile>
-#include <QThread>
 #include <QNetworkAccessManager>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -169,22 +170,20 @@ void MainWindow::limitValueBoxChanged(int value)
 void MainWindow::updateDownloadSpeed()
 {
     m_ui->progressBar->setRange(0, m_total);
-    int delta = m_received - m_ui->progressBar->value();
     m_ui->progressBar->setValue(m_received);
-    //////////////////////////////////////
+    int delta = m_received - m_ui->progressBar->value();
     ///limit speed
-    if(m_limitValue != 0 && delta > m_limitValue*1024)
+    if(m_limitValue != 0 && delta > m_limitValue * 1024)
     {
-#if defined Q_OS_WIN && TTK_QT_VERSION_CHECK(5,0,0)
-        QThread::msleep(1000 - m_limitValue * 1024 * 1000 / delta);
-#else
+#ifdef Q_CC_MSVC
+        ::Sleep(1000 - m_limitValue * 1024 * 1000 / delta);
+#elif defined Q_OS_UNIX || defined Q_CC_MINGW
         usleep((1000 - m_limitValue * 1024 * 1000 / delta) * 1000);
 #endif
         delta = m_limitValue * 1024;
     }
-    //////////////////////////////////////
     m_ui->downloadSpeed->setText(sizeStandardization(delta) + "/s");
-    m_ui->restOfTime->setText( delta == 0 ? "99:99:99" : timeStandardization((m_total - m_received)/delta + 1));
+    m_ui->restOfTime->setText(delta == 0 ? "99:99:99" : timeStandardization((m_total - m_received) / delta + 1));
 }
 
 QString MainWindow::sizeStandardization(qint64 size)
