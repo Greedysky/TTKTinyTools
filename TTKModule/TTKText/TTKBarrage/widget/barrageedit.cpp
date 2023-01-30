@@ -7,7 +7,7 @@
 BarrageEdit::BarrageEdit(QWidget *parent)
     : QLineEdit(parent)
 {
-    setStyleSheet(BarrageCore::MLineEditStyle02);
+    setStyleSheet(BarrageCore::LineEditStyle02);
 }
 
 void BarrageEdit::addFilterText(const QString &text)
@@ -43,7 +43,7 @@ void BarrageEdit::contextMenuEvent(QContextMenuEvent *event)
     QLineEdit::contextMenuEvent(event);
 
     QMenu rightClickMenu(this);
-    rightClickMenu.setStyleSheet(BarrageCore::MMenuStyle02);
+    rightClickMenu.setStyleSheet(BarrageCore::MenuStyle02);
 
     QAction *shearM = rightClickMenu.addAction(tr("Shear"), this, SLOT(cut()));
     QAction *copyM = rightClickMenu.addAction(tr("Copy"), this, SLOT(copy()));

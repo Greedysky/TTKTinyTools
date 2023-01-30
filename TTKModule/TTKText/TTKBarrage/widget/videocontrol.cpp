@@ -36,12 +36,12 @@ VideoControl::VideoControl(QWidget *parent)
     m_timeSlider->setCursor(QCursor(Qt::PointingHandCursor));
     m_volumnSlider->setCursor(QCursor(Qt::PointingHandCursor));
 
-    m_popupVolumn.setStyleSheet(BarrageCore::MMenuStyle01);
-    m_timeSlider->setStyleSheet(BarrageCore::MSliderStyle02);
-    m_volumnSlider->setStyleSheet(BarrageCore::MSliderStyle01);
-    m_playButton->setStyleSheet(BarrageCore::MPushButtonStyle02);
-    m_volumnButton->setStyleSheet(BarrageCore::MToolButtonStyle02);
-    m_menuButton->setStyleSheet(BarrageCore::MToolButtonStyle02);
+    m_popupVolumn.setStyleSheet(BarrageCore::MenuStyle01);
+    m_timeSlider->setStyleSheet(BarrageCore::SliderStyle02);
+    m_volumnSlider->setStyleSheet(BarrageCore::SliderStyle01);
+    m_playButton->setStyleSheet(BarrageCore::PushButtonStyle02);
+    m_volumnButton->setStyleSheet(BarrageCore::ToolButtonStyle02);
+    m_menuButton->setStyleSheet(BarrageCore::ToolButtonStyle02);
 
     QVBoxLayout *controlVLayout = new QVBoxLayout(this);
     controlVLayout->setSpacing(0);
@@ -214,14 +214,13 @@ QWidget* VideoControl::createBarrageWidget()
     barrageLayout->setContentsMargins(0, 0, 0, 0);
 
     QToolButton *menuBarrage = new QToolButton(barrageWidget);
-    menuBarrage->setStyleSheet(BarrageCore::MToolButtonStyle02);
+    menuBarrage->setStyleSheet(BarrageCore::ToolButtonStyle02);
     menuBarrage->setIcon(QIcon(":/video/barrageStyle"));
     menuBarrage->setMenu(&m_popupBarrage);
     menuBarrage->setPopupMode(QToolButton::InstantPopup);
     BarrageEdit *lineEditBarrage = new BarrageEdit(barrageWidget);
     lineEditBarrage->addFilterText(tr("just one barrage!"));
-    lineEditBarrage->setStyleSheet(BarrageCore::MLineEditStyle01 + \
-                                   "QLineEdit{color:white;}");
+    lineEditBarrage->setStyleSheet(BarrageCore::LineEditStyle01 + "QLineEdit{color:white;}");
     connect(lineEditBarrage, SIGNAL(enterFinished(QString)), SIGNAL(addBarrageChanged(QString)));
 
     QLabel *labelBarrage = new QLabel(barrageWidget);
@@ -251,7 +250,7 @@ QPushButton* VideoControl::createBarrageSizeButton(int index)
         case 3: button->setText(tr("G")); break;
     }
     button->setFixedSize(25, 15);
-    button->setStyleSheet(BarrageCore::MPushButtonStyle02);
+    button->setStyleSheet(BarrageCore::PushButtonStyle02);
     button->setCursor(QCursor(Qt::PointingHandCursor));
     return button;
 }
@@ -271,7 +270,7 @@ QPushButton* VideoControl::createBarrageColorButton(int index)
         case 8: button->setIcon(QIcon(":/color/black")); break;
     }
     button->setFixedSize(15, 15);
-    button->setStyleSheet(BarrageCore::MPushButtonStyle02);
+    button->setStyleSheet(BarrageCore::PushButtonStyle02);
     button->setCursor(QCursor(Qt::PointingHandCursor));
     return button;
 }

@@ -59,20 +59,18 @@ namespace BarrageCore
     }
 
 ///Menu
-//////////////////////////////////////////////////////
-    const QString MMenuStyle01 = " \
+    const QString MenuStyle01 = " \
             QMenu {border: 1px solid gray; padding: 5px; }\
             QMenu::item {padding: 4px 25px 4px 30px;border: 1px solid transparent; }\
             QMenu::item:disabled {color: #666666;}\
             QMenu::item:selected { color: white; background: #BBBBBB;}\
             QMenu::separator {height: 1px;background: #BBBBBB;margin-top: 5px; margin-bottom: 5px;}";
 
-    const QString MMenuStyle02 = MMenuStyle01 + " \
+    const QString MenuStyle02 = MenuStyle01 + " \
             QMenu { background-color: rgba(255, 255, 255, 235);}";
 
 ///Slider
-//////////////////////////////////////////////////////
-    const QString MSliderStyle01 = " \
+    const QString SliderStyle01 = " \
             QSlider::groove:vertical {border: 1px solid #4A708B; \
             background: #C0C0C0;  width: 5px;  border-radius: 1px;\
             padding-left:-1px;padding-right:-1px;  padding-top:-1px;  padding-bottom:-1px;}  \
@@ -89,35 +87,32 @@ namespace BarrageCore
             height: 11px;margin-left: -3px;margin-right: -3px;border-radius: 5px;}\
             QSlider::handle:vertical:disabled {background: #eee;border: 1px solid #aaa;border-radius: 4px;}";
 
-    const QString MSliderStyle02 = "\
+    const QString SliderStyle02 = "\
             QSlider::groove:horizontal{background:#C0C0C0; height:8px;}\
             QSlider::sub-page:horizontal{background:#F7F66C;}\
             QSlider::add-page:horizontal{background:#4E4E4E;}\
             QSlider::handle:horizontal{background:#FFFFFF; width:10px;}";
 
 ///ToolButton
-//////////////////////////////////////////////////////
-    const QString MToolButtonStyle01 = " \
+    const QString ToolButtonStyle01 = " \
             QToolButton{background-color:transparent;}";
 
-    const QString MToolButtonStyle02 = MToolButtonStyle01 + " \
+    const QString ToolButtonStyle02 = ToolButtonStyle01 + " \
             QToolButton::menu-indicator{image:None;}";
 
 ///PushButton
-//////////////////////////////////////////////////////
-    const QString MPushButtonStyle01 = "\
+    const QString PushButtonStyle01 = "\
             QPushButton{background-color:transparent;}";
 
-    const QString MPushButtonStyle02 = MPushButtonStyle01 + "\
+    const QString PushButtonStyle02 = PushButtonStyle01 + "\
             QPushButton{border-none;}";
 
 ///LineEdit
-//////////////////////////////////////////////////////
-    const QString MLineEditStyle01 = " \
+    const QString LineEditStyle01 = " \
             QLineEdit{ border: 1px solid gray;} \
             QLineEdit::hover{ border: 1px solid #AAAAFF;}";
 
-    const QString MLineEditStyle02 = " \
+    const QString LineEditStyle02 = " \
             QLineEdit{border-image: url(:/image/searchline); \
             font-size:15px; color:#333333;}";
 
