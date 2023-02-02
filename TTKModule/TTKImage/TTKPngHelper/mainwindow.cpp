@@ -41,7 +41,7 @@ QFileInfoList MainWindow::fileListByPath(const QString &dpath, const QStringList
 
 void MainWindow::choosePng()
 {
-    const QString &dir = QFileDialog::getExistingDirectory(this, "Please Choose PNG Dir First!");
+    const QString &dir = QFileDialog::getExistingDirectory(this, "Please Choose PNG Dir First");
     if(dir.isEmpty())
     {
         return;

@@ -42,7 +42,7 @@ void MainWindow::listenButtonClicked()
         if(m_tcpServer->listen(QHostAddress::Any, m_ui->serverPortEdit->text().toInt()))
         {
             m_ui->serverListenButton->setText(tr("Stop"));
-            m_ui->serverLogEdit->append(tr("Listen Success!"));
+            m_ui->serverLogEdit->append(tr("Listen Success"));
             m_ui->serverSendButton->setEnabled(true);
         }
     }
@@ -52,7 +52,7 @@ void MainWindow::listenButtonClicked()
         m_tcpServer->close();
 
         m_ui->serverListenButton->setText(tr("Listen"));
-        m_ui->serverLogEdit->append(tr("Stop Listen!"));
+        m_ui->serverLogEdit->append(tr("Stop Listen"));
         m_ui->serverSendButton->setEnabled(false);
     }
 }
@@ -65,7 +65,7 @@ void MainWindow::connectButtonClicked()
         if(m_tcpClient->waitForConnected(1000))
         {
             m_ui->serverConnectButton->setText(tr("Disconnect"));
-            m_ui->clientLogEdit->append(tr("Connect Success!"));
+            m_ui->clientLogEdit->append(tr("Connect Success"));
             m_ui->clientSendButton->setEnabled(true);
         }
     }
@@ -75,7 +75,7 @@ void MainWindow::connectButtonClicked()
         if(m_tcpClient->state() == QAbstractSocket::UnconnectedState || m_tcpClient->waitForDisconnected(1000))
         {
             m_ui->clientLogEdit->setText(tr("Connect"));
-            m_ui->clientLogEdit->append(tr("Disconnect Success!"));
+            m_ui->clientLogEdit->append(tr("Disconnect Success"));
             m_ui->clientSendButton->setEnabled(true);
         }
     }
