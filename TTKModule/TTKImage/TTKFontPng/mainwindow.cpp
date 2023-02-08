@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "ttkdesktopwrapper.h"
 
 #include <QLabel>
 #include <QFontDatabase>
@@ -15,11 +16,7 @@ static QPixmap transFontToPixmap(const QFont &newFont, int w, int h, int fontSiz
     font.setPointSize(fontSize);
     widget.setFont(font);
 
-#if TTK_QT_VERSION_CHECK(5,0,0)
-    return widget.grab(widget.rect());
-#else
-    return QPixmap::grabWidget(&widget, widget.rect());
-#endif
+    return TTKDesktopWrapper::grabWidget(&widget, widget.rect());
 }
 
 
