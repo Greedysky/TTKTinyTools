@@ -61,7 +61,7 @@ static QImage makeQRcode(const QString &data, const QSize &size)
 
 void MainWindow::savePng(const QString &text)
 {
-    QString filePath = QFileDialog::getSaveFileName(nullptr, "Save Path", TTK_DOT, "*.png");
+    QString filePath = QFileDialog::getSaveFileName(nullptr, "Save Path", TTK_DOT, "Image Files (*.png)");
 
     if(filePath.isEmpty())
     {

@@ -23,7 +23,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::openImage()
 {
-    m_path = QFileDialog::getOpenFileName(this, "Please Image", "", "Images (*.png *.bmp *.jpg)");
+    m_path = QFileDialog::getOpenFileName(this, "Please Image", "", "Image Files (*.png *.bmp *.jpg)");
     if(m_path.isEmpty())
     {
         return;

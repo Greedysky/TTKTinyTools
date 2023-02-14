@@ -30,7 +30,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::openImage()
 {
-    const QString &path = QFileDialog::getOpenFileName(this, "Please Image", "", "Images (*.png *.bmp *.jpg)");
+    const QString &path = QFileDialog::getOpenFileName(this, "Please Image", "", "Image Files (*.png *.bmp *.jpg)");
     if(path.isEmpty())
     {
         return;
