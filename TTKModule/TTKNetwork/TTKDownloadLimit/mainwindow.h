@@ -19,9 +19,9 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
+#include <QTimer>
 #include <QMainWindow>
 #include <QNetworkReply>
-#include <QTimer>
 #include "ttkglobaldefine.h"
 
 namespace Ui {

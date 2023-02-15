@@ -6,7 +6,6 @@
 #  include <unistd.h>
 #endif
 #include <QFile>
-#include <QNetworkAccessManager>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
