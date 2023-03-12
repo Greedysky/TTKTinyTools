@@ -92,7 +92,7 @@ void ShowCPUMemory::cpu()
     if(m_process->state() == QProcess::NotRunning)
     {
         m_totalNew = m_idleNew = 0;
-        m_process->start("cat /proc/stat");
+        m_process->start("cat", {"/proc/stat"});
     }
 #endif
 }
@@ -114,7 +114,7 @@ void ShowCPUMemory::memory()
 #else
     if(m_process->state() == QProcess::NotRunning)
     {
-        m_process->start("cat /proc/meminfo");
+        m_process->start("cat", {"/proc/meminfo"});
     }
 #endif
 }

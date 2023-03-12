@@ -71,7 +71,7 @@ void ShowDeviceSize::load()
         }
     }
 #else
-    m_process->start("df -h");
+    m_process->start("df", {"-h"});
 #endif
 }
 
@@ -80,7 +80,7 @@ void ShowDeviceSize::readData()
     while(!m_process->atEnd())
     {
         const QString &result = QString::fromLocal8Bit(m_process->readLine());
-        if(result.startsWith("/dev/sda"))
+        if(result.startsWith("/dev/sd"))
         {
             checkSize(result);
         }
