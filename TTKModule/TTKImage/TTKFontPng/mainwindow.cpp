@@ -24,5 +24,5 @@ QPixmap MainWindow::saveIcon(const QString &fontPath, int w, int h, int fontSize
 {
     const int fontId = QFontDatabase::addApplicationFont(fontPath);
     const QString &fontName = QFontDatabase::applicationFontFamilies(fontId).at(0);
-    return transFontToPixmap(QtFontInit(fontName), w, h, fontSize, iconIndex);
+    return transFontToPixmap(QFont(fontName), w, h, fontSize, iconIndex);
 }
