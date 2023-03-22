@@ -40,7 +40,7 @@ static QImage makeQRcode(const QString &data, const QSize &size)
 
     for(int y = 0; y < s; ++y)
     {
-        const int yy = TTKStatic_cast(int, y * s);
+        const int yy = TTKStaticCast(int, y * s);
         for(int x = 0; x < s; ++x)
         {
             const int xx = yy + x;

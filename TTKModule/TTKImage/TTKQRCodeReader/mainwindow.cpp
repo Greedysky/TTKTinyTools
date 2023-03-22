@@ -30,7 +30,7 @@ public:
 
         for(int x = 0; x < width; ++x)
         {
-            row[x] = TTKStatic_cast(char, qGray( m_image.pixel(x, y)));
+            row[x] = TTKStaticCast(char, qGray( m_image.pixel(x, y)));
         }
 
         return row;
@@ -110,7 +110,7 @@ QString MainWindow::decodeImage(const QImage &image, const int decode)
 
     try
     {
-        res = reader->decode(ref, TTKStatic_cast(zxing::DecodeHints, TTKStatic_cast(unsigned int, decode)));
+        res = reader->decode(ref, TTKStaticCast(zxing::DecodeHints, TTKStaticCast(unsigned int, decode)));
         return QString( res->getText()->getText().c_str());
     }
     catch(zxing::Exception &)
