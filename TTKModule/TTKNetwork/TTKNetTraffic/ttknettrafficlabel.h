@@ -20,15 +20,14 @@
  ***************************************************************************/
 
 #include <QLabel>
-#include <QThread>
-#include "ttkglobaldefine.h"
+#include "ttkabstractthread.h"
 
 class QProcess;
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTKNetTraffic : public QThread
+class TTKNetTraffic : public TTKAbstractThread
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNetTraffic)
@@ -47,14 +46,6 @@ public:
      * Get newtwork names.
      */
     QStringList newtworkNames() const;
-    /*!
-     * Stop and quit current thread.
-     */
-    void stopAndQuitThread();
-    /*!
-     * Strat thread now.
-     */
-    void start();
 
 Q_SIGNALS:
     /*!
@@ -75,9 +66,8 @@ private:
     virtual void run() override final;
 
 private:
-    bool m_run;
     QString m_name;
-    QProcess *m_process ;
+    QProcess *m_process;
 
 };
 

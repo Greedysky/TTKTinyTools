@@ -18,8 +18,7 @@
 #define TEMP_FILE_NAME  "net_temp"
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
-    : QThread(parent),
-      m_run(true),
+    : TTKAbstractThread(parent),
       m_process(nullptr)
 {
 #ifdef Q_OS_UNIX
@@ -41,7 +40,7 @@ TTKNetTraffic::TTKNetTraffic(QObject *parent)
 TTKNetTraffic::~TTKNetTraffic()
 {
     QFile::remove(TEMP_FILE_NAME);
-    stopAndQuitThread();
+    stop();
     if(m_process)
     {
         m_process->kill();
@@ -121,22 +120,6 @@ QStringList TTKNetTraffic::newtworkNames() const
     return names;
 }
 
-void TTKNetTraffic::stopAndQuitThread()
-{
-    if(isRunning())
-    {
-        m_run = false;
-        wait();
-    }
-    quit();
-}
-
-void TTKNetTraffic::start()
-{
-    m_run = true;
-    QThread::start();
-}
-
 void TTKNetTraffic::outputRecieved()
 {
 #ifdef Q_OS_UNIX
@@ -176,7 +159,7 @@ void TTKNetTraffic::run()
     DWORD dwLastIn = 0, dwLastOut = 0;
     DWORD dwBandIn = 0, dwBandOut = 0;
 
-    while(m_run)
+    while(m_running)
     {
         GetIfTable(pTable, &dwAdapters, TRUE);
         DWORD dwInOctets = 0, dwOutOctets = 0;

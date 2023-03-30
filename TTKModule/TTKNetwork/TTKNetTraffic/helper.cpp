@@ -1,28 +1,29 @@
 #include "helper.h"
 #include "ttknettrafficlabel.h"
 #include "ttkcpumemorylabel.h"
+#include "ttknumberdefine.h"
 
-#define KB (1024)
-#define MB (1024 * 1024)
-#define GB (1024 * 1024 * 1024)
-
-QString size2Number(ulong size)
+QString size2Number(qint64 size)
 {
-    if(size < KB)
+    if(size < MH_KB2B)
     {
-        return QString::number(size*1.0, 'f', 2) + "KB";
+        return QString::number(size * 1.0, 'f', 1) + "B/s";
     }
-    else if(KB <= size && size < MB)
+    else if(MH_KB2B <= size && size < MH_MB2B)
     {
-        return QString::number(size*1.0/KB, 'f', 2) + "MB";
+        return QString::number(size * 1.0 / MH_KB2B, 'f', 1) + "KB/s";
     }
-    else if(MB <= size && size < GB)
+    else if(MH_MB2B <= size && size < MH_GB2B)
     {
-        return QString::number(size*1.0/MB, 'f', 2) + "GB";
+        return QString::number(size * 1.0 / MH_MB2B, 'f', 1) + "MB/s";
+    }
+    else if(MH_GB2B <= size && size < MH_TB2B)
+    {
+        return QString::number(size * 1.0 / MH_GB2B, 'f', 1) + "GB/s";
     }
     else
     {
-        return QString("0KB");
+        return QString::number(size * 1.0 / MH_TB2B, 'f', 1) + "TB/s";
     }
 }
 
@@ -44,6 +45,8 @@ Helper::~Helper()
 void Helper::start()
 {
     m_traffic->setAvailableNewtworkName("wlp2s0");
+    m_traffic->stop();
+    m_traffic->start();
     m_memery->start(500);
 }
 
@@ -64,5 +67,5 @@ QString Helper::cpu() const
 
 void Helper::setData(ulong upload, ulong download)
 {
-    m_nwsInfo = QString(" ↑ %1, ↓ %2").arg(size2Number(upload)).arg(size2Number(download));
+    m_nwsInfo = QString(" ↑ %1, ↓ %2").arg(size2Number(upload), size2Number(download));
 }
