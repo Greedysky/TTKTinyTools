@@ -35,7 +35,9 @@ TTKTinyTools is free software licensed under the term of [Licence GPL v3](https:
 
 Download
 --------
-Github: **<u>https://github.com/Greedysky/TTKTinyTools</u>**
+Gitee URL: **<u>https://gitee.com/Greedysky/TTKTinyTools</u>**
+
+Github URL: **<u>https://github.com/Greedysky/TTKTinyTools</u>**
 
 Features
 --------
