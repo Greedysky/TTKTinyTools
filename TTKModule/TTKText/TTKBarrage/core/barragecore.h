@@ -59,62 +59,62 @@ namespace BarrageCore
     }
 
 ///Menu
-    const QString MenuStyle01 = " \
-            QMenu {border: 1px solid gray; padding: 5px; }\
-            QMenu::item {padding: 4px 25px 4px 30px;border: 1px solid transparent; }\
-            QMenu::item:disabled {color: #666666;}\
-            QMenu::item:selected { color: white; background: #BBBBBB;}\
-            QMenu::separator {height: 1px;background: #BBBBBB;margin-top: 5px; margin-bottom: 5px;}";
+    static const QString MenuStyle01 = " \
+        QMenu {border: 1px solid gray; padding: 5px; }\
+        QMenu::item {padding: 4px 25px 4px 30px;border: 1px solid transparent; }\
+        QMenu::item:disabled {color: #666666;}\
+        QMenu::item:selected { color: white; background: #BBBBBB;}\
+        QMenu::separator {height: 1px;background: #BBBBBB;margin-top: 5px; margin-bottom: 5px;}";
 
-    const QString MenuStyle02 = MenuStyle01 + " \
-            QMenu { background-color: rgba(255, 255, 255, 235);}";
+    static const QString MenuStyle02 = MenuStyle01 + " \
+        QMenu { background-color: rgba(255, 255, 255, 235);}";
 
 ///Slider
-    const QString SliderStyle01 = " \
-            QSlider::groove:vertical {border: 1px solid #4A708B; \
-            background: #C0C0C0;  width: 5px;  border-radius: 1px;\
-            padding-left:-1px;padding-right:-1px;  padding-top:-1px;  padding-bottom:-1px;}  \
-            QSlider::sub-page:vertical {background: #575757;border:1px solid #4A708B;border-radius: 2px;}\
-            QSlider::add-page:vertical {  \
-            background: qlineargradient(x1:0, y1:0, x2:0, y2:1,  \
-            stop:0 #c4c4c4, stop:1 #B1B1B1);  \
-            background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,  \
-            stop: 0 #5DCCFF, stop: 1 #1874CD);  \
-            border: 0px solid #777;  width: 10px;border-radius: 2px;}  \
-            QSlider::handle:vertical{\
-            background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, \
-            fx:0.5, fy:0.5, stop:0.6 #45ADED,stop:0.778409 rgba(255, 255, 255, 255));\
-            height: 11px;margin-left: -3px;margin-right: -3px;border-radius: 5px;}\
-            QSlider::handle:vertical:disabled {background: #eee;border: 1px solid #aaa;border-radius: 4px;}";
+    static const QString SliderStyle01 = " \
+        QSlider::groove:vertical {border: 1px solid #4A708B; \
+        background: #C0C0C0;  width: 5px;  border-radius: 1px;\
+        padding-left:-1px;padding-right:-1px;  padding-top:-1px;  padding-bottom:-1px;}  \
+        QSlider::sub-page:vertical {background: #575757;border:1px solid #4A708B;border-radius: 2px;}\
+        QSlider::add-page:vertical {  \
+        background: qlineargradient(x1:0, y1:0, x2:0, y2:1,  \
+        stop:0 #c4c4c4, stop:1 #B1B1B1);  \
+        background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,  \
+        stop: 0 #5DCCFF, stop: 1 #1874CD);  \
+        border: 0px solid #777;  width: 10px;border-radius: 2px;}  \
+        QSlider::handle:vertical{\
+        background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, \
+        fx:0.5, fy:0.5, stop:0.6 #45ADED,stop:0.778409 rgba(255, 255, 255, 255));\
+        height: 11px;margin-left: -3px;margin-right: -3px;border-radius: 5px;}\
+        QSlider::handle:vertical:disabled {background: #eee;border: 1px solid #aaa;border-radius: 4px;}";
 
-    const QString SliderStyle02 = "\
-            QSlider::groove:horizontal{background:#C0C0C0; height:8px;}\
-            QSlider::sub-page:horizontal{background:#F7F66C;}\
-            QSlider::add-page:horizontal{background:#4E4E4E;}\
-            QSlider::handle:horizontal{background:#FFFFFF; width:10px;}";
+    static const QString SliderStyle02 = "\
+        QSlider::groove:horizontal{background:#C0C0C0; height:8px;}\
+        QSlider::sub-page:horizontal{background:#F7F66C;}\
+        QSlider::add-page:horizontal{background:#4E4E4E;}\
+        QSlider::handle:horizontal{background:#FFFFFF; width:10px;}";
 
 ///ToolButton
-    const QString ToolButtonStyle01 = " \
-            QToolButton{background-color:transparent;}";
+    static const QString ToolButtonStyle01 = " \
+        QToolButton{background-color:transparent;}";
 
-    const QString ToolButtonStyle02 = ToolButtonStyle01 + " \
-            QToolButton::menu-indicator{image:None;}";
+    static const QString ToolButtonStyle02 = ToolButtonStyle01 + " \
+        QToolButton::menu-indicator{image:None;}";
 
 ///PushButton
-    const QString PushButtonStyle01 = "\
-            QPushButton{background-color:transparent;}";
+    static const QString PushButtonStyle01 = "\
+        QPushButton{background-color:transparent;}";
 
-    const QString PushButtonStyle02 = PushButtonStyle01 + "\
-            QPushButton{border-none;}";
+    static const QString PushButtonStyle02 = PushButtonStyle01 + "\
+        QPushButton{border-none;}";
 
 ///LineEdit
-    const QString LineEditStyle01 = " \
-            QLineEdit{ border: 1px solid gray;} \
-            QLineEdit::hover{ border: 1px solid #AAAAFF;}";
+    static const QString LineEditStyle01 = " \
+        QLineEdit{ border: 1px solid gray;} \
+        QLineEdit::hover{ border: 1px solid #AAAAFF;}";
 
-    const QString LineEditStyle02 = " \
-            QLineEdit{border-image: url(:/image/searchline); \
-            font-size:15px; color:#333333;}";
+    static const QString LineEditStyle02 = " \
+        QLineEdit{border-image: url(:/image/searchline); \
+        font-size:15px; color:#333333;}";
 
 }
 
