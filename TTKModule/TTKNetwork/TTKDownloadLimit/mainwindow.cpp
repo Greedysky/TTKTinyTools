@@ -47,16 +47,15 @@ void MainWindow::startRequest(const QUrl &url)
 
 void MainWindow::deleteAll()
 {
-    if(m_file)
-    {
-        delete m_file;
-        m_file = nullptr;
-    }
+    delete m_file;
+    m_file = nullptr;
+
     if(m_reply)
     {
         m_reply->deleteLater();
         m_reply = nullptr;
     }
+
     if(m_manager)
     {
         m_manager->deleteLater();
