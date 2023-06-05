@@ -1,7 +1,7 @@
 /**
  * qrencode - QR Code encoder
  *
- * Copyright (C) 2006-2012 Kentaro Fukuchi <kentaro@fukuchi.org>
+ * Copyright (C) 2006-2017 Kentaro Fukuchi <kentaro@fukuchi.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -23,8 +23,8 @@
  * symbology.
  *
  * \section encoding Encoding
- * 
- * There are two methods to encode data: <b>encoding a string/data</b> or 
+ *
+ * There are two methods to encode data: <b>encoding a string/data</b> or
  * <b>encoding a structured data</b>.
  *
  * \subsection encoding-string Encoding a string/data
@@ -35,8 +35,8 @@
  *
  * If the input data contains Kanji (Shift-JIS) characters and you want to
  * encode them as Kanji in QR Code, you should give QR_MODE_KANJI as a hint.
- * Otherwise, all of non-alphanumeric characters are encoded as 8 bit data.
- * If you want to encode a whole string in 8 bit mode, you can use
+ * Otherwise, all of non-alphanumeric characters are encoded as 8-bit data.
+ * If you want to encode a whole string in 8-bit mode, you can use
  * QRcode_encodeString8bit() instead.
  *
  * Please note that a C string can not contain NUL characters. If your data
@@ -44,16 +44,16 @@
  *
  * \subsection encoding-input Encoding a structured data
  * You can construct a structured input data manually. If the structure of the
- * input data is known, you can use this way.
+ * input data is known, you can use this method.
  * At first, create a ::QRinput object by QRinput_new(). Then add input data
  * to the QRinput object by QRinput_append(). Finally call QRcode_encodeInput()
  * to encode the QRinput data.
- * You can reuse the QRinput data again to encode it in other symbols with
+ * You can reuse the QRinput object again to encode it in other symbols with
  * different parameters.
  *
  * \section result Result
- * The encoded symbol is resulted as a ::QRcode object. It will contain
- * its version number, width of the symbol and an array represents the symbol.
+ * The encoded symbol is generated as a ::QRcode object. It will contain its
+ * version number, the width of the symbol, and an array represents the symbol.
  * See ::QRcode for the details. You can free the object by QRcode_free().
  *
  * Please note that the version of the result may be larger than specified.
@@ -68,7 +68,7 @@
  * to generate structured-appended symbols. This functions returns an instance
  * of ::QRcode_List. The returned list is a singly-linked list of QRcode: you
  * can retrieve each QR code in this way:
- *  
+ *
  * \code
  * QRcode_List *qrcodes;
  * QRcode_List *entry;
@@ -96,8 +96,8 @@
  * encoding symbols.
  */
 
-#ifndef __QRENCODE_H__
-#define __QRENCODE_H__
+#ifndef QRENCODE_H
+#define QRENCODE_H
 
 #ifdef _WIN32
 #define EXTRAS_EXPORT __declspec(dllexport)
@@ -113,25 +113,25 @@ extern "C" {
  * Encoding mode.
  */
 typedef enum {
-	QR_MODE_NUL = -1,  ///< Terminator (NUL character). Internal use only
-	QR_MODE_NUM = 0,   ///< Numeric mode
-	QR_MODE_AN,        ///< Alphabet-numeric mode
-	QR_MODE_8,         ///< 8-bit data mode
-	QR_MODE_KANJI,     ///< Kanji (shift-jis) mode
-	QR_MODE_STRUCTURE, ///< Internal use only
-	QR_MODE_ECI,       ///< ECI mode
-	QR_MODE_FNC1FIRST,  ///< FNC1, first position
-	QR_MODE_FNC1SECOND, ///< FNC1, second position
+    QR_MODE_NUL = -1,   ///< Terminator (NUL character). Internal use only
+    QR_MODE_NUM = 0,    ///< Numeric mode
+    QR_MODE_AN,         ///< Alphabet-numeric mode
+    QR_MODE_8,          ///< 8-bit data mode
+    QR_MODE_KANJI,      ///< Kanji (shift-jis) mode
+    QR_MODE_STRUCTURE,  ///< Internal use only
+    QR_MODE_ECI,        ///< ECI mode
+    QR_MODE_FNC1FIRST,  ///< FNC1, first position
+    QR_MODE_FNC1SECOND, ///< FNC1, second position
 } QRencodeMode;
 
 /**
  * Level of error correction.
  */
 typedef enum {
-	QR_ECLEVEL_L = 0, ///< lowest
-	QR_ECLEVEL_M,
-	QR_ECLEVEL_Q,
-	QR_ECLEVEL_H      ///< highest
+    QR_ECLEVEL_L = 0, ///< lowest
+    QR_ECLEVEL_M,
+    QR_ECLEVEL_Q,
+    QR_ECLEVEL_H      ///< highest
 } QRecLevel;
 
 /**
@@ -366,22 +366,22 @@ extern EXTRAS_EXPORT int QRinput_setFNC1Second(QRinput *input, unsigned char app
  * the uchar is 1, the corresponding module is black. The other bits are
  * meaningless for usual applications, but here its specification is described.
  *
- * <pre>
- * MSB 76543210 LSB
- *     |||||||`- 1=black/0=white
- *     ||||||`-- data and ecc code area
- *     |||||`--- format information
- *     ||||`---- version information
- *     |||`----- timing pattern
- *     ||`------ alignment pattern
- *     |`------- finder pattern and separator
- *     `-------- non-data modules (format, timing, etc.)
- * </pre>
+ * @verbatim
+   MSB 76543210 LSB
+       |||||||`- 1=black/0=white
+       ||||||`-- 1=ecc/0=data code area
+       |||||`--- format information
+       ||||`---- version information
+       |||`----- timing pattern
+       ||`------ alignment pattern
+       |`------- finder pattern and separator
+       `-------- non-data modules (format, timing, etc.)
+   @endverbatim
  */
 typedef struct {
-	int version;         ///< version of the symbol
-	int width;           ///< width of the symbol
-	unsigned char *data; ///< symbol data
+    int version;         ///< version of the symbol
+    int width;           ///< width of the symbol
+    unsigned char *data; ///< symbol data
 } QRcode;
 
 /**
@@ -389,8 +389,8 @@ typedef struct {
  * A list is terminated with NULL.
  */
 typedef struct _QRcode_List {
-	QRcode *code;
-	struct _QRcode_List *next;
+    QRcode *code;
+    struct _QRcode_List *next;
 } QRcode_List;
 
 /**
@@ -478,7 +478,7 @@ extern EXTRAS_EXPORT void QRcode_free(QRcode *qrcode);
 /**
  * Create structured symbols from the input data.
  * @warning This function is THREAD UNSAFE when pthread is disabled.
- * @param s
+ * @param s input data, structured.
  * @return a singly-linked list of QRcode.
  */
 extern EXTRAS_EXPORT QRcode_List *QRcode_encodeInputStructured(QRinput_Struct *s);
@@ -545,9 +545,9 @@ extern EXTRAS_EXPORT void QRcode_List_free(QRcode_List *qrlist);
 
 /**
  * Return a string that identifies the library version.
- * @param major_version
- * @param minor_version
- * @param micro_version
+ * @param major_version major version number
+ * @param minor_version minor version number
+ * @param micro_version micro version number
  */
 extern EXTRAS_EXPORT void QRcode_APIVersion(int *major_version, int *minor_version, int *micro_version);
 
@@ -559,14 +559,16 @@ extern EXTRAS_EXPORT void QRcode_APIVersion(int *major_version, int *minor_versi
 extern EXTRAS_EXPORT char *QRcode_APIVersionString(void);
 
 /**
- * Clear all caches. This is only for debug purpose. If you are attacking a
- * complicated memory leak bug, try this to reduce the reachable blocks record.
- * @warning This function is THREAD UNSAFE when pthread is disabled.
+ * @deprecated
  */
+#ifndef _MSC_VER
+extern EXTRAS_EXPORT void QRcode_clearCache(void) __attribute__ ((deprecated));
+#else
 extern EXTRAS_EXPORT void QRcode_clearCache(void);
+#endif
 
 #if defined(__cplusplus)
 }
 #endif
 
-#endif /* __QRENCODE_H__ */
+#endif /* QRENCODE_H */

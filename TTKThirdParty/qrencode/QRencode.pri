@@ -29,6 +29,7 @@ HEADERS += \
     $$PWD/qrinput.h \
     $$PWD/qrspec.h \
     $$PWD/rscode.h \
+    $$PWD/rsecc.h \
     $$PWD/split.h
 
 SOURCES += \
@@ -40,4 +41,5 @@ SOURCES += \
     $$PWD/qrinput.c \
     $$PWD/qrspec.c \
     $$PWD/rscode.c \
+    $$PWD/rsecc.c \
     $$PWD/split.c
