@@ -21,7 +21,7 @@
 
 #include <QMainWindow>
 #include <QFileInfoList>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 namespace Ui {
 class MainWindow;

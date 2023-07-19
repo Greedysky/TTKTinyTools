@@ -21,7 +21,7 @@
 
 #include <QWidget>
 #include <QMediaPlayer>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QAudioOutput;
 class QVideoWidget;

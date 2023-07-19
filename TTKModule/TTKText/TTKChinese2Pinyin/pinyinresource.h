@@ -21,7 +21,7 @@
 
 #include <QMap>
 #include <QStringList>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 /*! @brief The class of the pinyin resource.
  * @author jiangXiaoBai <2499971906@qq.com>

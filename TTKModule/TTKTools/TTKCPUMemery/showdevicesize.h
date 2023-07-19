@@ -21,7 +21,7 @@
 
 #include <QObject>
 #include <QMutex>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QTableWidget;
 class QProcess;

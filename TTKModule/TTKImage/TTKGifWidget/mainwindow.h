@@ -21,7 +21,7 @@
 
 #include "gif.h"
 #include <QDialog>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 namespace Ui {
 class MainWindow;

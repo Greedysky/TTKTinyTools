@@ -22,7 +22,7 @@
 #include <QFile>
 #include <QLabel>
 #include <QPushButton>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class Helper;
 

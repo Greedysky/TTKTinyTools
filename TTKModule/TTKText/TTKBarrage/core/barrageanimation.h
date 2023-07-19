@@ -21,7 +21,7 @@
 
 #include <QSize>
 #include <QPropertyAnimation>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class TTK_MODULE_EXPORT BarrageAnimation : public QPropertyAnimation
 {

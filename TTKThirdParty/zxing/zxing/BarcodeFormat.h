@@ -21,7 +21,7 @@
  * limitations under the License.
  */
 
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 namespace zxing {
 

@@ -22,7 +22,7 @@
 #include <QTimer>
 #include <QMainWindow>
 #include <QNetworkReply>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 namespace Ui {
 class MainWindow;

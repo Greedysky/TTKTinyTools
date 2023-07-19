@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QImage>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class TTK_MODULE_EXPORT GaussianBlur
 {

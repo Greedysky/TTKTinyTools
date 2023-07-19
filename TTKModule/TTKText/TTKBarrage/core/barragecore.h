@@ -21,7 +21,7 @@
 
 #include <QDateTime>
 #include <QApplication>
-#include "ttkglobal.h"
+#include "ttkqtglobal.h"
 #if TTK_QT_VERSION_CHECK(5,10,0)
 #  include <QRandomGenerator>
 #endif

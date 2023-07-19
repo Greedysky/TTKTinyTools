@@ -19,7 +19,7 @@
  */
 
 #include <iostream>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 namespace zxing {
 

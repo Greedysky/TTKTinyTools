@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QLineEdit>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class TTK_MODULE_EXPORT BarrageEdit : public QLineEdit
 {

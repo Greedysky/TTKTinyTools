@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QTimer>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QProcess;
 

@@ -21,7 +21,7 @@
 
 #include <iostream>
 #include <functional>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 using namespace std;
 

@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QPixmap>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class TTK_MODULE_EXPORT MainWindow
 {

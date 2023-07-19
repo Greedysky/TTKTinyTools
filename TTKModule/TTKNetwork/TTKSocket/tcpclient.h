@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QTcpSocket>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 struct TTK_MODULE_EXPORT ClientData
 {
