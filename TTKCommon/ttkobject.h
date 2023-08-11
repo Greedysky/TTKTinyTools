@@ -1,8 +1,8 @@
-#ifndef TTKGB18030CHECKER
-#define TTKGB18030CHECKER
+#ifndef TTKOBJECT_H
+#define TTKOBJECT_H
 
 /***************************************************************************
- * This file is part of the TTK Tiny Tools project
+ * This file is part of the TTK Library Module project
  * Copyright (C) 2015 - 2023 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
@@ -19,16 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "checker.h"
+#include "ttkglobal.h"
 
-class TTK_MODULE_EXPORT GB18030Checker : public AbstractChecker
-{
-public:
-    GB18030Checker();
+#define TTK_SERVICE_NAME        "TTKService"
+#define TTK_APP_NAME            "TTKTinyTools"
+#define TTK_APP_COME_NAME       TTK_STRCAT(TTK_APP_NAME, COM_FILE)
 
-    virtual bool detect(const string &str) const override final;
+#ifdef _WIN32
+#  define TTK_APP_EXE_NAME      TTK_STRCAT(TTK_APP_NAME, EXE_FILE)
+#  define TTK_SERVICE_EXE_NAME  TTK_STRCAT(TTK_SERVICE_NAME, EXE_FILE)
+#  define TTK_APP_SHL_NAME      TTK_APP_EXE_NAME
+#  define TTK_SERVICE_SHL_NAME  TTK_SERVICE_EXE_NAME
+#else
+#  define TTK_APP_EXE_NAME      TTK_APP_NAME
+#  define TTK_SERVICE_EXE_NAME  TTK_SERVICE_NAME
+#  define TTK_APP_SHL_NAME      TTK_STRCAT(TTK_APP_NAME, SHL_FILE)
+#  define TTK_SERVICE_SHL_NAME  TTK_STRCAT(TTK_SERVICE_NAME, SHL_FILE)
+#endif
 
-};
-
-#endif // TTKGB18030CHECKER
-
+#endif // TTKOBJECT_H

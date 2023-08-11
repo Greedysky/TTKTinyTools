@@ -31,7 +31,7 @@ Usage
 
 License
 --------
-TTKTinyTools is free software licensed under the term of [Licence GPL v3](https://github.com/Greedysky/TTKTinyTools/blob/master/LICENSE). If you use TTKTinyTools or its constituent libraries, you must adhere to the terms of the license in question.
+TTKTinyTools is free software licensed under the term of [Licence LGPL v3](https://github.com/Greedysky/TTKTinyTools/blob/master/LICENSE). If you use TTKTinyTools or its constituent libraries, you must adhere to the terms of the license in question.
 
 Download
 --------
