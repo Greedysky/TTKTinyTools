@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #ifdef Q_CC_MSVC
 #  include <qt_windows.h>
-#elif defined Q_OS_UNIX || defined Q_CC_MINGW
+#elif defined Q_OS_UNIX || defined Q_CC_GNU
 #  include <unistd.h>
 #endif
 #include <QFile>
@@ -175,7 +175,7 @@ void MainWindow::updateDownloadSpeed()
     {
 #ifdef Q_CC_MSVC
         ::Sleep(1000 - m_limitValue * 1024 * 1000 / delta);
-#elif defined Q_OS_UNIX || defined Q_CC_MINGW
+#elif defined Q_OS_UNIX || defined Q_CC_GNU
         usleep((1000 - m_limitValue * 1024 * 1000 / delta) * 1000);
 #endif
         delta = m_limitValue * 1024;

@@ -45,7 +45,7 @@ QString PinyinHelper::convertToPinyinString(const QString &s, const QString &sep
                     for(int j = 0, l = pinyinArray.length(); j < l; ++j)
                     {
                         sb.append(pinyinArray[j]);
-                        if (j<l - 1)
+                        if(j < l - 1)
                         {
                             sb.append(separator);
                         }
