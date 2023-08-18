@@ -1,15 +1,11 @@
 #include "mainwindow.h"
+#include "ttkconcurrent.h"
 
 #include <QDir>
 #include <QMap>
 #include <QFileInfo>
 #include <QEventLoop>
 #include <functional>
-#if TTK_QT_VERSION_CHECK(5,0,0)
-#  include <QtConcurrent/QtConcurrent>
-#else
-#  include <QtConcurrentRun>
-#endif
 
 void foreachFileFromDirectory(const QDir &directory, const std::function<void(const QFileInfo &)> &each, const bool recursion)
 {
@@ -44,7 +40,7 @@ void  MainWindow::codeLines(const QString &path)
     QMap<QString, int> categorys;
 
     QEventLoop eventLoop;
-    const auto status = QtConcurrent::run([&]()
+    TTKConcurrent(
     {
         foreachFileFromDirectory( { path }, [&](const QFileInfo &fin)
         {
@@ -77,8 +73,8 @@ void  MainWindow::codeLines(const QString &path)
         }, true);
 
         eventLoop.quit();
-    } );
-    Q_UNUSED(status);
+    });
+
     eventLoop.exec();
 
     TTK_INFO_STREAM("All File Count " << fileCount);
