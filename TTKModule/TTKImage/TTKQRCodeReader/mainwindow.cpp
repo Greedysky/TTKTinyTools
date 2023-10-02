@@ -76,7 +76,7 @@ QString MainWindow::decodeImage(const int decode)
 
     if(filePath.isEmpty())
     {
-        return QString();
+        return {};
     }
 
     QImage image;
@@ -85,7 +85,7 @@ QString MainWindow::decodeImage(const int decode)
         return decodeImage(image, decode) ;
     }
 
-    return QString();
+    return {};
 }
 
 QString MainWindow::decodeImage(const QImage &image, const int decode)
@@ -94,7 +94,7 @@ QString MainWindow::decodeImage(const QImage &image, const int decode)
 
     if(image.isNull())
     {
-        return QString();
+        return {};
     }
 
     zxing::MultiFormatReader *reader = new zxing::MultiFormatReader;
@@ -115,6 +115,6 @@ QString MainWindow::decodeImage(const QImage &image, const int decode)
     }
     catch(zxing::Exception &)
     {
-        return QString();
+        return {};
     }
 }

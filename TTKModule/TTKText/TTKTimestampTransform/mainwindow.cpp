@@ -17,5 +17,5 @@ QString MainWindow::dateTimeStringFromTimestampString(const QString &stamp)
     {
         return QDateTime::fromMSecsSinceEpoch(stamp.toInt() * 1000).toString("yyyy-MM-dd hh:mm:ss");
     }
-    return QString();
+    return {};
 }

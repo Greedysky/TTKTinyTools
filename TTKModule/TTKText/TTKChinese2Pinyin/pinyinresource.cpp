@@ -35,7 +35,7 @@ TTKStringMap PinyinResource::resource(const QString &resourceName)
 #endif
 
     QString line;
-    while((line = in.readLine()) != QString())
+    while(!(line = in.readLine()).isEmpty())
     {
         const QStringList &tokens = line.trimmed().split("=");
         if(tokens.count() >= 2)

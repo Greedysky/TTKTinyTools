@@ -109,7 +109,7 @@ QStringList PinyinHelper::formatPinyin(QString pinyinString, Format pinyinFormat
         case Format::WITH_TONE_MARK: return convertWithToneMark(pinyinString);
         case Format::WITH_TONE_NUMBER: return convertWithToneNumber(pinyinString);
         case Format::WITHOUT_TONE: return convertWithoutTone(pinyinString);
-        default: return QStringList();
+        default: return {};
     }
 }
 
@@ -120,7 +120,7 @@ QStringList PinyinHelper::convertToPinyinArray(const QChar &c, Format pinyinForm
     {
         return formatPinyin(pinyin, pinyinFormat);
     }
-    return QStringList();
+    return {};
 }
 
 QStringList PinyinHelper::convertWithToneMark(const QString &pinyinArrayString)

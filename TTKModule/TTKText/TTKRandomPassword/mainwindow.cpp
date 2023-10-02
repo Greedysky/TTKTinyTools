@@ -36,7 +36,7 @@ QString MainWindow::randomPassword(const int length, const bool number, const bo
 
     if(table.isEmpty())
     {
-        return QString();
+        return {};
     }
 
     for(int index = 0; index < length; ++index)

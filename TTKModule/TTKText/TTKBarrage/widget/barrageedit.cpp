@@ -22,7 +22,7 @@ void BarrageEdit::focusInEvent(QFocusEvent *event)
     blockSignals(true);
     if(text() == m_filterText)
     {
-        setText(QString());
+        setText({});
     }
     blockSignals(false);
 }
