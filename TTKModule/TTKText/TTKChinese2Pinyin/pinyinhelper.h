@@ -36,7 +36,7 @@ public:
     };
 
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     PinyinHelper();
 

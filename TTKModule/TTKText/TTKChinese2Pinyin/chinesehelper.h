@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT ChineseHelper
 {
 public:
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     ChineseHelper();
 
