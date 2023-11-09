@@ -42,7 +42,7 @@ bool UTF8Checker::detect(const string &str) const
     while(index + 1 < length)
     {
         bool flag = false;
-        for(auto &func : qAsConst(UTF8_Detect))
+        for(const auto &func : qAsConst(UTF8_Detect))
         {
             if(func.second(buffer, length - index - 1))
             {

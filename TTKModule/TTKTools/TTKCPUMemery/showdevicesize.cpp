@@ -93,9 +93,9 @@ void ShowDeviceSize::checkSize(const QString &result)
     int percent = 0, index = 0;
     const QStringList &list = result.split(" ");
 
-    for(int i = 0; i < list.count(); ++i)
+    for(const QString &str : list)
     {
-        const QString &s = list.at(i).trimmed();
+        const QString &s = str.trimmed();
         if(s.isEmpty())
         {
             continue;

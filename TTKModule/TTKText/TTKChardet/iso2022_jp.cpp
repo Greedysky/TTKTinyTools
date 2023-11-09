@@ -44,7 +44,7 @@ bool ISO2022_JPChecker::detect(const string &str) const
 tuple<bool, ISO2022_jp_pair> ISO2022_JPChecker::checkFlag(const char *&str) const
 {
     tuple<bool, ISO2022_jp_pair> ret = make_tuple(false, ISO2022_jp_pair());
-    for(auto &func : qAsConst(ISO2022_Detect))
+    for(const auto &func : qAsConst(ISO2022_Detect))
     {
         string flag = func.first;
         if(!strncmp(flag.c_str(), (const char *)str, flag.length()))
