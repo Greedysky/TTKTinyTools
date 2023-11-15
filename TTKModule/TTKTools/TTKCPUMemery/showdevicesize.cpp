@@ -1,4 +1,5 @@
 ﻿#include "showdevicesize.h"
+#include "ttknumberdefine.h"
 #include <QProcess>
 #include <QTableWidget>
 #include <QFileInfo>
@@ -9,9 +10,6 @@
 #ifdef Q_OS_WIN
 #  include "windows.h"
 #endif
-#define GB (1024 * 1024 * 1024)
-#define MB (1024 * 1024)
-#define KB (1024)
 
 ShowDeviceSize *ShowDeviceSize::m_instance = nullptr;
 ShowDeviceSize::ShowDeviceSize(QObject *parent) : QObject(parent)
@@ -59,11 +57,11 @@ void ShowDeviceSize::load()
         ULARGE_INTEGER liFreeBytesAvailable, liTotalBytes, liTotalFreeBytes;
         if(GetDiskFreeSpaceEx(lpcwstrDriver, &liFreeBytesAvailable, &liTotalBytes, &liTotalFreeBytes))
         {
-            QString use = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart - liTotalFreeBytes.QuadPart) / GB, 'f', 1);
+            QString use = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart - liTotalFreeBytes.QuadPart) / MH_GB2B, 'f', 1);
             use += "G";
-            QString free = QString::number(TTKStaticCast(double, liTotalFreeBytes.QuadPart) / GB, 'f', 1);
+            QString free = QString::number(TTKStaticCast(double, liTotalFreeBytes.QuadPart) / MH_GB2B, 'f', 1);
             free += "G";
-            QString all = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart) / GB, 'f', 1);
+            QString all = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart) / MH_GB2B, 'f', 1);
             all += "G";
             int percent = 100 - ((double)liTotalFreeBytes.QuadPart / liTotalBytes.QuadPart) * 100;
 

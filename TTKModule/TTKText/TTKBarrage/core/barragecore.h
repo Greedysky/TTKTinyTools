@@ -26,8 +26,7 @@
 #  include <QRandomGenerator>
 #endif
 
-#define BARRAGEPATH     "videobarrage"
-#define BARRAGEPATH_AL  BarrageCore::applicationPath() + BARRAGEPATH
+#define BARRAGEPATH  BarrageCore::applicationPath() + "videobarrage"
 
 namespace BarrageCore
 {

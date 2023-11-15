@@ -1,5 +1,5 @@
-#ifndef TTKSHIFTJISCHECKER
-#define TTKSHIFTJISCHECKER
+#ifndef TTKSHIFTJISCHECKER_H
+#define TTKSHIFTJISCHECKER_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -30,5 +30,4 @@ public:
 
 };
 
-#endif // TTKSHIFTJISCHECKER
-
+#endif // TTKSHIFTJISCHECKER_H

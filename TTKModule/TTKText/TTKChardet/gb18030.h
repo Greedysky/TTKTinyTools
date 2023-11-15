@@ -1,5 +1,5 @@
-#ifndef TTKGB18030CHECKER
-#define TTKGB18030CHECKER
+#ifndef TTKGB18030CHECKER_H
+#define TTKGB18030CHECKER_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -30,5 +30,4 @@ public:
 
 };
 
-#endif // TTKGB18030CHECKER
-
+#endif // TTKGB18030CHECKER_H

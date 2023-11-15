@@ -1,5 +1,5 @@
-#ifndef TTKCHECKERBASE
-#define TTKCHECKERBASE
+#ifndef TTKCHECKERBASE_H
+#define TTKCHECKERBASE_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -38,4 +38,4 @@ private:
 
 };
 
-#endif // TTKCHECKERBASE
+#endif // TTKCHECKERBASE_H

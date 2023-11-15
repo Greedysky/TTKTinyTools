@@ -1,4 +1,5 @@
 #include "showcpumemory.h"
+#include "ttknumberdefine.h"
 #include <QTimer>
 #include <QProcess>
 #include <QLabel>
@@ -6,8 +7,6 @@
 #ifdef Q_OS_WIN
 #  include "windows.h"
 #endif
-#define MB (1024 * 1024)
-#define KB (1024)
 
 ShowCPUMemory::ShowCPUMemory(QObject *parent)
     : QObject(parent),
@@ -104,8 +103,8 @@ void ShowCPUMemory::memory()
     statex.dwLength = sizeof (statex);
     GlobalMemoryStatusEx(&statex);
     m_memoryPercent = statex.dwMemoryLoad;
-    m_memoryAll = statex.ullTotalPhys / MB;
-    m_memoryFree = statex.ullAvailPhys / MB;
+    m_memoryAll = statex.ullTotalPhys / MH_MB2B;
+    m_memoryFree = statex.ullAvailPhys / MH_MB2B;
     m_memoryUse = m_memoryAll - m_memoryFree;
 
     const QString &msg = QString("CPU : %1%  Memery : %2% ( Use %3 MB / All %4 MB )")
@@ -144,25 +143,25 @@ void ShowCPUMemory::readData()
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryAll = s.left(s.length() - 3).toInt() / KB;
+            m_memoryAll = s.left(s.length() - 3).toInt() / MH_KB2B;
         }
         else if(s.startsWith("MemFree"))
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryFree = s.left(s.length() - 3).toInt() / KB;
+            m_memoryFree = s.left(s.length() - 3).toInt() / MH_KB2B;
         }
         else if(s.startsWith("Buffers"))
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryFree += s.left(s.length() - 3).toInt() / KB;
+            m_memoryFree += s.left(s.length() - 3).toInt() / MH_KB2B;
         }
         else if(s.startsWith("Cached"))
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryFree += s.left(s.length() - 3).toInt() / KB;
+            m_memoryFree += s.left(s.length() - 3).toInt() / MH_KB2B;
             m_memoryUse = m_memoryAll - m_memoryFree;
             m_memoryPercent = 100 * m_memoryUse / m_memoryAll;
             break;

@@ -1,5 +1,5 @@
-#ifndef TTKASCIICHECKER
-#define TTKASCIICHECKER
+#ifndef TTKASCIICHECKER_H
+#define TTKASCIICHECKER_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -30,4 +30,4 @@ public:
 
 };
 
-#endif // TTKASCIICHECKER
+#endif // TTKASCIICHECKER_H

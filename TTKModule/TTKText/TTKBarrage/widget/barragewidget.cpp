@@ -187,7 +187,7 @@ void BarrageWidget::setLabelTextSize(QLabel *label)
 
 void BarrageWidget::readBarrage()
 {
-    QFile file(BARRAGEPATH_AL);
+    QFile file(BARRAGEPATH);
     if(file.open(QIODevice::ReadOnly))
     {
         m_barrageList << QString(file.readAll()).split("\r\n");
@@ -204,7 +204,7 @@ void BarrageWidget::readBarrage()
 
 void BarrageWidget::writeBarrage()
 {
-    QFile file(BARRAGEPATH_AL);
+    QFile file(BARRAGEPATH);
     if(file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QByteArray array;

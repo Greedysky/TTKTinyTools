@@ -1,5 +1,5 @@
-#ifndef TTKGBKCHECKER
-#define TTKGBKCHECKER
+#ifndef TTKGBKCHECKER_H
+#define TTKGBKCHECKER_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -33,5 +33,4 @@ private:
 
 };
 
-#endif // TTKGBKCHECKER
-
+#endif // TTKGBKCHECKER_H

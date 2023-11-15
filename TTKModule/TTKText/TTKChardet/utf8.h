@@ -1,5 +1,5 @@
-#ifndef TTKUTF8CHECKER
-#define TTKUTF8CHECKER
+#ifndef TTKUTF8CHECKER_H
+#define TTKUTF8CHECKER_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -30,5 +30,4 @@ public:
 
 };
 
-#endif // UTF8CHECKER
-
+#endif // UTF8CHECKER_H

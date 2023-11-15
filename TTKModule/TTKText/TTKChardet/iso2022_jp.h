@@ -1,5 +1,5 @@
-#ifndef TTKISO2022JP
-#define TTKISO2022JP
+#ifndef TTKISO2022JP_H
+#define TTKISO2022JP_H
 
 /***************************************************************************
  * This file is part of the TTK Tiny Tools project
@@ -36,4 +36,4 @@ private:
 
 };
 
-#endif // TTKISO2022JP
+#endif // TTKISO2022JP_H
