@@ -57,11 +57,11 @@ void ShowDeviceSize::load()
         ULARGE_INTEGER liFreeBytesAvailable, liTotalBytes, liTotalFreeBytes;
         if(GetDiskFreeSpaceEx(lpcwstrDriver, &liFreeBytesAvailable, &liTotalBytes, &liTotalFreeBytes))
         {
-            QString use = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart - liTotalFreeBytes.QuadPart) / MH_GB2B, 'f', 1);
+            QString use = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart - liTotalFreeBytes.QuadPart) / TTK_SN_GB2B, 'f', 1);
             use += "G";
-            QString free = QString::number(TTKStaticCast(double, liTotalFreeBytes.QuadPart) / MH_GB2B, 'f', 1);
+            QString free = QString::number(TTKStaticCast(double, liTotalFreeBytes.QuadPart) / TTK_SN_GB2B, 'f', 1);
             free += "G";
-            QString all = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart) / MH_GB2B, 'f', 1);
+            QString all = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart) / TTK_SN_GB2B, 'f', 1);
             all += "G";
             int percent = 100 - ((double)liTotalFreeBytes.QuadPart / liTotalBytes.QuadPart) * 100;
 
