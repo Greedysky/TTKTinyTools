@@ -59,5 +59,5 @@ void MainWindow::ShowColorValue()
     m_ui->txtRgb->setText(strDecimal);
     m_ui->txtWeb->setText(strHex);
 
-    QTimer::singleShot(TTK_DN_ONCE, this, SLOT(ShowColorValue()));
+    TTK_SIGNLE_SHOT(ShowColorValue);
 }

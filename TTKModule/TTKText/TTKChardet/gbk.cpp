@@ -9,7 +9,7 @@ GBKChecker::GBKChecker()
 bool GBKChecker::detect(const string &str) const
 {
     int index = -1;
-    int length = str.length();
+    int length = TTKStaticCast(int, str.length());
     const unsigned char* buffer = (const unsigned char*)str.c_str();
     while(index + 1 < length)
     {
@@ -29,7 +29,7 @@ bool GBKChecker::detect(const string &str) const
             break;
         }
     }
-    return (index + 1 == length);
+    return index + 1 == length;
 }
 
 bool GBKChecker::checkTwoBytes(const unsigned char *buffer) const
