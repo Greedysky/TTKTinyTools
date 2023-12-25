@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_ui->serverSendButton->setEnabled(false);
 
     connect(m_tcpClient, SIGNAL(readyRead()), SLOT(readData()));
-    QtSocketErrorConnect(m_tcpClient, this, readError);
+    QtSocketErrorConnect(m_tcpClient, this, readError, TTK_SLOT);
 
     connect(m_tcpServer, SIGNAL(clientConnect(ClientData)), SLOT(clientConnect(ClientData)));
     connect(m_tcpServer, SIGNAL(clientDisConnect(ClientData)), SLOT(clientDisConnect(ClientData)));

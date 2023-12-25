@@ -59,5 +59,5 @@ void MainWindow::ShowColorValue()
     m_ui->txtRgb->setText(strDecimal);
     m_ui->txtWeb->setText(strHex);
 
-    TTK_SIGNLE_SHOT(ShowColorValue);
+    TTK_SIGNLE_SHOT(ShowColorValue, TTK_SLOT);
 }

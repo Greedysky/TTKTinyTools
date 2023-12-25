@@ -182,7 +182,7 @@ QWidget* VideoControl::createBarrageWidget()
 
     fontSizeLayout->addStretch(1);
     fontSizeWidget->setLayout(fontSizeLayout);
-    QtButtonGroupConnect(fontSizeGroup, this, barrageSizeButtonClicked);
+    QtButtonGroupConnect(fontSizeGroup, this, barrageSizeButtonClicked, TTK_SLOT);
 
     QWidget *backgroundWidget = new QWidget(barrageSettingWidget);
     QHBoxLayout *backgroundLayout = new QHBoxLayout(backgroundWidget);
@@ -200,7 +200,7 @@ QWidget* VideoControl::createBarrageWidget()
     }
 
     backgroundWidget->setLayout(backgroundLayout);
-    QtButtonGroupConnect(backgroundGroup, this, barrageColorButtonClicked);
+    QtButtonGroupConnect(backgroundGroup, this, barrageColorButtonClicked, TTK_SLOT);
 
     settingLayout->addWidget(fontSizeWidget);
     settingLayout->addWidget(backgroundWidget);
