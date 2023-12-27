@@ -57,7 +57,7 @@ namespace BarrageCore
 #endif
     }
 
-///Menu
+    ///Menu
     static const QString MenuStyle01 = " \
         QMenu {border: 1px solid gray; padding: 5px; }\
         QMenu::item {padding: 4px 25px 4px 30px;border: 1px solid transparent; }\
@@ -68,7 +68,7 @@ namespace BarrageCore
     static const QString MenuStyle02 = MenuStyle01 + " \
         QMenu { background-color: rgba(255, 255, 255, 235);}";
 
-///Slider
+    ///Slider
     static const QString SliderStyle01 = " \
         QSlider::groove:vertical {border: 1px solid #4A708B; \
         background: #C0C0C0;  width: 5px;  border-radius: 1px;\
@@ -92,21 +92,21 @@ namespace BarrageCore
         QSlider::add-page:horizontal{background:#4E4E4E;}\
         QSlider::handle:horizontal{background:#FFFFFF; width:10px;}";
 
-///ToolButton
+    ///ToolButton
     static const QString ToolButtonStyle01 = " \
         QToolButton{background-color:transparent;}";
 
     static const QString ToolButtonStyle02 = ToolButtonStyle01 + " \
         QToolButton::menu-indicator{image:None;}";
 
-///PushButton
+    ///PushButton
     static const QString PushButtonStyle01 = "\
         QPushButton{background-color:transparent;}";
 
     static const QString PushButtonStyle02 = PushButtonStyle01 + "\
         QPushButton{border-none;}";
 
-///LineEdit
+    ///LineEdit
     static const QString LineEditStyle01 = " \
         QLineEdit{ border: 1px solid gray;} \
         QLineEdit::hover{ border: 1px solid #AAAAFF;}";
