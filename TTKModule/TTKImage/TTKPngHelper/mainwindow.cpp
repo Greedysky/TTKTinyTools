@@ -29,7 +29,7 @@ QFileInfoList MainWindow::fileListByPath(const QString &dpath, const QStringList
     QFileInfoList fileList = dir.entryInfoList(filter, QDir::Files | QDir::Hidden);
     if(recursively)
     {
-        const QFileInfoList& folderList = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+        const QFileInfoList &folderList = dir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
         for(const QFileInfo &fin : qAsConst(folderList))
         {
             fileList.append(fileListByPath(fin.absoluteFilePath(), filter, recursively));
