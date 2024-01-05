@@ -38,7 +38,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void startRequest(const QUrl &url);
+    void startToRequest(const QUrl &url);
 
 private Q_SLOTS:
     void startToDownload();

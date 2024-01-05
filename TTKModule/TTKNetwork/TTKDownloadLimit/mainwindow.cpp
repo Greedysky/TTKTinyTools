@@ -36,7 +36,7 @@ MainWindow::~MainWindow()
     delete m_ui;
 }
 
-void MainWindow::startRequest(const QUrl &url)
+void MainWindow::startToRequest(const QUrl &url)
 {
     m_reply = m_manager->get(QNetworkRequest(url));
     connect(m_reply, SIGNAL(finished()), SLOT(downLoadFinished()));
@@ -73,7 +73,7 @@ void MainWindow::startToDownload()
         {
             if(m_file->open(QIODevice::WriteOnly))
             {
-                startRequest(QUrl(url));
+                startToRequest(QUrl(url));
                 m_timer.start(1000);
             }
         }
@@ -112,7 +112,7 @@ void MainWindow::downLoadFinished()
         m_reply->deleteLater();
         m_file->open(QIODevice::WriteOnly);
         m_file->resize(0);
-        startRequest(m_reply->url().resolved(redirectionTarget.toUrl()));
+        startToRequest(m_reply->url().resolved(redirectionTarget.toUrl()));
         return;
     }
     else
