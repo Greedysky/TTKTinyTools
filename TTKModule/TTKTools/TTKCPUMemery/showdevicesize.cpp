@@ -8,7 +8,8 @@
 #include <QProgressBar>
 
 #ifdef Q_OS_WIN
-#  include "windows.h"
+#  define WIN32_LEAN_AND_MEAN
+#  include <qt_windows.h>
 #endif
 
 ShowDeviceSize *ShowDeviceSize::m_instance = nullptr;

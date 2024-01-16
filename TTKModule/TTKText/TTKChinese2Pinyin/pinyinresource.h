@@ -29,7 +29,6 @@
 class TTK_MODULE_EXPORT PinyinResource
 {
 public:
-
     static TTKStringMap pinyinResource();
     /*!
      * Get mutil pinyin resource.
