@@ -33,4 +33,4 @@ SOURCES += \
 
 FORMS += $$PWD/mainwindow.ui
 
-RESOURCES += $$PWD/TTKImageView.qrc
+RESOURCES += $$PWD/$${TARGET}.qrc

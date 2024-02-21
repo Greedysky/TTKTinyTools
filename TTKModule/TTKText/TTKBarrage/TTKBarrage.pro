@@ -55,4 +55,4 @@ SOURCES += \
     $$PWD/core/barrageanimation.cpp \
     $$PWD/videoview.cpp
 
-RESOURCES += $$PWD/TTKBarrage.qrc
+RESOURCES += $$PWD/$${TARGET}.qrc

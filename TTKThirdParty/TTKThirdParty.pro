@@ -51,4 +51,4 @@ INCLUDEPATH += \
 include($$PWD/qrencode/QRencode.pri)
 include($$PWD/zxing/ZXing.pri)
 
-win32:RC_FILE = $$PWD/TTKThirdParty.rc
+win32:RC_FILE = $$PWD/$${TARGET}.rc

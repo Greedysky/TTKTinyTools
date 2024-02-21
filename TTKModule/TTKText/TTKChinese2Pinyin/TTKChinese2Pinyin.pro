@@ -31,4 +31,4 @@ SOURCES += \
     $$PWD/chinesehelper.cpp \
     $$PWD/pinyinhelper.cpp
 
-RESOURCES += $$PWD/TTKChinese2Pinyin.qrc
+RESOURCES += $$PWD/$${TARGET}.qrc

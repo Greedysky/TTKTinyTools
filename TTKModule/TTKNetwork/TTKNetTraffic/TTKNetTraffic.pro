@@ -37,4 +37,4 @@ SOURCES += \
     $$PWD/ttkcpumemorylabel.cpp \
     $$PWD/ttknettrafficlabel.cpp
 
-RESOURCES += $$PWD/TTKNetTraffic.qrc
+RESOURCES += $$PWD/$${TARGET}.qrc
