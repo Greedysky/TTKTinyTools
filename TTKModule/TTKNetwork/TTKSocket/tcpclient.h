@@ -46,6 +46,8 @@ private Q_SLOTS:
     void disConnect();
 
 private:
+    using QTcpSocket::readData;
+
     int m_clientID;
 
 };

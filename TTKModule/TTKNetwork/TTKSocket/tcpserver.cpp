@@ -25,8 +25,11 @@ void TcpServer::closeAllClient()
         client->close();
     }
 }
-
+#if TTK_QT_VERSION_CHECK(5,0,0)
+void TcpServer::incomingConnection(qintptr handle)
+#else
 void TcpServer::incomingConnection(int handle)
+#endif
 {
     TcpClient *client = new TcpClient(handle, this);
     client->setSocketDescriptor(handle);

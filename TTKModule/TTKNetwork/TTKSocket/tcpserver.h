@@ -40,7 +40,11 @@ private Q_SLOTS:
     void clientDisConnectChanged(const ClientData &pair);
 
 private:
-    void incomingConnection(int handle);
+#if TTK_QT_VERSION_CHECK(5,0,0)
+    virtual void incomingConnection(qintptr handle) override;
+#else
+    virtual void incomingConnection(int handle) override;
+#endif
 
     QList<TcpClient*> m_clientList;
 
