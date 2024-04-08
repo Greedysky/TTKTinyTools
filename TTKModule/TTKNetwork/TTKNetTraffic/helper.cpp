@@ -1,7 +1,6 @@
 #include "helper.h"
 #include "ttknettrafficlabel.h"
 #include "ttkcpumemorylabel.h"
-#include "ttknumberdefine.h"
 
 QString size2Number(qint64 size)
 {

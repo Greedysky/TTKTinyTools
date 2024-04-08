@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "ttknumberdefine.h"
 #include "ttkdesktopwrapper.h"
 
 #include <QTimer>

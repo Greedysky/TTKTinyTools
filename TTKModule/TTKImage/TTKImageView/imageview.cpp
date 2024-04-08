@@ -111,7 +111,7 @@ ImageView::ImageView(QWidget *parent)
     connect(m_nextButton, SIGNAL(clicked()), this, SLOT(moveNext()));
 
     m_timer = new QTimer(this);
-    m_timer->setInterval(50);
+    m_timer->setInterval(50 * TTK_DN_MS);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(fading()));
 
     QAction *action_load = new QAction("载入", this);

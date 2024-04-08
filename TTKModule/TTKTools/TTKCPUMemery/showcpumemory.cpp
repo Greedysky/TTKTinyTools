@@ -1,5 +1,5 @@
 #include "showcpumemory.h"
-#include "ttknumberdefine.h"
+
 #include <QTimer>
 #include <QProcess>
 #include <QLabel>

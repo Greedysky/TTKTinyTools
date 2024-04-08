@@ -1,5 +1,5 @@
 ﻿#include "showdevicesize.h"
-#include "ttknumberdefine.h"
+
 #include <QProcess>
 #include <QTableWidget>
 #include <QFileInfo>

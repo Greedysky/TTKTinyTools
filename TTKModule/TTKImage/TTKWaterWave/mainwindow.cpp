@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_ui->openButton, SIGNAL(clicked(bool)), SLOT(openImage()));
 
     m_timer = new QTimer(this);
-    m_timer->setInterval(20);
+    m_timer->setInterval(20 * TTK_DN_MS);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(renderImage()));
 }
 

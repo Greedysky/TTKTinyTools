@@ -42,7 +42,7 @@ void MainWindow::initialize()
     m_gifWriter = nullptr;
 
     m_timer = new QTimer(this);
-    m_timer->setInterval(100);
+    m_timer->setInterval(100 * TTK_DN_MS);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(saveImage()));
 
     m_ui->btnClose->setIcon(style()->standardIcon(QStyle::SP_TitleBarCloseButton));
