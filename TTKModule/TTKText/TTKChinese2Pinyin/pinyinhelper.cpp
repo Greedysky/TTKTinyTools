@@ -12,11 +12,7 @@ PinyinHelper::PinyinHelper()
       m_allUnmarkedVowel("aeiouv"),
       m_allMarkedVowel("āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ")
 {
-#ifdef Q_CC_MSVC
-    m_chineseLing = '\xa9\x96';
-#else
-    m_chineseLing = L'〇';
-#endif
+
 }
 
 QStringList PinyinHelper::convertToPinyinArray(const QChar &c)

@@ -52,7 +52,7 @@ bool ChineseHelper::isChinese(const QChar &c) const
 #ifdef Q_CC_MSVC
     return '\xa9\x96' == c || (c.unicode() >= 0x4e00 && c.unicode() <= 0x9fa5);
 #else
-    return L'〇' == c || (c.unicode() >= 0x4e00 && c.unicode() <= 0x9fa5);
+    return char16_t(L'〇') == c || (c.unicode() >= 0x4e00 && c.unicode() <= 0x9fa5);
 #endif
 }
 

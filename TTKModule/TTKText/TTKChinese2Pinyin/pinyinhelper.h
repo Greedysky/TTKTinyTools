@@ -117,7 +117,6 @@ private:
     TTKStringMap m_pinyinTable;
     TTKStringMap m_mutliPinyinTable;
     QString m_pinyinSeparator;   // = ",";
-    QChar m_chineseLing;         // = '〇';
     QString m_allUnmarkedVowel;  // = "aeiouv";
     QString m_allMarkedVowel;    // = "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ";
 
