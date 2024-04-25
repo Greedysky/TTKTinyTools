@@ -219,7 +219,7 @@ QComboBox::hover{
  QComboBox:!editable:on, QComboBox::drop-down:editable:on {
      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #080B10,
-                                 stop: 1.0 #212C3F);;
+                                 stop: 1.0 #212C3F);
  }
 
  QComboBox:on { /* shift the text when the popup opens */
