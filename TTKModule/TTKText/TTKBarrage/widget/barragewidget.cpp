@@ -190,7 +190,7 @@ void BarrageWidget::readBarrage()
     QFile file(BARRAGEPATH);
     if(file.open(QIODevice::ReadOnly))
     {
-        m_barrageList << QString(file.readAll()).split("\r\n");
+        m_barrageList << QString(file.readAll()).split(TTK_WLINEFEED);
         for(int i = m_barrageList.count() -1; i >= 0; --i)
         {
             if(m_barrageList[i].isEmpty())

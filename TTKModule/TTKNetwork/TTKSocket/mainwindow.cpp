@@ -87,7 +87,7 @@ void MainWindow::clientReadData(const ClientData &pair, const QByteArray &data)
     {
         m_ui->serverLogEdit->append(tr("Receive:%1 From:[ClientID:%2 IP:%3 Port:%4] Time:%5")
                                   .arg(QString(data)).arg(pair.m_clientID).arg(pair.m_ip).arg(pair.m_port)
-                                  .arg(QTime::currentTime().toString(TTK_TIMEZ_FORMAT)));
+                                  .arg(QTime::currentTime().toString(TTK_TIMES_FORMAT)));
     }
 }
 
@@ -95,7 +95,7 @@ void MainWindow::clientConnect(const ClientData &pair)
 {
     m_ui->serverLogEdit->append(tr("Client:[ClientID:%1 IP:%2 Port:%3] Login Time:%4")
                               .arg(pair.m_clientID).arg(pair.m_ip).arg(pair.m_port)
-                              .arg(QTime::currentTime().toString(TTK_TIMEZ_FORMAT)));
+                              .arg(QTime::currentTime().toString(TTK_TIMES_FORMAT)));
     m_ui->serverComboBox->addItem(tr("%1:%2:%3").arg(pair.m_clientID).arg(pair.m_ip).arg(pair.m_port));
 }
 
@@ -103,7 +103,7 @@ void MainWindow::clientDisConnect(const ClientData &pair)
 {
     m_ui->serverLogEdit->append(tr("Client:[ClientID:%1 IP:%2 Port:%3] Logoff Time:%4")
                               .arg(pair.m_clientID).arg(pair.m_ip).arg(pair.m_port)
-                              .arg(QTime::currentTime().toString(TTK_TIMEZ_FORMAT)));
+                              .arg(QTime::currentTime().toString(TTK_TIMES_FORMAT)));
     m_ui->serverComboBox->removeItem(m_ui->serverComboBox->findText(tr("%1:%2:%3").arg(pair.m_clientID).arg(pair.m_ip).arg(pair.m_port)));
 }
 
@@ -113,7 +113,7 @@ void MainWindow::readData()
     if(!buffer.isEmpty())
     {
         m_ui->clientLogEdit->append(tr("Receive:%1 Time:%2")
-                                  .arg(QString(buffer)).arg(QTime::currentTime().toString(TTK_TIMEZ_FORMAT)));
+                                  .arg(QString(buffer)).arg(QTime::currentTime().toString(TTK_TIMES_FORMAT)));
     }
 }
 

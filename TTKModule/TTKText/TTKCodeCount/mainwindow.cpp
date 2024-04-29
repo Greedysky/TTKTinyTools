@@ -88,7 +88,7 @@ bool MainWindow::checkFile(const QString &fileName)
     const QFileInfo fin(fileName);
     const QString &suffix = "*." + fin.suffix();
     const QString &filter = m_ui->txtFilter->text().trimmed();
-    const QStringList &filters = filter.split(" ");
+    const QStringList &filters = filter.split(TTK_SPACE);
     return filters.contains(suffix);
 }
 
@@ -217,9 +217,9 @@ void MainWindow::countCode(const QString &fileName, int &lineCode, int &lineBlan
         while(!out.atEnd())
         {
             line = out.readLine();
-            if(line.startsWith(" "))
+            if(line.startsWith(TTK_SPACE))
             {
-                line.remove(" ");
+                line.remove(TTK_SPACE);
             }
 
             if(line.startsWith("/*"))

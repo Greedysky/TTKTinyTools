@@ -11,11 +11,11 @@ QString MainWindow::dateTimeStringFromTimestampString(const QString &stamp)
 {
     if(stamp.length() == 13)
     {
-        return QDateTime::fromMSecsSinceEpoch(stamp.toLongLong()).toString(TTK_DATE_TIMEZ_FORMAT);
+        return QDateTime::fromMSecsSinceEpoch(stamp.toLongLong()).toString(TTK_DATE_TIMES_FORMAT);
     }
     else if(stamp.length() == 10)
     {
-        return QDateTime::fromMSecsSinceEpoch(stamp.toInt() * 1000).toString(TTK_DATE_TIMEZ_FORMAT);
+        return QDateTime::fromMSecsSinceEpoch(stamp.toInt() * 1000).toString(TTK_DATE_TIMES_FORMAT);
     }
     return {};
 }
