@@ -54,7 +54,7 @@ void MainWindow::ShowColorValue()
         }
     }
 
-    m_ui->labColor->setStyleSheet(QString("background-color: rgb(%1);").arg(strDecimal));
+    m_ui->labColor->setStyleSheet(QString("background-color:rgb(%1);").arg(strDecimal));
     m_ui->txtRgb->setText(strDecimal);
     m_ui->txtWeb->setText(strHex);
 
