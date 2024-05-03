@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
     flags |= Qt::WindowStaysOnTopHint;
 
     setWindowFlags(flags);
-    setStyleSheet("border-radius: 0px;");
+    setStyleSheet("border-radius:0px;");
 
     m_helper->start();
 }

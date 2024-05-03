@@ -220,7 +220,7 @@ QWidget* VideoControl::createBarrageWidget()
     menuBarrage->setPopupMode(QToolButton::InstantPopup);
     BarrageEdit *lineEditBarrage = new BarrageEdit(barrageWidget);
     lineEditBarrage->addFilterText(tr("just one barrage"));
-    lineEditBarrage->setStyleSheet(BarrageCore::LineEditStyle01 + "QLineEdit{color:white;}");
+    lineEditBarrage->setStyleSheet(BarrageCore::LineEditStyle01 + "QLineEdit{ color:white; }");
     connect(lineEditBarrage, SIGNAL(enterFinished(QString)), SIGNAL(addBarrageChanged(QString)));
 
     QLabel *labelBarrage = new QLabel(barrageWidget);

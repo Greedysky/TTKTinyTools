@@ -89,7 +89,7 @@ ImageView::ImageView(QWidget *parent)
       m_totalNum(0),
       m_opacity(1.0)
 {
-    setStyleSheet(".QToolButton{background-color:rgba(0,0,0,0);border-style:none;}");
+    setStyleSheet(".QToolButton{ background-color:rgba(0,0,0,0); border-style:none; }");
 
     m_imageIndex = new ImageIndex(this);
     connect(this, SIGNAL(totalNumChanged(int)), m_imageIndex, SLOT(setTotalNum(int)));

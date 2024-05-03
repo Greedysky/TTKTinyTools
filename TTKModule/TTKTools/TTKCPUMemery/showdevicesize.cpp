@@ -31,7 +31,7 @@ void ShowDeviceSize::setTableWidget(QTableWidget *table)
     m_tableWidget->setColumnWidth(3, 100);
     m_tableWidget->setColumnWidth(4, 150);
 
-    m_tableWidget->setStyleSheet("QTableWidget::item{padding:0px;}");
+    m_tableWidget->setStyleSheet("QTableWidget::item{ padding:0px; }");
 
     QStringList headText;
     headText << "Dir" << "Used" << "Available" << "Size" << "Percent" ;
