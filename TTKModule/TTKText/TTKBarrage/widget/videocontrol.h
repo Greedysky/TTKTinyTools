@@ -42,7 +42,7 @@ public:
 
 Q_SIGNALS:
     void sliderValueChanged(int value);
-    void mediaChanged(const QString &data);
+    void mediaChanged(const QString &url);
 
     void addBarrageChanged(const QString &string);
     void pushBarrageChanged(bool on);

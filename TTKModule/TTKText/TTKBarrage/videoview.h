@@ -43,7 +43,7 @@ private Q_SLOTS:
     void durationChanged(qint64 duration);
     void setPosition(int position);
     void volumnChanged(int volumn);
-    void mediaChanged(const QString &data);
+    void mediaChanged(const QString &url);
 #if TTK_QT_VERSION_CHECK(6,0,0)
     void stateChanged(QMediaPlayer::PlaybackState state);
 #else

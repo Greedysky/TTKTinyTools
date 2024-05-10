@@ -141,12 +141,12 @@ void VideoView::volumnChanged(int volumn)
 #endif
 }
 
-void VideoView::mediaChanged(const QString &data)
+void VideoView::mediaChanged(const QString &url)
 {
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    m_player->setSource(QUrl(data));
+    m_player->setSource(QUrl(url));
 #else
-    m_player->setMedia(QUrl(data));
+    m_player->setMedia(QUrl(url));
 #endif
     m_player->play();
 }
