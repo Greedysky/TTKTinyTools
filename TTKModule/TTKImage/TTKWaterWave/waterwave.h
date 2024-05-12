@@ -62,4 +62,4 @@ private:
 
 };
 
-#endif //WATERWAVE_H
+#endif // WATERWAVE_H
