@@ -99,7 +99,7 @@ void BarrageWidget::setLabelTextSize(int size)
 
 void BarrageWidget::addBarrage(const QString &string)
 {
-    BarrageCore::timeSRand();
+    TTK::initRandom();
     QLabel *label = new QLabel(m_parentClass);
     createLabel(label);
     createAnimation(label);
@@ -132,7 +132,7 @@ void BarrageWidget::deleteItems()
 
 void BarrageWidget::createLabel()
 {
-    BarrageCore::timeSRand();
+    TTK::initRandom();
     for(const QString &str : qAsConst(m_barrageList))
     {
         Q_UNUSED(str);
@@ -144,11 +144,11 @@ void BarrageWidget::createLabel()
 void BarrageWidget::createLabel(QLabel *label)
 {
     QString color = QString("QLabel{color:rgb(%1,%2,%3);}")
-            .arg(BarrageCore::random(255)).arg(BarrageCore::random(255)).arg(BarrageCore::random(255));
+            .arg(TTK::random(255)).arg(TTK::random(255)).arg(TTK::random(255));
     label->setStyleSheet(color);
     if(!m_barrageList.isEmpty())
     {
-        label->setText(m_barrageList[BarrageCore::random(m_barrageList.count())]);
+        label->setText(m_barrageList[TTK::random(m_barrageList.count())]);
     }
     label->hide();
     m_labels << label;
