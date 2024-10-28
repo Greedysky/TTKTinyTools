@@ -2,12 +2,12 @@
 
 #include <QDateTime>
 
-QString MainWindow::currentDateTimeTimestampString()
+QString MainWindow::currentDateTime()
 {
     return QString::number(QDateTime::currentDateTime().toMSecsSinceEpoch() * 1000);
 }
 
-QString MainWindow::dateTimeStringFromTimestampString(const QString &stamp)
+QString MainWindow::fromString(const QString &stamp)
 {
     if(stamp.length() == 13)
     {

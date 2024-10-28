@@ -24,8 +24,8 @@
 class TTK_MODULE_EXPORT MainWindow
 {
 public:
-    QString currentDateTimeTimestampString();
-    QString dateTimeStringFromTimestampString(const QString &stamp);
+    QString currentDateTime();
+    QString fromString(const QString &stamp);
 
 };
 
