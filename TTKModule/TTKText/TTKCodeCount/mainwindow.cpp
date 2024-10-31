@@ -195,13 +195,13 @@ void MainWindow::countCode(const QStringList &files)
     m_ui->txtBlank->setText(QString::number(totalBlanks));
 
     double percent = 0.0;
-    percent = ((double)totalCodes / totalLines) * 100;
+    percent = (totalCodes * 1.0 / totalLines) * 100;
     m_ui->labPercentCode->setText(QString("%1%").arg(percent, 5, 'f', 2, QChar(' ')));
 
-    percent = ((double)totalNotes / totalLines) * 100;
+    percent = (totalNotes * 1.0 / totalLines) * 100;
     m_ui->labPercentNote->setText(QString("%1%").arg(percent, 5, 'f', 2, QChar(' ')));
 
-    percent = ((double)totalBlanks / totalLines) * 100;
+    percent = (totalBlanks * 1.0 / totalLines) * 100;
     m_ui->labPercentBlank->setText(QString("%1%").arg(percent, 5, 'f', 2, QChar(' ')));
 }
 

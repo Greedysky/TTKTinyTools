@@ -58,13 +58,13 @@ void ShowDeviceSize::load()
         ULARGE_INTEGER liFreeBytesAvailable, liTotalBytes, liTotalFreeBytes;
         if(GetDiskFreeSpaceEx(lpcwstrDriver, &liFreeBytesAvailable, &liTotalBytes, &liTotalFreeBytes))
         {
-            QString use = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart - liTotalFreeBytes.QuadPart) / TTK_SN_GB2B, 'f', 1);
+            QString use = QString::number((liTotalBytes.QuadPart - liTotalFreeBytes.QuadPart) * 1.0 / TTK_SN_GB2B, 'f', 1);
             use += "G";
-            QString free = QString::number(TTKStaticCast(double, liTotalFreeBytes.QuadPart) / TTK_SN_GB2B, 'f', 1);
+            QString free = QString::number(liTotalFreeBytes.QuadPart * 1.0 / TTK_SN_GB2B, 'f', 1);
             free += "G";
-            QString all = QString::number(TTKStaticCast(double, liTotalBytes.QuadPart) / TTK_SN_GB2B, 'f', 1);
+            QString all = QString::number(liTotalBytes.QuadPart * 1.0 / TTK_SN_GB2B, 'f', 1);
             all += "G";
-            int percent = 100 - ((double)liTotalFreeBytes.QuadPart / liTotalBytes.QuadPart) * 100;
+            int percent = 100 - (liTotalFreeBytes.QuadPart * 1.0 / liTotalBytes.QuadPart) * 100;
 
             insertSize(dirName, use, free, all, percent);
         }
