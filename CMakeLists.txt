@@ -128,7 +128,6 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
     set(QT_USE_QTGUI ON)
     set(QT_USE_QTNETWORK ON)
     set(QT_USE_QTXML ON)
-    set(QT_USE_QTMULTIMEDIA ON)
 
     include(${QT_USE_FILE})
 

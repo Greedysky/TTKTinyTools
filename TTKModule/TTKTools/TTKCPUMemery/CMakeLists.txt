@@ -38,6 +38,9 @@ set(UI_FILES
 )
 
 if(WIN32)
+  add_definitions(-DUNICODE)
+  add_definitions(-D_UNICOD)
+
   list(APPEND SOURCE_FILES ${MODULE_RC_FILE})
 endif()
 

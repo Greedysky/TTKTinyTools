@@ -18,7 +18,10 @@
 
 cmake_minimum_required(VERSION 3.0.0)
 
-add_subdirectory(TTKBarrage)
+if(TTK_QT_VERSION VERSION_GREATER "4")
+  add_subdirectory(TTKBarrage)
+endif()
+
 add_subdirectory(TTKCaseTransform)
 add_subdirectory(TTKChardet)
 add_subdirectory(TTKChinese2Pinyin)
