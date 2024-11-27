@@ -15,9 +15,9 @@ VideoView::VideoView(QWidget *parent)
 
     m_player = new QMediaPlayer(this);
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    connect(m_player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)), SLOT(stateChanged(QMediaPlayer::PlaybackState)));
+    connect(m_player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)), SLOT(stateChanged(MediaState)));
 #else
-    connect(m_player, SIGNAL(stateChanged(QMediaPlayer::State)), SLOT(stateChanged(QMediaPlayer::State)));
+    connect(m_player, SIGNAL(stateChanged(QMediaPlayer::State)), SLOT(stateChanged(MediaState)));
 #endif
     connect(m_player, SIGNAL(positionChanged(qint64)), SLOT(positionChanged(qint64)));
     connect(m_player, SIGNAL(durationChanged(qint64)), SLOT(durationChanged(qint64)));
@@ -93,11 +93,7 @@ void VideoView::play()
     }
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void VideoView::stateChanged(QMediaPlayer::PlaybackState state)
-#else
-void VideoView::stateChanged(QMediaPlayer::State state)
-#endif
+void VideoView::stateChanged(MediaState state)
 {
     switch(state)
     {

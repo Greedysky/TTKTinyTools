@@ -1,5 +1,5 @@
 # ***************************************************************************
-# * This file is part of the TTK Library Module project
+# * This file is part of the TTK Tiny Tools project
 # * Copyright (C) 2015 - 2024 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -18,43 +18,52 @@
 
 cmake_minimum_required(VERSION 3.0.0)
 
-project(TTKDumper)
+project(TTKBarrage)
 
 set(HEADER_FILES
-  ttkdumper.h
-  miniprocess.h
+  widget/barragewidget.h
+  widget/videocontrol.h
+  widget/barrageedit.h
+  core/barrageanimation.h
+  core/barragecore.h
+  videoview.h
 )
 
 set(SOURCE_FILES
-  ttkdumper.cpp
-  miniprocess.cpp
+  widget/barragewidget.cpp
+  widget/videocontrol.cpp
+  widget/barrageedit.cpp
+  core/barrageanimation.cpp
+  videoview.cpp
+  main.cpp
 )
 
-if(WIN32)
-  list(APPEND SOURCE_FILES ${PROJECT_NAME}.rc)
-endif()
+SET(QRC_FILES
+  ${PROJECT_NAME}.qrc
+)
+
+include_directories(widget core)
 
 if(WIN32)
-  list(APPEND QT_LINK_LIBS -lpsapi)
+  list(APPEND SOURCE_FILES ${MODULE_RC_FILE})
 endif()
 
 if(TTK_QT_VERSION VERSION_EQUAL "4")
   qt4_wrap_cpp(MOC_FILES ${HEADER_FILES})
+  qt4_add_resources(RCC_FILES ${QRC_FILES})
 
-  list(APPEND QT_LINK_LIBS ${QT_QTCORE_LIBRARY})
+  list(APPEND QT_LINK_LIBS ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTMULTIMEDIA_LIBRARY})
 elseif(TTK_QT_VERSION VERSION_EQUAL "5")
   qt5_wrap_cpp(MOC_FILES ${HEADER_FILES})
+  qt5_add_resources(RCC_FILES ${QRC_FILES})
 
-  list(APPEND QT_LINK_LIBS Qt5::Core)
+  list(APPEND QT_LINK_LIBS Qt5::Core Qt5::Gui Qt5::Widgets Qt5::MultimediaWidgets)
 elseif(TTK_QT_VERSION VERSION_EQUAL "6")
   qt6_wrap_cpp(MOC_FILES ${HEADER_FILES})
+  qt6_add_resources(RCC_FILES ${QRC_FILES})
 
-  list(APPEND QT_LINK_LIBS Qt6::Core)
+  list(APPEND QT_LINK_LIBS Qt6::Core Qt6::Gui Qt6::Widgets Qt6::MultimediaWidgets)
 endif()
 
-if(TTK_BUILD_SHARED)
-  add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES})
-else()
-  add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES})
-endif()
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES} ${RCC_FILES})
 target_link_libraries(${PROJECT_NAME} ${QT_LINK_LIBS})

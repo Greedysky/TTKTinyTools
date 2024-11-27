@@ -31,6 +31,12 @@ class BarrageWidget;
 class VideoView : public QWidget
 {
     Q_OBJECT
+private:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    using MediaState = QMediaPlayer::PlaybackState;
+#else
+    using MediaState = QMediaPlayer::State;
+#endif
 public:
     explicit VideoView(QWidget *parent = nullptr);
     ~VideoView();
@@ -44,11 +50,7 @@ private Q_SLOTS:
     void setPosition(int position);
     void volumnChanged(int volumn);
     void mediaChanged(const QString &url);
-#if TTK_QT_VERSION_CHECK(6,0,0)
-    void stateChanged(QMediaPlayer::PlaybackState state);
-#else
-    void stateChanged(QMediaPlayer::State state);
-#endif
+    void stateChanged(MediaState state);
 
     void addBarrageChanged(const QString &string);
     void pushBarrageChanged(bool on);

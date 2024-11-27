@@ -1,5 +1,5 @@
 # ***************************************************************************
-# * This file is part of the TTK Library Module project
+# * This file is part of the TTK Tiny Tools project
 # * Copyright (C) 2015 - 2024 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -18,43 +18,33 @@
 
 cmake_minimum_required(VERSION 3.0.0)
 
-project(TTKDumper)
+project(TTKUi)
 
-set(HEADER_FILES
-  ttkdumper.h
-  miniprocess.h
+SET(QRC_FILES
+  ${TTK_UI_DIR}/TinyTools.qrc
 )
-
-set(SOURCE_FILES
-  ttkdumper.cpp
-  miniprocess.cpp
-)
-
-if(WIN32)
-  list(APPEND SOURCE_FILES ${PROJECT_NAME}.rc)
-endif()
-
-if(WIN32)
-  list(APPEND QT_LINK_LIBS -lpsapi)
-endif()
 
 if(TTK_QT_VERSION VERSION_EQUAL "4")
-  qt4_wrap_cpp(MOC_FILES ${HEADER_FILES})
+  qt4_add_resources(RCC_FILES ${QRC_FILES})
 
   list(APPEND QT_LINK_LIBS ${QT_QTCORE_LIBRARY})
 elseif(TTK_QT_VERSION VERSION_EQUAL "5")
-  qt5_wrap_cpp(MOC_FILES ${HEADER_FILES})
+  qt5_add_resources(RCC_FILES ${QRC_FILES})
 
   list(APPEND QT_LINK_LIBS Qt5::Core)
 elseif(TTK_QT_VERSION VERSION_EQUAL "6")
-  qt6_wrap_cpp(MOC_FILES ${HEADER_FILES})
+  qt6_add_resources(RCC_FILES ${QRC_FILES})
 
   list(APPEND QT_LINK_LIBS Qt6::Core)
 endif()
 
+if(WIN32)
+  list(APPEND RCC_FILES TTKUi.rc)
+endif()
+
 if(TTK_BUILD_SHARED)
-  add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES})
+  add_library(${PROJECT_NAME} SHARED ${RCC_FILES})
 else()
-  add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES})
+  add_library(${PROJECT_NAME} STATIC ${RCC_FILES})
 endif()
 target_link_libraries(${PROJECT_NAME} ${QT_LINK_LIBS})
