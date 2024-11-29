@@ -43,9 +43,6 @@ SET(QRC_FILES
 
 if(WIN32)
   list(APPEND QT_LINK_LIBS Iphlpapi)
-endif()
-
-if(WIN32)
   list(APPEND SOURCE_FILES ${MODULE_RC_FILE})
 endif()
 
