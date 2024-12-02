@@ -4,9 +4,9 @@
 ![License](https://img.shields.io/badge/License-GPL%20V3-yellowgreen.svg?style=flat-square)
 ![License](https://img.shields.io/badge/License-LGPL%20V3-yellow.svg?style=flat-square)
 
-![LOGO](https://github.com/Greedysky/TTKTinyTools/blob/master/TTKResource/logo_banner.png?raw=true)
+![LOGO](TTKResource/logo_banner.png?raw=true)
 
-### **|[About](https://github.com/Greedysky/TTKTinyTools#usage)|[License](https://github.com/Greedysky/TTKTinyTools#license)|[Download](https://github.com/Greedysky/TTKTinyTools#download)|[Features](https://github.com/Greedysky/TTKTinyTools#features)|[Screenshots](https://github.com/Greedysky/TTKTinyTools#screenshots)|[Copyright](https://github.com/Greedysky/TTKTinyTools#copyright)|[Contribute](https://github.com/Greedysky/TTKTinyTools#how-to-contribute)|**
+### **|[About](#usage)|[License](#license)|[Download](#download)|[Features](#features)|[Screenshots](#screenshots)|[Copyright](#copyright)|[Contribute](#how-to-contribute)|**
 
 Usage
 --------
@@ -33,7 +33,7 @@ Usage
 
 License
 --------
-TTKTinyTools is free software licensed under the term of [Licence LGPL v3](https://github.com/Greedysky/TTKTinyTools/blob/master/LICENSE). If you use TTKTinyTools or its constituent libraries, you must adhere to the terms of the license in question.
+TTKTinyTools is free software licensed under the term of [Licence LGPL v3](LICENSE). If you use TTKTinyTools or its constituent libraries, you must adhere to the terms of the license in question.
 
 Download
 --------
