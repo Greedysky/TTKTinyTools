@@ -42,15 +42,15 @@ void BarrageEdit::contextMenuEvent(QContextMenuEvent *event)
 {
     QLineEdit::contextMenuEvent(event);
 
-    QMenu rightClickMenu(this);
-    rightClickMenu.setStyleSheet(BarrageCore::MenuStyle02);
+    QMenu menu(this);
+    menu.setStyleSheet(BarrageCore::MenuStyle02);
 
-    QAction *shearM = rightClickMenu.addAction(tr("Shear"), this, SLOT(cut()));
-    QAction *copyM = rightClickMenu.addAction(tr("Copy"), this, SLOT(copy()));
-    rightClickMenu.addAction(tr("Paste"), this, SLOT(paste()));
-    QAction *deleteM = rightClickMenu.addAction(tr("Delete"), this, SLOT(clear()));
-    rightClickMenu.addSeparator();
-    QAction *selectM = rightClickMenu.addAction(tr("SelectAll"), this, SLOT(selectAll()));
+    QAction *shearM = menu.addAction(tr("Shear"), this, SLOT(cut()));
+    QAction *copyM = menu.addAction(tr("Copy"), this, SLOT(copy()));
+    menu.addAction(tr("Paste"), this, SLOT(paste()));
+    QAction *deleteM = menu.addAction(tr("Delete"), this, SLOT(clear()));
+    menu.addSeparator();
+    QAction *selectM = menu.addAction(tr("SelectAll"), this, SLOT(selectAll()));
 
     bool state = hasSelectedText();
     shearM->setEnabled(state);
@@ -58,7 +58,7 @@ void BarrageEdit::contextMenuEvent(QContextMenuEvent *event)
     deleteM->setEnabled(state);
     selectM->setEnabled(!text().trimmed().isEmpty());
 
-    rightClickMenu.exec(QCursor::pos());
+    menu.exec(QCursor::pos());
 }
 
 void BarrageEdit::keyPressEvent(QKeyEvent *event)

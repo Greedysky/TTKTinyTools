@@ -178,7 +178,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
         if(mouseEvent->button() == Qt::LeftButton)
         {
             mousePressed = true;
-            mousePoint = mouseEvent->globalPos() - this->pos();
+            mousePoint = mouseEvent->globalPos() - pos();
             return true;
         }
     }
