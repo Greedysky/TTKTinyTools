@@ -25,6 +25,7 @@ void TcpServer::closeAllClient()
         client->close();
     }
 }
+
 #if TTK_QT_VERSION_CHECK(5,0,0)
 void TcpServer::incomingConnection(qintptr handle)
 #else
