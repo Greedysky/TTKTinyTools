@@ -46,7 +46,8 @@ win32:msvc{
 
 INCLUDEPATH += \
     $$PWD \
-    $$PWD/../TTKCommon
+    $$PWD/../TTKCommon \
+    $$PWD/../TTKCommon/base
 
 include($$PWD/qrencode/QRencode.pri)
 include($$PWD/zxing/ZXing.pri)
