@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ttkdesktopwrapper.h"
+#include "ttkdesktopscreen.h"
 
 #include <QLabel>
 #include <QFontDatabase>
@@ -16,7 +16,7 @@ static QPixmap transFontToPixmap(const QFont &newFont, int w, int h, int fontSiz
     font.setPointSize(fontSize);
     widget.setFont(font);
 
-    return TTKDesktopWrapper::grabWidget(&widget, widget.rect());
+    return TTKDesktopScreen::grabWidget(&widget, widget.rect());
 }
 
 

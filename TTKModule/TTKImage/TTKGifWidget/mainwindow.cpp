@@ -1,6 +1,6 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "ttkdesktopwrapper.h"
+#include "ttkdesktopscreen.h"
 
 #include <QStyle>
 #include <QTimer>
@@ -74,7 +74,7 @@ void MainWindow::saveImage()
         return;
     }
 
-    const QPixmap &pix = TTKDesktopWrapper::grabWindow(x() + m_rectGif.x(), y() + m_rectGif.y(), m_rectGif.width(), m_rectGif.height());
+    const QPixmap &pix = TTKDesktopScreen::grabWindow(x() + m_rectGif.x(), y() + m_rectGif.y(), m_rectGif.width(), m_rectGif.height());
 #if !TTK_QT_VERSION_CHECK(5,2,0)
     const QImage &image = pix.toImage().convertToFormat(QImage::Format_ARGB32);
 #else

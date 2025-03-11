@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "ttkdesktopwrapper.h"
+#include "ttkdesktopscreen.h"
 
 #include <QTimer>
 
@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowFlags(Qt::WindowMinimizeButtonHint);
     setWindowFlags(Qt::WindowStaysOnTopHint);
 
-    const QRect &geometry = TTKDesktopWrapper::geometry();
+    const QRect &geometry = TTKDesktopScreen::geometry();
     move((geometry.width() - width()) / 2, (geometry.height() - height()) / 2);
     setFixedSize(width(), height());
 
@@ -32,7 +32,7 @@ void MainWindow::ShowColorValue()
     m_ui->txtXY->setText(QString("X:%1  Y:%2").arg(x).arg(y));
 
     QString strDecimal, strHex;
-    const QPixmap &pixmap = TTKDesktopWrapper::grabWindow(x, y, 2, 2);
+    const QPixmap &pixmap = TTKDesktopScreen::grabWindow(x, y, 2, 2);
     if(!pixmap.isNull())
     {
         const QImage &image = pixmap.toImage();
