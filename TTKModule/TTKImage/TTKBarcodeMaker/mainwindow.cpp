@@ -118,7 +118,7 @@ void MainWindow::savePng(const QString &id)
         return;
     }
 
-    if(!filePath.toLower().endsWith(".png"))
+    if(!filePath.endsWith(".png", Qt::CaseInsensitive))
     {
         filePath += ".png";
     }

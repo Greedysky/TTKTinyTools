@@ -44,7 +44,7 @@ void  MainWindow::codeLines(const QString &path)
     {
         foreachFileFromDirectory( { path }, [&](const QFileInfo &fin)
         {
-            QString suffix = fin.suffix().toLower();
+            QString suffix = TTK_FILE_SUFFIX(fin);
             if(suffix.isEmpty())
             {
                suffix = "other";
