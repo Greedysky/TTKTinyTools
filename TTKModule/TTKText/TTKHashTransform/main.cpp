@@ -9,5 +9,5 @@ int main(int argc, char *argv[])
     w.setSource("Test");
     w.calculateMD5();
 
-    return 0;
+    return a.exec();
 }

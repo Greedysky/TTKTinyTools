@@ -9,5 +9,5 @@ int main(int argc, char *argv[])
     w.encode("Test");
     w.decode("Test");
 
-    return 0;
+    return a.exec();
 }

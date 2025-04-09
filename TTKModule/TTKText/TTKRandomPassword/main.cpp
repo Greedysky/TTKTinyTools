@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.randomPassword(16, true, true, true);
 
-    return 0;
+    return a.exec();
 }

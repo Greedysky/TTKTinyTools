@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.decodeImage();
 
-    return 0;
+    return a.exec();
 }
