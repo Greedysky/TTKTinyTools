@@ -14,7 +14,7 @@
    <string>TTKSocket</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../TTKUi/TinyTools.qrc">
+   <iconset resource="../../TTKUi/TTKModule.qrc">
     <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -299,7 +299,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../TTKUi/TinyTools.qrc"/>
+  <include location="../../TTKUi/TTKModule.qrc"/>
  </resources>
  <connections/>
 </ui>
