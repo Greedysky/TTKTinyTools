@@ -35,10 +35,14 @@ public:
     ~MainWindow();
 
 public Q_SLOTS:
+    void convert();
     void chooseImage();
+    void sizeTypeChanged(int index);
 
 private:
     Ui::MainWindow *m_ui;
+
+    QString m_path;
 
 };
 

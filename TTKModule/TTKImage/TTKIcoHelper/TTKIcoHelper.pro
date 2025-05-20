@@ -16,7 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-TEMPLATE = subdirs
-CONFIG += ordered
-SUBDIRS += TTKGetColor TTKGifWidget TTKPngHelper TTKGaussianBlur TTKFontPng TTKBarcodeMaker TTKWebPMaker \
-           TTKQRCodeReader TTKQRCodeMaker TTKIcoHelper TTKIconMaker TTKImageView TTKWaterWave
+include($$PWD/../../../TTKTinyTools.pri)
+
+TARGET = TTKIcoHelper
+
+HEADERS += $$PWD/mainwindow.h
+
+SOURCES += \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp
+
+FORMS += $$PWD/mainwindow.ui

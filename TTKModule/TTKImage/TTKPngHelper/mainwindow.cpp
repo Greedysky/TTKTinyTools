@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->pushButton, SIGNAL(clicked(bool)), SLOT(choosePng()));
+    connect(m_ui->pushButton, SIGNAL(clicked(bool)), SLOT(chooseImage()));
 }
 
 MainWindow::~MainWindow()
@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
     delete m_ui;
 }
 
-QFileInfoList MainWindow::fileListByPath(const QString &dpath, const QStringList &filter, bool recursively)
+static QFileInfoList fileListByPath(const QString &dpath, const QStringList &filter, bool recursively)
 {
     QDir dir(dpath);
     if(!dir.exists())
@@ -39,7 +39,7 @@ QFileInfoList MainWindow::fileListByPath(const QString &dpath, const QStringList
     return fileList;
 }
 
-void MainWindow::choosePng()
+void MainWindow::chooseImage()
 {
     const QString &dir = QFileDialog::getExistingDirectory(this, "Please Choose PNG Dir First");
     if(dir.isEmpty())

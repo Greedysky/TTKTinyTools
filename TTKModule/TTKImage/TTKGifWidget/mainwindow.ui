@@ -77,7 +77,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../../TTKUi/TTKModule.qrc">
+         <iconset resource="../../../TTKUi/TTKModule.qrc">
           <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
         </property>
         <property name="flat">
@@ -270,7 +270,7 @@
   <tabstop>btnClose</tabstop>
  </tabstops>
  <resources>
-  <include location="../../TTKUi/TTKModule.qrc"/>
+  <include location="../../../TTKUi/TTKModule.qrc"/>
  </resources>
  <connections/>
 </ui>
