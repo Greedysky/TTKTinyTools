@@ -38,19 +38,19 @@ void MainWindow::ShowColorValue()
         const QImage &image = pixmap.toImage();
         if(!image.isNull() && image.valid(0, 0))
         {
-            const QColor &color = image.pixel(0, 0);
-            const int red = color.red();
-            const int green = color.green();
-            const int blue= color.blue();
+            const QRgb rgb = image.pixel(0, 0);
+            const int red = qRed(rgb);
+            const int green = qGreen(rgb);
+            const int blue= qBlue(rgb);
 
             strDecimal = QString("%1, %2, %3")
                     .arg(red)
                     .arg(green)
                     .arg(blue);
             strHex = QString("#%1%2%3")
-                    .arg(QString("%1").arg(red & 0xFF ,2, 16, QLatin1Char('0')).toUpper())
-                    .arg(QString("%1").arg(green & 0xFF ,2, 16, QLatin1Char('0')).toUpper())
-                    .arg(QString("%1").arg(blue & 0xFF ,2, 16, QLatin1Char('0')).toUpper());
+                    .arg(QString("%1").arg(red & 0xFF ,2, 16, QLatin1Char('0')),
+                         QString("%1").arg(green & 0xFF ,2, 16, QLatin1Char('0')),
+                         QString("%1").arg(blue & 0xFF ,2, 16, QLatin1Char('0'))).toUpper();
         }
     }
 
