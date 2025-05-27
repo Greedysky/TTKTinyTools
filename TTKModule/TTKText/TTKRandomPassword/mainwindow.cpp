@@ -4,7 +4,7 @@
 
 MainWindow::MainWindow()
 {
-    srand(QDateTime::currentDateTime().toMSecsSinceEpoch());
+    srand(QDateTime::currentMSecsSinceEpoch());
 }
 
 QString MainWindow::randomPassword(const int length, const bool number, const bool english, const bool caseSensitive)

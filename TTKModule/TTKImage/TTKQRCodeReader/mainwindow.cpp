@@ -56,12 +56,7 @@ public:
         }
 
         zxing::ArrayRef<char> arr = zxing::ArrayRef<char>(matrix, width*height);
-
-        if(matrix)
-        {
-            delete[] matrix;
-        }
-
+        delete[] matrix;
         return arr;
     }
 
