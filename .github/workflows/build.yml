@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI-Build
+
+on:
+  push:
+  pull_request:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in
+# parallel
+jobs:
+  ubuntu:
+    uses: ./.github/workflows/ubuntu.yml
+    secrets: inherit
+
+  linux:
+    uses: ./.github/workflows/linux.yml
+    secrets: inherit
+
