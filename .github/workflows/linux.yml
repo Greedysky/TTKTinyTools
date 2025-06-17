@@ -10,7 +10,7 @@ env:
   TTK_VERSTION: 3.1.0.0
 
 jobs:
-  build_linux:
+  build:
     name: Build on linux
     strategy:
       matrix:
@@ -40,7 +40,7 @@ jobs:
 
       - name: Build project
         run: |
-          sudo apt install p7zip-full rename
+          sudo apt install rename p7zip-full
           qmake -v
           cmake --version
           cmake ${GITHUB_WORKSPACE} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
