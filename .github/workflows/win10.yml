@@ -34,7 +34,7 @@ jobs:
           host: windows
           arch: win64_mingw
           target: desktop
-          modules: qt5compat
+          modules: qt5compat qtmultimedia
           cache: 'true'
 
       - name: Create build dir
