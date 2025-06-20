@@ -111,9 +111,11 @@ void MainWindow::downLoadFinished()
     else if(!redirectionTarget.isNull())
     {
         m_reply->deleteLater();
-        m_file->open(QIODevice::WriteOnly);
-        m_file->resize(0);
-        startToRequest(m_reply->url().resolved(redirectionTarget.toUrl()));
+        if(m_file->open(QIODevice::WriteOnly))
+        {
+            m_file->resize(0);
+            startToRequest(m_reply->url().resolved(redirectionTarget.toUrl()));
+        }
         return;
     }
     else
