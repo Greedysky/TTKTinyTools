@@ -34,7 +34,7 @@ void ShowDeviceSize::setTableWidget(QTableWidget *table)
     m_tableWidget->setStyleSheet("QTableWidget::item{ padding:0px; }");
 
     QStringList headText;
-    headText << "Dir" << "Used" << "Available" << "Size" << "Percent" ;
+    headText << "Dir" << "Used" << "Available" << "Size" << "Percent";
     m_tableWidget->setHorizontalHeaderLabels(headText);
     m_tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);

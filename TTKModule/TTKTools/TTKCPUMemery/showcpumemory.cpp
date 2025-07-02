@@ -83,7 +83,7 @@ void ShowCPUMemory::cpu()
 
     preidleTime = idleTime;
     prekernelTime = kernelTime;
-    preuserTime = userTime ;
+    preuserTime = userTime;
 
     const QString &msg = QString("CPU : %1%  Memery : %2% ( Use %3 MB / All %4 MB )")
                                 .arg(m_cpuPercent).arg(m_memoryPercent).arg(m_memoryUse).arg(m_memoryAll);

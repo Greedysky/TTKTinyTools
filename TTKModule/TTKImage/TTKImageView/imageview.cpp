@@ -244,7 +244,7 @@ void ImageView::load(const QString &path)
     if(folder.exists())
     {
         QStringList filter;
-        filter << "*.png" << "*.jpg" << "*.gif" << "*.jpeg" << "*.bmp" ;
+        filter << "*.png" << "*.jpg" << "*.gif" << "*.jpeg" << "*.bmp";
         const QStringList &imageList = folder.entryList(filter);
 
         m_totalNum = imageList.count();
@@ -374,7 +374,7 @@ void ImageView::moveToPage(int index)
 {
     if(m_totalNum == 0 || index > m_totalNum - 1)
     {
-        return ;
+        return;
     }
 
     m_currentIndex = index;

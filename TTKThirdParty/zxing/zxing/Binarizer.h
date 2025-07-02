@@ -38,7 +38,7 @@ class TTK_MODULE_EXPORT Binarizer : public Counted {
   virtual Ref<BitArray> getBlackRow(int y, Ref<BitArray> row) = 0;
   virtual Ref<BitMatrix> getBlackMatrix() = 0;
 
-  Ref<LuminanceSource> getLuminanceSource() const ;
+  Ref<LuminanceSource> getLuminanceSource() const;
   virtual Ref<Binarizer> createBinarizer(Ref<LuminanceSource> source) = 0;
 
   int getWidth() const;

@@ -55,7 +55,7 @@ int EAN13Reader::decodeMiddle(Ref<BitArray> row,
   
   determineFirstDigit(resultString, lgPatternFound);
   
-  Range middleRange = findGuardPattern(row, rowOffset, true, MIDDLE_PATTERN) ;
+  Range middleRange = findGuardPattern(row, rowOffset, true, MIDDLE_PATTERN);
   rowOffset = middleRange[1];
 
   for (int x = 0; x < 6 && rowOffset < end; x++) {

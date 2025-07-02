@@ -183,7 +183,7 @@ QListWidget::item:selected {
 }
 
 #QListWidget::item:selected:!active {
-     border-width: 0px ;
+     border-width: 0px;
  }
 #QListWidget::item:selected:active {
      border-width: 1px;

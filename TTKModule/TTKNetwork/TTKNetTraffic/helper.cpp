@@ -2,7 +2,7 @@
 #include "ttknettrafficlabel.h"
 #include "ttkcpumemorylabel.h"
 
-QString size2Number(qint64 size)
+static QString size2Number(qint64 size)
 {
     if(size < TTK_SN_KB2B)
     {
@@ -26,6 +26,7 @@ QString size2Number(qint64 size)
     }
 }
 
+
 Helper::Helper(QObject *parent)
     : QObject(parent)
 {
@@ -43,7 +44,8 @@ Helper::~Helper()
 
 void Helper::start()
 {
-    m_traffic->setAvailableNewtworkName("wlp2s0");
+    const QString &module = m_traffic->currentNewtworkName();
+    m_traffic->setNewtworkName(module);
     m_traffic->stop();
     m_traffic->start();
     m_memery->start(500);
@@ -67,4 +69,5 @@ QString Helper::cpu() const
 void Helper::setData(ulong upload, ulong download)
 {
     m_nwsInfo = QString(" ↑ %1, ↓ %2").arg(size2Number(upload), size2Number(download));
+    TTK_INFO_STREAM(m_nwsInfo);
 }

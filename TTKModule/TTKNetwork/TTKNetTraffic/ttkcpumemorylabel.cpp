@@ -94,7 +94,7 @@ void TTKCPUMemoryLabel::cpu()
 
     preidleTime = idleTime;
     prekernelTime = kernelTime;
-    preuserTime = userTime ;
+    preuserTime = userTime;
 #else
 
     if(m_process->state() == QProcess::NotRunning)

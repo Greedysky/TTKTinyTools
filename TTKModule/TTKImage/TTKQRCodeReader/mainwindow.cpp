@@ -77,7 +77,7 @@ QString MainWindow::decodeImage(const int decode)
     QImage image;
     if(image.load(filePath))
     {
-        return decodeImage(image, decode) ;
+        return decodeImage(image, decode);
     }
 
     return {};
