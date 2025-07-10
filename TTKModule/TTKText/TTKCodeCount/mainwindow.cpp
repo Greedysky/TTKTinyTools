@@ -86,7 +86,7 @@ bool MainWindow::checkFile(const QString &fileName)
     }
 
     const QFileInfo fin(fileName);
-    const QString &suffix = "*." + fin.suffix();
+    const QString &suffix = "*." + TTK_FILE_SUFFIX(fin);
     const QString &filter = m_ui->txtFilter->text().trimmed();
     const QStringList &filters = filter.split(TTK_SPACE);
     return filters.contains(suffix);
@@ -138,7 +138,7 @@ void MainWindow::countCode(const QStringList &files)
         itemName->setText(fin.fileName());
 
         QTableWidgetItem *itemSuffix = new QTableWidgetItem;
-        itemSuffix->setText(fin.suffix());
+        itemSuffix->setText(TTK_FILE_SUFFIX(fin));
 
         QTableWidgetItem *itemSize = new QTableWidgetItem;
         itemSize->setText(QString::number(fin.size()));
