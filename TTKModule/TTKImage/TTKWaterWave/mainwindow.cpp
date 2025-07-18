@@ -42,7 +42,7 @@ void MainWindow::openImage()
 
 void MainWindow::renderImage()
 {
-    m_waterWave->run();
+    m_waterWave->execute();
     memcpy(m_image.bits(), (const uchar*)m_waterWave->pixels(), QtImageBytes(m_image));
     update();
 }

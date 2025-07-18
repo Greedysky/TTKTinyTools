@@ -28,7 +28,7 @@ int* WaterWave::pixels()
     return m_newPixels;
 }
 
-void WaterWave::run()
+void WaterWave::execute()
 {
     spreedRipple();
     renderRipple();

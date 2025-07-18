@@ -29,7 +29,7 @@ public:
     ~WaterWave();
 
     int* pixels();
-    void run();
+    void execute();
 
     void setWaveSource(int x, int y, int radius, int depth);
 
