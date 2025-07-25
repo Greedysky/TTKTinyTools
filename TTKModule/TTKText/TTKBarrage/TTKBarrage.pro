@@ -35,7 +35,7 @@ equals(QT_MAJOR_VERSION, 6):lessThan(QT_MINOR_VERSION, 2){
 TRANSLATIONS += $$PWD/cn.ts
 
 INCLUDEPATH += \
-    $$PWD/ \
+    $$PWD \
     $$PWD/core \
     $$PWD/widget
 
