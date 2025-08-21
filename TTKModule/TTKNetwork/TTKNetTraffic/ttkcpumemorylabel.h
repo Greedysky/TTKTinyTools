@@ -30,7 +30,6 @@ class QProcess;
 class TTK_MODULE_EXPORT TTKCPUMemoryLabel : public QObject
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKCPUMemoryLabel)
 public:
     explicit TTKCPUMemoryLabel(QObject *parent = nullptr);
     ~TTKCPUMemoryLabel();

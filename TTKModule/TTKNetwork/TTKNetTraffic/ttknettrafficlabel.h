@@ -30,7 +30,6 @@ class QProcess;
 class TTKNetTraffic : public TTKAbstractThread
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKNetTraffic)
 public:
     /*!
      * Object constructor.
