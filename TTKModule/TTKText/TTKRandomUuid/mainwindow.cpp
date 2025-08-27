@@ -1,13 +1,11 @@
 #include "mainwindow.h"
 
-#include <QUrl>
-
 QString MainWindow::encode(const QString &str)
 {
-    return QUrl::toPercentEncoding(str, "/:?=&%");
+    return QByteArray::toPercentEncoding(str, "/:?=&%");
 }
 
 QString MainWindow::decode(const QString &str)
 {
-    return QUrl::fromPercentEncoding(str.toUtf8());
+    return QByteArray::fromPercentEncoding(str.toUtf8());
 }
