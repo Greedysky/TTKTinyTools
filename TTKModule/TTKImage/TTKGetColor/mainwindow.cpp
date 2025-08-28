@@ -48,9 +48,9 @@ void MainWindow::ShowColorValue()
                     .arg(green)
                     .arg(blue);
             strHex = QString("#%1%2%3")
-                    .arg(QString("%1").arg(red & 0xFF ,2, 16, QLatin1Char('0')),
-                         QString("%1").arg(green & 0xFF ,2, 16, QLatin1Char('0')),
-                         QString("%1").arg(blue & 0xFF ,2, 16, QLatin1Char('0'))).toUpper();
+                    .arg(QString("%1").arg(red & 0xFF , 2, 16, QLatin1Char('0')),
+                         QString("%1").arg(green & 0xFF, 2, 16, QLatin1Char('0')),
+                         QString("%1").arg(blue & 0xFF, 2, 16, QLatin1Char('0'))).toUpper();
         }
     }
 

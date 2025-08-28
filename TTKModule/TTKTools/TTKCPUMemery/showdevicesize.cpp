@@ -129,7 +129,7 @@ void ShowDeviceSize::checkSize(const QString &result)
 
 void ShowDeviceSize::insertSize(const QString &name, const QString &use, const QString &free, const QString &all, int percent)
 {
-    int row = m_tableWidget->rowCount();
+    const int row = m_tableWidget->rowCount();
     m_tableWidget->insertRow(row);
     m_tableWidget->setRowHeight(row, 25);
 

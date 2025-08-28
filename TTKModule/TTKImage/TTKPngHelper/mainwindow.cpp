@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
 
 static QFileInfoList fileListByPath(const QString &dpath, const QStringList &filter, bool recursively)
 {
-    QDir dir(dpath);
+    const QDir dir(dpath);
     if(!dir.exists())
     {
         return QFileInfoList();

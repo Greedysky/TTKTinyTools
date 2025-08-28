@@ -94,7 +94,7 @@ bool MainWindow::checkFile(const QString &fileName)
 
 void MainWindow::countCode(const QString &filePath)
 {
-    QDir dir(filePath);
+    const QDir dir(filePath);
     for(const QFileInfo &fin : dir.entryInfoList())
     {
         if(fin.isFile())
