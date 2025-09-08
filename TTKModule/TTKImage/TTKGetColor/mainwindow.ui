@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>277</width>
+    <width>290</width>
     <height>103</height>
    </rect>
   </property>
@@ -16,9 +16,9 @@
   <widget class="QLineEdit" name="txtWeb">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>163</x>
      <y>10</y>
-     <width>101</width>
+     <width>113</width>
      <height>20</height>
     </rect>
    </property>
@@ -43,9 +43,9 @@ color: rgb(255, 170, 0);</string>
   <widget class="QLineEdit" name="txtRgb">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>163</x>
      <y>38</y>
-     <width>101</width>
+     <width>113</width>
      <height>20</height>
     </rect>
    </property>
@@ -70,9 +70,9 @@ color: rgb(255, 170, 0);</string>
   <widget class="QLineEdit" name="txtXY">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>163</x>
      <y>68</y>
-     <width>101</width>
+     <width>113</width>
      <height>20</height>
     </rect>
    </property>
