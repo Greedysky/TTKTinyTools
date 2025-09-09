@@ -60,6 +60,7 @@ if(WIN32)
   string(APPEND CMAKE_RC_FLAGS " --use-temp-file")
 endif()
 
+option(TTK_INSTALL_CTL "TTK install common tools library" OFF)
 option(TTK_BUILD_SHARED "TTK build shared library" ON)
 if(TTK_BUILD_SHARED)
   message(STATUS "TTK build by shared link")
@@ -105,6 +106,9 @@ include_directories(${TTK_GENERATE_DIR})
 
 set(LIBRARY_OUTPUT_PATH ${TTK_BUILD_DIR}/${TTK_VERSION})
 set(EXECUTABLE_OUTPUT_PATH ${TTK_BUILD_DIR}/${TTK_VERSION})
+set(TTK_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}")
+set(TTK_INSTALL_BIN_DIR "${TTK_INSTALL_DIR}/${TTK_VERSION}")
+
 
 set(TTK_QT_VERSION "0" CACHE STRING "Select Qt version")
 set_property(CACHE TTK_QT_VERSION PROPERTY STRINGS 4 5 6)
@@ -119,7 +123,7 @@ find_program(QT_QMAKE_EXECUTABLE qmake ${QT_INSTALL_BINS})
 if(QT_QMAKE_EXECUTABLE)
   message(STATUS "Found qmake executable: " ${QT_QMAKE_EXECUTABLE})
 else()
-  message(FATAL_ERROR "Could NOT find qmake executable")
+  message(FATAL_ERROR "Could not find qmake executable")
 endif()
 
 
@@ -172,7 +176,7 @@ find_program(QT_LRELEASE_EXECUTABLE lrelease ${QT_INSTALL_BINS})
 if(QT_LRELEASE_EXECUTABLE)
   message(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
 else()
-  message(FATAL_ERROR "Could NOT find lrelease executable")
+  message(FATAL_ERROR "Could not find lrelease executable")
 endif()
 
 
@@ -182,9 +186,6 @@ add_subdirectory(TTKThirdParty)
 add_subdirectory(TTKModule)
 
 
-set(TTK_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}")
-set(TTK_INSTALL_BIN_DIR "${TTK_INSTALL_DIR}/${TTK_VERSION}")
-
 install(DIRECTORY "${TTK_BUILD_DIR}/" DESTINATION "${TTK_INSTALL_DIR}" USE_SOURCE_PERMISSIONS)
 install(FILES "${TTK_BASE_DIR}/ChangeLog"
               "${TTK_BASE_DIR}/LICENSE"
@@ -193,6 +194,7 @@ install(FILES "${TTK_BASE_DIR}/ChangeLog"
               "${TTK_UTILS_DIR}/resource/LICENSE.QT-LICENSE-AGREEMENT"
         DESTINATION "${TTK_INSTALL_DIR}/doc")
 install(FILES "${TTK_UTILS_DIR}/resource/README.txt" DESTINATION "${TTK_INSTALL_DIR}")
+# copy resource
 if(WIN32)
   install(FILES "${TTK_UTILS_DIR}/resource/qicon.dll" DESTINATION "${TTK_INSTALL_DIR}")
 endif()
