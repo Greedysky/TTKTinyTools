@@ -9,5 +9,7 @@ int main(int argc, char *argv[])
     w.encode("Test");
     w.decode("Test");
 
-    return a.exec();
+//    return a.exec();
+    Q_UNUSED(a);
+    return EXIT_SUCCESS;
 }

@@ -9,5 +9,7 @@ int main(int argc, char *argv[])
     w.toUpper("LOWER");
     w.toLower("UPPER");
 
-    return a.exec();
+//    return a.exec();
+    Q_UNUSED(a);
+    return EXIT_SUCCESS;
 }

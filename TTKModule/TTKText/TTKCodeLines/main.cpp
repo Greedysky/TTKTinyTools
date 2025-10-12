@@ -8,5 +8,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.codeLines({});
 
-    return a.exec();
+//    return a.exec();
+    Q_UNUSED(a);
+    return EXIT_SUCCESS;
 }

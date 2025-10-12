@@ -11,5 +11,7 @@ int main(int argc, char *argv[])
     ChineseHelper chinese;
     qDebug() << chinese.convertToTraditionalChinese("我们");
 
-    return a.exec();
+//    return a.exec();
+    Q_UNUSED(a);
+    return EXIT_SUCCESS;
 }
