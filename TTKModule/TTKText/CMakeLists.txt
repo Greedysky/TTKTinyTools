@@ -16,7 +16,7 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.18.0)
 
 if(TTK_QT_VERSION VERSION_GREATER "4")
   add_subdirectory(TTKBarrage)
