@@ -50,10 +50,6 @@ jobs:
 
       - name: Build package
         run: |
-          # add dependency for openssl
-          wget https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z
-          7z x openssl.7z
-          cp linux64/* ${{env.TTK_MODULE}}/lib
           # add portable binary package
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
