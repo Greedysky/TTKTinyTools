@@ -33,8 +33,13 @@ jobs:
           target: desktop
           cache: 'true'
 
+      - name: Install linuxdeploy
+        uses: miurahr/install-linuxdeploy-action@v1
+        with:
+          plugins: qt appimage
+
       - name: Install dependencies
-        run: sudo apt install p7zip-full
+        run: sudo apt install libfuse2 p7zip-full
 
       - name: Create build dir
         run: mkdir build
