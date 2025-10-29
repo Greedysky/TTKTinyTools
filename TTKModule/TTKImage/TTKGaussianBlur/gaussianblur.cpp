@@ -1,7 +1,7 @@
 #include "gaussianblur.h"
 
-#include <iostream>
 #include <qmath.h>
+#include <iostream>
 
 GaussianBlur::GaussianBlur()
 {
@@ -16,7 +16,7 @@ void GaussianBlur::gaussBlur(QImage &img, int radius)
 void GaussianBlur::gaussBlur1(int* pix, int w, int h, int radius)
 {
     float sigma =  1.0 * radius / 2.57;
-    float deno  =  1.0 / (sigma * sqrt(2.0 * M_PI));
+    float deno  =  1.0 / (sigma * std::sqrt(2.0 * M_PI));
     float nume  = -1.0 / (2.0 * sigma * sigma);
 
     float* gaussMatrix = (float*)malloc(sizeof(float)* (radius + radius + 1));
@@ -311,8 +311,8 @@ void GaussianBlur::boxBlur(int* srcPix, int* destPix, int w, int h, int r)
 
 void GaussianBlur::boxesForGauss(float sigma, int* size, int n)
 {
-    float wIdeal = sqrt(12.0 * sigma * sigma / n + 1.0);
-    int wl = floor(wIdeal);
+    float wIdeal = std::sqrt(12.0 * sigma * sigma / n + 1.0);
+    int wl = std::floor(wIdeal);
 
     if(0 == wl % 2)
     {
