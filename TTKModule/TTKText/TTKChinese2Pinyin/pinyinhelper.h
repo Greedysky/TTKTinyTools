@@ -30,9 +30,9 @@ class TTK_MODULE_EXPORT PinyinHelper
 public:
     enum class Format
     {
-        WITH_TONE_MARK = 0, /*!< With tone*/
-        WITH_TONE_NUMBER,   /*!< The number represents the tone*/
-        WITHOUT_TONE        /*!< Without tone*/
+        WITH_TONE_MARK = 0, /*!< With tone */
+        WITH_TONE_NUMBER,   /*!< The number represents the tone */
+        WITHOUT_TONE        /*!< Without tone */
     };
 
     /*!
