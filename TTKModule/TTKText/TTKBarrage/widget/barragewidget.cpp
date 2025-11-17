@@ -1,7 +1,7 @@
 #include "barragewidget.h"
 #include "barragecore.h"
 #include "barrageanimation.h"
-#include <QFile>
+
 #include <QLabel>
 
 BarrageWidget::BarrageWidget(QObject *parent)
@@ -189,7 +189,7 @@ void BarrageWidget::setLabelTextSize(QLabel *label)
 
 void BarrageWidget::readBarrage()
 {
-    QFile file(BARRAGEPATH);
+    QFile file(RESOURCE_PATH);
     if(file.open(QIODevice::ReadOnly))
     {
         m_barrageList << QString(file.readAll()).split(TTK_WLINEFEED);
@@ -206,7 +206,7 @@ void BarrageWidget::readBarrage()
 
 void BarrageWidget::writeBarrage()
 {
-    QFile file(BARRAGEPATH);
+    QFile file(RESOURCE_PATH);
     if(file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QByteArray array;

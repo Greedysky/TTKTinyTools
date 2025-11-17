@@ -19,26 +19,15 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QDateTime>
-#include <QApplication>
+#include <QDir>
+#include <QPoint>
 #include "ttktime.h"
 #include "ttkqtglobal.h"
 
-#define BARRAGEPATH  BarrageCore::applicationPath() + "videobarrage"
+#define RESOURCE_PATH  QDir::tempPath() + "/videobarrage.tkf"
 
 namespace BarrageCore
 {
-    inline static QString applicationPath()
-    {
-        QString path = QApplication::applicationDirPath();
-#ifdef QT_DEBUG
-        path.chop(5);
-        return path;
-#else
-        return path + TTK_SEPARATOR;
-#endif
-    }
-
     ///Menu
     static const QString MenuStyle01 = " \
         QMenu{ border:1px solid gray; padding:5px; } \

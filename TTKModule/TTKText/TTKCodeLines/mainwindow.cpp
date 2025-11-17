@@ -42,7 +42,7 @@ void  MainWindow::codeLines(const QString &path)
     QEventLoop eventLoop;
     TTKConcurrent(
     {
-        foreachFileFromDirectory( { path }, [&](const QFileInfo &fin)
+        foreachFileFromDirectory({path}, [&](const QFileInfo &fin)
         {
             QString suffix = TTK_FILE_SUFFIX(fin);
             if(suffix.isEmpty())

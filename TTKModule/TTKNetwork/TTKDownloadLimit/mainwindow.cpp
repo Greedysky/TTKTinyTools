@@ -6,20 +6,23 @@
 #elif defined Q_OS_UNIX || defined Q_CC_GNU
 #  include <unistd.h>
 #endif
-#include <QFile>
+#include <QDir>
+
+#define RESOURCE_PATH  QDir::tempPath() + "/download.tkx"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       m_ui(new Ui::MainWindow),
       m_reply(nullptr),
-      m_received(0),
-      m_total(0),
-      m_limitValue(0)
+      m_limitValue(0),
+      m_hasReceived(0),
+      m_currentReceived(0),
+      m_totalSize(0)
 {
     m_ui->setupUi(this);
     setFixedSize(433, 194);
 
-    m_file = new QFile("download.d", this);
+    m_file = new QFile(RESOURCE_PATH, this);
     m_manager = new QNetworkAccessManager(this);
 
     connect(m_ui->downloadButton, SIGNAL(clicked(bool)), SLOT(startToDownload()));
@@ -48,6 +51,7 @@ void MainWindow::startToRequest(const QUrl &url)
 
 void MainWindow::deleteAll()
 {
+    m_file->remove();
     delete m_file;
     m_file = nullptr;
 
@@ -120,8 +124,10 @@ void MainWindow::downLoadFinished()
     }
     else
     {
+        m_ui->downloadButton->setText("download");
         m_ui->downloadStatusLabel->setText("downLoad Finished");
         m_reply->deleteLater();
+        m_reply = nullptr;
     }
 }
 
@@ -147,8 +153,11 @@ void MainWindow::replyError(QNetworkReply::NetworkError)
 
 void MainWindow::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    m_received = bytesReceived;
-    m_total = bytesTotal;
+    m_currentReceived = bytesReceived;
+    m_totalSize = bytesTotal;
+
+    m_ui->progressBar->setRange(0, m_totalSize);
+    m_ui->progressBar->setValue(m_currentReceived);
 }
 
 void MainWindow::autoDownloadPressed()
@@ -170,21 +179,20 @@ void MainWindow::limitValueBoxChanged(int value)
 
 void MainWindow::updateDownloadSpeed()
 {
-    m_ui->progressBar->setRange(0, m_total);
-    m_ui->progressBar->setValue(m_received);
-    int delta = m_received - m_ui->progressBar->value();
+    const int delta = m_currentReceived - m_hasReceived;
     ///limit speed
-    if(m_limitValue != 0 && delta > m_limitValue * 1024)
+    if(m_limitValue != 0 && delta > m_limitValue * TTK_SN_KB2B)
     {
 #ifdef Q_CC_MSVC
-        ::Sleep(1000 - m_limitValue * 1024 * 1000 / delta);
+        ::Sleep((TTK_DN_S2MS - m_limitValue * TTK_SN_KB2B * TTK_DN_S2MS / delta) * 1000);
 #elif defined Q_OS_UNIX || defined Q_CC_GNU
-        usleep((1000 - m_limitValue * 1024 * 1000 / delta) * 1000);
+        usleep((TTK_DN_S2MS - m_limitValue * TTK_SN_KB2B * TTK_DN_S2MS / delta) * 1000);
 #endif
-        delta = m_limitValue * 1024;
     }
+
+    m_hasReceived = m_currentReceived;
     m_ui->downloadSpeed->setText(sizeStandardization(delta) + "/s");
-    m_ui->restOfTime->setText(delta == 0 ? "99:99:99" : timeStandardization((m_total - m_received) / delta + 1));
+    m_ui->restOfTime->setText(delta == 0 ? "99:99:99" : timeStandardization((m_totalSize - m_currentReceived) / delta + 1));
 }
 
 QString MainWindow::sizeStandardization(qint64 size)

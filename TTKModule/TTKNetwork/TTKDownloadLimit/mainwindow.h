@@ -60,8 +60,8 @@ private:
     QFile *m_file;
     QNetworkAccessManager *m_manager;
     QNetworkReply *m_reply;
-    qint64 m_received, m_total;
     qint64 m_limitValue;
+    qint64 m_hasReceived, m_currentReceived, m_totalSize;
     QTimer m_timer;
 
 };

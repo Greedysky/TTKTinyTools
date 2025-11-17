@@ -81,6 +81,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_helper->start();
 }
 
+MainWindow::~MainWindow()
+{
+    delete m_helper;
+}
+
 void MainWindow::refreshInfo()
 {
     m_lableNWS->setText(m_helper->speed());

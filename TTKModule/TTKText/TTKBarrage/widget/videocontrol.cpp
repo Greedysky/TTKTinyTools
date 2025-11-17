@@ -110,7 +110,7 @@ void VideoControl::sliderReleased()
 void VideoControl::openFileDialog()
 {
     QFileDialog dialog(this);
-    dialog.setFileMode(QFileDialog::ExistingFiles );
+    dialog.setFileMode(QFileDialog::ExistingFiles);
     dialog.setViewMode(QFileDialog::Detail);
     dialog.setNameFilter("MP4 File(*.mp4)");
 
