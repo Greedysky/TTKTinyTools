@@ -25,7 +25,7 @@ equals(QT_MAJOR_VERSION, 4){
 }
 
 equals(QT_MAJOR_VERSION, 6):lessThan(QT_MINOR_VERSION, 2){
-    message(Qt6.0.x and 6.1.x not support multimediawidgets)
+    message("Qt6.0.x and 6.1.x not support multimediawidgets")
 }else{
     greaterThan(QT_MAJOR_VERSION, 4){
         QT += multimediawidgets
