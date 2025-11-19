@@ -6,7 +6,7 @@ on: workflow_call
 
 env:
   TTK_MODULE: TTKTinyTools
-  TTK_VERSTION: 3.1.0.0
+  TTK_VERSION: 3.1.0.0
 
 jobs:
   build:
@@ -57,7 +57,7 @@ jobs:
 
       - name: Build package
         run: |
-          cd ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cd ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           linuxdeploy-x86_64.AppImage --executable=TTKBarrage --appdir=image --plugin=qt
           rm image/usr/lib/libTTK*.so
@@ -69,13 +69,13 @@ jobs:
           7z x openssl.7z
           cp linux64/* ${{env.TTK_MODULE}}/lib
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{env.TTK_VERSTION}}
+          tag_name: ${{env.TTK_VERSION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.7z
