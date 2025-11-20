@@ -28,6 +28,11 @@ set(HEADER_FILES
   ttknettrafficlabel.h
 )
 
+if(MSVC)
+  get_property(TTK_LIBRARY_KITS_HEADER_FILES GLOBAL PROPERTY "TTK_LIBRARY_KITS_HEADER_FILES")
+  list(APPEND HEADER_FILES ${TTK_LIBRARY_KITS_HEADER_FILES})
+endif()
+
 set(SOURCE_FILES
   mainwindow.cpp
   helper.cpp
