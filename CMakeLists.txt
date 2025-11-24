@@ -153,7 +153,7 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
 elseif(TTK_QT_VERSION VERSION_EQUAL "5")
   find_package(Qt5 COMPONENTS Core Gui Widgets MultimediaWidgets Network Xml REQUIRED)
 elseif(TTK_QT_VERSION VERSION_EQUAL "6")
-  find_package(Qt6 COMPONENTS Core Gui Widgets MultimediaWidgets Network Xml Core5Compat REQUIRED)
+  find_package(Qt6 COMPONENTS Core Gui Widgets MultimediaWidgets Network Xml REQUIRED)
   # Add a compiler flag
   if(NOT MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
