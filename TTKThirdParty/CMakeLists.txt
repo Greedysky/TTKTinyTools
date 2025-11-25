@@ -258,8 +258,8 @@ set(SOURCE_FILES
 )
 
 if(WIN32)
-  list(APPEND HEADER_FILES zxing/win32/zxing/iconv.h zxing/win32/zxing/stdint.h ${PROJECT_NAME}.rc)
-  list(APPEND SOURCE_FILES zxing/win32/zxing/win_iconv.c)
+  list(APPEND HEADER_FILES zxing/win32/zxing/iconv.h zxing/win32/zxing/stdint.h)
+  list(APPEND SOURCE_FILES zxing/win32/zxing/win_iconv.c ${PROJECT_NAME}.rc)
 endif()
 
 if(TTK_QT_VERSION VERSION_EQUAL "4")

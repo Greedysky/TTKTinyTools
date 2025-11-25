@@ -2,8 +2,8 @@
 #include "videocontrol.h"
 #include "barragewidget.h"
 
-#include <QVideoWidget>
 #include <QBoxLayout>
+#include <QVideoWidget>
 #if TTK_QT_VERSION_CHECK(6,0,0)
 #  include <QAudioOutput>
 #endif
