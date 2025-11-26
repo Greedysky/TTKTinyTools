@@ -52,7 +52,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
     if(m_waterWave)
     {
-        m_waterWave->setWaveSource(QtMouseX(event), QtMouseY(event), 40, 100);
+        m_waterWave->setWaveSource(QtPositionX(event), QtPositionY(event), 40, 100);
         m_timer->start();
     }
 }

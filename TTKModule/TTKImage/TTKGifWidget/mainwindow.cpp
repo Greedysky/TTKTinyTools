@@ -178,7 +178,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
         if(mouseEvent->button() == Qt::LeftButton)
         {
             mousePressed = true;
-            mousePoint = QtMouseGlobalPos(mouseEvent) - pos();
+            mousePoint = QtGlobalPosition(mouseEvent) - pos();
             return true;
         }
     }
@@ -191,7 +191,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
     {
         if(mousePressed && (mouseEvent->buttons() & Qt::LeftButton))
         {
-            move(QtMouseGlobalPos(mouseEvent) - mousePoint);
+            move(QtGlobalPosition(mouseEvent) - mousePoint);
             return true;
         }
     }

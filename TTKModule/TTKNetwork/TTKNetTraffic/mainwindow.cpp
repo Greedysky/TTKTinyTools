@@ -164,10 +164,10 @@ void MainWindow::showtop(int value)
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 { 
-    m_dPos = QtMouseGlobalPos(event) - pos();
+    m_dPos = QtGlobalPosition(event) - pos();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
-    move(QtMouseGlobalPos(event) - m_dPos);
+    move(QtGlobalPosition(event) - m_dPos);
 }
