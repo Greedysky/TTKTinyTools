@@ -83,7 +83,7 @@ Screenshots
 Copyright
 --------
  * This file is part of the TTK Tiny Tools project.
- * Copyright (C) 2015 - 2025 Greedysky Studio.
+ * Copyright (C) 2015 - 2026 Greedysky Studio.
  * Mail: greedysky@163.com.
 
 How To Contribute
