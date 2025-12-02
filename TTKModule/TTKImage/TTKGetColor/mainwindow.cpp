@@ -13,9 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowFlags(Qt::WindowMinimizeButtonHint);
     setWindowFlags(Qt::WindowStaysOnTopHint);
 
-    const QRect &rect = TTKDesktopScreen::currentGeometry();
-    move(rect.x() + (rect.width() - width()) / 2, rect.y() + (rect.height() - height()) / 2);
     setFixedSize(width(), height());
+    TTKDesktopScreen::centerWidget(this);
 
     ShowColorValue();
 }
