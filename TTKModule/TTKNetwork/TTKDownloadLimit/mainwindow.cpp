@@ -200,7 +200,7 @@ QString MainWindow::sizeStandardization(qint64 size)
     QString front, back;
     if(size / 1024 == 0)
     {
-        front =  QString::number(size);
+        front = QString::number(size);
         back = "00";
     }
     else if(size / 1024 / 1024 == 0 && size / 1024 > 0)

@@ -185,7 +185,7 @@ vector<int> Code128Reader::findStartPattern(Ref<BitArray> row){
   vector<int> counters (6, 0);
   int patternStart = rowOffset;
   bool isWhite = false;
-  int patternLength =  counters.size();
+  int patternLength = counters.size();
 
   for (int i = rowOffset; i < width; i++) {
     if (row->get(i) ^ isWhite) {

@@ -32,7 +32,7 @@ std::vector<Ref<Result> > QRCodeMultiReader::decodeMultiple(Ref<BinaryBitmap> im
   std::vector<Ref<Result> > results;
   MultiDetector detector(image->getBlackMatrix());
 
-  std::vector<Ref<DetectorResult> > detectorResult =  detector.detectMulti(hints);
+  std::vector<Ref<DetectorResult> > detectorResult = detector.detectMulti(hints);
   for (unsigned int i = 0; i < detectorResult.size(); i++) {
     try {
       Ref<DecoderResult> decoderResult = getDecoder().decode(detectorResult[i]->getBits());

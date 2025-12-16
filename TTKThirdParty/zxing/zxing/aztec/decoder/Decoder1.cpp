@@ -46,7 +46,7 @@ namespace {
   void add(string& result, char character) {
 #ifndef NO_ICONV
     char character2 = character & 0xff;
-    char s[] =  {character2};
+    char s[] = {character2};
     char* ss = s;
     size_t sl = sizeof(s);
     char d[4];
