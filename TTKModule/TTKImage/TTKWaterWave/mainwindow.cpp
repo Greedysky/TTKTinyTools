@@ -65,6 +65,6 @@ void MainWindow::paintEvent(QPaintEvent *)
     }
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::SmoothPixmapTransform);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawImage(0, 0, m_image);
 }

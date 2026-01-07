@@ -36,7 +36,7 @@ public Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
+    void drawBackground(QPainter *painter);
     void drawText(QPainter *painter);
 
 private:
@@ -88,8 +88,8 @@ private:
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void showEvent(QShowEvent *event) override final;
 
-    void drawBg(QPainter *painter);
     void drawImage(QPainter *painter);
+    void drawBackground(QPainter *painter);
 
 private:
     int m_bottomSpace;

@@ -20,11 +20,11 @@ void ImageIndex::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-    drawBg(&painter);
+    drawBackground(&painter);
     drawText(&painter);
 }
 
-void ImageIndex::drawBg(QPainter *painter)
+void ImageIndex::drawBackground(QPainter *painter)
 {
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -162,8 +162,8 @@ void ImageView::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-    drawBg(&painter);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    drawBackground(&painter);
 
     if(m_totalNum > 0)
     {
@@ -195,15 +195,6 @@ void ImageView::showEvent(QShowEvent *event)
     calcGeometry();
 }
 
-void ImageView::drawBg(QPainter *painter)
-{
-    painter->save();
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(Qt::black);
-    painter->drawRect(rect());
-    painter->restore();
-}
-
 void ImageView::drawImage(QPainter *painter)
 {
     painter->save();
@@ -225,6 +216,15 @@ void ImageView::drawImage(QPainter *painter)
         painter->drawImage(point, m_currentImage);
         painter->restore();
     }
+}
+
+void ImageView::drawBackground(QPainter *painter)
+{
+    painter->save();
+    painter->setPen(Qt::NoPen);
+    painter->setBrush(Qt::black);
+    painter->drawRect(rect());
+    painter->restore();
 }
 
 void ImageView::load()

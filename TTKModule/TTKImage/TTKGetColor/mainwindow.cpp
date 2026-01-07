@@ -10,9 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     m_ui->setupUi(this);
 
-    setWindowFlags(Qt::WindowMinimizeButtonHint);
-    setWindowFlags(Qt::WindowStaysOnTopHint);
-
+    setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowStaysOnTopHint);
     setFixedSize(width(), height());
     TTKDesktopScreen::centerWidget(this);
 

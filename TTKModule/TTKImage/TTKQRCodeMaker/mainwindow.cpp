@@ -10,6 +10,7 @@ static QImage makeQRcode(const QString &data, const QSize &size)
     image.fill(QColor(0x00, 0x00, 0x00));
 
     QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     if(!painter.isActive())
     {

@@ -214,6 +214,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     m_rectGif = QRect(m_borderWidth, m_ui->widgetTop->height(), width - (m_borderWidth * 2), height);
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen);
     painter.setBrush(m_backgroundColor);
     painter.drawRoundedRect(rect(), 5, 5);
