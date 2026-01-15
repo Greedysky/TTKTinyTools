@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT MainWindow : public QWidget
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    
+
 private Q_SLOTS:
     void initialize();
     

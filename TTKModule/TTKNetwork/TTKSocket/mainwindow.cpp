@@ -117,8 +117,9 @@ void MainWindow::readData()
     }
 }
 
-void MainWindow::readError(QAbstractSocket::SocketError)
+void MainWindow::readError(QAbstractSocket::SocketError error)
 {
+    Q_UNUSED(error);
     m_tcpClient->disconnectFromHost();
     m_ui->serverConnectButton->setText(tr("Disconnect"));
     m_ui->clientLogEdit->append(tr("Connect Error:%1").arg(m_tcpClient->errorString()));

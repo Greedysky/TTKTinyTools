@@ -126,7 +126,7 @@ QToolBar{
 
 
 QToolButton[objectName="minimizeToolBtn"] {						/*为特定控件名的按钮单独设置属性*/
-    background: transparent;
+    background:transparent;
     border:none;
     image:url(:/qss/minimize.png)
 }

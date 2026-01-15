@@ -74,7 +74,7 @@ QDialog QPushButton,QDialog QToolButton{
 }
 
 QToolButton[objectName="minimizeToolBtn"] {
-    background: transparent;
+    background:transparent;
     border:none;
     image:url(:/qss/minimize.png)
 }
@@ -82,7 +82,7 @@ QToolButton[objectName="minimizeToolBtn"]:hover,QToolButton[objectName="minimize
     image:url(:/qss/minimize_hover.png)
 }
 QToolButton[objectName="maximizeToolBtn"] {
-    background: transparent;
+    background:transparent;
     border:none;
     image:url(:/qss/maximize.png)
 }
@@ -91,7 +91,7 @@ QToolButton[objectName="maximizeToolBtn"]:hover,QToolButton[objectName="maximize
 }
 
 QToolButton[objectName="closeToolBtn"],QToolButton[objectName="customCloseWindow"] {
-    background: transparent;
+    background:transparent;
     border:none;
     image:url(:/qss/close.png)
 }
@@ -102,7 +102,7 @@ QToolButton[objectName="customCloseWindow"]:hover,QToolButton[objectName="custom
     image:url(:/qss/close_hover.png)
 }
 QToolButton[objectName="titleSetUpToolBtn"]{
-    background: transparent;
+    background:transparent;
     border:none;
     image:url(:/qss/setup.png)
 }
@@ -800,7 +800,7 @@ QWidget#GroupChatingWidget *
 
 QWidget#GroupChatingWidget QLabel
 {
-    background: transparent;
+    background:transparent;
 }
 
 QWidget#GroupChatingWidget QFrame#mainFrame
@@ -846,7 +846,7 @@ QWidget#GroupChatinSingleWidget *
 }
 QWidget#GroupChatinSingleWidget QLabel
 {
-    background: transparent;
+    background:transparent;
 }
 QWidget#GroupChatingWidget QPushButton::hover,QWidget#GroupChatingWidget QToolButton::hover{
     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
@@ -879,7 +879,7 @@ QWidget#InfoAreaWidget *
 
 QWidget#InfoAreaWidget QLabel
 {
-    background: transparent;
+    background:transparent;
 }
 
 QWidget#GpsLeftBottomWidget *
@@ -922,6 +922,6 @@ QWidget#NavItemMenuWidget *
 }
 QWidget#NavItemMenuWidget QLabel
 {
-    background: transparent;
+    background:transparent;
 }
 

@@ -139,8 +139,9 @@ void MainWindow::downLoadReadyRead()
     }
 }
 
-void MainWindow::replyError(QNetworkReply::NetworkError)
+void MainWindow::replyError(QNetworkReply::NetworkError error)
 {
+    Q_UNUSED(error);
     m_ui->downloadStatusLabel->setText("replyError -- download faild");
     m_ui->downloadButton->setText("download");
     if(m_reply)
