@@ -24,7 +24,7 @@
 #include "ttktime.h"
 #include "ttkqtglobal.h"
 
-#define RESOURCE_PATH  QDir::tempPath() + "/videobarrage.tkf"
+#define RESOURCE_PATH  QDir::tempPath() + TTK_SEPARATOR + "videobarrage.tkf"
 
 namespace BarrageCore
 {

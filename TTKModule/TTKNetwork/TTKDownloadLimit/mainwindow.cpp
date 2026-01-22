@@ -8,7 +8,7 @@
 #endif
 #include <QDir>
 
-#define RESOURCE_PATH  QDir::tempPath() + "/download.tkx"
+#define RESOURCE_PATH  QDir::tempPath() + TTK_SEPARATOR + "download.tkx"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
