@@ -42,8 +42,8 @@ public:
 
 private Q_SLOTS:
     void startToDownload();
-    void downLoadFinished();
-    void downLoadReadyRead();
+    void downloadFinished();
+    void downloadReadyRead();
     void updateDownloadSpeed();
     void autoDownloadPressed();
     void limitDownloadPressed();

@@ -43,8 +43,8 @@ MainWindow::~MainWindow()
 void MainWindow::startToRequest(const QUrl &url)
 {
     m_reply = m_manager->get(QNetworkRequest(url));
-    connect(m_reply, SIGNAL(finished()), SLOT(downLoadFinished()));
-    connect(m_reply, SIGNAL(readyRead()), SLOT(downLoadReadyRead()));
+    connect(m_reply, SIGNAL(finished()), SLOT(downloadFinished()));
+    connect(m_reply, SIGNAL(readyRead()), SLOT(downloadReadyRead()));
     connect(m_reply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(downloadProgress(qint64,qint64)));
     QtNetworkErrorConnect(m_reply, this, replyError, TTK_SLOT);
 }
@@ -82,7 +82,7 @@ void MainWindow::startToDownload()
                 m_timer.start(1000);
             }
         }
-        m_ui->downloadStatusLabel->setText("downLoading");
+        m_ui->downloadStatusLabel->setText("downloading");
         m_ui->downloadButton->setText("stop");
     }
     else
@@ -98,7 +98,7 @@ void MainWindow::startToDownload()
     }
 }
 
-void MainWindow::downLoadFinished()
+void MainWindow::downloadFinished()
 {
     if(!m_file)
     {
@@ -125,13 +125,13 @@ void MainWindow::downLoadFinished()
     else
     {
         m_ui->downloadButton->setText("download");
-        m_ui->downloadStatusLabel->setText("downLoad Finished");
+        m_ui->downloadStatusLabel->setText("download Finished");
         m_reply->deleteLater();
         m_reply = nullptr;
     }
 }
 
-void MainWindow::downLoadReadyRead()
+void MainWindow::downloadReadyRead()
 {
     if(m_file)
     {
