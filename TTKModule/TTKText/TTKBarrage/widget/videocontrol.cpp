@@ -83,12 +83,12 @@ VideoControl::~VideoControl()
 
 void VideoControl::setValue(qint64 position) const
 {
-    m_timeSlider->setValue(position*1000);
+    m_timeSlider->setValue(position * 1000);
 }
 
 void VideoControl::durationChanged(qint64 duration) const
 {
-    m_timeSlider->setRange(0, duration*1000);
+    m_timeSlider->setRange(0, duration * 1000);
 }
 
 void VideoControl::setButtonStyle(bool style) const
