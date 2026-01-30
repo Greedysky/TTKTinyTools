@@ -249,6 +249,7 @@ QPushButton* VideoControl::createBarrageSizeButton(int index)
         case 2: button->setText(tr("M")); break;
         case 3: button->setText(tr("G")); break;
     }
+
     button->setFixedSize(25, 15);
     button->setStyleSheet(BarrageCore::PushButtonStyle02);
     button->setCursor(QCursor(Qt::PointingHandCursor));
@@ -269,6 +270,7 @@ QPushButton* VideoControl::createBarrageColorButton(int index)
         case 7: button->setIcon(QIcon(":/color/purple")); break;
         case 8: button->setIcon(QIcon(":/color/black")); break;
     }
+
     button->setFixedSize(15, 15);
     button->setStyleSheet(BarrageCore::PushButtonStyle02);
     button->setCursor(QCursor(Qt::PointingHandCursor));
