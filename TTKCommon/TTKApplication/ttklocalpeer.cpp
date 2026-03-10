@@ -28,7 +28,8 @@ static PProcessIdToSessionId pProcessIdToSessionId = 0;
 #  include <unistd.h>
 #endif
 
-namespace TTKLockedPrivate {
+namespace TTKLockedPrivate
+{
 #include "ttklockedfile.cpp"
 #if defined(Q_OS_WIN)
 #  include "ttklockedfile_win.cpp"
@@ -111,7 +112,7 @@ TTKLocalPeer::TTKLocalPeer(QObject *parent, const QString &id)
 #endif
 
     d->m_server = new QLocalServer(this);
-    const QString &lockName = QDir(QDir::tempPath()).absolutePath() + QLatin1Char('/') + d->m_socketName + QLatin1String("-lockfile");
+    const QString &lockName = QDir::tempPath() + QLatin1Char('/') + d->m_socketName + QLatin1String("-lockfile");
     d->m_lockFile.setFileName(lockName);
     if(!d->m_lockFile.open(QIODevice::ReadWrite))
     {
