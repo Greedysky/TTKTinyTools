@@ -37,7 +37,7 @@ void  MainWindow::codeLines(const QString &path)
     availableSuffixs << "h" << "c" << "cc" << "cp" << "cpp" << "hpp" << "inc"
                      << "i" << "ii" << "m" << "qml" << "pro" << "pri" << "prf" << "prl";
 
-    QMap<QString, int> categorys;
+    QMap<QString, int> categories;
 
     QEventLoop eventLoop;
     TTKConcurrent(
@@ -49,7 +49,7 @@ void  MainWindow::codeLines(const QString &path)
             {
                suffix = "other";
             }
-            categorys.insert(suffix, categorys[suffix] + 1);
+            categories.insert(suffix, categories[suffix] + 1);
 
             QFile file(fin.filePath());
             if(!file.open(QIODevice::ReadOnly))
@@ -80,8 +80,8 @@ void  MainWindow::codeLines(const QString &path)
     TTK_INFO_STREAM("All File Count " << fileCount);
     TTK_INFO_STREAM("All Meet The Requirements Line Count " << lineCount);
 
-    for(const QString &key : categorys.keys())
+    for(const QString &key : categories.keys())
     {
-        TTK_INFO_STREAM(QString(".%1 Type  All count %2").arg(key).arg(categorys[key]));
+        TTK_INFO_STREAM(QString(".%1 Type  All count %2").arg(key).arg(categories[key]));
     }
 }
