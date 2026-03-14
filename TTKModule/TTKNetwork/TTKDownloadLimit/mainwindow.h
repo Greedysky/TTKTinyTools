@@ -49,7 +49,7 @@ private Q_SLOTS:
     void limitDownloadPressed();
     void limitValueBoxChanged(int value);
     void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-    void replyError(QNetworkReply::NetworkError error);
+    void replyError(QNetworkReply::NetworkError code);
 
 private:
     void deleteAll();

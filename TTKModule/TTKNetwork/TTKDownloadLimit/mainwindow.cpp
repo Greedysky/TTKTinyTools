@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ttkabstractnetwork.h"
 #ifdef Q_CC_MSVC
 #  define WIN32_LEAN_AND_MEAN
 #  include <qt_windows.h>
@@ -107,18 +108,19 @@ void MainWindow::downloadFinished()
 
     m_file->flush();
     m_file->close();
-    const QVariant &redirectionTarget = m_reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+
+    const QVariant &redirection = m_reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
     if(m_reply->error())
     {
         m_file->remove();
     }
-    else if(!redirectionTarget.isNull())
+    else if(!redirection.isNull())
     {
         m_reply->deleteLater();
         if(m_file->open(QIODevice::WriteOnly))
         {
             m_file->resize(0);
-            startToRequest(m_reply->url().resolved(redirectionTarget.toUrl()));
+            startToRequest(TTK::fetchResolvedUrl(m_reply->url().toString(), redirection.toString()));
         }
         return;
     }
@@ -139,9 +141,9 @@ void MainWindow::downloadReadyRead()
     }
 }
 
-void MainWindow::replyError(QNetworkReply::NetworkError error)
+void MainWindow::replyError(QNetworkReply::NetworkError code)
 {
-    Q_UNUSED(error);
+    Q_UNUSED(code);
     m_ui->downloadStatusLabel->setText("replyError -- download faild");
     m_ui->downloadButton->setText("download");
     if(m_reply)
