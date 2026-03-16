@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ttkabstractnetwork.h"
+
 #ifdef Q_CC_MSVC
 #  define WIN32_LEAN_AND_MEAN
 #  include <qt_windows.h>
@@ -114,7 +115,7 @@ void MainWindow::downloadFinished()
     {
         m_file->remove();
     }
-    else if(!redirection.isNull())
+    else if(redirection.isValid())
     {
         m_reply->deleteLater();
         if(m_file->open(QIODevice::WriteOnly))
