@@ -34,10 +34,14 @@ public:
     ~MainWindow();
 
 public Q_SLOTS:
-    void ShowColorValue();
+    void RenderValue();
+
+private:
+    virtual void closeEvent(QCloseEvent *event) override final;
 
 private:
     Ui::MainWindow *m_ui;
+    QPixmap m_pixmap;
 
 };
 
