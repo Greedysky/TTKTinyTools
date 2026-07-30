@@ -75,6 +75,6 @@ win32{
             $$PWD/TTKLibrary/ttktree.h \
             $$PWD/TTKLibrary/ttkunsortedmap.h \
             $$PWD/TTKLibrary/ttkvariant.h \
-            $$PWD/TTKLibrary/ttkdeque.h
+            $$PWD/TTKLibrary/ttklist.h
     }
 }
