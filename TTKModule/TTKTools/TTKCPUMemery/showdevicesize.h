@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT ShowDeviceSize : public QObject
 public:
     explicit ShowDeviceSize(QObject *parent = nullptr);
 
-    static ShowDeviceSize *instance()
+    static ShowDeviceSize* instance()
     {
         static QMutex mutex;
         if(!m_instance)

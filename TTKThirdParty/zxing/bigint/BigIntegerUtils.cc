@@ -22,7 +22,7 @@ BigInteger stringToBigInteger(const std::string &s) {
 		: BigInteger(stringToBigUnsigned(s));
 }
 
-std::ostream &operator <<(std::ostream &os, const BigUnsigned &x) {
+std::ostream& operator <<(std::ostream &os, const BigUnsigned &x) {
 	BigUnsignedInABase::Base base;
 	long osFlags = os.flags();
 	if (osFlags & os.dec)
@@ -42,7 +42,7 @@ std::ostream &operator <<(std::ostream &os, const BigUnsigned &x) {
 	return os;
 }
 
-std::ostream &operator <<(std::ostream &os, const BigInteger &x) {
+std::ostream& operator <<(std::ostream &os, const BigInteger &x) {
 	if (x.getSign() == BigInteger::negative)
 		os << '-';
 	os << x.getMagnitude();

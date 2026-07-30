@@ -20,11 +20,11 @@ template <typename T>
 BigInteger dataToBigInteger(const T* data, BigInteger::Index length, BigInteger::Sign sign);
 
 // Outputs x to os, obeying the flags `dec', `hex', `bin', and `showbase'.
-std::ostream &operator <<(std::ostream &os, const BigUnsigned &x);
+std::ostream& operator <<(std::ostream &os, const BigUnsigned &x);
 
 // Outputs x to os, obeying the flags `dec', `hex', `bin', and `showbase'.
 // My somewhat arbitrary policy: a negative sign comes before a base indicator (like -0xFF).
-std::ostream &operator <<(std::ostream &os, const BigInteger &x);
+std::ostream& operator <<(std::ostream &os, const BigInteger &x);
 
 // BEGIN TEMPLATE DEFINITIONS.
 
